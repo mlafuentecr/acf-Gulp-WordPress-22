@@ -1,0 +1,235 @@
+@import '_variables';
+.single-podcast {
+	min-height: 100vh;
+	display: flex;
+	font-size: 18px;
+	line-height: 27px;
+	p,
+	li {
+		font-size: 18px;
+		line-height: 27px;
+	}
+
+	#wrapper {
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		#header-top {
+			display: none;
+		}
+		main {
+			display: flex;
+			align-items: stretch;
+			justify-content: center;
+			min-height: 100%;
+		}
+
+		#menu-primary,
+		#menu-button {
+			display: none;
+		}
+		footer {
+			display: none;
+		}
+
+		#podcast {
+			display: flex;
+			flex-wrap: wrap;
+
+			justify-content: center;
+			align-items: stretch;
+			background: #f6f8fa;
+
+			.intro {
+				display: flex;
+				align-items: center;
+				.logo {
+					max-height: 80px;
+				}
+				.container {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 80px;
+					@media (max-width: $md) {
+						flex-direction: column;
+						margin-top: 40px;
+					}
+					h2 {
+						line-height: 3rem;
+						margin-bottom: 2rem;
+					}
+					section {
+						display: flex;
+						flex: 1;
+						flex-direction: column;
+
+						.home-hero-title {
+							color: $prim-purple;
+							letter-spacing: 3px;
+							text-transform: uppercase;
+							margin: 30px 0px;
+							font-family: $font-Avenir-heavy;
+						}
+
+						ul {
+							list-style: none;
+							margin-left: 0;
+							padding-left: 0;
+							li {
+								color: $prim-purple;
+								font-family: $font-Avenir-heavy;
+								margin-bottom: initial;
+								&:before {
+									content: '→';
+									padding-right: 5px;
+								}
+							}
+						}
+					}
+
+					form {
+						margin: 0px;
+						min-width: 100%;
+						min-height: 350px;
+
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						justify-content: center;
+					}
+					.hbspt-form {
+						margin-top: 100px;
+						display: flex;
+						flex-direction: column;
+						flex: 1;
+						background: #fff;
+						border: 1px solid #d9d9d9;
+						box-shadow: 1px 1px 10px #ececec;
+						padding: 20px;
+						justify-content: center;
+
+						@media (max-width: $md) {
+							margin-top: -100px !important;
+						}
+						.form-columns-2 {
+							text-align: left;
+							min-width: 100%;
+							min-height: 100px;
+						}
+						.actions {
+							margin-top: 20px;
+						}
+
+						.hs-button.primary.large {
+							background: $prim-purple;
+							border-color: $prim-purple;
+							color: #ffffff;
+							min-height: 70px;
+							font-family: $font-Avenir-roman;
+							border: 3px solid transparent;
+							border-radius: 3px;
+							outline: 0;
+							text-transform: uppercase;
+							letter-spacing: 0.075em;
+
+							padding: 1.2rem;
+
+							margin: 0 0 20px;
+							position: relative;
+							text-align: center;
+							z-index: 1;
+							transition: all 0.3s;
+							line-height: 1.5;
+							min-width: 228px;
+							text-decoration: none;
+							padding-left: 5px;
+							padding-right: 5px;
+							width: -webkit-max-content;
+							width: -moz-max-content;
+							width: max-content;
+
+							&:hover {
+								background-color: $teal;
+							}
+						}
+						label {
+							line-height: 20px;
+							font-size: 13px;
+							font-family: $font-Avenir-roman;
+							text-transform: capitalize;
+						}
+						.input {
+							margin-right: 0px !important;
+						}
+						input {
+							box-sizing: border-box;
+							min-height: 27px;
+							background-color: #f5f8fa;
+							display: inline-block;
+							width: 95%;
+							max-width: 500px;
+							height: 40px;
+							padding: 9px 10px;
+							font-family: $font-light;
+							font-size: 13;
+
+							line-height: 22px;
+							color: $prim-purple;
+							border: 1px solid #cbd6e2;
+							border-radius: 3px;
+							margin-right: 0px;
+						}
+					}
+				}
+			}
+
+			.explain {
+				display: flex;
+				min-width: 100%;
+				background: $prim-purple;
+				padding-top: 30px;
+				padding-bottom: 30px;
+
+				.container {
+					color: white;
+					font-size: 18px;
+					text-align: center;
+
+					.content {
+						max-width: 80%;
+						display: flex;
+						margin: auto;
+						position: relative;
+						margin-top: 50px;
+						&:before {
+							min-width: 100%;
+							font-size: 6rem;
+							color: #b0b0ff;
+							position: absolute;
+							top: -20px;
+							left: 0;
+							content: ' “ ';
+							font-family: $font-fair;
+						}
+					}
+
+					.person {
+						display: flex;
+						justify-content: center;
+						flex-wrap: wrap;
+						margin-top: 20px;
+						flex-direction: column;
+						.name {
+							color: #b0b0ff;
+							font-family: $font-Avenir-heavy;
+						}
+						.charge {
+							color: #b0b0ff;
+						}
+					}
+				}
+			}
+		}
+	}
+}

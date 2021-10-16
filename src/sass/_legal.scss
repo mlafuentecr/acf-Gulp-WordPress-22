@@ -1,0 +1,77 @@
+@import '_variables';
+/*------------------------------------------*/
+/*   Legal
+/*------------------------------------------*/
+#legal {
+	position: relative;
+	background: #f3f6f9;
+	min-height: 700px;
+	.intro-banner {
+		min-height: 300px;
+		h1 {
+			margin-top: 0;
+		}
+	}
+	h1 {
+		text-align: center;
+	}
+	li {
+		display: block;
+		text-transform: uppercase;
+		letter-spacing: 0.075em;
+		font-family: 'Brown', sans-serif;
+		font-size: 16px;
+		font-weight: 700;
+		color: #000;
+		margin: 0 0 6px;
+		margin-bottom: 6px;
+		padding: 0;
+		a {
+			color: black;
+			text-decoration: none;
+			transition: all 0.3s;
+		}
+	}
+	.block-nav {
+		display: flex;
+		flex: 1;
+		max-width: 326px;
+		padding-top: 100px;
+		ul {
+			list-style-type: none;
+			margin: 0 80px 0 0;
+			padding: 0;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			top: -5px;
+			width: 326px;
+			background: $prim-purple;
+			left: 0;
+			height: 7px;
+		}
+	}
+
+	.content {
+		background: white;
+		padding-top: 100px;
+		h6 {
+			text-transform: uppercase;
+			font-size: 15px;
+			letter-spacing: 0.05em;
+			color: $prim-purple;
+			margin: 0 0 20px;
+		}
+		.row {
+			border-top: 3px solid #000;
+		}
+
+		article {
+			padding-top: 100px;
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+	}
+}

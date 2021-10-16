@@ -1,0 +1,105 @@
+<?php
+
+/*-----------------------------------------------------------------------------------*/
+//     defines
+/*-----------------------------------------------------------------------------------*/
+$GLOBALS['THEME_MLM_PATH'] 	= get_template_directory_uri();
+$GLOBALS['THEME_MLM_VER'] 	= '1.1.2';
+$GLOBALS['THEME_SETTING_PG'] 	= 2994;
+$GLOBALS['THEME_MLM_ENV'] = '';
+
+
+//ERROR Error while fetching an original source: request failed with status 404
+//DEBERIA DE IRSE EN UN SERVER NO LOCAL
+
+
+/*-----------------------------------------------------------------------------------*/
+//     Variables LOCAL OR DIST
+/*-----------------------------------------------------------------------------------*/
+// Get the hostname
+$http_host      = $_SERVER['HTTP_HOST'];
+$ENV            = '';
+$local          = 'localhost:8006';
+$staging        = 'heylaikanewlook2.local';
+$production     = 'heylaika.com';
+
+$environments = array(
+  'local'       => $local,
+  'staging'     => $staging,
+  'production'  => $production
+);
+
+// Compare $hhphost and set the enviroment
+foreach($environments as $environment => $hostname) {
+  if (stripos($http_host, $hostname) !== FALSE) {
+    //     Set Enviroment
+    if($environment === 'local' ){
+      $GLOBALS['THEME_MLM_ENV'] 	= 'src';
+    }else{
+      $GLOBALS['THEME_MLM_ENV'] 	= 'dist';
+    }
+    break;
+  }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+//     1) Array of files to include.
+/*-----------------------------------------------------------------------------------*/
+
+// UnderStrap's includes directory.
+$understrap_inc_dir = get_template_directory() ;
+
+$understrap_includes = array(
+   '/inc/functions/cleanup.php', // clean all website code elements from wp
+   '/inc/functions/enqueue.php', // Enqueue scripts and styles.
+   '/inc/functions/add_menus.php', // define menus
+  '/inc/functions/custom_dashboard.php', // add new look to dashboad
+  '/inc/functions/dashboad_menu.php', // add my menu for client use to dashboar
+  '/inc/functions/custom_login_look.php', // re look the loging
+  '/inc/functions/wp_support.php', // add wp supporth has thumbnails ect
+  '/inc/functions/blocks.php', // add wp supporth has thumbnails ect
+ 
+  '/inc/functions/acfAdmin.php', // Theme Settings tab
+  '/inc/functions/acfToJson.php', // save acf data and load it
+  '/inc/functions/add_widgets.php', // widgets support
+ 
+);
+
+foreach ($understrap_includes as $file) {
+ require_once $understrap_inc_dir . $file;
+}
+
+
+// Register a testimonial ACF Block
+if( function_exists('acf_register_block') ) {
+	
+	$result = acf_register_block(array(
+		'name'				=> 'testimonial-1',
+		'title'				=> __('testimonial-1'),
+		'description'		=> __('A custom testimonial block.'),
+		'render_callback'	=> 'my_testimonial_block_html'
+		//'category'		=> '',
+		//'icon'			=> '',
+		//'keywords'		=> array(),
+	));
+}
+
+// Callback to render the testimonial ACF Block
+function my_testimonial_block_html() {
+	
+	// vars
+	$testimonial = get_field('testimonial');
+	$author = get_field('name');
+	$avatar = get_field('picture');
+	
+	?>
+<blockquote class="testimonial">
+  <p><?php echo $testimonial; ?></p>
+  <cite>
+    <img src="<?php echo $avatar['url']; ?>" alt="<?php echo $avatar['alt']; ?>" />
+    <span><?php echo $author; ?></span>
+  </cite>
+</blockquote>
+<?php
+}

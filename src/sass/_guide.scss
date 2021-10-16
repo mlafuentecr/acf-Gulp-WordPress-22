@@ -1,0 +1,172 @@
+/*------------------------------------------*/
+/*   Legal
+/*------------------------------------------*/
+#guide-download {
+	.intro-banner {
+		background-color: #f3f6f9;
+		min-height: 700px;
+		margin-bottom: 100px;
+		.row {
+			display: flex;
+			flex-direction: row;
+		}
+		.col-left {
+			display: flex;
+			flex: 1;
+			max-width: 50%;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			align-content: flex-end;
+		}
+
+		.col-right {
+			flex: 1;
+			max-width: 50%;
+			width: calc(45% - 15px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			.intro__img {
+				max-height: 450px;
+				margin: auto;
+			}
+		}
+	}
+	.question {
+		.row {
+			display: flex;
+
+			flex-direction: row;
+
+			.col-left {
+				display: flex;
+				flex: 1;
+				max-width: 50%;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				align-content: flex-end;
+
+				.heading-section {
+					line-height: 46px;
+					color: #0a0a0a;
+					font-size: 38px;
+					font-weight: 700;
+				}
+
+				.paragraph {
+					padding: 0;
+					margin: 0;
+
+					font-weight: 400;
+					font-size: 15px;
+					line-height: 26px;
+					color: #0a0a0a;
+					display: flex;
+
+					flex-direction: row;
+
+					justify-content: flex-start;
+					margin-bottom: 34px;
+					align-items: center;
+					&:before {
+						content: '✓';
+						margin-right: 18px;
+
+						color: #fff;
+						border-radius: 50%;
+						background-color: #5dc1c3;
+						width: 20px;
+						padding: 15px;
+						height: 20px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font-size: 22px;
+					}
+				}
+			}
+
+			.col-right {
+				flex: 1;
+				max-width: 50%;
+				width: calc(45% - 15px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+		}
+
+		.heading-section {
+			line-height: 46px;
+			color: #0a0a0a;
+			font-size: 38px;
+			font-weight: 700;
+			margin-bottom: 53px;
+			text-align: left;
+		}
+	}
+	#guide-target {
+		padding: 195px 0 123px;
+		background-color: #fff;
+		h2 {
+			font-size: 1.8rem;
+			width: 100%;
+			text-align: center;
+		}
+		#label-subscribe_to_company_and_industry_updates-a006c748-6045-4621-9129-2b5d7d6a40f8 {
+			margin: 20px 0px;
+		}
+		.hbspt-form form .hs-fieldtype-checkbox .input .inputs-list .hs-form-checkbox label span,
+		.hbspt-form form .hs-fieldtype-checkbox .input .inputs-list .hs-form-radio label span,
+		.hbspt-form form .hs-fieldtype-radio .input .inputs-list .hs-form-checkbox label span,
+		.hbspt-form form .hs-fieldtype-radio .input .inputs-list .hs-form-radio label span {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			color: #000;
+		}
+	}
+
+	.investment {
+		.row {
+			display: flex;
+			flex-direction: row;
+			margin-top: 5rem;
+			.col-left {
+				display: flex;
+				flex: 1;
+				max-width: 40%;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				align-content: flex-end;
+				margin-right: 10%;
+			}
+			.col-right {
+				flex: 1;
+				max-width: 50%;
+				width: calc(45% - 15px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+			.heading-section {
+				font-size: 38px;
+				font-weight: 700;
+				line-height: 46px;
+				color: #0a0a0a;
+				font-size: 38px;
+				font-weight: 700;
+			}
+		}
+	}
+	.button {
+		color: white;
+		margin: 2rem 0px;
+	}
+}

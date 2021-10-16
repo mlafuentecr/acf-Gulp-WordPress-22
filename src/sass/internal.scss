@@ -1,0 +1,70 @@
+@import '_variables';
+@import '_glossary';
+@import '_university';
+@import '_partners';
+@import '_programs';
+@import '_product';
+@import '_pricing';
+@import '_guide';
+@import '_customer-stories';
+@import '_request-demo'; //request a demo
+@import '_our_value';
+@import '_integrations';
+@import '_about';
+@import '_blog';
+@import '_integrated-audit';
+@import '_startup-page';
+@import '_contact-us.scss';
+@import '_ebook-page.scss';
+@import '_legal.scss';
+@import '_landing-podcast.scss';
+@import 'global';
+@import 'intern_ver2';
+
+.error404 {
+	h2,
+	h1 {
+		color: white !important;
+	}
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*   Sports News 	@media (max-width: $md) {
+/*-----------------------------------------------------------------------------------*/
+.page-template {
+	a {
+		color: $prim-purple;
+		transition: all 0.3s;
+		text-decoration: none;
+	}
+	#header-top {
+		background-color: white;
+	}
+}
+.intern-pg {
+	// margin-top: 110px;
+	min-height: 800px;
+	background-color: #fefefe;
+	.row {
+		@media (max-width: $md) {
+			padding: 20px;
+		}
+	}
+}
+
+.intro-banner {
+	h1 {
+		font-size: 48px;
+		font-family: $font-Medium !important;
+	}
+}
+
+#guide-download {
+	background-color: white !important;
+	.intro-banner {
+		h1 {
+			margin-bottom: initial !important;
+			margin-top: initial !important;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"short_name": "laika",
+	"name": "laika",
+	"description": "laika",
+	"start_url": "https://heylaika.com/",
+	"scope": "https://heylaika.com/",
+	"background_color": "#3367D6",
+	"display": "standalone",
+	"theme_color": "#3367D6",
+	"icons": [
+		{
+			"src": "favicon-48x48.png",
+			"sizes": "48x48",
+			"type": "image/png",
+			"density": "1.0"
+		},
+		{
+			"src": "favicon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"density": "1.5"
+		},
+		{
+			"src": "favicon-72x72.png",
+			"sizes": "72x72",
+			"type": "image/png",
+			"density": "1.5"
+		},
+
+		{
+			"src": "favicon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"density": "4.0",
+			"purpose": "any maskable"
+		}
+	]
+}
