@@ -10,7 +10,6 @@ get_header();
 /*-----------------------------------------------------------------------------------*/
 $page_fields = get_fields();
 
-
 $application_types =  get_terms( 'application_type', array('hide_empty' => false) );
 $apps = array();
 
@@ -208,6 +207,7 @@ foreach($application_types as $type){
   <section class="cta">
     <div class="container">
       <div class="row">
+
         <h2><?php echo $page_fields["faq_heading"]; ?></h2>
         <a class="button button-teal btn-animation" rel="noopener" href="<?php echo $page_fields["btn"]["url"]; ?>"
           target="<?php echo $page_fields["url"]["title"]; ?>"><span><?php echo $page_fields["btn"]["title"]; ?></span>
@@ -216,9 +216,6 @@ foreach($application_types as $type){
     </div>
   </section>
   <!-- /. cta Reques Demo-->
-
-  <!-- 6 demo -->
-  <!-- puedo hacer uno general y que tenga un drop down de bg y un text field o un drop down de text -->
 
 </div>
 <?php   edit_post_link(__('Edit This page'));  ?>

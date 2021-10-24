@@ -80,9 +80,9 @@ if (!$searchData) {
 function catGroup()
 {
  foreach ((get_the_category())  as  $key => $category) {
-   $key >= 1 ? $com=' , ': $com=' ';
+   $key >1 ? $com=',': $com='';
   if ($category->name !== 'Blog') {
-   echo '<span  >' . $com. '  '.$category->name ." </span>";
+   echo '<span  >' . $com. ' '.$category->name ." </span>";
   }
  }
 }

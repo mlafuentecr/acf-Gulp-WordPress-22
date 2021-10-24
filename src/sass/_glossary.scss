@@ -37,11 +37,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
-		h1 {
-			font-size: 2.5rem;
-			line-height: 1.5;
-			font-weight: 700;
-		}
+
 		.glossary-intro__heading {
 			margin: 0;
 			text-align: center;
@@ -79,19 +75,13 @@
 
 							.glossary-info__heading {
 								margin: 0 0 25px 0;
-								font-family: 'Brown', sans-serif;
-								font-weight: 700;
-								font-size: 32px;
-								line-height: 45px;
+								font-family: $font-Medium;
 								color: black;
 							}
 
 							.glossary-info__paragraph {
 								margin: 0 0 48px 0;
-								font-family: 'Avenir-Book', sans-serif;
-								font-weight: 400;
-								font-size: 18px;
-								line-height: 31px;
+								font-family: $font-Avenir;
 								color: #0a0a0a;
 							}
 						}
@@ -124,8 +114,8 @@
 
 								.glossary-info__heading {
 									margin: 0 0 15px 0;
-									font-family: 'Brown', sans-serif;
-									font-weight: 700;
+									font-family: $font-Medium;
+
 									font-size: 20px;
 									line-height: 28px;
 									color: black;
@@ -133,8 +123,8 @@
 
 								.glossary-info__paragraph {
 									margin: 0 0 0 0;
-									font-family: 'Avenir-Book', sans-serif;
-									font-weight: 400;
+									font-family: $font-Avenir;
+
 									font-size: 15px;
 									line-height: 26px;
 									color: #0a0a0a;
@@ -203,8 +193,8 @@
 								flex-direction: row;
 								justify-content: flex-start;
 								align-items: flex-start;
-								font-family: 'Brown', sans-serif;
-								font-weight: 700;
+								font-family: $font-Medium;
+
 								font-size: 32px;
 								line-height: 45px;
 								color: black;

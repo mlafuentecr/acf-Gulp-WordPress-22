@@ -9,7 +9,9 @@ get_header();
 /*  ACF Page our-value
 /*-----------------------------------------------------------------------------------*/
 $pageFields = get_fields();
-$bannerBtn  = $pageFields['banner_button'];
+
+$bannerBtn = get_field('request_demo_button', 'option');
+
 ?>
 <div id="products" class="intern-pg">
 
@@ -25,9 +27,8 @@ $bannerBtn  = $pageFields['banner_button'];
           <p class="banner-content"><?php echo $pageFields['banner_content']; ?></p>
           <?php endif; ?>
 
-
-          <a class=" button button-purple btn-animation  mt-5" rel="noopener" href='<?php echo$bannerBtn["link"]; ?>'
-            target=""><span><?php echo$bannerBtn["name"]; ?></span>
+          <a class=" button button-purple btn-animation  mt-5" rel="noopener" href='<?php echo$bannerBtn["url"]; ?>'
+            target=""><span><?php echo$bannerBtn["title"]; ?></span>
           </a>
 
 
@@ -74,7 +75,7 @@ $bannerBtn  = $pageFields['banner_button'];
           <div class="text"><?php echo $pageFields['sec_two_text']; ?></div>
 
           <?php $link = $pageFields["sec_two_link"]; ?>
-          <?php if($link){ ?> <a class="home-text-link text-link arrow" href="<?php echo $link['link']; ?>">
+          <?php if($link){ ?> <a class="home-text-link text-link arrow arrow-start" href="<?php echo $link['link']; ?>">
             <?php echo $link['name']; ?></a> <?php } ?>
         </div>
 
@@ -147,7 +148,7 @@ $bannerBtn  = $pageFields['banner_button'];
 
           <?php 
           $link = $pageFields["sec_four_link"]; 
-          if($link){ ?> <a class="home-text-link text-link arrow" href="<?php echo $link['link']; ?>">
+          if($link){ ?> <a class="home-text-link text-link arrow arrow-start" href="<?php echo $link['link']; ?>">
             <?php echo $link['name']; ?></a>
           <?php } ?>
 
@@ -168,7 +169,7 @@ $bannerBtn  = $pageFields['banner_button'];
           <?php $link = $pageFields['sec_five_link']; ?>
           <h2><?php echo $pageFields['sec_five_heading']; ?></h2>
           <div class="text"><?php echo $pageFields['sec_five_text']; ?></div>
-          <a class="home-text-link text-link arrow"
+          <a class="home-text-link text-link arrow arrow-start"
             href="<?php echo $pageFields['sec_five_link']['link']; ?>"><?php echo $pageFields['sec_five_link']['name']; ?></a>
 
         </div>
@@ -187,17 +188,19 @@ $bannerBtn  = $pageFields['banner_button'];
 
   <!-- cta Reques Demo-->
   <?php 
-$cta4 = get_field("cta_4", "option");
+  $cta_4 = get_field('cta_4', 'option');
+  $cta_bg = get_field('cta_bg', 'option');
+  $cta_btn = get_field('request_demo_button', 'option');
+ 
+  ?>
 
-?>
-
-  <section class="cta cta4" style="background: url(<?php echo $cta4["bg"]["url"]; ?>)">
+  <section class="cta cta4" style="background: url(<?php echo $cta_bg['bg_purple']['url']; ?>)">
     <div class="container">
       <div class="row">
-        <h2><?php echo $cta4["title"] ; ?></h2>
+        <h2><?php echo $cta_4['title']; ?></h2>
 
         <a class=" button button-teal btn-animation" rel="noopener"
-          href="<?php echo $cta4["btn"]["url"]; ?>"><span><?php echo $cta4["btn"]["title"]; ?></span>
+          href="<?php echo $cta_btn['url']; ?>"><span><?php echo $cta_btn['title']; ?></span>
         </a>
       </div>
     </div>

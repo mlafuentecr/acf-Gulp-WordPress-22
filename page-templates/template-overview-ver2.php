@@ -15,7 +15,7 @@ $banner = $pageFields['banner_image'];
 
   <!-- 0 banner -->
   <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
-    <div class="container">
+    <div class="container-xl">
       <article class="headline">
 
         <?php if ($pageFields['banner_title']): ?>
@@ -45,7 +45,7 @@ $banner = $pageFields['banner_image'];
   <!-- 2  -->
   <?php if ($pageFields['sec_two_title']): ?>
   <section class="sec_2 content-list block">
-    <div class="container">
+    <div class="container-xl">
 
       <div class="headline">
         <h2><?php echo $pageFields['sec_two_title']; ?></h2>
@@ -53,7 +53,7 @@ $banner = $pageFields['banner_image'];
       </div>
 
       <?php foreach ($pageFields['sec_two_list'] as $secTwoListValue): ?>
-      <article class="item ul-icons">
+      <article class="item">
         <div class="imgWrap">
           <img class='lazyload' src='<?php echo $secTwoListValue['image']['url']; ?>' alt='' width='auto'
             height='300' />
@@ -71,8 +71,8 @@ $banner = $pageFields['banner_image'];
 
   <!-- 3 list   -->
   <?php if (get_field('sec_three_title')):  ?>
-  <section class="sec_3 col-12 block m-0">
-    <div class="container">
+  <section class="sec_3 full-bar bg-purple block-padding">
+    <div class="container-xl">
       <?php 
         $title = get_field('sec_three_title'); 
         $content = get_field('sec_three_content'); 
@@ -103,7 +103,7 @@ $banner = $pageFields['banner_image'];
   <!-- 4 sec_four_list -->
   <?php if ($pageFields['sec_four_list']): ?>
   <section class="sec_2 content-list block">
-    <div class="container">
+    <div class="container-xl">
 
       <?php foreach ($pageFields['sec_four_list'] as $secfourListValue): ?>
       <article class="item">
@@ -126,7 +126,7 @@ $banner = $pageFields['banner_image'];
   <!-- 5 sec_five-better experience  -->
   <?php if (get_field('sec_five_title')):  ?>
   <section class="sec_4 footer-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
-    <div class="container">
+    <div class="container-xl">
       <?php 
         $title = get_field('sec_five_title'); 
         $link = get_field('sec_five_link'); 

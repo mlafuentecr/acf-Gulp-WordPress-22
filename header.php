@@ -3,10 +3,17 @@
     //Logo
     $ond_logo = get_theme_mod( 'custom_logo' );
     $image = wp_get_attachment_image_src( $ond_logo , 'full' );
+
+    $post = get_post();
+    $slugname = get_post_field( 'post_name', $post );
+    if (strpos($slugname, '-')) {
+      $slug  = explode("-", $slugname);
+      $slug  = $slug[1];
+  }
     
 ?>
 
-<html <?php language_attributes();?>>
+<html id="<?php echo $slugname; ?>" <?php language_attributes();?>>
 
   <head name="top">
 

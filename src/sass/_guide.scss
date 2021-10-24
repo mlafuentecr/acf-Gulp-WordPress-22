@@ -53,16 +53,12 @@
 					line-height: 46px;
 					color: #0a0a0a;
 					font-size: 38px;
-					font-weight: 700;
 				}
 
 				.paragraph {
 					padding: 0;
 					margin: 0;
 
-					font-weight: 400;
-					font-size: 15px;
-					line-height: 26px;
 					color: #0a0a0a;
 					display: flex;
 
@@ -74,10 +70,9 @@
 					&:before {
 						content: '✓';
 						margin-right: 18px;
-
 						color: #fff;
 						border-radius: 50%;
-						background-color: #5dc1c3;
+						background-color: $teal;
 						width: 20px;
 						padding: 15px;
 						height: 20px;
@@ -104,7 +99,7 @@
 			line-height: 46px;
 			color: #0a0a0a;
 			font-size: 38px;
-			font-weight: 700;
+
 			margin-bottom: 53px;
 			text-align: left;
 		}
@@ -124,7 +119,6 @@
 		.hbspt-form form .hs-fieldtype-checkbox .input .inputs-list .hs-form-radio label span,
 		.hbspt-form form .hs-fieldtype-radio .input .inputs-list .hs-form-checkbox label span,
 		.hbspt-form form .hs-fieldtype-radio .input .inputs-list .hs-form-radio label span {
-			font-weight: 400;
 			font-size: 16px;
 			line-height: 20px;
 			color: #000;
@@ -157,11 +151,10 @@
 			}
 			.heading-section {
 				font-size: 38px;
-				font-weight: 700;
+
 				line-height: 46px;
 				color: #0a0a0a;
 				font-size: 38px;
-				font-weight: 700;
 			}
 		}
 	}

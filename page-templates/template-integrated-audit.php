@@ -207,15 +207,18 @@ $bannerBtn  = $pageFields['banner_button_audit'];
   <!-- cta Reques Demo-->
   <?php 
   $cta4 = get_field("cta_4", "option");
+  $ctaBg = get_field('cta_bg', 'option');
+  $ctaBtn = get_field('request_demo_button', 'option');
+
   ?>
 
-  <section class="cta cta4" style="background: url(<?php echo $cta4["bg_2"]["url"]; ?>)">
+  <section class="cta cta4" style="background: url(<?php echo $ctaBg["bg_dark_purple"]["url"]; ?>)">
     <div class="container">
       <div class="row">
         <h2><?php echo $cta4["title"] ; ?></h2>
 
         <a class=" button button-teal btn-animation" rel="noopener"
-          href="<?php echo $cta4["btn"]["url"]; ?>"><span><?php echo $cta4["btn"]["title"]; ?></span>
+          href="<?php echo $ctaBtn["url"]; ?>"><span><?php echo $ctaBtn["title"]; ?></span>
         </a>
       </div>
     </div>

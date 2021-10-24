@@ -149,7 +149,7 @@
 			font-family: $font-Medium;
 			span {
 				flex: 1;
-				font-weight: 400;
+
 				padding-bottom: 20px;
 				position: relative;
 				cursor: pointer;
@@ -377,10 +377,12 @@
 
 		.feature_sec {
 			display: flex;
+			padding-left: 0px;
+			gap: 20px;
 			li {
 				margin-bottom: 0;
 				display: flex;
-				justify-content: flex-start;
+				justify-content: flex-start !important;
 				flex-direction: column;
 				align-items: left;
 				flex: 1;
@@ -425,7 +427,7 @@
 
 				.sub-title {
 					color: #d8d8ff;
-					font-size: $f_md_x;
+					font-size: $f_md_subTitle;
 					text-align: left;
 					margin: 20px auto;
 					display: flex;
@@ -522,6 +524,10 @@
 
 			@media (max-width: $md) {
 				flex-direction: column;
+				padding: 0px;
+				.box-white {
+					margin-bottom: 0px;
+				}
 			}
 		}
 
@@ -588,8 +594,5 @@
 				min-width: 100%;
 			}
 		}
-	}
-	.quotes {
-		padding: 5rem 0 0rem 0;
 	}
 }

@@ -2,15 +2,6 @@
 
 <section class="page intern-pg">
   <?php 
-      $post = get_post();
-      $slugname = get_post_field( 'post_name', $post );
-     
-      if (strpos($slugname, '-')) {
-        $slug  = explode("-", $slugname);
-        $slug  = $slug[1];
-    }
-   //echo 'page.php slug='.$slugname;
-
    $url = '/inc/parts/loop';
 
       if ( have_posts() ) : 

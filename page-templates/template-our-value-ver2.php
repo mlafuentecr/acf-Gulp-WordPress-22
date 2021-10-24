@@ -41,7 +41,7 @@ $pageFields = get_fields();
 
 
   <!-- 2 content list -->
-  <section class="content-list shadow-bottom  block">
+  <section class="sec2 content-list shadow-bottom  block">
     <div class="container">
 
 
@@ -76,7 +76,7 @@ $pageFields = get_fields();
 
 
   <!-- 3 Manage and automate -->
-  <section class="manage-automate">
+  <section class="manage-automate horizontal-list">
     <div class="container">
 
       <?php if ($pageFields['sec_three_heading']): ?>
@@ -123,18 +123,22 @@ $pageFields = get_fields();
 
   <!-- 5 sec_five_titler  -->
   <?php if (get_field('sec_five_title')):  ?>
-  <section class="enterprise-ready footer-banner">
-    <div class="container">
-      <?php 
+  <section class="enterprise-ready footer-banner"
+    style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
+    <div class="bg-holder">
+      <div class="container">
+        <?php 
         $title = get_field('sec_five_title'); 
         $link = get_field('sec_five_link'); 
     
       ?>
-      <article>
-        <h4><?php echo $title; ?></h4>
-        <a rel="noopener" class='arrow ' href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-      </article>
+        <article>
+          <h4><?php echo $title; ?></h4>
+          <a rel="noopener" class='arrow arrow-center'
+            href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+        </article>
 
+      </div>
     </div>
   </section>
   <?php endif; ?>

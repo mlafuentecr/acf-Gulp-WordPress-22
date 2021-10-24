@@ -1,28 +1,22 @@
 @import '../sass/typography';
 
-*,
-*:before,
-*:after {
-	transition: all 0.5;
-	box-sizing: border-box;
-}
-
 $prim-purple: #664fb7;
 $prim-purple-light: #d8d8ff;
 $sec-purple: #3a2452;
 $sec-purple-wach: #3a2452;
 $menu-footer-sublink: #766686;
+$prim-purple-less: #b3a7db;
 $teal: #5dc1c3;
 $tealdrk: #3fa9ac;
 $dark: black;
-$gray: #4d4d4d;
+$gray: #616060;
+$light-blur: #7aacde;
 $gray-darker: #212428;
-$gray-lighter: #aaa;
+$gray-lighter: #c4c4c4;
 $menu-over: #aaa;
 $highlight_color: #e8920b;
 $bg_color: #181818;
 $bg_high_color: #232323;
-$bottom_margin: 50px;
 
 // ==================================================
 // BREAK POINTS BASE BOOSTRAP
@@ -51,43 +45,78 @@ $font-fair-bold: 'PlayfairDisplay-bold', Helvetica, helvetica, Arial, sans-serif
 /*-----------------------------------------------------------------------------------*/
 /*  Font sizes 
 /*-----------------------------------------------------------------------------------*/
-h1 {
-	font-size: 3.75rem; //60px
-}
-h2 {
-	font-size: 1.75rem; // 28px;
-}
-h3 {
-	font-size: 1.25rem; //20px;
-}
-h4 {
-	font-size: 1.375rem; //22;
-}
-.sub-title {
-	font-size: 1.5; // 24px;
-}
 
 //font SIzes
 $f_sm: 0.75rem; //12px
+$f_sm2: 0.813rem; //12px
 $f_md: 1.125rem; //18px
 $f_paragraph: 1.125rem; //18px
 $f_paragraph_title: 1.25rem; //18px
-$f_md_x: 1.5rem; //24px
+$f_md_subTitle: 1.5rem; //24px
 $f_lg: 1.75rem; //28
 $f_title_entry: 2rem; //32px
+
+$f_h1: 3.75rem; //60px
+$f_h2: 1.75rem; // 28px;
+$f_h3: 1.25rem; //20px;
+$f_h4: 1.375rem; //22;
+
 $f_sm_cal: calc(min(max(2vw + 1vh + 2vmin), 4.5rem));
 $f_md_cal: 2.5rem;
 
-///line-height: 1.5;
+///line-height: 1.5; line-height: 60px;
 $lh: 1.688rem;
 $lh_md: 2.5rem;
+$lh_lg: 3.75rem;
 
 //Margin
 $m-l: 1.8rem;
 $m: 1.688rem;
+$mb-titles: 1.875rem; //30px
+
 $m-block: 6.25rem auto;
 $m-headline: 6.25rem auto;
+$bottom_margin: 3.125rem; //50px
+//Paddings
 $p: 6.25rem 0px;
 //gaps
 $general-gap: 1.25rem;
 $big-gap: 2.5rem;
+//LIne high
+
+//Full bar size
+$fullbar-small: 400px;
+$fullbar-medium: 500px;
+
+h1 {
+	font-size: $f_h1; //60px
+	line-height: $lh_lg;
+}
+h2 {
+	font-size: $f_h2;
+}
+h3 {
+	font-size: $f_h3;
+}
+h4 {
+	font-size: $f_h4;
+}
+.sub-title {
+	font-size: $f_md_subTitle; // 24px;
+}
+
+//flex
+
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+.block {
+	margin: $m-block;
+}
+.block-padding {
+	padding: $p;
+}

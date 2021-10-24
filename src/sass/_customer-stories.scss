@@ -22,15 +22,13 @@
 		.subtitle {
 			padding: 0;
 			margin: 0 0 24px;
-			font-weight: 400;
+
 			font-size: 18px;
 			line-height: 22px;
 			color: hsla(0, 0%, 4%, 0.4);
 		}
 		h1 {
 			height: auto;
-			line-height: 1.5;
-			font-weight: 700;
 		}
 		@media (max-width: $md) {
 			min-height: 200px;
@@ -64,8 +62,6 @@
 
 		h2 {
 			text-align: center;
-			line-height: 1.5;
-			font-weight: 700;
 			font-size: $f_md_cal;
 		}
 		.banner-content {
@@ -137,9 +133,6 @@
 			}
 			.w-arrow {
 				font-style: normal;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 36px;
 				letter-spacing: normal;
 				color: #3a2452;
 				text-transform: none;
@@ -242,8 +235,6 @@
 			font-family: $font-Medium !important;
 			margin-bottom: 40px;
 			font-size: $f_md_cal;
-			line-height: 71px;
-			font-weight: 700;
 			text-align: center;
 		}
 	}
@@ -356,9 +347,6 @@
 			flex-wrap: wrap;
 			h2 {
 				min-width: 100%;
-				font-weight: 700;
-				font-size: 1.125rem;
-				line-height: 22px;
 				color: #0a0a0a;
 				margin-bottom: 23px;
 			}
@@ -382,19 +370,11 @@
 				display: flex;
 				flex-direction: row;
 				.option {
-					font-style: normal;
-					font-weight: 700;
-					font-size: 1.125rem;
-					line-height: 22px;
 					color: #0a0a0a;
 					margin-right: 20px;
 					width: 40%;
 				}
 				.description {
-					font-style: normal;
-					font-weight: 700;
-					font-size: 1.125rem;
-					line-height: 22px;
 					color: $teal;
 					width: 40%;
 				}
@@ -424,16 +404,12 @@
 			margin-top: 3px;
 		}
 		h1 {
-			font-style: normal;
-			font-weight: 700;
-			font-size: 38px;
-			line-height: 2px;
 			color: #0a0a0a;
 			position: relative;
 			margin-bottom: 50px;
-			display: -ms-flexbox;
+
 			display: flex;
-			-ms-flex-align: center;
+
 			align-items: center;
 			width: 30px;
 			min-width: 100%;
@@ -468,25 +444,18 @@
 			}
 			p {
 				font-style: italic;
-				font-weight: 400;
+
 				font-size: 1.3rem;
 				line-height: 40px;
 				color: #867c7c;
 				margin-bottom: 0;
 				strong {
-					font-style: normal;
-					font-weight: 700;
-					font-size: 22px;
-					line-height: 26px;
 					color: #0a0a0a;
 				}
 				span {
 					font-style: italic;
 					color: #867c7c;
 					margin-bottom: 0;
-					font-weight: 700;
-					font-size: 16px;
-					line-height: 29px;
 				}
 			}
 		}

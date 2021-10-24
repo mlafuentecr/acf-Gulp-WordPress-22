@@ -116,13 +116,15 @@ $cta1 = get_field("cta_2", "option");
     $bg = "background-image: url(".get_template_directory_uri()."/inc/images/demo-section-backgr-light.svg";
     $btn = "button button-teal btn-animation content-center";
   }
+  $btnRequesDemo = get_field('request_demo_button', 'options');
+
 ?>
   <section class="cta" style="<?php echo $bg; ?>">
     <div class="container">
       <div class="row">
         <h2><?php echo $cta1["title"] ; ?></h2>
-        <a class="<?php echo $btn?>" rel="noopener" href="<?php echo $cta1["btn"]["url"]; ?>">
-          <span><?php echo $cta1["btn"]["title"]; ?></span>
+        <a class="<?php echo $btn?>" rel="noopener" href="<?php echo $btnRequesDemo['url']; ?>">
+          <span><?php echo $btnRequesDemo['title']; ?></span>
         </a>
       </div>
     </div>
@@ -131,6 +133,6 @@ $cta1 = get_field("cta_2", "option");
 
 
 </div>
-<?php   edit_post_link(__('Edit This page'));  ?>
+
 
 <?php get_footer(); ?>

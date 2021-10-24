@@ -11,19 +11,18 @@ $seventh_link  = get_field('seventh_link', 'options');
   <div class="container">
     <?php if($seventh_heading): ?>
     <h2><?php echo $seventh_heading; ?></h2><?php endif; ?>
-    <a rel="noopener" href="<?php echo $link_seven_url; ?>">
 
-      <div class="imgcontainer col-12 col-md-6">
-        <img class="boxShadow" loading=“lazy” src="<?php echo $seventh_photo["url"]; ?>"
-          alt="<?php echo $seventh_name; ?>">
-      </div>
-      <div class="text col-12 col-md-6">
-        <?php echo $seventh_testimonial; ?>
-        <div class="home-section__testimon-name"><?php echo $seventh_name; ?></div>
-        <div class="home-section__testimon-position"><?php echo $seventh_position; ?></div>
-      </div>
+    <div class="imgcontainer col-12 col-md-6">
+      <img class="boxShadow" loading=“lazy” src="<?php echo $seventh_photo["url"]; ?>"
+        alt="<?php echo $seventh_name; ?>">
+    </div>
+    <div class="text col-12 col-md-6">
+      <?php echo $seventh_testimonial; ?>
+      <div class="home-section__testimon-name"><?php echo $seventh_name; ?></div>
+      <div class="home-section__testimon-position"><?php echo $seventh_position; ?></div>
+    </div>
 
-    </a>
+
 
   </div>
 </section>

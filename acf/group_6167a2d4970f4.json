@@ -1,6 +1,6 @@
 {
     "key": "group_6167a2d4970f4",
-    "title": "Page overview Customer ver2",
+    "title": "ver2 Page overview Customer",
     "fields": [
         {
             "key": "field_6167a2d4ac464",
@@ -58,7 +58,7 @@
         },
         {
             "key": "field_6167a2d4ad01b",
-            "label": "Banner Image xxx",
+            "label": "Banner Image",
             "name": "banner_image",
             "type": "group",
             "instructions": "",
@@ -543,5 +543,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634358307
+    "modified": 1634571433
 }

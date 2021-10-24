@@ -187,7 +187,6 @@
 				flex: 2;
 				display: flex;
 				h3 {
-					font-weight: 700;
 					font-size: 20px;
 					line-height: 25px;
 					color: #0a0a0a;
@@ -204,9 +203,6 @@
 					line-height: 23px;
 					color: #0a0a0a;
 					flex: 2;
-				}
-				.arrow {
-					height: 30px;
 				}
 
 				.cat {
@@ -392,7 +388,7 @@
 		label {
 			margin: 0;
 			font-size: 0.875rem;
-			font-weight: 400;
+
 			line-height: 1.5;
 			color: #0a0a0a;
 			display: flex;
@@ -422,14 +418,12 @@
 			border: 3px solid transparent;
 			border-radius: 3px;
 			outline: none;
-			font-size: 16px;
 			text-transform: uppercase;
 			letter-spacing: 0.075em;
-			font-weight: 700;
 			padding: 0px;
 			margin: 0px;
 			position: relative;
-			height: 60px;
+			min-height: 60px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -471,6 +465,7 @@
 	.intro-banner {
 		h1 {
 			text-align: center;
+			margin-top: initial;
 		}
 	}
 	.narrow {
@@ -498,11 +493,11 @@
 
 	.headline {
 		.block-intro-plain {
-			font-weight: 400;
 			text-align: center;
 			color: $teal;
 			font-size: 18px;
 			line-height: 22px;
+			min-width: 100%;
 			span {
 				color: $teal;
 			}
@@ -516,17 +511,11 @@
 		margin: 0px auto;
 
 		h1 {
-			font-weight: 700;
 			margin-bottom: 35px;
-			font-size: 55px;
-			line-height: 64px;
 			color: #0a0a0a;
 		}
 		p {
 			font-style: italic;
-			font-weight: 300;
-			font-size: 15px;
-			line-height: 26px;
 			color: #828282;
 		}
 		.author {
@@ -615,7 +604,7 @@
 					padding-left: 110px;
 					margin-bottom: 0;
 					font-style: italic;
-					font-weight: 400;
+
 					font-size: 18px;
 					line-height: 32px;
 					color: hsla(0, 0%, 4%, 0.6);
@@ -708,9 +697,6 @@
 						min-width: 100%;
 						position: absolute;
 						top: -40px;
-						font-weight: 700;
-						font-size: 24px;
-						line-height: 34px;
 						color: #000;
 					}
 				}
@@ -779,7 +765,7 @@
 			display: block;
 			margin: 0px;
 			font-size: 14px;
-			font-weight: 400;
+
 			color: #d14434;
 			position: absolute;
 			bottom: 2px;
@@ -845,9 +831,6 @@
 						text-decoration: none;
 					}
 					h3 {
-						font-weight: 700;
-						font-size: 20px;
-						line-height: 25px;
 						color: #0a0a0a;
 						transition: color 0.2s;
 						flex: 1;
@@ -864,9 +847,6 @@
 						flex: 2;
 						height: 220px;
 						max-height: 220px;
-					}
-					.arrow {
-						height: 30px;
 					}
 
 					.cat {

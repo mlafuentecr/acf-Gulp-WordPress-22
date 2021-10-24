@@ -58,7 +58,7 @@ $understrap_includes = array(
   '/inc/functions/dashboad_menu.php', // add my menu for client use to dashboar
   '/inc/functions/custom_login_look.php', // re look the loging
   '/inc/functions/wp_support.php', // add wp supporth has thumbnails ect
-  '/inc/functions/blocks.php', // add wp supporth has thumbnails ect
+
  
   '/inc/functions/acfAdmin.php', // Theme Settings tab
   '/inc/functions/acfToJson.php', // save acf data and load it
@@ -68,38 +68,4 @@ $understrap_includes = array(
 
 foreach ($understrap_includes as $file) {
  require_once $understrap_inc_dir . $file;
-}
-
-
-// Register a testimonial ACF Block
-if( function_exists('acf_register_block') ) {
-	
-	$result = acf_register_block(array(
-		'name'				=> 'testimonial-1',
-		'title'				=> __('testimonial-1'),
-		'description'		=> __('A custom testimonial block.'),
-		'render_callback'	=> 'my_testimonial_block_html'
-		//'category'		=> '',
-		//'icon'			=> '',
-		//'keywords'		=> array(),
-	));
-}
-
-// Callback to render the testimonial ACF Block
-function my_testimonial_block_html() {
-	
-	// vars
-	$testimonial = get_field('testimonial');
-	$author = get_field('name');
-	$avatar = get_field('picture');
-	
-	?>
-<blockquote class="testimonial">
-  <p><?php echo $testimonial; ?></p>
-  <cite>
-    <img src="<?php echo $avatar['url']; ?>" alt="<?php echo $avatar['alt']; ?>" />
-    <span><?php echo $author; ?></span>
-  </cite>
-</blockquote>
-<?php
 }
