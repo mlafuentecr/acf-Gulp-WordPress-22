@@ -14,30 +14,7 @@ $pageFields = get_fields();
 <div id="our-value-ver2" class="intern-pg">
 
   <!-- 0 banner -->
-  <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
-    <div class="container">
-      <article class="headline">
-
-        <?php if ($pageFields['banner_title']): ?>
-        <div class="content">
-          <h1><?php echo $pageFields['banner_title']; ?></h1>
-          <div class="text"><?php echo $pageFields['banner_content']; ?></div>
-          <?php get_template_part( '/inc/parts/btn-request-demo' );  ?>
-        </div>
-        <?php endif; ?>
-
-        <?php if ($pageFields['banner_image']['image']): ?>
-        <div class="hero">
-          <span class="text"><?php echo $pageFields['banner_image']['description_image'] ?></span>
-          <img src="<?php echo $pageFields['banner_image']['image'] ?>" class="block-picture__img"
-            alt="<?php echo $pageFields['banner_image']['description_image'] ?>">
-        </div>
-        <?php endif; ?>
-
-      </article>
-    </div>
-  </section>
-
+  <?php get_template_part( '/inc/parts/banner-top-2section' ); ?>
 
 
   <!-- 2 content list -->
@@ -121,27 +98,8 @@ $pageFields = get_fields();
 
 
 
-  <!-- 5 sec_five_titler  -->
-  <?php if (get_field('sec_five_title')):  ?>
-  <section class="enterprise-ready footer-banner"
-    style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
-    <div class="bg-holder">
-      <div class="container">
-        <?php 
-        $title = get_field('sec_five_title'); 
-        $link = get_field('sec_five_link'); 
-    
-      ?>
-        <article>
-          <h4><?php echo $title; ?></h4>
-          <a rel="noopener" class='arrow arrow-center'
-            href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-  <?php endif; ?>
+  <!-- 5 sec_five-better experience  -->
+  <?php get_template_part( '/inc/parts/banner-footer-intern' ); ?>
 
 
 </div>

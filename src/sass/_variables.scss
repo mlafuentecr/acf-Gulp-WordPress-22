@@ -18,16 +18,34 @@ $highlight_color: #e8920b;
 $bg_color: #181818;
 $bg_high_color: #232323;
 
-// ==================================================
-// BREAK POINTS BASE BOOSTRAP
-// ==================================================
+///line-height:
+$lh_sm: 1rem;
+$lh_md: 2.5rem;
+$lh_lg: 3.75rem;
 
+//Margin
+
+$m-sm: 1rem;
+$m-md: 1.688rem;
+$m-lg: 1.8rem;
+
+//Paddings
+$p_sm: 2.25rem 0px;
+$p_md: 4.25rem 0px;
+$p_lg: 6.25rem 0px;
+
+//gaps
+$gap_sm: 0.25rem;
+$gap_m: 1.25rem;
+$gap_lg: 2.25rem;
+// ==================================
+// BREAK POINTS BASE BOOSTRAP
+// ==================================
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
-
 // ==================================================
 // Fonts
 // ==================================================
@@ -61,28 +79,24 @@ $f_h2: 1.75rem; // 28px;
 $f_h3: 1.25rem; //20px;
 $f_h4: 1.375rem; //22;
 
-$f_sm_cal: calc(min(max(2vw + 1vh + 2vmin), 4.5rem));
-$f_md_cal: 2.5rem;
-
 ///line-height: 1.5; line-height: 60px;
-$lh: 1.688rem;
-$lh_md: 2.5rem;
-$lh_lg: 3.75rem;
+$lh: 1.875rem; //30
+$lh_md: 2.5rem; //40
+$lh_lg: 3.125rem; //50
 
 //Margin
-$m-l: 1.8rem;
-$m: 1.688rem;
+$m-l: 1.8rem; //30px
+$m: 1.875rem; //30px
 $mb-titles: 1.875rem; //30px
-
 $m-block: 6.25rem auto;
 $m-headline: 6.25rem auto;
 $bottom_margin: 3.125rem; //50px
 //Paddings
-$p: 6.25rem 0px;
+//$p: 6.25rem 0px;
+
 //gaps
 $general-gap: 1.25rem;
 $big-gap: 2.5rem;
-//LIne high
 
 //Full bar size
 $fullbar-small: 400px;
@@ -105,18 +119,19 @@ h4 {
 	font-size: $f_md_subTitle; // 24px;
 }
 
-//flex
+.block {
+	margin: $m-block;
+}
+.block-padding {
+	padding: $p_lg;
+}
 
+// ==================================================
+// mixing
+// ==================================================
 @mixin flexCenter {
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	align-items: center;
-}
-
-.block {
-	margin: $m-block;
-}
-.block-padding {
-	padding: $p;
 }

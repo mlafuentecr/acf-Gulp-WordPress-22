@@ -1,10 +1,10 @@
 // Fonts
 // ---------
-// Avenir
 
 @font-face {
 	font-family: 'Avenir-Book';
 	src: url('../../inc/fonts/avenir-book.woff2') format('woff2'), url('../../inc/fonts/avenir-book.woff') format('woff');
+	font-display: swap;
 }
 
 @font-face {
@@ -12,6 +12,7 @@
 	src: url('../../inc/fonts/avenir-roman.eot');
 	src: url('../../inc/fonts/avenir-roman.eot?#iefix') format('embedded-opentype'), url('../../inc/fonts/avenir-roman.woff2') format('woff2'), url('../../inc/fonts/avenir-roman.woff') format('woff'),
 		url('../../inc/fonts/avenir-roman.ttf') format('truetype');
+	font-display: swap;
 }
 
 @font-face {
@@ -19,6 +20,7 @@
 	src: url('../../inc/fonts/avenir-medium.eot');
 	src: url('../../inc/fonts/avenir-medium.eot?#iefix') format('embedded-opentype'), url('../../inc/fonts/avenir-medium.woff2') format('woff2'), url('../../inc/fonts/avenir-medium.woff') format('woff'),
 		url('../../inc/fonts/avenir-medium.ttf') format('truetype');
+	font-display: swap;
 }
 
 @font-face {
@@ -26,6 +28,7 @@
 	src: url('../../inc/fonts/avenir-heavy.eot');
 	src: url('../../inc/fonts/avenir-heavy.eot?#iefix') format('embedded-opentype'), url('../../inc/fonts/avenir-heavy.woff2') format('woff2'), url('../../inc/fonts/avenir-heavy.woff') format('woff'),
 		url('../../inc/fonts/avenir-heavy.ttf') format('truetype');
+	font-display: swap;
 }
 
 @font-face {
@@ -34,7 +37,7 @@
 	font-style: normal;
 	src: url('../../inc/fonts/Brown-Regular.eot');
 	src: url('../../inc/fonts/Brown-Regular.eot?#iefix') format('embedded-opentype'), url('../../inc/fonts/Brown-Regular.woff') format('woff'), url('../fonts/Brown-Bold.ttf') format('truetype');
-	//font-display: swap;
+	font-display: swap;
 }
 
 @font-face {
@@ -62,7 +65,7 @@
 		/* Safari, Android, iOS */ url('../../inc/fonts/Brown-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
 	font-weight: bold;
 	font-style: normal;
-	// font-display: swap;
+	font-display: swap;
 }
 
 @font-face {

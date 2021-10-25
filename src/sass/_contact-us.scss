@@ -44,4 +44,14 @@
 			flex-direction: column;
 		}
 	}
+	@media (max-width: $md) {
+		.hs-form-checkbox {
+			.input input {
+				width: 10% !important;
+				margin: 0.5rem 0;
+				margin-right: 0px;
+				margin-right: 20px;
+			}
+		}
+	}
 }

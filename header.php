@@ -4,16 +4,9 @@
     $ond_logo = get_theme_mod( 'custom_logo' );
     $image = wp_get_attachment_image_src( $ond_logo , 'full' );
 
-    $post = get_post();
-    $slugname = get_post_field( 'post_name', $post );
-    if (strpos($slugname, '-')) {
-      $slug  = explode("-", $slugname);
-      $slug  = $slug[1];
-  }
-    
 ?>
 
-<html id="<?php echo $slugname; ?>" <?php language_attributes();?>>
+<html <?php language_attributes();?>>
 
   <head name="top">
 
@@ -48,10 +41,14 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <?php 
+  $post = get_post();
+  $slugname = get_post_field( 'post_name', $post );
+  ?>
 
   </head>
 
-  <body <?php body_class();?>>
+  <body id="<?php echo $slugname; ?>" <?php body_class();?>>
     <div id="wrapper">
 
       <!--[if lt IE 8]>

@@ -9,7 +9,7 @@ get_header();
 /*  ACF Page our-value
 /*-------------------------------------------*/
 $pageFields = get_fields();
-$banner = $pageFields['banner_section'];
+
 
 /*-------------------------------------------*/
 /*  Apps query
@@ -38,31 +38,10 @@ foreach($application_types as $type){
 
 ?>
 <div id="integrations-ver2" class="intern-pg">
+
   <!-- 0 banner -->
+  <?php get_template_part( '/inc/parts/banner-top-2section' ); ?>
 
-  <section class="intro-banner" style="background-image: url(<?php echo $banner['banner_background']; ?>);">
-    <div class="container">
-      <article class="headline">
-
-        <?php if ($pageFields['banner_title']): ?>
-        <div class="content">
-          <h1><?php echo $pageFields['banner_title']; ?></h1>
-          <div class="text"><?php echo $pageFields['banner_content']; ?></div>
-          <?php get_template_part( '/inc/parts/btn-request-demo' );  ?>
-        </div>
-        <?php endif; ?>
-
-        <?php if ($banner['image']): ?>
-        <div class="hero">
-          <span class="text"><?php echo $banner['description_image'] ?></span>
-          <img src="<?php echo $banner['image'] ?>" class="block-picture__img"
-            alt="<?php echo $banner['description_image'] ?>">
-        </div>
-        <?php endif; ?>
-
-      </article>
-    </div>
-  </section>
 
   <!--4 industry -->
   <section class="industry shadow-bottom ">
@@ -111,39 +90,6 @@ foreach($application_types as $type){
 
 
           <div class="row mt-5 pb-5">
-
-            <ul class="menu hookDesktop mb-5 ">
-              <li class="post-cat__item post-item active">
-                <span id="all-tab" data-name="All" data-slug="All" class="tab post-cat__link post-cat__link_active">
-                  All
-                </span>
-              </li>
-              <?php foreach ($application_types as $type): ?>
-              <li class="post-cat__item">
-                <span data-name="<?php echo $type -> name ?>" data-slug="<?php echo $type -> slug ?>"
-                  class="tab post-cat__link">
-                  <?php echo $type -> name ?>
-                </span>
-              </li>
-              <?php endforeach; ?>
-            </ul>
-
-            <ul class="menu hookMobile mb-5 ">
-              <label for="">Category: All</label>
-              <li class="post-cat__item post-item active">
-                <span id="all-tab" data-name="All" data-slug="All" class="tab post-cat__link post-cat__link_active">
-                  All
-                </span>
-              </li>
-              <?php foreach ($application_types as $type): ?>
-              <li class="post-cat__item">
-                <span data-name="<?php echo $type -> name ?>" data-slug="<?php echo $type -> slug ?>"
-                  class="tab post-cat__link">
-                  <?php echo $type -> name ?>
-                </span>
-              </li>
-              <?php endforeach; ?>
-            </ul>
 
             <div class="logos-cards">
               <?php if ($query->have_posts()): ?>
@@ -198,24 +144,7 @@ foreach($application_types as $type){
 
 
   <!-- 5 sec_five-better experience  -->
-  <?php if (get_field('sec_four_title')):  ?>
-  <section class="sec_4 footer-banner" style="background-image: url(<?php echo $banner['banner_background']; ?>);">
-    <div class="container">
-      <?php 
-        $title = get_field('sec_four_title'); 
-        $link = get_field('sec_four_link'); 
-    
-      ?>
-      <article>
-        <h4><?php echo $title; ?></h4>
-        <a rel="noopener" class='arrow arrow-center '
-          href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-      </article>
-
-    </div>
-  </section>
-  <?php endif; ?>
-
+  <?php get_template_part( '/inc/parts/banner-footer-intern' ); ?>
 
 
 </div>

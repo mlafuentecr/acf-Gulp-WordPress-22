@@ -7,7 +7,7 @@ $seventh_position  = get_field('seventh_position', 'options');
 $seventh_photo  = get_field('seventh_photo', 'options');
 $seventh_link  = get_field('seventh_link', 'options');
 ?>
-<section class="quotes bg-gray">
+<section class="quotes-from-client bg-gray">
   <div class="container">
     <?php if($seventh_heading): ?>
     <h2><?php echo $seventh_heading; ?></h2><?php endif; ?>

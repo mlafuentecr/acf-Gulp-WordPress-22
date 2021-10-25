@@ -23,75 +23,78 @@
 /*------------------------------------------*/
 /*   slider Fix
 /*------------------------------------------*/
-.intro-banner {
-	background-size: cover;
-	display: flex;
-	align-items: stretch;
-	.container,
-	.container-xl {
-		display: flex;
-		align-items: stretch;
-		.headline {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: stretch;
-			.content {
-				display: flex;
-				flex-direction: column;
-				flex: 1;
-				justify-content: center;
-				h1 {
-					margin: 0px;
-				}
-			}
-			.hero {
-				display: flex;
-				flex-direction: column;
-				flex: 1;
-				justify-content: flex-end;
-				position: relative;
-				.text {
-					position: absolute;
-					bottom: calc(308px / 2);
-					left: 0%;
-					color: white;
-					min-width: 100%;
-					text-align: center;
-				}
-				img {
-					width: 100%;
-				}
-			}
-		}
-		.content {
-			.text {
-				text-align: left !important;
-			}
-		}
-	}
-	@media (max-width: $md) {
-		margin-top: 100px;
-		background-size: cover;
-		padding: 40px 40px 0px 40px;
-		background-position: top;
-		.container,
-		.container-xl {
-			.headline {
-				margin-top: 40px;
-				flex-direction: column;
-				.content {
-					margin-bottom: $mb-titles;
-				}
-				.text {
-					bottom: 50% !important;
-				}
-			}
-		}
-	}
-	.home-hero__button {
-		margin: 0px !important;
-	}
-}
+// .intro-banner {
+// 	display: flex;
+// 	background-size: cover;
+// 	align-items: stretch !important;
+// 	.container,
+// 	.container-xl {
+// 		display: flex;
+// 		align-items: stretch;
+// 		height: 100%;
+// 		justify-content: stretch;
+
+// 		.headline {
+// 			display: flex;
+// 			flex-wrap: wrap;
+// 			align-items: stretch;
+// 			.content {
+// 				display: flex;
+// 				flex-direction: column;
+// 				flex: 1;
+// 				justify-content: center;
+// 				h1 {
+// 					margin: 0px;
+// 				}
+// 			}
+// 			.hero {
+// 				display: flex;
+// 				flex-direction: column;
+// 				flex: 1;
+// 				justify-content: flex-end;
+// 				position: relative;
+// 				.text {
+// 					position: absolute;
+// 					bottom: calc(308px / 2);
+// 					left: 0%;
+// 					color: white;
+// 					min-width: 100%;
+// 					text-align: center;
+// 				}
+// 				img {
+// 					width: 100%;
+// 				}
+// 			}
+// 		}
+// 		.content {
+// 			.text {
+// 				text-align: left !important;
+// 			}
+// 		}
+// 	}
+// 	@media (max-width: $md) {
+// 		margin-top: 100px;
+// 		background-size: cover;
+// 		padding: 40px 40px 0px 40px;
+// 		background-position: top;
+// 		.container,
+// 		.container-xl {
+// 			.headline {
+// 				margin-top: 40px;
+// 				flex-direction: column;
+// 				.content {
+// 					margin-bottom: $mb-titles;
+// 				}
+// 				.text {
+// 					bottom: 50% !important;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.home-hero__button {
+// 		margin: 0px !important;
+// 	}
+// }
 .footer-banner {
 	@media (max-width: $md) {
 		display: block;
@@ -117,91 +120,22 @@
 		}
 	}
 }
+
 /*------------------------------------------*/
-/*   our-value ver2
+/*   customer-stories laika-products
 /*------------------------------------------*/
-#our-value-ver2 {
+#laika-products {
 	font-size: $f_paragraph;
 	.block {
 		margin: $m-block;
 	}
-	.bg-holder {
-		background: #ffffffc9;
-	}
-	.manage-automate {
-		margin-bottom: 9.375rem;
-	}
-
-	.before-after {
-		box-shadow: inset 0 7px 19px -7px rgba(0, 0, 0, 0.11);
-		background-color: gray;
-		position: relative;
-		.container,
-		.container-xl {
-			display: flex;
-
-			article {
-				z-index: 5;
-				max-width: 40%;
-				margin: auto;
-				min-height: 550px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				color: white;
-
-				h4 {
-					font-size: $f_title_entry;
-					color: white;
-					margin-bottom: $mb-titles;
-				}
-				p {
-					color: white;
-				}
-			}
-			&:after {
-				position: absolute;
-				background: $prim-purple;
-				height: 100%;
-				width: 100%;
-				display: flex;
-				content: '';
-				left: 50%;
-				z-index: 1;
-				top: 0;
-			}
-
-			@media (max-width: $md) {
-				display: flex;
-				flex-direction: column;
-				padding: 0px;
-				&:after {
-					display: none;
-				}
-				article {
-					min-width: 100%;
-					padding-right: 15px;
-					padding-left: 15px;
-					&:nth-last-child(1) {
-						background-color: $prim-purple;
-					}
-				}
-			}
+	.sec_2 {
+		h2 {
+			margin-bottom: 60px;
+			color: $prim-purple;
+			min-width: 100%;
+			text-align: center;
 		}
-	}
-}
-
-/*------------------------------------------*/
-/*   customer-stories
-/*------------------------------------------*/
-#overview-ver2 {
-	font-size: $f_paragraph;
-	.block {
-		margin: $m-block;
-	}
-
-	h2 {
-		margin-bottom: 60px;
 	}
 
 	.sec_3 {
@@ -222,7 +156,7 @@
 
 			@media (max-width: $md) {
 				flex-direction: column;
-				padding: $p;
+				padding: $p_lg;
 			}
 			header {
 				.text {
@@ -375,7 +309,7 @@
 		font-size: $f_paragraph !important;
 	}
 	.integrations {
-		padding: $p;
+		padding: $p_lg;
 		.card.hide {
 			display: none !important;
 		}
@@ -393,7 +327,7 @@
 	}
 
 	.industry {
-		padding: $p;
+		padding: $p_lg;
 		background-size: cover;
 		font-size: $f_paragraph;
 
@@ -557,106 +491,7 @@
 	}
 }
 
-#about-ver2 {
-	.social-box {
-		display: flex;
-		flex-wrap: wrap;
-		gap: $general-gap;
-		padding: 130px 0px;
-
-		.box_content {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			flex: 1;
-			color: white;
-			min-height: 350px;
-			min-width: 350px;
-			max-width: 350px;
-			padding: $m;
-			&.random-img {
-				padding: 0px;
-			}
-
-			h3 {
-				font-family: $font-fair-bold;
-				margin-bottom: 12px;
-				font-size: $f_title_entry;
-				text-align: left;
-				display: flex;
-				align-items: flex-start;
-				line-height: normal;
-			}
-		}
-	}
-
-	article {
-		display: flex;
-		flex: 1;
-		flex-direction: row;
-		position: relative;
-		flex-wrap: wrap;
-
-		.imgWrap {
-			min-height: 310px;
-			display: flex;
-			flex: 1;
-			margin-top: 0;
-			position: relative;
-			max-width: 45%;
-			min-width: 45%;
-			margin: auto;
-			overflow: hidden;
-		}
-		.content {
-			display: flex;
-			max-width: 50%;
-			justify-content: center;
-			align-items: flex-start;
-			flex-direction: column;
-		}
-	}
-	.founders {
-		h2 {
-			color: $prim-purple;
-		}
-
-		.headline {
-			.text {
-				text-align: center;
-				margin-bottom: $mb-titles;
-			}
-		}
-
-		@media (max-width: $md) {
-			.container,
-			.container-xl {
-				display: block;
-			}
-
-			.item {
-				flex-direction: column !important;
-				.imgWrap {
-					max-width: 100% !important;
-				}
-				.content {
-					max-width: 100% !important;
-				}
-			}
-		}
-		.linkedin {
-			min-width: 25px;
-			min-height: 25px;
-			background-image: url('../../inc/images/linkedin.png');
-			background-repeat: no-repeat;
-			background-size: contain;
-			filter: invert(31%) sepia(79%) saturate(841%) hue-rotate(180deg) brightness(96%) contrast(87%);
-		}
-	}
-}
-
-#ver3-request-a-demo {
+#request-demo {
 	text-align: center;
 
 	#header-top {

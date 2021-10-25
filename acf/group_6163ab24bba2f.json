@@ -467,7 +467,7 @@
         },
         {
             "key": "field_6163ab24d077e",
-            "label": "Section five",
+            "label": "Section five (banner footer)",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -483,8 +483,8 @@
         },
         {
             "key": "field_6163ab24d0b3b",
-            "label": "sec_five_title",
-            "name": "sec_five_title",
+            "label": "title",
+            "name": "banner_footer_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -502,8 +502,8 @@
         },
         {
             "key": "field_6163b64812f8a",
-            "label": "sec_five_link",
-            "name": "sec_five_link",
+            "label": "link",
+            "name": "banner_footer_link",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -533,5 +533,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634514566
+    "modified": 1635185583
 }

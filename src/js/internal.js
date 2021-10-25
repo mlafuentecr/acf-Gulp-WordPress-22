@@ -255,3 +255,22 @@ if (document.querySelector('.partner_pg')) {
 		accord.classList.add('active');
 	};
 }
+
+/*----------------------------------------*/
+/*  About
+/*----------------------------------------*/
+
+if (document.querySelector('.random-img')) {
+	//select how many ramdom Images I have
+	const images = document.querySelectorAll('.random-img');
+	//each time page is reload remplace images from the folder url
+	images.forEach(image => setRandomImage(image));
+}
+
+function setRandomImage(image) {
+	///buscar o poner style
+	const site = window.location.href;
+	let randomNumber = Math.floor(Math.random() * 114) + 1;
+	randomNumber < 10 ? '0' + randomNumber : randomNumber;
+	image.style.backgroundImage = `url('/wp-content/themes/heylaika_vr5/inc/images/team-social/laika-${randomNumber}.jpg')`;
+}

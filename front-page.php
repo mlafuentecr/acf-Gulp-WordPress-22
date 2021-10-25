@@ -213,8 +213,8 @@ endif;
 </section>
 
 
-<!-- 7 quote  -->
-<?php get_template_part( '/inc/parts/quote' ); ?>
+<!-- 7 quote from Client  -->
+<?php get_template_part( '/inc/parts/quote-client' ); ?>
 
 <!--  8 customers logos -->
 <?php get_template_part( '/inc/parts/slider_logos' ); ?>

@@ -16,20 +16,7 @@ $cta2 = get_field("cta_2", "option");
 <div id="our-value" class="intern-pg">
 
   <!-- 0 banner -->
-  <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
-    <div class="container-xl">
-      <div class="row">
-        <article class="headline">
-          <?php if ($pageFields['banner_title']): ?>
-          <h1><?php echo $pageFields['banner_title']; ?></h1>
-          <?php endif; ?>
-          <?php if ($pageFields['banner_content']): ?>
-          <p class="banner-content"><?php echo nl2br($pageFields['banner_content']); ?></p>
-          <?php endif; ?>
-        </article>
-      </div>
-    </div>
-  </section>
+  <?php get_template_part( '/inc/parts/banner-top-2section' ); ?>
 
   <section class="block-picture">
     <div class="container-xl">
@@ -219,8 +206,8 @@ $cta2 = get_field("cta_2", "option");
     <div class="container">
       <div class="row">
         <h2><?php echo $cta2["title"] ; ?></h2>
-        <a class=" <?php echo $btn?>" rel="noopener" href="<?php echo $cta2["btn"]["url"]; ?>"
-           ><span><?php echo $cta2["btn"]["title"]; ?></span>
+        <a class=" <?php echo $btn?>" rel="noopener"
+          href="<?php echo $cta2["btn"]["url"]; ?>"><span><?php echo $cta2["btn"]["title"]; ?></span>
         </a>
       </div>
     </div>

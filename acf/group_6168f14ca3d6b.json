@@ -460,8 +460,8 @@
         },
         {
             "key": "field_6168f8c7ba095",
-            "label": "sec_four_title",
-            "name": "sec_four_title",
+            "label": "title",
+            "name": "banner_footer_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -479,8 +479,8 @@
         },
         {
             "key": "field_6168f8eeba096",
-            "label": "sec_four_link",
-            "name": "sec_four_link",
+            "label": "link",
+            "name": "banner_footer_link",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -498,7 +498,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/laika-integrations-ver2.php"
+                "value": "page-templates\/template-laika-integrations-ver2.php"
             }
         ]
     ],
@@ -510,5 +510,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634514646
+    "modified": 1635187690
 }

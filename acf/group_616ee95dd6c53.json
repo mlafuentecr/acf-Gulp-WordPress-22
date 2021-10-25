@@ -765,8 +765,8 @@
         },
         {
             "key": "field_6171e1133e33b",
-            "label": "sec_6_title",
-            "name": "sec_6_title",
+            "label": "title",
+            "name": "banner_footer_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -784,8 +784,8 @@
         },
         {
             "key": "field_6171e1263e33c",
-            "label": "sec_6_link",
-            "name": "sec_6_link",
+            "label": "link",
+            "name": "banner_footer_link",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -800,7 +800,7 @@
         {
             "key": "field_6171ea14f4422",
             "label": "bg",
-            "name": "sec_6_bg",
+            "name": "banner_footer_bg",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -839,5 +839,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634856220
+    "modified": 1635187946
 }

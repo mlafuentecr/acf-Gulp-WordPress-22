@@ -86,6 +86,9 @@ endif;
 
 
   <!-- section3 section-acc -->
+  <?php
+  $btnRequesDemo = get_field('request_demo_button', 'options');
+?>
   <div class="section section-3 section-acc">
     <article class="item container-xl ">
       <h2 class="heading"><?php echo $page_fields['title_sec3']; ?></h2>
@@ -154,71 +157,14 @@ endif;
 <?php } ?>
 
 
-
-<!-- section 5 dont just take -->
-
-<!-- 7 quote  -->
-<section class="quotes bg-gray">
-  <div class="container">
-    <div class="row">
-      <h2><?php echo $sixth_heading; ?></h2>
-      <a rel="noopener" href="<?php echo $link_seven_url; ?>">
-        <div class="content">
-          <div class="imgcontainer">
-            <img loading=“lazy” src="<?php echo $seventh_photo["url"]; ?>" alt="<?php echo $seventh_name; ?>">
-          </div>
-          <div class="text">
-            <?php echo $seventh_testimonial; ?>
-            <div class="home-section__testimon-name">Shayne Skaff</div>
-            <div class="home-section__testimon-position">CEO &amp; Co-Founder, Blooma</div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!--  8 customers logos -->
-<?php
-/*    section-logo-heading  */
-$sectionlogo_heading   = get_field('section-logo-heading', 'option');
-$logos = get_field('logo_repeater', 'option');
-
-$link_customer = get_field('link_customer', 'option');
-if( $link_customer  ): 
-  $link_customer_url     = $link_customer ['url'];
-  $link_customer_title   = $link_customer ['title'];
-  $link_customer_target  = $link_customer ['target'] ? $link['target'] : '_self';
-endif;
-
-?>
-<section class="customers bg-gray">
-  <div class="container">
-    <div class="row">
-      <h2><?php echo $sectionlogo_heading; ?></h2>
-
-      <?php 
-    if( $logos) {
-    echo '<ul class="logos_carusel">';
-      foreach( $logos as $row ) {
-        echo '<li><a rel="noopener" style="background-image: url(' .  $row["logo"] . ')"   href="'.  $row["logo_link"] .'" target="_blank" ></a></li>';
-        }
-    echo '</ul>';
-      }
-      ?>
-
-      <a class='arrow' rel="noopener" href="<?php echo $link_customer_url; ?>"
-        target="_blank"><?php echo $link_customer_title; ?></a>
-    </div>
-  </div>
-</section>
-<!--  /. 8 customers logos -->
+<!-- 7 quote from Client  -->
+<?php get_template_part( '/inc/parts/quote-client' ); ?>
 <!-- /. section5 -->
+<!--  8 customers logos -->
+<?php get_template_part( '/inc/parts/slider_logos' ); ?>
+<!--  /.  2 Logos  -->
 
 
-
-<!-- purple2 -->
 <!-- cta Reques Demo-->
 <?php 
   $cta = get_field("cta_1", "option");
@@ -229,8 +175,11 @@ endif;
   <div class="container">
     <div class="row">
       <h2><?php echo $cta["title"] ; ?></h2>
-      <a class=" <?php echo $btn?>" rel="noopener" href="<?php echo $cta["btn"]["url"]; ?>"
-        target="<?php echo $cta["url"]["title"]; ?>"><span><?php echo $cta["btn"]["title"]; ?></span>
+      <?php $btnRequesDemo = get_field('request_demo_button', 'options');  ?>
+      <a class="<?php echo $btn?>" rel="noopener" href="<?php echo $btnRequesDemo['url']; ?>">
+        <span><?php echo $btnRequesDemo['title']; ?></span>
+      </a>
+      </span>
       </a>
     </div>
   </div>
