@@ -1,9 +1,35 @@
+@import 'variables';
 /*------------------------------------------*/
 /*   our-value ver2
 /*------------------------------------------*/
-#our-value-ver2 {
+#our-value {
 	font-size: $f_paragraph;
+	@media (max-width: $md) {
+		.cta-btn {
+			margin: auto;
+		}
+	}
+	.sec2 {
+		padding-bottom: 6.25rem;
+		.item {
+			.items_paragraph {
+				display: none;
+			}
+			.title {
+				text-align: left;
+				@media (max-width: $md) {
+					text-align: center;
+					margin-top: 30px;
+				}
+			}
+		}
 
+		.imgWrap {
+			min-width: auto;
+			max-width: 500px;
+			margin: auto;
+		}
+	}
 	.block {
 		margin: $m-block;
 	}
@@ -25,24 +51,37 @@
 
 			article {
 				z-index: 5;
-				max-width: 40%;
+				width: 50%;
 				margin: auto;
 				min-height: 550px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				color: white;
+
 				&:first-child {
-					h4 {
+					.title {
+						text-align: left;
 						font-size: $f_title_entry;
 						color: #c4c4c4 !important;
 						margin-bottom: $mb-titles;
 					}
 				}
-				h4 {
+				&:last-child {
+					@media (min-width: $md) {
+						margin-left: 100px;
+					}
+				}
+				.title {
+					text-align: left;
 					font-size: $f_title_entry;
 					color: white !important;
 					margin-bottom: $mb-titles;
+				}
+				.text {
+					p {
+						margin-bottom: 2rem;
+					}
 				}
 				p {
 					color: white;
@@ -80,7 +119,7 @@
 	}
 
 	.horizontal-list {
-		h2 {
+		.sub-title {
 			color: $prim-purple;
 		}
 		.container,

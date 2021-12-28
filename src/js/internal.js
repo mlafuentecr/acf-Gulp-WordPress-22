@@ -7,7 +7,7 @@ function internal() {
 	/*-----------------------------------------------------------------------------------*/
 	/*  Internal
 /*-----------------------------------------------------------------------------------*/
-	console.log('intern header');
+	//console.log('intern header');
 
 	/*-----------------------------------------------------------------------------------*/
 	/*  pg integrations Logos FAQ
@@ -28,56 +28,6 @@ function internal() {
 }
 
 /*----------------------------------------*/
-/*  integrations
-/*----------------------------------------*/
-
-if (document.querySelector('.integrations')) {
-	console.log('integration');
-	let [divLogos, tabs, menu, label] = '';
-
-	function showLogos(e) {
-		menuAction(e);
-		let name = e.target.dataset.name;
-
-		const logos = document.querySelectorAll('.card');
-		const divs = document.querySelectorAll(`[data-type='${name}']`);
-
-		//si es igual a all remove hide sino pongalo
-		name === 'All' ? logos.forEach(item => item.classList.remove('hide')) : logos.forEach(item => item.classList.add('hide'));
-		// //remove hide from the one I click
-		setTimeout(() => {
-			console.log('remove hide');
-			divs.forEach(item => item.classList.remove('hide'));
-		}, 100);
-	}
-
-	function menuAction(e) {
-		let menuItems = document.querySelectorAll('.post-cat__item');
-		//remove all active
-		menuItems.forEach(item => item.classList.remove('active'));
-		//add active just the one i click
-		setTimeout(() => e.target.closest('li').classList.add('active'), 100);
-	}
-
-	function openMenu(e) {
-		if (e.target.dataset.name) {
-			label.textContent = `Category: ${e.target.dataset.name}`;
-		}
-
-		menu.classList.toggle('active');
-	}
-
-	divLogos = document.querySelector('.hooks');
-	tabs = divLogos.querySelectorAll('.tab');
-	menu = document.querySelector('.hookMobile');
-	label = menu.querySelector('label');
-
-	//on click tab
-	tabs.forEach(item => item.addEventListener('click', e => showLogos(e)));
-	menu.addEventListener('click', e => openMenu(e));
-}
-
-/*----------------------------------------*/
 /*  Menu Blog
 /*----------------------------------------*/
 //searchActive
@@ -86,11 +36,11 @@ if (document.querySelector('#blog-pg')) {
 	const labelMenu = document.querySelector('.labelMenu');
 
 	const openSearch = e => {
-		console.log('close');
+		//console.log('close');
 		if (e.target.classList.contains('btnClose')) menu.classList.toggle('searchActive');
 	};
 	const openMenu = e => {
-		console.log('open');
+		//console.log('open');
 		menu.classList.toggle('active');
 	};
 
@@ -118,13 +68,13 @@ if (document.querySelector('#glossary-page')) {
 			//busca link
 			let postIndex = e.target.getAttribute('post-index');
 			let item = document.querySelector(`#desk-content-${postIndex}`);
-			console.log('este ', item);
+			//console.log('este ', item);
 
 			if (window.getComputedStyle(colRight).display === 'none') {
-				console.log('mobile');
+				//console.log('mobile');
 				glossaryPageScrollTo(document.querySelector(`#mob-content-${postIndex}`));
 			} else {
-				console.log('desk');
+				//console.log('desk');
 				glossaryPageScrollTo(document.querySelector(`#desk-content-${postIndex}`));
 			}
 		}
@@ -175,7 +125,7 @@ if (document.querySelector('#university-intern')) {
 	function AccordionClose(el, padding) {
 		const content = el.nextElementSibling;
 		el.closest('.p-university-post-sec-4__accordion-row').classList.remove('accordion_opened');
-		// console.log('xxxx', el.closest('.p-university-post-sec-4__accordion-row'));
+		// //console.log('xxxx', el.closest('.p-university-post-sec-4__accordion-row'));
 		// el.classList.remove('accordion_opened');
 		// content.classList.remove('accordion_opened');
 		// content.style.height = '0px';
@@ -226,11 +176,11 @@ if (document.querySelector('.partner_pg')) {
 	let tabs = document.querySelectorAll('.acc_title');
 
 	const clearTabs = () => {
-		console.log('clear tab');
+		//console.log('clear tab');
 		allAccordion.forEach(item => item.classList.remove('active'));
 	};
 	const clearImgs = () => {
-		console.log('clear images');
+		//console.log('clear images');
 		imagesWrap.forEach(item => item.classList.remove('active'));
 	};
 
@@ -269,8 +219,16 @@ if (document.querySelector('.random-img')) {
 
 function setRandomImage(image) {
 	///buscar o poner style
-	const site = window.location.href;
-	let randomNumber = Math.floor(Math.random() * 114) + 1;
-	randomNumber < 10 ? '0' + randomNumber : randomNumber;
-	image.style.backgroundImage = `url('/wp-content/themes/heylaika_vr5/inc/images/team-social/laika-${randomNumber}.jpg')`;
+
+	const totalOfImages = 67;
+	let randomNumber = () => Math.floor(Math.random() * totalOfImages) + 1;
+	let number = randomNumber();
+
+	if (number > totalOfImages) {
+		number = randomNumber();
+	} else {
+		number < 10 ? (number = `0${number}`) : number;
+	}
+
+	image.style.backgroundImage = `url('/wp-content/themes/heylaika_vr5/inc/images/team-social/laika-${number}.jpg')`;
 }

@@ -1,17 +1,16 @@
 <?php
 /*
-Template Name: Overview ver2
+Template Name: Overview
 */
 defined( 'ABSPATH' ) || exit;
 get_header(); 
 /*-----------------------------------------------------------------------------------*/
-/*  ACF Page our-value
+/*  ACF Page our-value Overview o Laika products
 /*-----------------------------------------------------------------------------------*/
 $pageFields = get_fields();
-$banner = $pageFields['banner_image'];
 
 ?>
-<div id="overview-ver2" class="intern-pg">
+<div id="overview" class="intern-pg">
 
 
   <!-- 0 banner -->
@@ -26,7 +25,7 @@ $banner = $pageFields['banner_image'];
     <div class="container-xl">
 
       <div class="headline">
-        <h2><?php echo $pageFields['sec_two_title']; ?></h2>
+        <div class="title title-purple"><?php echo $pageFields['sec_two_title']; ?></div>
         <div class="text"><?php echo $pageFields['sec_two_content']; ?></div>
       </div>
 
@@ -37,8 +36,12 @@ $banner = $pageFields['banner_image'];
             height='300' />
         </div>
         <div class="content">
-          <h3><?php echo $secTwoListValue['heading']; ?></h3>
+          <div class="title title-purple"><?php echo $secTwoListValue['heading']; ?></div>
           <?php echo $secTwoListValue['text']; ?>
+          <?php if($secTwoListValue['link']): ?>
+          <a href="<?php echo $secTwoListValue['link']['url']; ?>"
+            class="arrow"><?php echo $secTwoListValue['link']['title']; ?></a>
+          <?php endif;?>
         </div>
       </article>
       <?php endforeach; ?>
@@ -47,9 +50,12 @@ $banner = $pageFields['banner_image'];
   </section>
   <?php endif; ?>
 
+
+
+
   <!-- 3 list   -->
   <?php if (get_field('sec_three_title')):  ?>
-  <section class="sec_3 full-bar bg-purple block-padding">
+  <section class="sec_3 full-bar horizontal__block  bg-purple block-padding">
     <div class="container-xl">
       <?php 
         $title = get_field('sec_three_title'); 
@@ -58,20 +64,22 @@ $banner = $pageFields['banner_image'];
 
       <?php if ($title): ?>
       <header>
-        <h2><?php echo $title; ?></h2>
+        <div class="title"><?php echo $title; ?></div>
         <div class="text"><?php echo  $content; ?></div>
       </header>
       <?php endif; ?>
 
+      <div class="contentWrap">
+        <?php foreach ($pageFields['sec_three_list'] as $sec3ListValue): ?>
+        <item class="icons">
+          <img class='lazyload' src='<?php echo $sec3ListValue['icon']; ?>' alt='' width='auto' height='300' />
+          <div class="content">
+            <?php echo $sec3ListValue['content']; ?>
 
-      <?php foreach ($pageFields['sec_three_list'] as $sec3ListValue): ?>
-      <article class="item">
-        <img class='lazyload' src='<?php echo $sec3ListValue['icon']; ?>' alt='' width='auto' height='300' />
-        <div class="content">
-          <?php echo $sec3ListValue['content']; ?>
-        </div>
-      </article>
-      <?php endforeach; ?>
+          </div>
+        </item>
+        <?php endforeach; ?>
+      </div>
 
     </div>
   </section>
@@ -80,17 +88,23 @@ $banner = $pageFields['banner_image'];
 
   <!-- 4 sec_four_list -->
   <?php if ($pageFields['sec_four_list']): ?>
-  <section class="sec_2 content-list block">
+  <section class="sec_4 content-list block">
     <div class="container-xl">
 
       <?php foreach ($pageFields['sec_four_list'] as $secfourListValue): ?>
+
       <article class="item">
         <div class="imgWrap">
           <img class='lazyload' src='<?php echo $secfourListValue['image'] ?>' alt='' width='auto' height='300' />
         </div>
         <div class="content">
-          <h3><?php echo $secfourListValue['heading'] ?></h3>
+          <div class="title title-purple"><?php echo $secfourListValue['heading'] ?></div>
           <?php echo $secfourListValue['text']; ?>
+
+          <?php if($secfourListValue['link']): ?>
+          <a href="<?php echo $secfourListValue['link']['url']; ?>"
+            class="arrow"><?php echo $secfourListValue['link']['title']; ?></a>
+          <?php endif;?>
         </div>
       </article>
       <?php endforeach; ?>
@@ -101,25 +115,9 @@ $banner = $pageFields['banner_image'];
 
 
 
+
   <!-- 5 sec_five-better experience  -->
-  <?php if (get_field('sec_five_title')):  ?>
-  <section class="sec_4 footer-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
-    <div class="container-xl">
-      <?php 
-        $title = get_field('sec_five_title'); 
-        $link = get_field('sec_five_link'); 
-    
-      ?>
-      <article>
-        <h4><?php echo $title; ?></h4>
-        <a rel="noopener" class='arrow ' href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-      </article>
-
-    </div>
-  </section>
-  <?php endif; ?>
-
-
+  <?php get_template_part( '/inc/parts/banner-footer-intern' ); ?>
 
 
 </div>

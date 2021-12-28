@@ -4,7 +4,6 @@
 /*-----------------------------------------------------------------------------------*/
 $pageFields = get_fields();
 $banner = $pageFields['banner_image'];
-
 ?>
 <!-- 0 banner -->
 <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
@@ -20,11 +19,9 @@ $banner = $pageFields['banner_image'];
     </div>
     <?php endif; ?>
 
-    <?php if ($banner['image']): ?>
+    <?php if ($banner['url']): ?>
     <div class="hero">
-
-      <img src="<?php echo $banner['image'] ?>" class="block-picture__img"
-        alt="<?php echo $banner['description_image'] ?>">
+      <img src="<?php echo $banner['url'] ?>" class="block-picture__img" alt="<?php echo $banner['title'] ?>">
     </div>
     <?php endif; ?>
 

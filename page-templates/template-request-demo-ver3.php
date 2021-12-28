@@ -14,15 +14,15 @@ $content = $pageFields['content'];
 ?>
 
 
-<div  class="intern-pg">
-    <div class="container">
+<div class="intern-pg">
+  <div class="container requesDemo">
     <?php if ($content['title']): ?>
-          <h1><?php echo $content['title']; ?></h1>
-          <div class="text"><?php echo $content['content']; ?></div>
-        <?php endif; ?>
+    <h1><?php echo $content['title']; ?></h1>
+    <div class="text"><?php echo $content['content']; ?></div>
+    <?php endif; ?>
 
-      <section class="form"><?php echo $pageFields['form'];?></section>
-    </div>
+    <section class="form"><?php echo $pageFields['form'];?></section>
+  </div>
 </div>
 
 

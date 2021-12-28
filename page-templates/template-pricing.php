@@ -113,7 +113,7 @@ get_header(); ?>
   <?php 
 
 $bg = "background-image: url(".get_template_directory_uri()."/inc/images/bg-demo.jpg";
-$btn = "button button-teal btn-animation content-center";
+$btn = "button button-teal button-animation content-center";
 $contact = get_field('contact');
 $contact1 = $contact['col_1_contact'];
 $contactHeadline = $contact['heading'];

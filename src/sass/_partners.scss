@@ -1,4 +1,4 @@
-@import '_variables';
+@import 'variables';
 .partner_pg {
 	h2 {
 		padding: 30px 0;
@@ -44,7 +44,7 @@
 					font-size: 1.5rem;
 					text-align: left;
 					@media (max-width: $md) {
-						margin-bottom: $m;
+						margin-bottom: $m-md;
 					}
 				}
 			}
@@ -125,7 +125,7 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			height: 100%;
-			align-items: self-end;
+			align-items: flex-end;
 		}
 
 		//the wrapper

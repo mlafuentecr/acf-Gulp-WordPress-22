@@ -84,8 +84,9 @@ add_theme_support('html5', array(
 /*-----------------------------------------------------------------------------------*/
 /* svg
 /*-----------------------------------------------------------------------------------*/
-function cc_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
+function wpcontent_svg_mime_type( $mimes = array() ) {
+  $mimes['svg']  = 'image/svg+xml';
+  $mimes['svgz'] = 'image/svg+xml';
   return $mimes;
 }
-add_filter('upload_mimes', 'cc_mime_types');
+add_filter( 'upload_mimes', 'wpcontent_svg_mime_type' );   

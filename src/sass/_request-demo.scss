@@ -1,264 +1,185 @@
-#demo {
-	flex-wrap: wrap;
-
-	.intro-banner {
-		position: relative;
-		min-height: 600px;
-		background: #664fb7 url(../../inc/images/bg-demo.jpg) no-repeat top;
-		background-size: 100%;
-		color: #fff;
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		align-content: center;
-
-		h1 {
-			color: white;
-			text-align: center;
-			margin-top: 100px;
-			@media (max-width: $md) {
-				margin-top: 0px;
-			}
-		}
-		.banner-content {
-			text-align: center;
-			color: white;
-		}
-	}
-	.box-with-tab {
-		margin: 0px 40px;
-		background-image: none;
-		margin-top: -100px;
-		background-size: auto;
-		background-size: contain;
-		&:after {
-			background: url(../../inc/images/side-guide-full-t.svg) no-repeat !important;
-		}
-	}
-
-	.hs-form-radio {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		input {
-			max-width: 20px;
-			margin: 40px;
-			padding: 10px;
-			@media (max-width: $md) {
-				margin: 0px;
-			}
-		}
-		span {
-			max-height: 50px;
-			@media (max-width: $md) {
-				min-height: 100px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-		}
-	}
-
-	.box-with-tab .multi-container li label {
-		font-size: 14px;
-		display: flex;
-		flex-direction: row;
-		width: 100%;
-		justify-content: flex-start;
-		align-items: center;
-	}
-	.hs-form-checkbox-display {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		input {
-			max-width: 50px;
-			margin: 0px;
-			padding: 0px;
-		}
-	}
-
-	// DEMO VER 2
-	&.demo-purple {
-		display: flex;
-		flex-direction: row;
-		padding-top: 100px;
-		gap: 10px;
-		section {
-			display: flex;
-			flex: 1;
-			align-items: flex-start;
-			align-content: flex-start;
-			justify-content: space-evenly;
-		}
-		.box-3 {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			.box {
-				padding: 20px;
-				display: flex;
-				justify-content: left;
-				align-items: flex-start;
-				align-content: flex-start;
-				color: white;
-				min-width: 250px;
-				flex: 1;
-				ul {
-					li {
-						line-height: 1.5rem !important;
-					}
-				}
-				@media (max-width: $md) {
-					align-content: center;
-					text-align: center;
-					align-items: center;
-					justify-content: center;
-					flex-direction: column;
-
-					ul {
-						list-style: none;
-						margin: 0px;
-						padding: 0px;
-						li {
-							min-width: 100%;
-							margin: 0px;
-							padding: 0px;
-						}
-					}
-				}
-
-				@media (min-width: $md) {
-					justify-content: center;
-				}
-				ul {
-					li {
-						margin-bottom: 5px;
-						line-height: initial;
-						color: white;
-						margin: 0px;
-						padding: 0px;
-						padding-left: 20px;
-					}
-				}
-
-				h3 {
-					color: white;
-					font-size: 1.2rem;
-				}
-				.subtitle {
-					color: #c5bbeb;
-					font-size: 14px;
-					min-height: 60px;
-				}
-				.banner-content {
-					color: white;
-					font-size: 12px;
-				}
-			}
-		}
-		.content {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: flex-start;
-			flex: 2;
-			max-width: $lg;
-		}
-
-		.headline {
-			max-height: 200px;
-			padding: 10px;
-			background: url(../../inc/images/rep-shape-1-1.svg) no-repeat;
-			background-size: initial;
-			background-position: -150px -150px;
-			margin-bottom: 50px;
-
-			h1 {
-				width: 100%;
-				color: white !important;
-				text-align: center;
-				font-size: 2rem;
-			}
-			.banner-content {
-				color: white;
-				text-align: center;
-			}
-			.decoration {
-				background: url(../../inc/images/request.svg) no-repeat;
-				background-size: 30%;
-				background-position: right bottom;
-				position: absolute;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-			}
-		}
-		.box-purple {
-			border: 0.5rem solid white;
-			background-color: $prim-purple;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			align-content: center;
-			min-height: 300px;
-		}
-		.quotes {
-			min-width: 100%;
-			background-color: transparent;
-			h2 {
-				font-size: 2rem;
-				width: 100%;
-				color: $prim-purple;
-				text-align: center;
-				margin-bottom: 50px;
-				font-weight: bold;
-			}
-			.text {
-				flex: 2;
-			}
-
-			@media (max-width: $md) {
-				padding: initial;
-				margin: 0px;
-				h2 {
-					margin-bottom: initial;
-				}
-				.content {
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
-				}
-			}
-		}
-
-		.removeTab {
-			&:after {
-				background: none !important;
-			}
-		}
-		.form {
-			h2 {
-				line-height: initial;
-			}
-			.box-with-tab {
-				padding: 40px;
-			}
-		}
-	}
-	.hs-submit {
-		@media (max-width: $md) {
-			margin-top: 40px;
-		}
-	}
-}
-.hbspt-form {
-	width: 100%;
-}
-#label-subscribe_to_company_and_industry_updates-889464f6-ad79-4e62-8771-8a9739c2a7cc {
-	width: 100%;
+#request-demo {
 	text-align: center;
+
+	.hbspt-form {
+		margin-top: -40px !important;
+		textarea,
+		.hs-input {
+			margin: 0px !important;
+		}
+	}
+	.intern-pg {
+		margin-top: 100px;
+	}
+
+	h1 {
+		margin-bottom: $mb-titles;
+	}
+	.text {
+		b,
+		strong {
+			color: $prim-purple;
+		}
+		margin-bottom: $mb-titles;
+	}
+	form {
+		display: flex;
+		flex-wrap: wrap;
+		margin: auto;
+		max-width: 600px;
+
+		fieldset {
+			min-width: 100%;
+			gap: 10px;
+			margin: 10px auto;
+			display: flex;
+			@media (max-width: $md) {
+				flex-direction: column;
+				& > div {
+					padding: 10px;
+					min-width: 100%;
+				}
+			}
+			.hs-form-field {
+				position: relative;
+				margin: 0px;
+				label {
+					font-size: 12px;
+					position: absolute;
+					left: 20px;
+					top: -10px;
+					color: gray;
+					background-color: white;
+					padding: 0px 10px;
+				}
+			}
+		}
+	}
+
+	.hs-input {
+		display: inline-block;
+		width: 100%;
+		max-width: initial;
+		height: 40px;
+		padding: 30px;
+		font-weight: normal;
+		line-height: 22px;
+		color: #33475b;
+		border: 1px solid #cbd6e2;
+		box-sizing: border-box;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		-ms-border-radius: 3px;
+		border-radius: 3px;
+	}
+	//Inputes 1 colum
+	.form-columns-1 {
+		display: flex;
+		flex-wrap: wrap;
+		min-height: 10px;
+		label {
+			position: relative !important;
+			left: 0px !important;
+			top: 0px !important;
+		}
+		ul {
+			list-style: none;
+			max-height: initial;
+			display: flex;
+			width: 100%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			li {
+				line-height: 1.5rem;
+				position: relative;
+				min-height: 40px;
+
+				display: flex;
+				width: 100%;
+				max-width: 50%;
+				padding: 0px;
+				margin: 0px;
+			}
+		}
+		.input {
+			.hs-input,
+			textarea {
+				min-width: 100%;
+				margin: 20px 0px;
+			}
+		}
+		div {
+			min-width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.hs_subscribe_to_updates {
+			.inputs-list {
+				min-width: 100%;
+				li {
+					min-width: 100%;
+				}
+			}
+		}
+
+		//checkbox
+		.hs-form-checkbox-display {
+			display: flex;
+			min-width: 90%;
+			input {
+				max-width: 20px !important;
+				min-width: initial !important;
+				display: flex;
+				margin: 0px !important;
+				padding: 0px !important;
+				height: initial !important;
+			}
+			span {
+				margin-left: 20px;
+			}
+		}
+		.hs_subscribe_to_updates {
+			display: flex;
+		}
+	}
+
+	.hs-button {
+		background: $prim-purple;
+		color: #fff;
+		border: 3px solid transparent;
+		border-radius: 3px;
+		text-transform: uppercase;
+		letter-spacing: 0.075em;
+		padding: 1.2rem;
+		padding-bottom: 1.2rem;
+		margin: 0 0 20px;
+		position: relative;
+		text-align: center;
+		z-index: 1;
+		transition: all 0.3s;
+		line-height: 1.5;
+		min-width: 228px;
+		text-decoration: none;
+		padding-left: 5px;
+		padding-right: 5px;
+		width: -webkit-max-content;
+		width: -moz-max-content;
+		width: max-content;
+		&:hover {
+			background-color: $teal;
+		}
+	}
+	.hs-error-msgs {
+		li {
+			position: relative;
+			label {
+				left: 0px !important;
+				top: 0px !important;
+				padding: 0px !important;
+			}
+		}
+	}
+}
+.requesDemo {
+	max-width: 800px;
 }

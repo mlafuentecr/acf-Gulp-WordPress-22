@@ -709,7 +709,9 @@
 		}
 	}
 }
-
+.reques-demo {
+	max-width: 200px;
+}
 /*------------------------------------------*/
 /*   university
 /*------------------------------------------*/
@@ -721,7 +723,7 @@
 
 		& .headline {
 			height: 100%;
-			min-height: 600px;
+			min-height: auto;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -736,6 +738,7 @@
 			}
 			h1 {
 				font-weight: 700;
+				text-align: center;
 			}
 		}
 	}
@@ -765,6 +768,7 @@
 			.content {
 				min-width: 100%;
 				margin-bottom: 2rem;
+				flex-direction: column;
 			}
 		}
 		.hexagon {
@@ -782,6 +786,7 @@
 			height: 60px;
 			top: 30%;
 			z-index: 4;
+			display: none;
 		}
 		.hexagon-purple-light {
 			position: absolute;
@@ -790,6 +795,7 @@
 			height: 50px;
 			top: 50%;
 			z-index: 4;
+			display: none;
 		}
 	}
 
@@ -800,6 +806,7 @@
 		justify-content: space-between;
 		align-items: self-start;
 		.box {
+			min-height: auto;
 			.card-icon {
 				text-align: center;
 				height: 100px;
@@ -857,6 +864,9 @@
 				background-color: transparent !important;
 			}
 		}
+	}
+	.title {
+		text-align: left;
 	}
 	.intro-banner {
 		background-repeat: no-repeat;

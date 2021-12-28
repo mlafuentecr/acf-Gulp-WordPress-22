@@ -1,5 +1,4 @@
-@import '../sass/variables';
-
+@import 'variables';
 .home-hero {
 	background-size: cover;
 
@@ -25,7 +24,7 @@
 			color: $prim-purple;
 			font-size: 1rem;
 			text-align: center;
-			font-family: $font-Avenir-roman;
+			font-family: $font-Avenir-heavy !important;
 		}
 
 		//SLIDER
@@ -57,6 +56,7 @@
 					font-weight: bolder;
 					font-family: $font-Bold;
 					text-align: center;
+					margin-top: 0px;
 				}
 				.home-hero__text {
 					max-width: 770px;
@@ -84,15 +84,21 @@
 				flex: 1;
 				width: auto;
 				max-width: 430px;
+
 				height: 64px;
-				font-size: 1.125rem;
+				text-transform: uppercase;
 				display: flex;
 				color: #fff;
 				border: none;
-
 				justify-content: center;
 				align-items: center;
 				transition: height 0.4s ease, background-color 0.5s ease;
+				span {
+					font-family: $font-Avenir-heavy !important;
+					font-size: $px16 !important;
+					letter-spacing: 0.075em !important;
+				}
+
 				@media (max-width: $md) {
 					width: 12px;
 					max-width: 12px;

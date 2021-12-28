@@ -74,7 +74,7 @@ $query = new WP_Query($args);
 
 
 
-  <div class="container-xl mb-5">
+  <div class="container-xl ">
     <div class="row">
       <ul class="post-list">
         <?php if ($query->have_posts()): ?>
@@ -110,6 +110,6 @@ $query = new WP_Query($args);
 </div>
 
 </div>
-<?php edit_post_link(__('Edit This page')); ?>
+
 
 <?php get_footer(); ?>

@@ -138,7 +138,7 @@
                     "key": "field_614a412622e97",
                     "label": "banner text",
                     "name": "banner_text",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -156,10 +156,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
                 },
                 {
                     "key": "field_614a407a24898",
@@ -490,25 +490,6 @@
             },
             "placement": "left",
             "endpoint": 0
-        },
-        {
-            "key": "field_5fbbbd1843d90",
-            "label": "Heading",
-            "name": "section-logo-heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         },
         {
             "key": "field_60db793598699",
@@ -1361,5 +1342,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634249496
+    "modified": 1636408925
 }

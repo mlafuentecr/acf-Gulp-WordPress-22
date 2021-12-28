@@ -50,6 +50,6 @@ get_header(); ?>
 
 </div>
 
-<?php   edit_post_link(__('Edit This page'));  ?>
+
 
 <?php get_footer(); ?>

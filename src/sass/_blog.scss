@@ -28,8 +28,16 @@
 	//GUIDE TEMPLATE
 	background: transparent;
 }
-
+.laika-announcements {
+	.arrow,
+	.w-arrow {
+		margin: initial !important;
+	}
+}
 #blog-pg {
+	.post-list {
+		padding-left: 0px !important;
+	}
 	h1 {
 		margin: 20px 0 !important;
 	}
@@ -38,6 +46,12 @@
 		background: #f3f6f9;
 		z-index: 1;
 		display: flex;
+
+		.arrow,
+		.w-arrow {
+			margin: initial !important;
+		}
+
 		.row {
 			display: flex;
 			flex-direction: row;
@@ -209,7 +223,7 @@
 					color: gray;
 					border-top: 1px solid #b8b8b8;
 					margin: 5px 0;
-					margin-top: 5px;
+
 					width: 100%;
 					max-height: 50px;
 					padding-top: 10px;
@@ -241,6 +255,7 @@
 		padding-left: 2rem;
 		overflow: hidden;
 		height: 70px;
+		min-width: 100%;
 
 		&.active {
 			height: auto;
@@ -432,6 +447,14 @@
 			}
 		}
 	}
+	@media (max-width: $md) {
+		.menu {
+			min-width: 100%;
+		}
+		ul {
+			padding: 0px;
+		}
+	}
 }
 
 .post-list {
@@ -619,7 +642,7 @@
 					top: 8px;
 					left: 0;
 					background: url(../../inc/images/icon-quote.svg) no-repeat;
-					background-size: auto;
+
 					background-size: contain;
 				}
 			}
@@ -809,10 +832,10 @@
 					justify-content: center;
 					align-items: center;
 					height: 200px;
-
+					overflow: hidden;
 					img {
-						height: 100%;
-						width: auto;
+						height: auto;
+						width: 100%;
 					}
 				}
 
@@ -845,7 +868,7 @@
 						line-height: 23px;
 						color: #0a0a0a;
 						flex: 2;
-						height: 220px;
+						min-height: 270px;
 						max-height: 220px;
 					}
 

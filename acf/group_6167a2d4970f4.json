@@ -57,64 +57,28 @@
             "new_lines": ""
         },
         {
-            "key": "field_6167a2d4ad01b",
-            "label": "Banner Image",
+            "key": "field_6167a2d9519fe",
+            "label": "banner_image",
             "name": "banner_image",
-            "type": "group",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "70",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
-            "sub_fields": [
-                {
-                    "key": "field_6167a2d9519fe",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "full",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_6167a2d951de7",
-                    "label": "Description_Image",
-                    "name": "description_image",
-                    "type": "text",
-                    "instructions": "Description of the image (alt attribute)",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "return_format": "array",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_6167a2d4ad400",
@@ -255,6 +219,21 @@
                     "toolbar": "full",
                     "media_upload": 0,
                     "delay": 0
+                },
+                {
+                    "key": "field_617f600e43f25",
+                    "label": "link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
                 }
             ]
         },
@@ -472,6 +451,21 @@
                     "toolbar": "full",
                     "media_upload": 0,
                     "delay": 0
+                },
+                {
+                    "key": "field_617f604baa2d9",
+                    "label": "link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
                 }
             ]
         },
@@ -543,5 +537,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1635186929
+    "modified": 1635788266
 }

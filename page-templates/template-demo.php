@@ -73,6 +73,6 @@ $form = get_field('form_content');
   <!-- puedo hacer uno general y que tenga un drop down de bg y un text field o un drop down de text -->
 
 </div>
-<?php   edit_post_link(__('Edit This page'));  ?>
+
 
 <?php get_footer(); ?>

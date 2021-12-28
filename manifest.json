@@ -1,12 +1,11 @@
 {
-	"short_name": "laika",
-	"name": "laika",
-	"description": "laika",
-	"start_url": "https://staging-destiny.kinsta.cloud/",
-	"scope": "https://staging-destiny.kinsta.cloud/",
+	"name": "https://heylaika.com",
+	"short_name": "heylaika",
+	"start_url": "/",
+	"lang": "en",
 	"background_color": "#3367D6",
-	"display": "standalone",
 	"theme_color": "#3367D6",
+	"display": "fullscreen",
 	"icons": [
 		{
 			"src": "favicon-48x48.png",

@@ -4,10 +4,10 @@
 @import '_partners';
 @import '_programs';
 @import '_product';
-@import '_pricing';
+
 @import '_guide';
 @import '_customer-stories';
-@import '_request-demo'; //request a demo
+@import '_request-demo';
 @import '_our_value';
 @import '_integrations';
 @import '_about';
@@ -20,13 +20,7 @@
 @import '_landing-podcast.scss';
 @import 'global';
 @import 'intern_ver2';
-
-.error404 {
-	h2,
-	h1 {
-		color: white !important;
-	}
-}
+@import 'laika-products';
 
 /*-----------------------------------------------------------------------------------*/
 /*   Sports News 	@media (max-width: $md) {
@@ -51,7 +45,11 @@
 		}
 	}
 }
-
+.single-post {
+	.headline {
+		height: auto !important;
+	}
+}
 #guide-download {
 	background-color: white !important;
 	.intro-banner {
@@ -59,5 +57,19 @@
 			margin-bottom: initial !important;
 			margin-top: initial !important;
 		}
+	}
+}
+
+#thank-you {
+	.headline {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		color: white;
+	}
+	h2,
+	h3 {
+		color: white;
 	}
 }

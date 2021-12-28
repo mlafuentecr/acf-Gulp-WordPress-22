@@ -10,19 +10,8 @@
 
   <head name="top">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148885749-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-148885749-1');
-    </script>
-
+    <!-- - Google Analytics in enqueud -->
 
     <meta charset="<?php bloginfo('charset');?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,6 +29,11 @@
       href="<?php echo get_stylesheet_directory_uri(); ?>/manifest.json">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <!-- no-cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
 
     <?php 
   $post = get_post();
@@ -49,6 +43,10 @@
   </head>
 
   <body id="<?php echo $slugname; ?>" <?php body_class();?>>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9GVHWG" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="wrapper">
 
       <!--[if lt IE 8]>
@@ -60,7 +58,7 @@
 
 
       <!-- Banner announcement-->
-      <?php //get_template_part( '/inc/parts/banner','top'); ?>
+      <?php get_template_part( '/inc/parts/banner','announcements'); ?>
 
       <header id='header-top'>
         <div class='container  d-flex'>

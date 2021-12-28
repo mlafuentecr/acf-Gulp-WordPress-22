@@ -11,9 +11,9 @@
               -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-      console.log('1loaded')
+      //console.log('1loaded')
       setTimeout(() => {
-        console.log('2loaded')
+        //console.log('2loaded')
         let hbJs = document.createElement("script");
         hbJs.src = "<?php echo get_template_directory_uri(). '/dist/js/hubspot.js' ?>";
         document.body.appendChild(hbJs);
@@ -21,7 +21,7 @@
 
 
       setTimeout(() => {
-        console.log('3loaded')
+        //console.log('3loaded')
         hbspt.forms.create({
           region: "na1",
           portalId: "7851520",

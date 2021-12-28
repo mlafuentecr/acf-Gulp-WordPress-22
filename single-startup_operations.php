@@ -116,7 +116,7 @@ get_header();
         </ul>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>
-        <?php   edit_post_link(__('Edit This page'));  ?>
+        
       </div>
     </div>
   </section>
@@ -141,6 +141,6 @@ get_header();
     </div>
   </section>
 </div>
-<?php edit_post_link(__('Edit This page')); ?>
+
 
 <?php get_footer(); ?>

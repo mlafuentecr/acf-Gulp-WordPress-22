@@ -155,7 +155,7 @@ get_header();
     $btn ="home-hero__button button button-purple";
   }else{
     $bg = "background-image: url(".get_template_directory_uri()."/inc/images/demo-section-backgr-light.svg";
-    $btn = "button button-teal btn-animation content-center";
+    $btn = "button button-teal button-animation content-center";
   }
 ?>
   <section class="cta" style="<?php echo $bg; ?>">

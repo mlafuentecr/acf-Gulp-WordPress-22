@@ -38,107 +38,47 @@
             "maxlength": ""
         },
         {
-            "key": "field_6169d4c48e6b3",
-            "label": "banner section",
-            "name": "banner_section",
-            "type": "group",
+            "key": "field_6167a2d4acc85",
+            "label": "Banner Content",
+            "name": "banner_content",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_6167a2d9519fe",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "25",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "full",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_6167a2d951de7",
-                    "label": "Description_Image",
-                    "name": "description_image",
-                    "type": "text",
-                    "instructions": "Description of the image (alt attribute)",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "25",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6167a2d4ad400",
-                    "label": "Banner Background",
-                    "name": "banner_background",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "25",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "full",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_6167a2d4acc85",
-                    "label": "Banner Content",
-                    "name": "banner_content",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "25",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                }
-            ]
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_618022a9776c5",
+            "label": "banner_image",
+            "name": "banner_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_6167a2d4ad836",
@@ -207,10 +147,10 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_6167a2d995403",
+            "collapsed": "field_6167a2d995801",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "",
             "sub_fields": [
                 {
@@ -498,7 +438,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/template-laika-integrations-ver2.php"
+                "value": "page-templates\/template-integrations.php"
             }
         ]
     ],
@@ -510,5 +450,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1635187690
+    "modified": 1635800315
 }

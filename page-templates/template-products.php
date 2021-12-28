@@ -27,7 +27,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
           <p class="banner-content"><?php echo $pageFields['banner_content']; ?></p>
           <?php endif; ?>
 
-          <a class=" button button-purple btn-animation  mt-5" rel="noopener" href='<?php echo$bannerBtn["url"]; ?>'
+          <a class=" button button-purple button-animation  mt-5" rel="noopener" href='<?php echo$bannerBtn["url"]; ?>'
             target=""><span><?php echo$bannerBtn["title"]; ?></span>
           </a>
 
@@ -199,7 +199,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
       <div class="row">
         <h2><?php echo $cta_4['title']; ?></h2>
 
-        <a class=" button button-teal btn-animation" rel="noopener"
+        <a class=" button button-teal button-animation" rel="noopener"
           href="<?php echo $cta_btn['url']; ?>"><span><?php echo $cta_btn['title']; ?></span>
         </a>
       </div>

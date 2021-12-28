@@ -5,225 +5,146 @@ Template Name: Integrated Audit
 defined( 'ABSPATH' ) || exit;
 get_header(); 
 
-/*-----------------------------------------------------------------------------------*/
+/*-------------------------------------------*/
 /*  ACF Page our-value
-/*-----------------------------------------------------------------------------------*/
+/*-------------------------------------------*/
 $pageFields = get_fields();
-$bannerGroup = $pageFields['banner_audit_left_col'];//
-$bannerBtn  = $pageFields['banner_button_audit'];
+
+
 ?>
+
+
+
+
 <div id="integrated-audit" class="intern-pg">
+  <!-- 0 banner -->
+  <?php get_template_part( '/inc/parts/banner-top-2section' ); ?>
 
-  <!-- 0 banner sec1-->
-  <section class="intro-banner" style="background-image: url(<?php echo $bannerGroup['banner_bg_audit']; ?>);">
+  <!--1 subbanner -->
+
+  <?php if($pageFields['subbanner']): ?>
+  <section class="subbanner shadow-bottom">
     <div class="container-xl">
-      <div class="row">
-        <article class="headline">
-          <?php if ($bannerGroup['banner_title_audit']): ?>
-          <h1><?php echo $bannerGroup['banner_title_audit']; ?></h1>
+      <?php echo $pageFields['subbanner']; ?>
+    </div>
+  </section>
+  <?php endif; ?>
+
+
+  <!-- 2  why-laika -->
+  <section class="sec_2  horizontal__block horizontal__block-lines mt-5 mb-5">
+    <div class="container-xl">
+      <div class="headline">
+        <div class="title title-purple mb-5"><?php echo $pageFields['sec_two_ltitle']; ?></div>
+        <div class="text"><?php echo $pageFields['sec_two_lsubtitle']; ?></div>
+      </div>
+
+      <div class="contentWrap">
+        <?php 
+        $sec2 = $pageFields['sec_two_list']; 
+        foreach( $sec2 as $item ) {
+      ?>
+        <item class="icons">
+          <img class='lazyload' src='<?php echo $item['image']['url'] ?>' alt='<?php echo $item['image']['title'] ?>'
+            width='auto' height='60' />
+          <span class="sub-title"><?php echo $item['heading']; ?></span>
+          <p><?php echo $item['text']; ?></p>
+        </item>
+        <?php }  ?>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- sec_4 integrated-audit -->
+  <?php if (get_field('sec_three_title')):  ?>
+  <section class="full-bar  bg-gray sec_3  text-center text-purple block-padding ">
+    <div class="container-xl">
+
+      <h2><?php echo get_field('sec_three_title'); ?></h2>
+      <div class="content">
+        <?php  
+          $img1 = get_field('part-1'); 
+          ?>
+        <img class='lazyload' src='<?php echo $img1['url']; ?>' alt='<?php echo $img1['title']; ?>' width='33%'
+          height=' auto' />
+      </div>
+
+    </div>
+  </section>
+  <?php endif; ?>
+
+
+
+  <!-- 4 sec_four_list  why-laika-->
+  <?php if ($pageFields['articles']): ?>
+  <section class="sec_4 content-list  block">
+    <div class="container-xl">
+
+      <?php foreach ($pageFields['articles'] as $articles): ?>
+
+      <article class="item">
+
+        <div class="headline">
+          <h2><?php echo $articles['title']; ?></h2>
+          <div class="text"><?php echo $articles['subtitle']; ?></div>
+        </div>
+
+
+        <div class="imgWrap">
+          <img class='lazyload' src='<?php echo $articles['image']['url'] ?>' alt='' width='auto' height='160' />
+        </div>
+        <div class="content">
+          <?php echo $articles['content']; ?>
+
+          <?php if($articles['link']): ?>
+          <a href="<?php echo $articles['link']['url']; ?>" class="arrow"><?php echo $articles['link']['title']; ?></a>
+          <?php endif;?>
+        </div>
+      </article>
+      <?php endforeach; ?>
+
+
+
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <!-- 5 -->
+  <?php if ($pageFields['sec_five_title']): ?>
+  <section class="full-bar faq bg-purple sec_5 integrated-audit  block-padding ">
+    <div class="container-xl">
+
+      <div class="headline">
+        <h2><?php echo $pageFields['sec_five_title']; ?></h2>
+      </div>
+
+      <div class=" two-block">
+
+        <?php 
+           $post_id = $pageFields['post']->ID;
+           $fields = get_fields($post_id );
+          echo ' <section>'.get_the_post_thumbnail( $post_id, 'large' ).'</section>';
+         ?>
+
+        <section>
+          <h4><?php echo $pageFields['post']->post_title; ?> </h4>
+          <?php if($fields['preview_content']): ?>
+          <div class="content"><?php echo $fields['preview_content']; ?> </div>
+          <div class="date less-important"> <?php echo $fields['post_creation_date']; ?> .
+            <?php echo $fields['author']['name']; ?> .
+            <?php echo $fields['reading_time']; ?> </div>
           <?php endif; ?>
-          <?php if ($bannerGroup['banner_content_audit']): ?>
-          <p class="banner-content"><?php echo $bannerGroup['banner_content_audit']; ?></p>
-          <?php endif; ?>
-
-
-          <a class=" button button-purple btn-animation  " rel="noopener"
-            href='<?php echo $bannerGroup["link_audit"]["url"]; ?>'
-            target=""><span><?php echo$bannerGroup["link_audit"]["title"]; ?></span>
-          </a>
-
-
-
-        </article>
-        <div class="hero-media  ">
-          <img src="<?php echo $pageFields['banner_media_audit']["image"]; ?>"
-            alt="<?php echo $pageFields['banner_media_audit']["description"]; ?>" data-pin-nopin="true">
-        </div>
+        </section>
       </div>
+
     </div>
   </section>
+  <?php endif; ?>
 
-
-
-  <!-- sec2 section-->
-  <section class="block sec2 policies ">
-
-    <div class="container-xl ">
-      <div class="row headline">
-        <h4> <?php echo $pageFields["sec_three_heading"]; ?></h4>
-        <div class="text">
-          <?php  echo $pageFields["sec_three_text"]; ?>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Why Laika?-->
-    <div class="container-fluid bg-white content-list">
-      <div class="container-xl ">
-        <div class="row">
-
-
-
-          <div class="white-headline">
-            <?php if( $pageFields["subtitle_audit"] ){echo '<p class="subtitle">'. $pageFields["subtitle_audit"] .'</p>';} ?>
-            <?php if( $pageFields["sec2title_audit"] ){echo '<h4>'. $pageFields["sec2title_audit"] .'</h4>';} ?>
-            <?php $list =   $pageFields["sec2_list_audit"]; ?>
-            <?php foreach ($list as $secTwoListValue): ?>
-            <div class="items_wrap">
-              <article class="item">
-                <div class="items_img  " style="background-image: url('<?php echo $secTwoListValue['image'] ?>')">
-                </div>
-                <h5><?php echo $secTwoListValue['heading']; ?></h5>
-                <p class="items_paragraph"><?php echo nl2br($secTwoListValue['text']) ?></p>
-              </article>
-            </div>
-            <?php endforeach; ?>
-          </div>
-
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!--  Logos -->
-  <?php get_template_part( '/inc/parts/slider_logos' ); ?>
-  <!--  /.  2 Logos  -->
-
-
-  <!-- sec3 section-->
-  <section class="block sec3 two-blocks">
-    <div class="container-xl">
-      <div class="row">
-
-        <?php $hero_sec3 = $pageFields["hero_sec3"]; ?>
-        <?php $right_col_3 = $pageFields["right_col_3"]; ?>
-        <div class="product-img animate">
-          <img src="<?php echo $hero_sec3["url"]; ?>" alt="<?php echo $hero_sec3["alt"]; ?>">
-          <img class="img img2 animate" src="<?php echo $right_col_3["animate_img"]; ?>" alt="laika">
-        </div>
-
-        <div class="description">
-          <p class="sub_heading"><?php echo $right_col_3['sub_heading']; ?></p>
-          <h2><?php echo $right_col_3['heading']; ?></h2>
-          <div class="text"><?php echo $right_col_3['text']; ?></div>
-          <?php $link = $right_col_3["link"]; ?>
-          <?php if($link){ ?> <a class="home-text-link text-link arrow" href="<?php echo $link['link']; ?>">
-            <?php echo $link['name']; ?></a> <?php } ?>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- sec4 section-->
-  <section class="block sec4 two-blocks">
-    <div class="container-xl">
-      <div class="row">
-
-        <?php $hero_sec4 = $pageFields["hero_sec4"]; ?>
-        <?php $left_col_4 = $pageFields["left_col_4"]; ?>
-
-        <div class="description">
-          <p class="sub_heading"><?php echo $left_col_4['sub_heading']; ?></p>
-          <h2><?php echo $left_col_4['heading']; ?></h2>
-          <div class="text"><?php echo $left_col_4['text']; ?></div>
-          <?php $link = $left_col_4["link"]; ?>
-          <?php if($link['link']){ ?> <a class="home-text-link text-link arrow" href="<?php echo $link['link']; ?>">
-            <?php echo $link['name']; ?></a> <?php } ?>
-        </div>
-
-        <div class="product-img animate">
-          <img src="<?php echo $hero_sec4["url"]; ?>" alt="<?php echo $hero_sec4["alt"]; ?>">
-        </div>
-
-      </div>
-  </section>
-
-
-
-  <!-- sec5 section-->
-  <section class="block sec5 two-blocks">
-    <div class="container-xl">
-      <div class="row">
-
-        <?php $hero_sec5 = $pageFields["hero_sec_5"]; ?>
-        <?php $right_col_5 = $pageFields["right_col_5"]; ?>
-
-
-        <div class="product-img animate">
-          <img src="<?php echo $hero_sec5["url"]; ?>" alt="<?php echo $hero_sec5["alt"]; ?>">
-        </div>
-
-        <div class="description">
-          <p class="sub_heading"><?php echo $right_col_5['sub_heading']; ?></p>
-          <h2><?php echo $right_col_5['heading']; ?></h2>
-          <div class="text"><?php echo $right_col_5['text']; ?></div>
-          <?php $link = $right_col_5["link"]; ?>
-          <?php if($link){ ?> <a class="home-text-link text-link arrow" href="<?php echo $link['link']; ?>">
-            <?php echo $link['name']; ?></a> <?php } ?>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- sec6 section-->
-  <section class="block sec5 two-blocks">
-    <div class="container-xl">
-      <div class="row">
-        <div class="box">
-
-          <?php $hero_sec6 = $pageFields["hero_sec_6"]; ?>
-          <?php $right_col_6 = $pageFields["right_col_6"]; ?>
-
-
-          <div class="product-img ">
-            <img src="<?php echo $hero_sec6["url"]; ?>" alt="<?php echo $hero_sec6["alt"]; ?>">
-          </div>
-
-          <div class="description">
-            <p class="sub_heading"><?php echo $right_col_6['sub_heading']; ?></p>
-            <h2><?php echo $right_col_6['heading']; ?></h2>
-            <div class="text"><?php echo $right_col_6['text']; ?></div>
-            <?php $link = $right_col_6["link"]; ?>
-            <?php if($link){ ?> <a class="home-text-link text-link arrow" href="<?php echo $link['link']; ?>">
-              <?php echo $link['name']; ?></a> <?php } ?>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- cta Reques Demo-->
-  <?php 
-  $cta4 = get_field("cta_4", "option");
-  $ctaBg = get_field('cta_bg', 'option');
-  $ctaBtn = get_field('request_demo_button', 'option');
-
-  ?>
-
-  <section class="cta cta4" style="background: url(<?php echo $ctaBg["bg_dark_purple"]["url"]; ?>)">
-    <div class="container">
-      <div class="row">
-        <h2><?php echo $cta4["title"] ; ?></h2>
-
-        <a class=" button button-teal btn-animation" rel="noopener"
-          href="<?php echo $ctaBtn["url"]; ?>"><span><?php echo $ctaBtn["title"]; ?></span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- /. cta Reques Demo-->
 
 
 </div>

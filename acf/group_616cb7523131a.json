@@ -57,64 +57,28 @@
             "new_lines": ""
         },
         {
-            "key": "field_616d940a00486",
-            "label": "Banner Image",
+            "key": "field_616d940a00487",
+            "label": "banner_image",
             "name": "banner_image",
-            "type": "group",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "70",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
-            "sub_fields": [
-                {
-                    "key": "field_616d940a00487",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "full",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_616d940a00488",
-                    "label": "Description_Image",
-                    "name": "description_image",
-                    "type": "text",
-                    "instructions": "Description of the image (alt attribute)",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "return_format": "array",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_616d941000489",
@@ -356,54 +320,6 @@
             "mime_types": ""
         },
         {
-            "key": "field_616cb9d1fd59c",
-            "label": "part-2",
-            "name": "part-2",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "30",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_616cb9e7fd59d",
-            "label": "part-3",
-            "name": "part-3",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "30",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_616cba059c925",
             "label": "4 sec end to end compliance",
             "name": "",
@@ -599,7 +515,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/template-integrated-audit-ver2.php"
+                "value": "page-templates\/template-integrated-audit.php"
             }
         ]
     ],
@@ -611,5 +527,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634656868
+    "modified": 1636576376
 }

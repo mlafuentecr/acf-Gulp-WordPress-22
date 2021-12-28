@@ -10,7 +10,6 @@ $social = get_field('social', 'options');
 
 ?>
 
-
 </main>
 <footer>
   <!-- footer -->
@@ -18,9 +17,9 @@ $social = get_field('social', 'options');
     <div class="container">
       <div class="first-level">
         <!-- LOGO -->
-        <div class="menu logo col-12 col-md-2">
-          <img class='lazyload' src='<?php echo $logo['url']; ?>' alt='' width='128' height='auto' />
-        </div>
+        <section class="menu logo col-12 col-md-2">
+          <img class='lazyload' src='<?php echo $logo['url']; ?>' alt='Laika Logo' width='128px' height='61px' />
+        </section>
         <!-- 1Menus -->
         <?php
               if( have_rows('menus', 'options') ):
@@ -29,31 +28,32 @@ $social = get_field('social', 'options');
                 $menus = get_sub_field('menu');
               ?>
         <!-- 2Menus -->
-        <div class="menu  ">
-          <h3><?php echo $title; ?></h3>
+        <section class="menu  ">
+          <div class="subtitle"><?php echo $title; ?></div>
 
           <?php
                 if( $menus)
                 {
-                  echo '<ul class="menus">';
+                  echo '<ul class="links">';
                   foreach(  $menus as $row ) {
                       $link = $row['link'];
                       if($row['link']):
                       echo '<li class="menuItem">';
-                          echo '<a target="'.$link["target"].'" href="'.$link["url"].'">'.$link["title"].'</a>';
+                          echo '<a rel="noreferrer" target="'.$link["target"].'" href="'.$link["url"].'">'.$link["title"].'</a>';
                       echo '</li>';
                       endif;
                   }
                   echo '</ul>';
                 }
               ?>
-        </div>
+        </section>
 
         <?php
                 endwhile;
                 else :
               endif;
               ?>
+        <!-- REQUES DEMO BTN -->
         <?php get_template_part( '/inc/parts/btn-request-demo' );  ?>
       </div>
 
@@ -93,7 +93,7 @@ $social = get_field('social', 'options');
                       if($row['link']):
                       
                       echo '<li>';
-                          echo '<a class="linkSocial '.$name.'"  target="'.$link["target"].'" href="'.$link["url"].'"></a>';
+                          echo '<a class="linkSocial '.$name.'"  rel="noreferrer" target="_blank" href="'.$link["url"].'">follow us on'.$name.'</a>';
                       echo '</li>';
                       endif;
                   }

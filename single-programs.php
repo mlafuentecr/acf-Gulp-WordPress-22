@@ -26,7 +26,7 @@ get_header();
           </p>
           <?php endif; ?>
           <?php if($pageFields['intro_button']['name']): ?>
-          <a class="button button-purple btn-animation"
+          <a class="button button-purple button-animation"
             href="<?php echo $pageFields['intro_button']['link'] ?>"><span><?php echo $pageFields['intro_button']['name'] ?></span></a>
           <?php endif; ?>
 
@@ -202,7 +202,7 @@ get_header();
   <?php 
 
 $bg = "background-image: url(".get_template_directory_uri()."/inc/images/bg-contact.jpg";
-$btn = "button button-teal btn-animation content-center";
+$btn = "button button-teal button-animation content-center";
 ?>
   <section class="cta block" style="<?php echo $bg; ?>">
     <div class="container">
@@ -316,6 +316,6 @@ $btn ="home-hero__button button button-purple";
     </section>
     <!-- /. cta Reques Demo-->
 </div>
-<?php   edit_post_link(__('Edit This page'));  ?>
+
 
 <?php get_footer(); ?>

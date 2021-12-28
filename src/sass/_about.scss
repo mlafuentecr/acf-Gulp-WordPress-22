@@ -1,7 +1,7 @@
 /*------------------------------------------*/
 /*   our-value about
 /*------------------------------------------*/
-#about-ver2 {
+#about {
 	.intro-banner {
 		h1 {
 			text-align: left;
@@ -10,10 +10,15 @@
 			}
 		}
 	}
+	.content-list {
+		.container-xl {
+			justify-content: space-between;
+		}
+	}
 	.social-box {
 		display: flex;
 		flex-wrap: wrap;
-		gap: $general-gap;
+		gap: $gap_md;
 		padding: 130px 0px;
 
 		.box_content {
@@ -23,10 +28,10 @@
 			justify-content: center;
 			flex: 1;
 			color: white;
-			min-height: 350px;
-			min-width: 350px;
-			max-width: 350px;
-			padding: $m;
+			min-width: 30%;
+			// min-height: 350px;
+			// max-width: 350px;
+			padding: $lh_md;
 			&.random-img {
 				padding: 0px;
 				background-size: cover;
@@ -46,35 +51,12 @@
 				align-items: flex-start;
 				line-height: normal;
 			}
+			@media (max-width: $md) {
+				min-height: 450px;
+			}
 		}
 	}
 
-	article {
-		display: flex;
-		flex: 1;
-		flex-direction: row;
-		position: relative;
-		flex-wrap: wrap;
-
-		.imgWrap {
-			min-height: 310px;
-			display: flex;
-			flex: 1;
-			margin-top: 0;
-			position: relative;
-			max-width: 45%;
-			min-width: 45%;
-			margin: auto;
-			overflow: hidden;
-		}
-		.content {
-			display: flex;
-			max-width: 50%;
-			justify-content: center;
-			align-items: flex-start;
-			flex-direction: column;
-		}
-	}
 	.founders {
 		h2 {
 			color: $prim-purple;
@@ -110,6 +92,66 @@
 			background-repeat: no-repeat;
 			background-size: contain;
 			filter: invert(31%) sepia(79%) saturate(841%) hue-rotate(180deg) brightness(96%) contrast(87%);
+		}
+	}
+
+	.investors {
+		min-height: $fullbar-small;
+		@media (max-width: $md) {
+			margin-top: $m-lg;
+			margin-bottom: $m-lg;
+		}
+
+		h4 {
+			color: $prim-purple;
+			text-align: center;
+			margin-bottom: $mb-titles;
+		}
+		.content {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-wrap: wrap;
+
+			img {
+				max-width: 25%;
+				height: auto;
+				width: 100%;
+			}
+			@media (max-width: $md) {
+				flex-direction: column;
+
+				img {
+					margin: 20px auto;
+				}
+			}
+		}
+	}
+
+	.networks {
+		color: white;
+		min-height: $fullbar-medium;
+
+		h4 {
+			text-align: center;
+			margin-bottom: $mb-titles;
+		}
+		.subttile {
+			justify-self: center;
+			text-align: center;
+			margin-bottom: $mb-titles;
+		}
+		.content {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			@media (max-width: $md) {
+				flex-direction: column;
+
+				img {
+					margin: 20px auto;
+				}
+			}
 		}
 	}
 }

@@ -1,4 +1,4 @@
-@import 'variables';
+@import '_variables';
 @import 'global';
 @import 'slideHome';
 
@@ -7,7 +7,6 @@
 /*-----------------------------------------------------------------------------------*/
 .home {
 	background-color: white;
-
 	.button-purple {
 		span {
 			background-color: transparent;
@@ -23,7 +22,7 @@
 
 	/*  competitors */
 	.competitors {
-		padding: 9.5rem 0px;
+		padding: $p_lg;
 		font-size: $f_paragraph;
 
 		h2 {
@@ -49,39 +48,12 @@
 		.contentWrap {
 			display: flex;
 			flex-direction: row;
-
 			align-content: center;
 			justify-content: center;
 
 			.content {
 				@media (min-width: $md) {
 					padding-left: 4.5rem;
-				}
-				ul {
-					list-style-type: none;
-					font-size: $f_paragraph;
-					min-height: 70%;
-					justify-content: space-evenly;
-					display: flex;
-					flex-direction: column;
-					@media (min-width: $md) {
-						padding-left: 2rem;
-					}
-					strong {
-						margin-left: -15px;
-					}
-					@media (max-width: $md) {
-						li {
-							margin-bottom: 15px;
-						}
-					}
-
-					li::before {
-						left: -35px;
-						position: relative;
-						top: 2px;
-						content: url(./../../inc/images/list-style-hexagon-check.svg);
-					}
 				}
 			}
 
@@ -118,7 +90,7 @@
 
 	/*  journey */
 	.journey {
-		padding: 9.5rem 0px;
+		padding: $p_lg;
 		box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 		font-size: $f_paragraph;
 		h2 {
@@ -149,7 +121,6 @@
 			font-family: $font-Medium;
 			span {
 				flex: 1;
-
 				padding-bottom: 20px;
 				position: relative;
 				cursor: pointer;
@@ -190,7 +161,6 @@
 
 		.tabsContent {
 			position: relative;
-			height: 15rem;
 
 			ul {
 				display: flex;
@@ -259,226 +229,86 @@
 
 	/*  solution */
 	.solution {
-		padding: 9.5rem 0px;
-		background-size: cover;
 		font-size: $f_paragraph;
-
-		h2 {
-			margin-bottom: 4rem;
-			min-width: 100%;
-			@media (max-width: $md) {
+		padding: $p_lg;
+		.icons {
+			align-items: center;
+			.number {
 				text-align: center;
 			}
-		}
-
-		ul {
-			display: flex;
-			justify-content: space-around;
-			list-style-type: none;
-			flex-wrap: wrap;
-			padding: 0px;
-
-			li {
-				padding: 0 40px 24px;
-				margin-bottom: 0;
-				display: flex;
-				justify-content: flex-start;
-				flex-direction: column;
-				align-items: center;
-				flex: 1;
-				max-width: 25%;
+			.content {
 				text-align: center;
-				position: relative;
-
-				&::after {
-					content: '';
-					display: block;
-					position: absolute;
-					right: 0;
-					top: 50%;
-					height: 100%;
-					transform: translateY(-50%);
-					border-left: 1px solid #c4c4c4;
-				}
-
-				@media (max-width: $sm) {
-					max-width: 100%;
-					min-width: 100%;
-					padding: 0 auto 24px;
-
-					&::after {
-						border-left: 0px;
-					}
-				}
-
-				&:nth-last-child(1) {
-					&::after {
-						border-left: none;
-					}
-				}
-
-				img {
-					max-height: 93px;
-					width: auto;
-					margin-bottom: 1.5rem;
-
-					@media (max-width: $sm) {
-						max-height: 63px;
-					}
-				}
-
-				.number {
-					font-weight: 900;
-					font-size: 55px;
-
-					margin-bottom: 15px;
-					color: $prim-purple;
-					font-family: $font-fair-bold;
-					width: 100%;
-				}
-
-				.content {
-					margin: 20px auto 0 auto;
-				}
+			}
+			img {
+				margin-bottom: $mb-titles !important;
 			}
 		}
 	}
 
 	.features {
-		padding: 9.5rem 0px;
+		padding: $p_lg;
 		color: white;
 		font-size: $f_paragraph;
-		.arrow {
-			color: white;
-			display: flex;
-			justify-content: center;
-		}
 
-		h2 {
+		.title {
 			color: #fff;
-			text-align: center;
-			max-width: 80%;
-			margin: auto;
-			margin-bottom: $m;
-
-			@media (max-width: $md) {
-				max-width: 100%;
-			}
 		}
-
 		.text {
-			margin: $m;
 			text-align: center;
 		}
-
-		.button {
-			margin: 40px auto;
+		.sub-title {
+			font-family: $font-fair-bold;
+			margin-bottom: $px12;
+			font-size: $px32;
+			text-align: left;
+			display: flex;
+			align-items: flex-start;
+			line-height: normal;
+			min-height: 85px !important;
 		}
 
-		.feature_sec {
-			display: flex;
-			padding-left: 0px;
-			gap: 20px;
+		.hexagon {
+			margin-bottom: $px20;
+		}
+
+		.content {
+			ul {
+				display: block;
+				list-style-type: disc !important;
+				margin-top: 1em;
+				margin-bottom: 1em;
+				padding-left: $px20;
+			}
 			li {
-				margin-bottom: 0;
-				display: flex;
-				justify-content: flex-start !important;
+				min-width: 100%;
+				display: list-item;
+				align-items: flex-start;
 				flex-direction: column;
-				align-items: left;
-				flex: 1;
-				max-width: 33%;
-				text-align: center;
-				position: relative;
-
-				@media (max-width: $md) {
-					justify-content: center;
-					text-align: center;
-					max-width: initial;
-					align-items: center;
-				}
-
-				.hexagon {
-					height: 60px;
-					width: 60px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					padding-bottom: 0.2rem;
-					min-height: 100px;
-				}
-
-				.title {
-					font-family: $font-fair-bold;
-					margin-bottom: 12px;
-					font-size: $f_title_entry;
-					text-align: left;
-					display: flex;
-					align-items: flex-start;
-					line-height: normal;
-					@media (max-width: $md) {
-						font-size: $f_title_entry;
-						text-align: center;
-						justify-content: center;
-						br {
-							display: none;
-						}
-					}
-				}
-
-				.sub-title {
-					color: #d8d8ff;
-					font-size: $f_md_subTitle;
-					text-align: left;
-					margin: 20px auto;
-					display: flex;
-					justify-content: center;
-					align-content: center;
-					align-items: flex-start;
-					min-height: 100px;
-					@media (max-width: $md) {
-						min-height: auto;
-					}
-				}
-
+				max-width: calc(30% - 1%);
 				.content {
 					ul {
-						display: flex;
-						flex-direction: column;
-						list-style-type: disc;
-
-						li {
-							justify-content: flex-start;
-							flex-direction: column;
-							align-items: center;
-							flex: 1;
-							max-width: 100%;
-							text-align: left;
-							position: relative;
-							padding-left: 1rem;
-
-							@media (max-width: $md) {
-								padding-left: 0.5rem;
-							}
-
-							margin-bottom: 14px;
-							display: list-item;
-						}
+						gap: initial !important;
 					}
 				}
 			}
 		}
 
-		@media (max-width: $sm) {
-			.feature_sec {
-				flex-direction: column;
+		.arrow {
+			justify-content: center;
+			margin-top: 0px;
+			filter: brightness(0) invert(1);
+		}
 
-				li {
-					max-width: 100%;
-				}
-
-				.hexagon {
-					margin: auto;
-				}
+		@media (max-width: $md) {
+			& * {
+				text-align: center;
+				justify-content: center;
+				min-width: 100%;
+			}
+			& .sub-title {
+				min-height: auto !important;
+				margin: auto;
+				text-align: center;
 			}
 		}
 	}
@@ -489,17 +319,8 @@
 		justify-content: flex-start;
 		font-size: $f_paragraph;
 		align-items: stretch;
-		ul {
-			list-style: none;
-			line-height: $lh_md;
-			li {
-				&:before {
-					left: -15px;
-					position: relative;
-					top: 2px;
-					content: url(../../inc/images/list-style-hexagon-check.svg);
-				}
-			}
+		.title {
+			text-align: left !important;
 		}
 
 		.container {
@@ -510,13 +331,19 @@
 				position: absolute;
 				background: white;
 				height: 100%;
-				width: 100%;
+				width: 150%;
 				display: flex;
 				content: '';
-				left: 50%;
 				z-index: 1;
 				top: 0px;
 
+				@media (max-width: $lg) {
+					left: 38%;
+				}
+
+				@media (min-width: $lg) {
+					left: 30%;
+				}
 				@media (max-width: $md) {
 					display: none;
 				}
@@ -536,7 +363,7 @@
 			flex-direction: column;
 			align-items: flex-start;
 			justify-content: center;
-			line-height: $lh;
+			line-height: $lh-sm;
 			z-index: 9;
 			padding: 4rem 0px;
 
@@ -551,9 +378,9 @@
 				min-width: 350px;
 				flex-wrap: wrap;
 				flex-direction: row;
-				line-height: $lh;
+				line-height: $lh-sm;
 				b {
-					line-height: $lh;
+					line-height: $lh-sm;
 				}
 				ul {
 					margin-top: 1rem;
@@ -578,7 +405,7 @@
 
 		.col:nth-child(2) {
 			flex: 2;
-
+			@include ul-checkmark;
 			@media (max-width: $md) {
 				background-color: #fafafa;
 			}
