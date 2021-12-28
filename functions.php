@@ -14,7 +14,7 @@ $GLOBALS['THEME_MLM_ENV'] = '';
 // Get the hostname
 $http_host      = $_SERVER['HTTP_HOST'];
 $ENV            = '';
-$local          = 'heylaikacomnewver5.local';
+$local          = 'heylaikadev.local';
 $staging        = 'destiny.kinsta.cloud';
 $production     = 'heylaika.com';
 

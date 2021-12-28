@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: request demo ver3
+Template Name: request demo
 */
 defined( 'ABSPATH' ) || exit;
 get_header(); 
