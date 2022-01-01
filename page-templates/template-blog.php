@@ -135,7 +135,7 @@ function truncate($str, $width)
 
 
   <!-- DESKTOP MENU -->
-  <div class="container-xl moveup">
+  <div class="container moveup">
     <div class="row ">
       <ul class="box desktop menu ">
 
@@ -179,7 +179,7 @@ function truncate($str, $width)
 
 
 
-  <div class="container-xl mb-5">
+  <div class="container mb-5">
     <div class="row">
 
       <?php

@@ -90,7 +90,7 @@ endif;
   $btnRequesDemo = get_field('request_demo_button', 'options');
 ?>
   <div class="section section-3 section-acc">
-    <article class="item container-xl ">
+    <article class="item container ">
       <h2 class="heading"><?php echo $page_fields['title_sec3']; ?></h2>
       <!-- accordion1 -->
       <div class="wrapper">

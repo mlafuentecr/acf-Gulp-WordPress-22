@@ -93,7 +93,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
 
   <!-- third section-->
   <section class="block policies ">
-    <div class="container-xl mt-5">
+    <div class="container mt-5">
       <div class="row headline">
         <h4> <?php echo $pageFields["sec_three_heading"]; ?></h4>
         <div class="text">
@@ -102,7 +102,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
       </div>
     </div>
 
-    <div class="container-xl mt-5 content-list">
+    <div class="container mt-5 content-list">
       <div class="row">
         <?php $list = $pageFields["sec_three_list"]; ?>
         <div class="box">

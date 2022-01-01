@@ -29,7 +29,7 @@ if ($theme === 'Light') {
 
   <section class="intro-banner <?php echo $class ?>">
     <div class="imgWrapper">
-      <div class="container-xl intro_wrapper">
+      <div class="container intro_wrapper">
         <div class="row">
           <article class="headline narrow">
 

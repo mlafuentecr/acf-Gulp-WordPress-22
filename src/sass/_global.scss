@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'typography';
 @import 'menu';
-@import '../css/bootstrap.css';
+//@import '../css/bootstrap.css';
 
 /*-----------------------------------------------------------------------------------*/
 /*  DECLARATE 
@@ -67,7 +67,7 @@ ul {
 .modal {
 	&.show {
 		display: flex;
-		background: #00000094;
+		// background: #00000094;
 	}
 	&-dialog {
 		transition: all 0.5s;
@@ -230,7 +230,7 @@ strong {
 	margin: auto !important;
 }
 .container,
-.container-xl {
+.container {
 	max-width: 1262px;
 	width: 100%;
 	padding-right: 15px;
@@ -665,7 +665,7 @@ strong {
 	display: flex;
 
 	.container,
-	.container-xl {
+	.container {
 		display: flex;
 		.hero {
 			min-width: 50%;
@@ -733,7 +733,7 @@ strong {
 		min-height: 300px !important;
 		margin-top: 50px;
 		.container,
-		.container-xl {
+		.container {
 			flex-direction: column;
 		}
 
@@ -828,7 +828,7 @@ strong {
 	padding: 0px;
 
 	.container,
-	.container-xl {
+	.container {
 		padding: 50px;
 	}
 
@@ -927,7 +927,7 @@ strong {
 		padding-bottom: 0rem !important;
 	}
 	.container,
-	.container-xl {
+	.container {
 		justify-content: flex-start;
 		align-content: center;
 		align-items: center;
@@ -1128,7 +1128,7 @@ strong {
 		background-size: contain;
 	}
 	.container,
-	.container-xl {
+	.container {
 		display: flex;
 		flex-wrap: wrap;
 		gap: $gap_lg;
@@ -1198,7 +1198,7 @@ strong {
 	}
 	@media (max-width: $md) {
 		.container,
-		.container-xl {
+		.container {
 			flex-direction: column;
 		}
 	}
@@ -1296,7 +1296,7 @@ strong {
 }
 .horizontal-list {
 	.container,
-	.container-xl {
+	.container {
 		display: flex;
 		flex-wrap: wrap;
 		gap: $gap_lg;
@@ -1844,7 +1844,7 @@ footer {
 		}
 
 		.container,
-		.container-xl {
+		.container {
 			@media (min-width: $md) {
 				display: flex;
 				justify-content: center;

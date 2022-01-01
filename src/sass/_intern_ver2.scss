@@ -7,7 +7,7 @@
 }
 
 .container,
-.container-xl {
+.container {
 	.headline {
 		h2 {
 			text-align: center;
@@ -30,7 +30,7 @@
 		margin: initial;
 	}
 	.container,
-	.container-xl {
+	.container {
 		min-height: $fullbar-small;
 		@include flexCenter;
 		h4 {
@@ -51,7 +51,7 @@
 /*------------------------------------------*/
 .faq {
 	.container,
-	.container-xl {
+	.container {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 10px;

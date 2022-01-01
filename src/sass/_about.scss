@@ -11,7 +11,7 @@
 		}
 	}
 	.content-list {
-		.container-xl {
+		.container {
 			justify-content: space-between;
 		}
 	}
@@ -71,7 +71,7 @@
 
 		@media (max-width: $md) {
 			.container,
-			.container-xl {
+			.container {
 				display: block;
 			}
 

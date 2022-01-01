@@ -12,8 +12,6 @@ const del = require('del');
 const imagemin = require('gulp-imagemin');
 sass.compiler = require('node-sass');
 
-
-
 function homepageScss() {
 	return src(['./src/sass/homepage.scss'])
 		.pipe(sass().on('error', sass.logError))
@@ -22,7 +20,7 @@ function homepageScss() {
 		.pipe(prefix())
 		.pipe(concat('homepage.min.css'))
 		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./dist/css/'));
+		.pipe(dest('./src/css/'));
 }
 
 function internalScss() {
@@ -33,7 +31,7 @@ function internalScss() {
 		.pipe(cleanCSS())
 		.pipe(concat('internal.css'))
 		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./dist/css/'));
+		.pipe(dest('./src/css/'));
 }
 
 //Js
@@ -46,7 +44,7 @@ function jsintern() {
 }
 //v2.js is for hubspot
 function jshome() {
-	return src(['./src/js/pwa.js','./src/js/popup-requestDemo.js', './src/js/menu_principal.js', './src/js/slider-home.js', './src/js/slider-logos.js', './src/js/tab-logos.js'])
+	return src(['./src/js/pwa.js', './src/js/popup-requestDemo.js', './src/js/menu_principal.js', './src/js/slider-home.js', './src/js/slider-logos.js', './src/js/tab-logos.js'])
 		.pipe(babel())
 		.pipe(uglify())
 		.pipe(concat('bundle_home.js'))
@@ -55,7 +53,10 @@ function jshome() {
 
 //copy to css files from dist to src and also copy map
 function copyresources() {
-	return src('./dist/css/*.*').pipe(dest('./src/css/'));
+	return src('./src/css/*.*').pipe(dest('./dist/css/'));
+}
+function copyboostrapJs() {
+	return src('./src/js/bootstrap.bundle.min.js').pipe(dest('./dist/js/'));
 }
 function copyadmincss() {
 	return src('./src/css/admin/*.css').pipe(dest('./dist/css/admin/'));
@@ -65,9 +66,9 @@ function copyadmincss() {
 function watchtask() {
 	watch('./src/sass/*.scss', internalScss);
 	watch('./src/sass/*.scss', homepageScss);
+	watch('./dist/css/*.css', copyresources);
 	watch('./src/js/*.js', jsintern);
 	watch('./src/js/*.js', jshome);
-	watch('./dist/css/*.css', copyresources);
 }
 
-exports.default = series( parallel(jshome, jsintern, series(homepageScss, internalScss, copyresources, copyadmincss, watchtask)));
+exports.default = series(parallel(jshome, jsintern, copyboostrapJs, series(homepageScss, internalScss, copyresources, copyadmincss, watchtask)));

@@ -79,7 +79,7 @@
         </section>
 
 
-        <div class="post-content container-xl mt-5">
+        <div class="post-content container mt-5">
           <div class="row">
             <?php the_content(); ?>
           </div>

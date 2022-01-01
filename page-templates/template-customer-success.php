@@ -13,8 +13,89 @@ $pageFields = get_fields();
 ?>
 <div id="customer-success" class="intern-pg">
 
+  <!-- 0 banner  -->
+  <?php 
+/*-----------------------------------------------------------------------------------*/
+/*  ACF Page our-value
+/*-----------------------------------------------------------------------------------*/
+$pageFields = get_fields();
+$banner_content = $pageFields['banner_content'];
+$banner_media_content = $pageFields['banner_media_content'];
+$featuredstory = $pageFields['featured_story'];
+?>
   <!-- 0 banner -->
-  <?php get_template_part( '/inc/parts/banner-top-2section' ); ?>
+  <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
+    <div class="container">
+
+      <?php if ($pageFields['banner_title']): ?>
+      <div class="row col-12">
+        <div class="col-md-6 col-12">
+          <p class='customer_banner_title'><?php echo $banner_content['banner_title']; ?></p>
+          <div class="customer_banner_subtitle"><?php echo $banner_content['banner_subtitle']; ?> </div>
+          <div class="customer_banner_content"><?php echo $banner_content['banner_content']; ?> </div>
+          <a class="button button-purple" rel="noopener" href="http://heylaikadev.local/request-demo/"><span>Request
+              Demo</span>
+          </a>
+        </div>
+        <div class="col-md-6 col-12">
+
+          <!-- If if image or if  -->
+          <?php //var_dump($banner_media_content); ?>
+
+          <?php 
+         
+          if($banner_media_content['type'] === "Video") : 
+            $videoDiv = '<div class="video"> <a href="'.$banner_media_content['video'].'" >';
+            $videoDiv .= '<img class="lazyload" src="'.$banner_media_content['video_thumbnail']['url'].'" alt="'.$banner_media_content['video_thumbnail']['title'].'" />';
+            $videoDiv .= '</a></div>';
+            echo $videoDiv;
+          endif;
+          ?>
+
+
+        </div>
+
+      </div>
+      <?php endif; ?>
+
+      <?php if ($banner['url']): ?>
+      <div class="hero">
+        <img src="<?php echo $banner['url'] ?>" class="block-picture__img" alt="<?php echo $banner['title'] ?>">
+      </div>
+      <?php endif; ?>
+
+    </div>
+  </section>
+
+
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade modal-dialog modal-dialog-centered" id="exampleModal" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
 
   <!-- 2 content list -->

@@ -74,7 +74,7 @@ $query = new WP_Query($args);
 
 
 
-  <div class="container-xl ">
+  <div class="container ">
     <div class="row">
       <ul class="post-list">
         <?php if ($query->have_posts()): ?>
