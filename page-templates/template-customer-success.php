@@ -20,6 +20,7 @@ $pageFields = get_fields();
 /*-----------------------------------------------------------------------------------*/
 $pageFields = get_fields();
 $banner_content = $pageFields['banner_content'];
+
 $banner_media_content = $pageFields['banner_media_content'];
 $featuredstory = $pageFields['featured_story'];
 $quote_picture = $pageFields['quote_picture'];
@@ -28,7 +29,7 @@ $read_more_btn = $pageFields['read_more_btn'];
 $g2_text = $pageFields['g2-text'];
 $g2_logos = $pageFields['g2-logos'];
 $cta = $pageFields['cta'];
-//var_dump($featuredstory['url']);
+
 ?>
   <!-- 0 banner -->
   <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
@@ -38,8 +39,8 @@ $cta = $pageFields['cta'];
       <div class="col-md-6 col-12 d-flex flex-wrap align-items-center">
         <div class="main-content">
           <p class='customer_banner_title col-12'><?php echo $banner_content['banner_title']; ?></p>
-          <p class="customer_banner_subtitle col-12"><?php echo $banner_content['banner_subtitle']; ?> </p>
-          <p class="customer_banner_content col-12"><?php echo $banner_content['banner_content']; ?> </p>
+          <div class="customer_banner_subtitle col-12"><?php echo $banner_content['banner_subtitle']; ?> </div>
+          <div class="customer_banner_content col-12"><?php echo $banner_content['banner_content']; ?> </div>
 
         </div>
         </a>
@@ -97,22 +98,24 @@ $cta = $pageFields['cta'];
       <div class="container">
         <section class="filter col-12">
           <div class="bg-purple rounded text-center d-flex  justify-content-center align-items-center">
-            dsdsd
+            SORT BY
           </div>
         </section>
       </div>
 
       <div class="container">
         <section class="featured box  rounded p-0 m-0 my-3 d-flex ">
-          <div class="d-flex flex-wrap m-0 p-0 col-12  ">
-            <div class="col-md-12 col-lg p-5 d-flex justify-content-center align-items-center ">
+          <div class="d-flex flex-wrap m-0 p-0 py-3 col-12  ">
+            <div class="col-md-12 col-lg p-5 d-flex featuredstory-logo justify-content-center align-items-center ">
               <img class='lazyload' src='<?php echo $featuredstory['logo']['url']; ?>'
                 alt='<?php echo $featuredstory['logo']['title']; ?>' />
             </div>
 
             <div class="col-md-12 col-lg  p-md-5 pt-sm-0">
-              <p class="col-12 text-lg-start text-md-center"><?php echo $featuredstory['featured_text']; ?></p>
-              <p class="col-12 text-lg-start text-md-center"><?php echo $featuredstory['featured_content']; ?></p>
+              <p class="col-12 featured_text text-lg-start text-md-center">
+                <?php echo $featuredstory['featured_text']; ?></p>
+              <p class="col-12 featured_content text-lg-start text-md-center">
+                <?php echo $featuredstory['featured_content']; ?></p>
               <div class="btn-wrap text-start col-12">
                 <a class="button reques-demo button-purple text-lg-start text-md-center m-lg-0 m-md-auto mb-5 mb-md-0"
                   rel="noopener"
@@ -205,19 +208,19 @@ $cta = $pageFields['cta'];
     <?php endif; ?>
 
 
-    <section class="g2 bg-white mt-5 p-5">
+    <section class="g2 bg-white mt-5 pt-5">
       <div class="container">
-        <div class="d-flex flex-wrap  justify-content-md-around m-0 p-0 col-12 m-5 m-sm-0 ">
-          <div class="col-md-5 col-12 ">
+        <div class="d-flex flex-wrap  justify-content-md-around m-0 p-0 col-12 m-0 m-md-5 ">
+          <div class="col-md-5 col-12 g2-content">
             <?php echo $g2_text; ?>
+            <a class="arrow" href="<?php echo $cta['url']; ?>"><?php echo $cta['title']; ?></a>
           </div>
           <div class="col-12 col-md-6 ml-5 mt-5 ">
             <div class="col-12 d-flex border-bottom pb-3">
               <img class='lazyload badges m-auto ' src='<?php echo $g2_logos['url']; ?>'
                 alt='<?php echo $g2_logos['title']; ?>' />
             </div>
-            <div
-              class="col-xl-10 col-md-12 m-auto d-flex border-bottom pb-3 align-content-center justify-content-center">
+            <div class="col-xl-10 col-md-12 m-auto d-flex mt-3 align-content-center justify-content-center">
 
               <div class="col m-0 p-0 text-center">
 

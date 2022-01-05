@@ -10,7 +10,7 @@ $banner = $pageFields['banner_image'];
   <div class="container">
 
     <?php if ($pageFields['banner_title']): ?>
-    <div class="content">
+    <div class="content col-12 col-md-6">
       <h1><?php echo $pageFields['banner_title']; ?></h1>
       <div class="text">
         <?php echo $pageFields['banner_content']; ?>
@@ -20,7 +20,7 @@ $banner = $pageFields['banner_image'];
     <?php endif; ?>
 
     <?php if ($banner['url']): ?>
-    <div class="hero">
+    <div class="hero col-12 col-md-6">
       <img src="<?php echo $banner['url'] ?>" class="block-picture__img" alt="<?php echo $banner['title'] ?>">
     </div>
     <?php endif; ?>

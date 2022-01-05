@@ -207,7 +207,7 @@
 			align-items: center;
 			min-width: 5rem;
 			display: none;
-			@media (max-width: $md) {
+			@media (max-width: $lg) {
 				display: flex;
 			}
 			.button-inner-wrapper {
@@ -241,7 +241,17 @@
 		margin-left: auto !important;
 	}
 }
-
+#menu-primary {
+	@media (min-width: $md) {
+		font-size: 18px;
+		li {
+			margin-right: 0rem;
+		}
+	}
+	@media (min-width: $xl) {
+		margin-left: 100px;
+	}
+}
 /*-----------------------------------------------------------------------------------*/
 /*  main style
 /*-----------------------------------------------------------------------------------*/
@@ -251,13 +261,15 @@
 	flex-direction: row;
 	list-style: none;
 	transition: all 0.3s;
-	padding: 0px;
+
 	text-transform: capitalize;
 	align-items: center;
 	margin-bottom: initial !important;
 	flex: 1;
-	margin-left: 100px;
+
 	font-size: $px18;
+	padding: 0px !important;
+
 	a {
 		font-family: $font-Avenir-heavy;
 		line-height: initial !important;
@@ -267,7 +279,7 @@
 		color: $teal;
 	}
 
-	@media (max-width: $md) {
+	@media (max-width: $lg) {
 		margin-left: 0px;
 		margin-top: 100px;
 		display: none;
@@ -331,7 +343,7 @@
 
 .menuMobile {
 	position: fixed;
-	top: 110px;
+
 	left: 100%;
 	width: 100%;
 	opacity: 0 !important;
@@ -380,6 +392,7 @@
 		display: flex;
 		flex-direction: column;
 		transition: max-height 1s;
+
 		li > a {
 			line-height: 3rem;
 			&:hover {

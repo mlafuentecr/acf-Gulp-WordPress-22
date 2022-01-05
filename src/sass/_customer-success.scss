@@ -41,6 +41,67 @@
 		background: #f2f2f2;
 	}
 
+	.customer_banner_title {
+		font-style: normal;
+		font-size: $px18;
+		line-height: 140%;
+		/* or 25px */
+		letter-spacing: 0.2em;
+
+		color: $prim-purple;
+	}
+
+	.featuredstory-logo {
+		position: relative;
+		&:after {
+			content: '';
+			height: 50%;
+			width: 1px;
+			background-color: rgb(163, 163, 163);
+			right: 50px;
+			display: flex;
+			position: absolute;
+			top: 25%;
+		}
+	}
+	.featured_text {
+		font-family: $font-light;
+		font-weight: 600;
+		font-size: $px18;
+		line-height: 140%;
+		letter-spacing: 0.2em;
+	}
+
+	.customer_banner_subtitle {
+		font-family: $font-Bold;
+		font-weight: 600;
+		font-size: $px35;
+		line-height: 140%;
+		color: $prim-purple;
+	}
+	.customer_banner_content {
+		p {
+			@extend .customer_banner_subtitle;
+			color: black;
+			font-style: normal;
+			font-weight: bold;
+			line-height: 46px;
+		}
+	}
+
+	.featured_content {
+		font-family: $font-light;
+		font-size: $px22;
+		line-height: 37px;
+		color: #444444;
+		position: relative;
+	}
+	.quote_name {
+		color: $prim-purple;
+	}
+	.quote_profession {
+		font-weight: bold;
+	}
 	.quote_content {
 		position: relative;
 		:after {
@@ -56,6 +117,13 @@
 			// 	top: 0rem !important;
 			// 	top: 60px;
 			// }
+		}
+	}
+	.g2-content {
+		p:first-child {
+			@media (max-width: $md) {
+				text-align: center;
+			}
 		}
 	}
 	.g2 {
@@ -90,9 +158,10 @@
 	// Circles
 	// ==================================
 
-	$circleSize: 100px;
-	$circleSizeinter: 80px; //-20
-
+	$circleSize: 80px;
+	$circleSizeinter: 70px; //-20
+	$clip-path: circle(150% at 92px 30px);
+	$clip: rect(0, 100px, 150px, 40px);
 	.circle-wrap {
 		width: $circleSize;
 		height: $circleSize;
@@ -109,9 +178,9 @@
 				$circleDeg: 160deg;
 				$color: pink;
 				.mask {
-					clip: rect(0, 100px, 150px, 50px);
+					clip: $clip;
 					.fill {
-						clip-path: circle(106.67% at 92px 40px);
+						clip-path: $clip-path;
 						background-color: $color;
 					}
 				}
@@ -140,9 +209,9 @@
 				$circleDeg: 140deg;
 				$color: red;
 				.mask {
-					clip: rect(0, 100px, 150px, 50px);
+					clip: $clip;
 					.fill {
-						clip-path: circle(106.67% at 92px 40px);
+						clip-path: $clip-path;
 						background-color: $color;
 					}
 				}

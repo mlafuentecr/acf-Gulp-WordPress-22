@@ -49,6 +49,11 @@ footer {
 	h3 {
 		color: white !important;
 	}
+	ul {
+		li {
+			margin: 0px;
+		}
+	}
 }
 ul {
 	@media (max-width: $md) {
@@ -667,7 +672,9 @@ strong {
 	background-size: cover;
 	align-items: stretch;
 	display: flex;
-
+	.block-picture__img {
+		max-width: 100%;
+	}
 	.container,
 	.container {
 		display: flex;
@@ -1891,7 +1898,7 @@ footer {
 			display: flex;
 			justify-content: flex-start;
 			flex: 1;
-			margin-left: 200px;
+
 			@media (max-width: $md) {
 				margin-left: 0px;
 				padding-left: 0px;
