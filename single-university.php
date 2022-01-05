@@ -42,7 +42,7 @@ get_header(); ?>
 
   <!-- 0 banner -->
   <section class="intro-banner " style="background-image: url(<?php echo $page_fields['first_background']['url']; ?>);">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
 
@@ -62,7 +62,7 @@ get_header(); ?>
 
   <!-- contentnt -->
   <section class="content">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <div class="nav col-md-3 col-sm-12 d-sm-none d-md-block">

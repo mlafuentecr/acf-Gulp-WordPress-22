@@ -12,7 +12,7 @@ get_header();
 
   <section class="group intro-banner"
     style="background-image: url(<?php echo $page_fields['first_background']['url']; ?>);">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
           <div class="label">
@@ -70,7 +70,7 @@ get_header();
 
   <!-- section 4 -->
   <section class="section-4 post-related">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <?php 

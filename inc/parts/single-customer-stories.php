@@ -30,7 +30,7 @@
 
     <!-- 0 banner -->
     <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_img']; ?>);">
-      <div class="container-xl">
+      <div class="container">
         <div class="row">
           <article class="headline">
             <h1><?php echo get_the_title(); ?></h1>
@@ -42,11 +42,11 @@
       </div>
     </section>
 
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <section class="company-descr">
-          <div class="container-xl">
+          <div class="container">
             <div class="row">
 
               <article>

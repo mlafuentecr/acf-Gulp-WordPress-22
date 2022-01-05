@@ -16,7 +16,7 @@ $pageFields = get_fields();
 
   <!-- 0 banner -->
   <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_img']; ?>);">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
           <?php if ($pageFields['banner_title']): ?>
@@ -123,7 +123,7 @@ $cta1 = get_field("cta_2", "option");
     <div class="container">
       <div class="row">
         <h2><?php echo $cta1["title"] ; ?></h2>
-        <a class="<?php echo $btn?>" rel="noopener" href="<?php echo $btnRequesDemo['url']; ?>">
+        <a class="<?php echo $btn?> col-4 m-auto" rel="noopener" href="<?php echo $btnRequesDemo['url']; ?>">
           <span><?php echo $btnRequesDemo['title']; ?></span>
         </a>
       </div>

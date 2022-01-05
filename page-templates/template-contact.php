@@ -18,7 +18,7 @@ $bannerContent = get_field('banner_content');
 
     <!-- 0 banner -->
     <section class="intro-banner">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
       <article class="headline">
 				<?php if($bannerTitle): ?>
@@ -34,7 +34,7 @@ $bannerContent = get_field('banner_content');
 
 
   <section class="block  form">
-    <div class="container-xl">
+    <div class="container">
 
 	  <div class="row moveup">
         <div class="box-with-tab ">

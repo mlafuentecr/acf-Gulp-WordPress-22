@@ -12,7 +12,7 @@ $sectionFour = get_field('section_four');
 
     <!-- 0 banner -->
 <section class="intro-banner">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
       <div class="col-left">
@@ -50,7 +50,7 @@ $sectionFour = get_field('section_four');
 
 
 <section class="question">
-  <div class="container-xl">
+  <div class="container">
         <div class="row">
                     <div class="col-left">
                         <p class="heading-section"><?php echo trim(nl2br($sectionTwo['heading'])) ?></p>
@@ -84,7 +84,7 @@ $sectionFour = get_field('section_four');
 
 
 <section class="investment">
-<div class="container-xl">
+<div class="container">
         <div class="row">
                     <div class="col-left">
                         <p class="investment__heading heading-section">

@@ -86,7 +86,7 @@ foreach($application_types as $type){
 
       <!-- 3 logos -->
       <section class="hooks logos">
-        <div class="container-xl">
+        <div class="container">
 
 
           <div class="row mt-5 pb-5">

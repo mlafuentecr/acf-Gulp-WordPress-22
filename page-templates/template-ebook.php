@@ -9,7 +9,7 @@ $sectionOne = get_field('section_one');
 <div id='ebook-page' class="intern-pg" >
     <!-- mbanner -->
     <section class="intro-banner">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
       <div class="ebook__wrapper">
 

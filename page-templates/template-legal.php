@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="legal" class="intern-pg">
     <!-- 0 banner -->
     <section class="intro-banner">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
       <article class="headline">
       <?php if($bannerTitle): ?>
@@ -24,7 +24,7 @@ get_header(); ?>
 
       <!-- 2 content -->
       <section class="content">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
  
       <div class="block-nav">

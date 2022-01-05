@@ -60,7 +60,20 @@ ul {
 		margin-bottom: $px24;
 	}
 }
-
+.shadow {
+	&-top_out {
+		position: relative;
+		&::before {
+			@include shadowTop;
+		}
+	}
+	&-bottom_out {
+		position: relative;
+		&::after {
+			@include shadowBottom;
+		}
+	}
+}
 .imgWrap {
 	max-width: 500px !important;
 }
@@ -228,15 +241,6 @@ strong {
 }
 .content-center {
 	margin: auto !important;
-}
-.container,
-.container {
-	max-width: 1262px;
-	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
 }
 
 .cta {
@@ -827,11 +831,6 @@ strong {
 	position: relative;
 	padding: 0px;
 
-	.container,
-	.container {
-		padding: 50px;
-	}
-
 	&:hover {
 		:after {
 			transition: all 0.3s;
@@ -861,7 +860,7 @@ strong {
 		list-style-type: none;
 		transition: all 2s;
 		overflow: hidden;
-		max-width: 90%;
+		// max-width: 90%;
 		margin: auto;
 		filter: grayscale(1);
 
@@ -893,8 +892,8 @@ strong {
 		li {
 			transition: all 1s;
 			min-width: 200px;
-			margin-right: 3%;
-			margin-left: 3%;
+			margin-right: 2%;
+			margin-left: 2%;
 			@include flexCenter;
 			&:before {
 				display: none !important;
@@ -1421,7 +1420,6 @@ strong {
 
 		&:hover {
 			color: white;
-			background-color: $tealdrk;
 		}
 	}
 
@@ -2129,7 +2127,7 @@ footer {
 /*------------------------------------------*/
 .slick-prev,
 .slick-next {
-	width: 58px;
+	width: 58px !important;
 	height: 58px;
 	top: 10px;
 	display: flex !important;

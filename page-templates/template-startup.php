@@ -17,7 +17,7 @@ get_header();
 
   <section class="group intro-banner"
     style="background-image: url(<?php echo $page_fields['first_background']['url']; ?>);">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
           <h1 class="h1">
@@ -34,7 +34,7 @@ get_header();
 
   <!-- section 2 -->
   <section class="section-2">
-    <div class="container-xl">
+    <div class="container">
       <div class="row ">
         <h2>
           <?php echo $page_fields['second_heading']; ?>
@@ -68,7 +68,7 @@ get_header();
 
   <!-- section 3 -->
   <section class="section-3">
-    <div class="container-xl">
+    <div class="container">
       <div class="row ">
 
         <h2>
@@ -95,7 +95,7 @@ get_header();
   <!-- section 4 -->
 
   <section class="section-4">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <?php 

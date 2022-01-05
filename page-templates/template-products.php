@@ -17,7 +17,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
 
   <!-- 0 banner -->
   <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_bg']; ?>);">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
           <?php if ($pageFields['banner_title']): ?>
@@ -44,7 +44,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
 
   <!-- First section-->
   <section class="block compliance-control two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <?php $hero = $pageFields["hero_group"]; ?>
         <div class="product-img">
@@ -65,7 +65,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
 
   <!-- Second section-->
   <section class="block platfom-audit two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
 
@@ -131,7 +131,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
 
   <!-- four section-->
   <section class="block question-library two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <?php $hero4= $pageFields["hero_group_four"]; ?>
@@ -162,7 +162,7 @@ $bannerBtn = get_field('request_demo_button', 'option');
 
   <!-- fifth section-->
   <section class="block powered-experts two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <div class="description">

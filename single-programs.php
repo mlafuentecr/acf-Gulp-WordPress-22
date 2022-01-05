@@ -14,7 +14,7 @@ get_header();
 
   <!-- 0 banner -->
   <section class="intro-banner" style="background-image: url(<?php echo $pageFields['intro_bg_image'] ?>);">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
           <?php if ($pageFields['intro_heading']): ?>
@@ -46,7 +46,7 @@ get_header();
 
   <!-- 2 implementation -->
   <section class="section_2 content-list">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <div class="box-with-tab">
@@ -78,7 +78,7 @@ get_header();
   <!-- 3 Strategically onboard img left-->
   <?php if ($pageFields['info_one_show']): ?>
   <section class="block section_3 mt-5 two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <div class="product-img">
           <img class="" src="<?php echo $pageFields['info_one_media']['image'] ?>"
@@ -101,7 +101,7 @@ get_header();
   <!-- 3 Strategically onboard img right-->
   <?php if ($pageFields['info_two_show']): ?>
   <section class="block section_4 two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <div class="description">
@@ -127,7 +127,7 @@ get_header();
   <!-- 3 Strategically onboard img left-->
   <?php if ($pageFields['info_three_show']): ?>
   <section class="block section_5 two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <div class="product-img">
           <img loading=“lazy” class="" src="<?php echo $pageFields['info_three_media']['image'] ?>"
@@ -151,7 +151,7 @@ get_header();
   <!-- 3 Strategically onboard img right-->
   <?php if ($pageFields['info_four_show']): ?>
   <section class="block section_6 two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <div class="description">
@@ -176,7 +176,7 @@ get_header();
   <!-- 3 Strategically onboard img left-->
   <?php if ($pageFields['info_five_show']): ?>
   <section class="block section_7 two-blocks">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <div class="product-img">
           <img loading=“lazy” class="" src="<?php echo $pageFields['info_five_media']['image'] ?>"
@@ -233,7 +233,7 @@ $posts = get_posts($args);
                 ?>
 
 
-    <div class="container-xl">
+    <div class="container">
       <div class=" row">
         <?php 
         echo "<h2 class='text-center mt-5 mb-5'>".$pageFields['customer_heading']."</h2>";
@@ -277,7 +277,7 @@ $posts = get_posts($args);
 
     <!-- 4 faq -->
     <section class="faq mb-5">
-      <div class="container-xl">
+      <div class="container">
         <div class="row">
           <h2 class="faq__heading"><?php echo $pageFields['faq_heading'] ?></h2>
           <div class="box">

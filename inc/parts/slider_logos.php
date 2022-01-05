@@ -7,7 +7,7 @@ $link_customer = get_field('link_customer', 'option');
 $logos = get_field('logo_repeater', 'option');
 
 ?>
-<section class="customers">
+<section class="customers my-5">
   <div class="container">
     <div class="row">
       <!-- <h2><?php // echo $sectionlogo_heading; ?></h2> -->

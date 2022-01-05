@@ -26,7 +26,7 @@ $query = new WP_Query($args);
 
   <!-- 0 banner -->
   <section class="intro-banner " style="background-image: url(<?php echo $pagefields['first_background']['url']; ?>);">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
           <?php if ($pagefields['first_heading']): ?>
@@ -50,7 +50,7 @@ $query = new WP_Query($args);
 
   <!-- sec3 SOC 2 repor-->
   <section id="resources" class="content-list soc-2">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <div class="box">

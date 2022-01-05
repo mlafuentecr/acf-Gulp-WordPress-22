@@ -127,8 +127,8 @@
 				img {
 					display: block;
 					margin: 0 auto;
-					height: 100%;
-					width: auto;
+					height: auto;
+					max-width: 100%;
 				}
 			}
 		}
@@ -252,7 +252,6 @@
 		position: relative;
 		flex-direction: row;
 		min-height: 100px;
-		padding-left: 2rem;
 		overflow: hidden;
 		height: 70px;
 		min-width: 100%;

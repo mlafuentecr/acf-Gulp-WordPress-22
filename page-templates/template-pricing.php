@@ -12,7 +12,7 @@ get_header(); ?>
 <div id="pricing" class=" intern-pg">
   <!-- 0 banner -->
   <section class="intro-banner">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
           <h1><?php echo $bannerTitle; ?></h1>

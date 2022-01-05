@@ -113,7 +113,7 @@ if ($theme === 'Light') {
 
   <?php if ($pageFields['show_section']['related_posts']): ?>
   <section class="section-4">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
 
         <?php

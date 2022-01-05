@@ -24,7 +24,7 @@ $pageFields = get_fields();
 
   <?php if($pageFields['subbanner']): ?>
   <section class="subbanner shadow-bottom">
-    <div class="container-xl">
+    <div class="container">
       <?php echo $pageFields['subbanner']; ?>
     </div>
   </section>
@@ -33,7 +33,7 @@ $pageFields = get_fields();
 
   <!-- 2  why-laika -->
   <section class="sec_2  horizontal__block horizontal__block-lines mt-5 mb-5">
-    <div class="container-xl">
+    <div class="container">
       <div class="headline">
         <div class="title title-purple mb-5"><?php echo $pageFields['sec_two_ltitle']; ?></div>
         <div class="text"><?php echo $pageFields['sec_two_lsubtitle']; ?></div>
@@ -62,7 +62,7 @@ $pageFields = get_fields();
   <!-- sec_4 integrated-audit -->
   <?php if (get_field('sec_three_title')):  ?>
   <section class="full-bar  bg-gray sec_3  text-center text-purple block-padding ">
-    <div class="container-xl">
+    <div class="container">
 
       <h2><?php echo get_field('sec_three_title'); ?></h2>
       <div class="content">
@@ -82,7 +82,7 @@ $pageFields = get_fields();
   <!-- 4 sec_four_list  why-laika-->
   <?php if ($pageFields['articles']): ?>
   <section class="sec_4 content-list  block">
-    <div class="container-xl">
+    <div class="container">
 
       <?php foreach ($pageFields['articles'] as $articles): ?>
 
@@ -116,7 +116,7 @@ $pageFields = get_fields();
   <!-- 5 -->
   <?php if ($pageFields['sec_five_title']): ?>
   <section class="full-bar faq bg-purple sec_5 integrated-audit  block-padding ">
-    <div class="container-xl">
+    <div class="container">
 
       <div class="headline">
         <h2><?php echo $pageFields['sec_five_title']; ?></h2>

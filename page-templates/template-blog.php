@@ -108,7 +108,7 @@ function truncate($str, $width)
 
 
   <section class="group intro-banner">
-    <div class="container-xl">
+    <div class="container">
 
       <div class="row">
 
@@ -120,12 +120,12 @@ function truncate($str, $width)
           <p class="banner-content"> <?php echo $postFields['preview_content']; ?></p>
           <?php endif; ?>
 
-          <a href="<?php echo get_permalink($post_feature_id) ?>" class="arrow">
+          <a href="<?php echo get_permalink($post_feature_id) ?>" class="arrow m-0">
             <?php echo $pageFields['link_name_full_post'] ?>
           </a>
 
         </article>
-        <div class="picture">
+        <div class="picture col-12">
           <?php echo get_the_post_thumbnail($post_feature_id, 'large'); ?>
         </div>
       </div>
@@ -198,7 +198,7 @@ if ($query->have_posts()) {
                   <div class="content">
                     <h3>' . get_the_title() . '</h3>
                     <div class="description">' . truncate($page_fields["preview_content"], 160) . '</div>
-                    <a  href="' . get_the_permalink() . '" class="arrow">' . $page_fields["cta_text"] . '</a>
+                    <a  href="' . get_the_permalink() . '" class="arrow m-0">' . $page_fields["cta_text"] . '</a>
                     <div class="cat">';
   catGroup();
   echo '</div> </div> </li>';

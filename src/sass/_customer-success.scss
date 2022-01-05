@@ -1,7 +1,219 @@
 #customer-success {
 	.intro-banner {
-		// .row {
-		// 	margin: auto;
-		// }
+		min-height: 445px;
+
+		.video-youtube {
+			position: relative;
+			.icon-video {
+				position: absolute;
+				left: calc(50% - 30px);
+				top: calc(50% - 30px);
+			}
+			.img-video {
+				max-width: 100%;
+			}
+		}
 	}
+	.youtube {
+		height: 600px;
+		position: relative;
+		.icon-video {
+			position: absolute;
+		}
+	}
+	.filter {
+		margin-top: -80px;
+		min-height: 125px;
+		z-index: 99;
+		position: relative;
+		.bg-purple {
+			min-height: 125px;
+		}
+	}
+	.box {
+		min-height: auto;
+	}
+	.featured {
+		background: white;
+		border-radius: 0px;
+	}
+	.bg-gray {
+		background: #f2f2f2;
+	}
+
+	.quote_content {
+		position: relative;
+		:after {
+			color: $prim-purple;
+			position: absolute;
+			left: 0;
+			content: url('../../inc/images/quote.svg');
+			background-repeat: no-repeat;
+			top: -3rem;
+			font-family: $font-fair-bold;
+
+			// @media (max-width: $md) {
+			// 	top: 0rem !important;
+			// 	top: 60px;
+			// }
+		}
+	}
+	.g2 {
+		.badges {
+			max-width: 100%;
+		}
+		p {
+			font-family: $font-light;
+		}
+		b,
+		strong {
+			font-family: $font-Bold;
+		}
+		ul {
+			list-style: none; /* Remove default bullets */
+			padding-left: 1rem;
+			li {
+				margin: 0;
+				&::before {
+					content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+					color: $prim-purple; /* Change the color */
+					font-weight: bold; /* If you want it to be bold */
+					display: inline-block; /* Needed to add space between the bullet and the text */
+					width: 1em; /* Also needed for space (tweak if needed) */
+					margin-left: -1em; /* Also needed for space (tweak if needed) */
+				}
+			}
+		}
+	}
+
+	// ==================================
+	// Circles
+	// ==================================
+
+	$circleSize: 100px;
+	$circleSizeinter: 80px; //-20
+
+	.circle-wrap {
+		width: $circleSize;
+		height: $circleSize;
+		background: #e6e2e7;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.circle {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&.full-9 {
+				$circleDeg: 160deg;
+				$color: pink;
+				.mask {
+					clip: rect(0, 100px, 150px, 50px);
+					.fill {
+						clip-path: circle(106.67% at 92px 40px);
+						background-color: $color;
+					}
+				}
+				.mask.full,
+				.fill {
+					animation: fill ease-in-out 3s;
+					transform: rotate($circleDeg); //este controla el lleno
+				}
+				@keyframes fill {
+					0% {
+						transform: rotate(0deg);
+					}
+					100% {
+						transform: rotate($circleDeg);
+					}
+				}
+				.mask,
+				.fill {
+					width: $circleSize;
+					height: $circleSize;
+					position: absolute;
+					border-radius: 50%;
+				}
+			}
+			&.full-8 {
+				$circleDeg: 140deg;
+				$color: red;
+				.mask {
+					clip: rect(0, 100px, 150px, 50px);
+					.fill {
+						clip-path: circle(106.67% at 92px 40px);
+						background-color: $color;
+					}
+				}
+				.mask.full,
+				.fill {
+					animation: fill ease-in-out 3s;
+					transform: rotate($circleDeg); //este controla el lleno
+				}
+				@keyframes fill {
+					0% {
+						transform: rotate(0deg);
+					}
+					100% {
+						transform: rotate($circleDeg);
+					}
+				}
+				.mask,
+				.fill {
+					width: $circleSize;
+					height: $circleSize;
+					position: absolute;
+					border-radius: 50%;
+				}
+			}
+		}
+		.circle-1 {
+			$color: #fc4b36 !important;
+			.mask .fill {
+				background-color: $color;
+			}
+			.inside-circle {
+				color: $color;
+			}
+		}
+		.circle-2 {
+			$color: #5a3d9f !important;
+			.mask .fill {
+				background-color: $color;
+			}
+			.inside-circle {
+				color: $color;
+			}
+		}
+		.circle-3 {
+			$color: #2e91cb !important;
+			.mask .fill {
+				background-color: $color;
+			}
+			.inside-circle {
+				color: $color;
+			}
+		}
+		.inside-circle {
+			width: $circleSizeinter;
+			height: $circleSizeinter;
+
+			border-radius: 50%;
+			background: #fff;
+
+			position: absolute;
+			z-index: 100;
+			font-weight: 700;
+			font-size: 2em;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	// ==================================
+	// Circle ends
+	// ==================================
 }

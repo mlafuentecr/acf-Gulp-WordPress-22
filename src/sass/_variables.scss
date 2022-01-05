@@ -167,3 +167,25 @@ h4 {
 		}
 	}
 }
+
+@mixin shadowTop {
+	content: '';
+	position: absolute;
+	min-width: 100%;
+	background: rgb(84, 84, 84);
+	background: linear-gradient(0deg, rgb(235, 235, 235) 0%, rgba(205, 205, 205, 0) 40%);
+	height: 40px;
+	top: -40px;
+	display: flex;
+}
+@mixin shadowBottom {
+	content: '';
+	position: absolute;
+	min-width: 100%;
+	background: rgb(84, 84, 84);
+	height: 40px;
+	display: flex;
+	top: initial;
+	bottom: -40px;
+	background: linear-gradient(180deg, rgb(235, 235, 235) 0%, rgba(205, 205, 205, 0) 40%);
+}

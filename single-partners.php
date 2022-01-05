@@ -39,7 +39,7 @@ endif;
   <section id='section-1' class="intro-banner  "
     style="background-image: url(<?php echo $page_fields['bg-image_sec1']; ?>);">
 
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <div class="textWrapper">
           <div class="logos">
@@ -68,7 +68,7 @@ endif;
 
 
   <div class="section section-2 ">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <!-- form section 2 focus on your bussines  -->
         <?php if( get_field('content_2'))   { $link=get_field('btn_sec2'); ?>
@@ -135,7 +135,7 @@ endif;
   <!-- section-4 icons -->
   <?php if( $sec3Icons ) {  ?>
   <section class="section section-4">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <h2 class="heading"><?php echo $page_fields['title_sec4']; ?></h2>
         <div class="content-list">

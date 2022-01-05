@@ -7,7 +7,7 @@ $banner = $pageFields['banner_image'];
 ?>
 <!-- 0 banner -->
 <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
-  <div class="container-xl">
+  <div class="container">
 
     <?php if ($pageFields['banner_title']): ?>
     <div class="content">

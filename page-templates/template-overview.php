@@ -22,7 +22,7 @@ $pageFields = get_fields();
   <!-- 2  -->
   <?php if ($pageFields['sec_two_title']): ?>
   <section class="sec_2 content-list block">
-    <div class="container-xl">
+    <div class="container">
 
       <div class="headline">
         <div class="title title-purple"><?php echo $pageFields['sec_two_title']; ?></div>
@@ -56,7 +56,7 @@ $pageFields = get_fields();
   <!-- 3 list   -->
   <?php if (get_field('sec_three_title')):  ?>
   <section class="sec_3 full-bar horizontal__block  bg-purple block-padding">
-    <div class="container-xl">
+    <div class="container">
       <?php 
         $title = get_field('sec_three_title'); 
         $content = get_field('sec_three_content'); 
@@ -89,7 +89,7 @@ $pageFields = get_fields();
   <!-- 4 sec_four_list -->
   <?php if ($pageFields['sec_four_list']): ?>
   <section class="sec_4 content-list block">
-    <div class="container-xl">
+    <div class="container">
 
       <?php foreach ($pageFields['sec_four_list'] as $secfourListValue): ?>
 

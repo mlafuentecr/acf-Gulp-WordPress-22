@@ -21,7 +21,7 @@ $banner = $pageFields['banner_image'];
   <!-- 2 social boxes -->
   <?php if ($pageFields['boxes']): ?>
   <section class="content-list social-box block shadow-bottom ">
-    <div class="container-xl">
+    <div class="container">
 
       <?php 
       $boxes = $pageFields['boxes']['box'];
@@ -46,7 +46,7 @@ $banner = $pageFields['banner_image'];
   <!-- 3 founders -->
   <?php if ($pageFields['sec_three_list']): ?>
   <section class="content-list  founders block ">
-    <div class="container-xl">
+    <div class="container">
 
       <div class="headline">
         <h2><?php echo $pageFields['sec_3_title']; ?></h2>
@@ -80,7 +80,7 @@ $banner = $pageFields['banner_image'];
   <!-- 4 Careers -->
   <?php if ($pageFields['sec_4_title']): ?>
   <section class="careers full-bar bg-purple ">
-    <div class="container-xl">
+    <div class="container">
       <div class="title "><?php echo $pageFields['sec_4_title']; ?></div>
       <div class="content">
         <?php echo $pageFields['sec_4_subtitle']; ?>
@@ -94,7 +94,7 @@ $banner = $pageFields['banner_image'];
   <!-- 5 investors  -->
   <?php if ($pageFields['sec_5_title']): ?>
   <section class="investors full-bar ">
-    <div class="container-xl">
+    <div class="container">
 
       <div class="headline">
         <div class="title title-purple"><?php echo $pageFields['sec_5_title']; ?></div>
@@ -114,7 +114,7 @@ $banner = $pageFields['banner_image'];
   <!-- 4 network -->
   <?php if ($pageFields['net_title']): ?>
   <section class="networks full-bar bg-darkGray ">
-    <div class="container-xl">
+    <div class="container">
 
       <div class="headline">
         <div class="title"><?php echo $pageFields['net_title']; ?></div>

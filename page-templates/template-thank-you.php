@@ -13,7 +13,7 @@ get_header(); ?>
 <div id="contact-us" class="intern-pg thanks1">
   <!-- 0 banner -->
   <section class="intro-banner">
-    <div class="container-xl">
+    <div class="container">
       <div class="row">
         <article class="headline">
           <?php if($bannerTitle):?>
