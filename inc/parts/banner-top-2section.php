@@ -20,7 +20,7 @@ $banner = $pageFields['banner_image'];
     <?php endif; ?>
 
     <?php if ($banner['url']): ?>
-    <div class="hero col-12 col-md-6">
+    <div class="col-12 col-md-6 pic">
       <img src="<?php echo $banner['url'] ?>" class="block-picture__img" alt="<?php echo $banner['title'] ?>">
     </div>
     <?php endif; ?>

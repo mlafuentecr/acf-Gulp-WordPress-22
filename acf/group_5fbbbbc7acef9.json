@@ -179,5 +179,9 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634248706
+    "show_in_graphql": 1,
+    "graphql_field_name": "pageCustomerPreview",
+    "map_graphql_types_from_location_rules": 0,
+    "graphql_types": "",
+    "modified": 1641441584
 }

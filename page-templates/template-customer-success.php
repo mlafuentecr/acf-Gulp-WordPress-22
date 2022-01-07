@@ -94,11 +94,50 @@ $cta = $pageFields['cta'];
 
   <div class="bg-gray">
     <section class="customers mt-5 d-flex flex-wrap">
-
       <div class="container">
         <section class="filter col-12">
           <div class="bg-purple rounded text-center d-flex  justify-content-center align-items-center">
-            SORT BY
+
+            <div class="bar col-10 m-auto d-flex flex-wrap  align-items-center justify-content-around">
+
+              <div class="col-lg-2 col-12  ">
+                SORT BY
+              </div>
+
+              <div class="col-lg-2 col-12  ">
+                <select name="pets" id="select1">
+                  <option value=""> All Industries </option>
+                  <option value="dog">Internet</option>
+                  <option value="cat">Other</option>
+                </select>
+              </div>
+
+
+              <div class="col-lg-2 col-12  ">
+                <select name="pets" id="select2">
+                  <option value=""> All Company Sizes </option>
+                  <option value="dog">Internet</option>
+                  <option value="cat">Other</option>
+                </select>
+              </div>
+
+
+              <div class="col-lg-2 col-12  ">
+                <select name="pets" id="select3">
+                  <option value=""> All Locations </option>
+                  <option value="dog">Internet</option>
+                  <option value="cat">Other</option>
+                </select>
+              </div>
+
+
+              <div class="col-lg-2 col-12  ">
+                <a href="http://"> <img class='lazyload'
+                    src='<?php echo get_template_directory_uri(); ?>/inc/images/search-btn.png' alt='search' /></a>
+              </div>
+
+            </div>
+
           </div>
         </section>
       </div>
@@ -127,55 +166,10 @@ $cta = $pageFields['cta'];
         </section>
       </div>
       <div class="customers-boxes container">
-        <div class="row p-0  gx-3 ">
-          <div class="col-md-12 col-lg mb-3">
-            <div class="box rounded p-3 border">
-              <figure>
-                img
-              </figure>
-              <div class="content">
-                <h3>We Raised a $35M Series B!</h3>
-                <div class="description">Today, we're excited to announce our $35 million Series B led by JPMorgan. You
-                  can
-                  read all about it in our press release and how our team has built the...</div>
-                <a href="https://heylaika.com/blog/laika-announcements/series-b/" class="arrow">Learn more</a>
-                <div class="cat"><span> Laika Announcements </span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 col-lg mb-3">
-            <div class="box rounded p-3 border">
-              <figure>
-                img
-              </figure>
-              <div class="content">
-                <h3>We Raised a $35M Series B!</h3>
-                <div class="description">Today, we're excited to announce our $35 million Series B led by JPMorgan. You
-                  can
-                  read all about it in our press release and how our team has built the...</div>
-                <a href="https://heylaika.com/blog/laika-announcements/series-b/" class="arrow">Learn more</a>
-                <div class="cat"><span> Laika Announcements </span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 col-lg mb-3">
-            <div class="box rounded p-3 border">
-              <figure>
-                img
-              </figure>
-              <div class="content">
-                <h3>We Raised a $35M Series B!</h3>
-                <div class="description">Today, we're excited to announce our $35 million Series B led by JPMorgan. You
-                  can
-                  read all about it in our press release and how our team has built the...</div>
-                <a href="https://heylaika.com/blog/laika-announcements/series-b/" class="arrow">Learn more</a>
-                <div class="cat"><span> Laika Announcements </span></div>
-              </div>
-            </div>
-          </div>
+        <div id="customers-1" class="row p-0  gx-3 ">
+
         </div>
       </div>
-
 
     </section>
 
@@ -200,6 +194,12 @@ $cta = $pageFields['cta'];
         </div>
       </div>
     </section>
+
+    <div class="customers-boxes container">
+      <div id="customers-2" class="row p-0  gx-3 ">
+
+      </div>
+    </div>
 
     <?php if($read_more_btn['url']): ?>
     <a class="button reques-demo button-purple text-lg-start text-md-center m-auto   mb-5 mb-md-0" rel="noopener"

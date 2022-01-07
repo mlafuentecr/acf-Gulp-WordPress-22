@@ -31,9 +31,9 @@ $banner = $pageFields['banner_image'];
           
             </section>';
           }else{
-            echo '<section class="box_content" style="background-color:'.$box["color"].'">
-            <h3>'.$box['title'].'</h3>
-            <div class="content">'.$box['content'].'</div>
+            echo '<section class="box_content d-flex align-items-center" style="background-color:'.$box["color"].'">
+            <h3 class="col-12 text-left">'.$box['title'].'</h3>
+            <div class="content_text text-left">'.$box['content'].'</div>
             </section>
             ';
           }
@@ -55,7 +55,7 @@ $banner = $pageFields['banner_image'];
 
 
       <?php foreach ($pageFields['sec_three_list'] as $founder): ?>
-      <article class="item">
+      <article class="item m-4 m-md-2 ">
 
         <div class="imgWrap">
           <img class='lazyload' src='<?php echo $founder['image']['url']; ?>' alt='' width='auto' height='310' />
@@ -93,17 +93,18 @@ $banner = $pageFields['banner_image'];
 
   <!-- 5 investors  -->
   <?php if ($pageFields['sec_5_title']): ?>
-  <section class="investors full-bar ">
+  <section class="investors full-bar my-5">
     <div class="container">
 
       <div class="headline">
         <div class="title title-purple"><?php echo $pageFields['sec_5_title']; ?></div>
       </div>
 
-      <div class="content">
+      <div class="content d-flex flex-wrap">
         <?php foreach ($pageFields['logos'] as $logo): ?>
-        <img class='lazyload' src='<?php echo $logo['logo']['url']; ?>' alt='<?php echo $logo['logo']['title']; ?>'
-          width='auto' height='80' />
+        <div class="col text-center">
+          <img class='lazyload' src='<?php echo $logo['logo']['url']; ?>' alt='<?php echo $logo['logo']['title']; ?>' />
+        </div>
         <?php endforeach; ?>
       </div>
     </div>

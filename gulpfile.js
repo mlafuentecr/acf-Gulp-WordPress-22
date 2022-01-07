@@ -36,7 +36,14 @@ function internalScss() {
 
 //Js
 function jsintern() {
-	return src(['./src/js/internal.js', './src/js/popup-requestDemo.js', './src/js/slider-logos.js', './src/js/menu_principal.js'])
+	return src([
+		'./src/js/internal.js',
+		'./src/js/customer-success-post.js',
+		'./src/js/popup-requestDemo.js',
+		'./src/js/customer-success-g2.js',
+		'./src/js/slider-logos.js',
+		'./src/js/menu_principal.js',
+	])
 		.pipe(babel())
 		.pipe(uglify())
 		.pipe(concat('bundle_intern.js'))

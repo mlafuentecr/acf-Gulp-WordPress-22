@@ -108,22 +108,17 @@
 			margin-bottom: $mb-titles;
 		}
 		.content {
-			display: flex;
-			justify-content: flex-start;
-			align-items: center;
-			flex-wrap: wrap;
-
-			img {
-				max-width: 25%;
-				height: auto;
-				width: 100%;
-			}
+			// img {
+			// 	max-width: 25%;
+			// 	height: auto;
+			// 	width: 100%;
+			// }
 			@media (max-width: $md) {
 				flex-direction: column;
-
-				img {
-					margin: 20px auto;
-				}
+				// img {
+				// 	max-width: 300px;
+				// 	margin: 20px auto;
+				// }
 			}
 		}
 	}

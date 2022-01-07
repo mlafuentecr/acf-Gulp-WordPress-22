@@ -672,6 +672,10 @@ strong {
 	background-size: cover;
 	align-items: stretch;
 	display: flex;
+	.pic {
+		align-items: flex-end;
+		display: flex;
+	}
 	.block-picture__img {
 		max-width: 100%;
 	}
