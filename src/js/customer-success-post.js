@@ -3,7 +3,7 @@
 /*-----------------------------------------------------------------------------------*/
 let decVar = (PURL = null);
 
-document.readyState !== 'loading' ? customerInit() : document.addEventListener('DOMContentLoaded', () => customerInit());
+//document.readyState !== 'loading' ? customerInit() : document.addEventListener('DOMContentLoaded', () => customerInit());
 
 function customerInit() {
 	//GET URL
@@ -62,7 +62,9 @@ function startFetching() {
 		})
 		.catch(console.error);
 }
-
+/*
+Se me ocurre que puedo hacer un array de objetos y 
+*/
 function addHtml(jsonData) {
 	//console.log(jsonData.data.customers.edges);
 	//add the array to a variable
@@ -71,13 +73,17 @@ function addHtml(jsonData) {
 	const box2 = document.querySelector('#customers-2');
 	let [industriesArr, sizesArr, locationsArr] = [[], [], [], []];
 
+	console.log(posts, 'posts');
+
 	posts.forEach((item, i) => {
 		const info = item.node.pageCustomerPreview.previewCustomerPost;
 		//get categories for sort BY seccion
 		const post_data = item.node.costumerSinglePost.companyDescr.applicationForm;
 
+		let [architect, industry, size, location, certification] = '';
+
 		if (post_data) {
-			const [architect, industry, size, location, certification] = post_data;
+			[architect, industry, size, location, certification] = post_data;
 
 			//Push the Array *SELECT IN HTML
 			industriesArr.push(industry.description);
@@ -89,56 +95,74 @@ function addHtml(jsonData) {
 			sizesArr.filter((value, index) => sizesArr.indexOf(value) == index);
 			locationsArr.filter((value, index) => locationsArr.indexOf(value) == index);
 		}
+		//${size.description} ${location.description}
+		box1.innerHTML += `
+    <div class="col-12 col-md-4 mb-3  ">
+    <div class="box d-flex align-content-start rounded p-3 border">
 
+    <figure class="col-12 d-flex justify-content-center align-center mb-3">
+    <img class='lazyload m-auto' src='${info.logo.sourceUrl}'/>
+    </figure>
+    
+    <div class="content">
+      <div class="description text-left">${info.content}</div>
+    </div>
+
+    ${info.link !== null ? `<a href="${item.node.uri}" class="w-arrow">${info.link}</a>` : ''}
+
+    <div class="tag d-flex justify-content-center col-12">${info.label.labelText}</div>
+  </div>
+  
+</div>`;
 		//Cuento 3 post y los meto en box1
-		if (i < 3) {
-			box1.innerHTML += `
-            <div class="col-12 col-md-4 mb-3 ">
-            <div class="box d-flex align-content-start rounded p-3 border">
+		// if (i < 3) {
+		// 	box1.innerHTML += `
+		//         <div class="col-12 col-md-4 mb-3 ">
+		//         <div class="box d-flex align-content-start rounded p-3 border">
 
-            <figure class="col-12 d-flex justify-content-center align-center mb-3">
-            <img class='lazyload m-auto' src='${info.logo.sourceUrl}'/>
-            </figure>
-            
-            <div class="content">
-              <div class="description text-left">${info.content}</div>
-            </div>
+		//         <figure class="col-12 d-flex justify-content-center align-center mb-3">
+		//         <img class='lazyload m-auto' src='${info.logo.sourceUrl}'/>
+		//         </figure>
 
-            ${info.link !== null ? `<a href="${item.node.uri}" class="w-arrow">${info.link}</a>` : ''}
+		//         <div class="content">
+		//           <div class="description text-left">${info.content}</div>
+		//         </div>
 
-            <div class="tag d-flex justify-content-center col-12">${info.label.labelText}</div>
-          </div>
-          
-        </div>`;
-		} else {
-			box2.innerHTML += `
-          <div class="col-12 col-md-4 mb-3 ">
-          <div class="box d-flex  align-content-start rounded p-3 border">
+		//         ${info.link !== null ? `<a href="${item.node.uri}" class="w-arrow">${info.link}</a>` : ''}
 
-            <figure class="col-12 d-flex justify-content-center align-center mb-3">
-            <img class='lazyload m-auto' src='${info.logo.sourceUrl}'/>
-            </figure>
-            
-            <div class="content">
-              <div class="description text-left">${info.content}</div>
-            </div>
+		//         <div class="tag d-flex justify-content-center col-12">${info.label.labelText}</div>
+		//       </div>
 
-            ${info.link !== null ? `<a href="${item.node.uri}" class="w-arrow">${info.link}</a>` : ''}
+		//     </div>`;
+		// } else {
+		// 	box2.innerHTML += `
+		//       <div class="col-12 col-md-4 mb-3 ">
+		//       <div class="box d-flex  align-content-start rounded p-3 border">
 
-            <div class="tag d-flex justify-content-center col-12">${info.label.labelText}</div>
-          </div>
-          
-        </div>`;
-		}
+		//         <figure class="col-12 d-flex justify-content-center align-center mb-3">
+		//         <img class='lazyload m-auto' src='${info.logo.sourceUrl}'/>
+		//         </figure>
+
+		//         <div class="content">
+		//           <div class="description text-left">${info.content}</div>
+		//         </div>
+
+		//         ${info.link !== null ? `<a href="${item.node.uri}" class="w-arrow">${info.link}</a>` : ''}
+
+		//         <div class="tag d-flex justify-content-center col-12">${info.label.labelText}</div>
+		//       </div>
+
+		//     </div>`;
+		// }
 	});
 
 	industriesArr = Array.from(new Set(industriesArr));
 	sizesArr = Array.from(new Set(sizesArr));
 	locationsArr = Array.from(new Set(locationsArr));
 
-	console.log(industriesArr, 'industriesArr');
-	console.log(sizesArr, 'sizesArr');
-	console.log(locationsArr, 'locationsArr');
+	// console.log(industriesArr, 'industriesArr');
+	// console.log(sizesArr, 'sizesArr');
+	// console.log(locationsArr, 'locationsArr');
 
 	//FILL THE *SELECT IN HTML
 	const select1 = document.querySelector('#select1');

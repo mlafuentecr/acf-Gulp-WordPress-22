@@ -148,6 +148,24 @@ ul {
 	justify-content: flex-start;
 	font-family: $font-Avenir-heavy;
 	margin: auto;
+	&:after {
+		content: url('../../inc/images/icon-arrow-p-light.svg');
+		position: relative;
+		transition: all 1s;
+		background-position: center;
+		display: inline-block;
+		width: 25px;
+		height: 20px;
+		margin-left: 10px;
+	}
+	&:hover {
+		color: red;
+		text-decoration: none;
+		&:after {
+			margin-left: 20px;
+		}
+	}
+
 	@media (max-width: $md) {
 		white-space: normal;
 		font-size: 17px !important;
@@ -159,23 +177,6 @@ ul {
 
 	&-start {
 		justify-content: flex-start;
-	}
-	&:after {
-		content: url('../../inc/images/icon-arrow-p-light.svg');
-		position: relative;
-		transition: all 1s;
-		margin-left: 10px;
-		background-position: center;
-		display: inline-block;
-		width: 25px;
-		height: 20px;
-	}
-	&:hover {
-		color: $prim-purple;
-		text-decoration: none;
-		&:after {
-			transform: translateX(15px);
-		}
 	}
 }
 .bg-purple {

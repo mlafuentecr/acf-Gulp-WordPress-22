@@ -27,41 +27,24 @@ let decVar=PURL=null;function customerInit(){protoCol="http:"===location.protoco
         }
       }
     }    
-    `})}).then(e=>e.json()).then(e=>{addHtml(e)}).catch(console.error)}function addHtml(e){const o=e.data.customers.edges,s=document.querySelector("#customers-1"),a=document.querySelector("#customers-2");let[d,u,m]=[[],[],[],[]];o.forEach((e,o)=>{var t,n,r,l,c=e.node.pageCustomerPreview.previewCustomerPost,i=e.node.costumerSinglePost.companyDescr.applicationForm;i&&([t,n,r,i,l]=i,d.push(n.description),u.push(r.description),m.push(i.description),d.filter((e,o)=>d.indexOf(e)==o),u.filter((e,o)=>u.indexOf(e)==o),m.filter((e,o)=>m.indexOf(e)==o)),o<3?s.innerHTML+=`
-            <div class="col-12 col-md-4 mb-3 ">
-            <div class="box d-flex align-content-start rounded p-3 border">
+    `})}).then(e=>e.json()).then(e=>{addHtml(e)}).catch(console.error)}function addHtml(e){const o=e.data.customers.edges,a=document.querySelector("#customers-1");document.querySelector("#customers-2");let[d,u,p]=[[],[],[],[]];console.log(o,"posts"),o.forEach((e,o)=>{var t=e.node.pageCustomerPreview.previewCustomerPost,r=e.node.costumerSinglePost.companyDescr.applicationForm,[n,l,c,s,i]="";r&&([n,l,c,s,i]=r,d.push(l.description),u.push(c.description),p.push(s.description),d.filter((e,o)=>d.indexOf(e)==o),u.filter((e,o)=>u.indexOf(e)==o),p.filter((e,o)=>p.indexOf(e)==o)),a.innerHTML+=`
+    <div class="col-12 col-md-4 mb-3  ">
+    <div class="box d-flex align-content-start rounded p-3 border">
 
-            <figure class="col-12 d-flex justify-content-center align-center mb-3">
-            <img class='lazyload m-auto' src='${c.logo.sourceUrl}'/>
-            </figure>
-            
-            <div class="content">
-              <div class="description text-left">${c.content}</div>
-            </div>
+    <figure class="col-12 d-flex justify-content-center align-center mb-3">
+    <img class='lazyload m-auto' src='${t.logo.sourceUrl}'/>
+    </figure>
+    
+    <div class="content">
+      <div class="description text-left">${t.content}</div>
+    </div>
 
-            ${null!==c.link?`<a href="${e.node.uri}" class="w-arrow">${c.link}</a>`:""}
+    ${null!==t.link?`<a href="${e.node.uri}" class="w-arrow">${t.link}</a>`:""}
 
-            <div class="tag d-flex justify-content-center col-12">${c.label.labelText}</div>
-          </div>
-          
-        </div>`:a.innerHTML+=`
-          <div class="col-12 col-md-4 mb-3 ">
-          <div class="box d-flex  align-content-start rounded p-3 border">
-
-            <figure class="col-12 d-flex justify-content-center align-center mb-3">
-            <img class='lazyload m-auto' src='${c.logo.sourceUrl}'/>
-            </figure>
-            
-            <div class="content">
-              <div class="description text-left">${c.content}</div>
-            </div>
-
-            ${null!==c.link?`<a href="${e.node.uri}" class="w-arrow">${c.link}</a>`:""}
-
-            <div class="tag d-flex justify-content-center col-12">${c.label.labelText}</div>
-          </div>
-          
-        </div>`}),d=Array.from(new Set(d)),u=Array.from(new Set(u)),m=Array.from(new Set(m)),console.log(d,"industriesArr"),console.log(u,"sizesArr"),console.log(m,"locationsArr");const t=document.querySelector("#select1"),n=document.querySelector("#select2"),r=document.querySelector("#select3");d.forEach(e=>t.innerHTML+=`<option value="${e.toLowerCase().replaceAll(" ","_")}<"> ${e}</option>`),u.forEach(e=>n.innerHTML+=`<option value="${e.toLowerCase().replaceAll(" ","_")}<"> ${e}</option>`),m.forEach(e=>r.innerHTML+=`<option value="${e.toLowerCase().replaceAll(" ","_")}<"> ${e}</option>`)}"loading"!==document.readyState?customerInit():document.addEventListener("DOMContentLoaded",()=>customerInit());
+    <div class="tag d-flex justify-content-center col-12">${t.label.labelText}</div>
+  </div>
+  
+</div>`}),d=Array.from(new Set(d)),u=Array.from(new Set(u)),p=Array.from(new Set(p));const t=document.querySelector("#select1"),r=document.querySelector("#select2"),n=document.querySelector("#select3");d.forEach(e=>t.innerHTML+=`<option value="${e.toLowerCase().replaceAll(" ","_")}<"> ${e}</option>`),u.forEach(e=>r.innerHTML+=`<option value="${e.toLowerCase().replaceAll(" ","_")}<"> ${e}</option>`),p.forEach(e=>n.innerHTML+=`<option value="${e.toLowerCase().replaceAll(" ","_")}<"> ${e}</option>`)}
 
 function customerg2Init(){console.log("g2");fetch("/wp-content/themes/heylaika_vr5/inc/parts/fetchingG2.php").then(e=>e.json()).then(e=>{var t=e.data.attributes.category_averages,o=t.ease_of_use,e=t.quality_of_support,t=t.ease_of_setup;console.log("ease_of_use:",o),console.log("quality_of_support:",e),console.log("ease_of_setup:",t);const n=document.querySelector(".circle-1-center"),c=document.querySelector(".circle-2-center"),r=document.querySelector(".circle-3-center");n.innerHTML=o,c.innerHTML=e,r.innerHTML=t}).catch(e=>{console.error("Error:",e)})}"loading"!==document.readyState?customerg2Init():document.addEventListener("DOMContentLoaded",()=>customerg2Init());
 function logo_slider(){document.querySelector(".logos_carusel")&&function(e){let t=2e3;setTimeout(L,t);let o="",l="";let c=document.querySelector(".logos_carusel"),i=document.querySelectorAll(".slick-prev"),s=document.querySelectorAll(".slick-next");const r=document.querySelector(e);let n="",a=0,u=!0;function d(){clearTimeout(l),clearTimeout(o)}function m(){o=setTimeout(L,t)}function v(e){e.remove(),r.appendChild(e),n.forEach(e=>e.classList.remove("activeLogo")),u=!0,m()}function L(){n=r.querySelectorAll("li"),a<n.length?a++:a=0;let e=n[0];e.classList.add("activeLogo"),d(),l=setTimeout(()=>v(e),t/2)}function g(e){if(u){if(d(),u=!1,"right"===e)if(n=r.querySelectorAll("li"),document.querySelector(".activeLogo"))n.forEach(e=>e.classList.remove("activeLogo"));else{let e=n[n.length-1];e.classList.add("activeLogo"),e.remove(),c.prepend(e),setTimeout(()=>e.classList.remove("activeLogo"),1e3)}else{let e=n[0];e.classList.contains("activeLogo")&&(v(e),e.remove(),r.appendChild(e),n.forEach(e=>e.classList.remove("activeLogo"))),L()}setTimeout(()=>u=!0,1e3)}}i=i[0],s=s[0],c.addEventListener("mouseover",()=>d()),c.addEventListener("mouseleave",()=>m()),s.addEventListener("click",()=>g("right")),i.addEventListener("click",()=>g("left"))}(".logos_carusel")}"loading"!==document.readyState?logo_slider():document.addEventListener("DOMContentLoaded",()=>logo_slider());

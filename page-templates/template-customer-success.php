@@ -5,19 +5,9 @@ Template Name: Customer Success
 defined( 'ABSPATH' ) || exit;
 get_header(); 
 
-/*-----------------------------------------------------------------------------------*/
-/*  ACF Page Customer Success
-/*-----------------------------------------------------------------------------------*/
-$pageFields = get_fields();
-
-?>
-<div id="customer-success" class="intern-pg">
-
-  <!-- 0 banner  -->
-  <?php 
-/*-----------------------------------------------------------------------------------*/
+/*------------------------------------------------------*/
 /*  ACF Page our-value
-/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------*/
 $pageFields = get_fields();
 $banner_content = $pageFields['banner_content'];
 
@@ -29,8 +19,37 @@ $read_more_btn = $pageFields['read_more_btn'];
 $g2_text = $pageFields['g2-text'];
 $g2_logos = $pageFields['g2-logos'];
 $cta = $pageFields['cta'];
+/*------------------------------------------------------*/
+/*  QUERY
+/*-----------------------------------------------------*/
+$args = array(  
+  'post_type' => 'customers',
+  'post_status' => 'publish',
+  'posts_per_page' => 40, 
 
+);
+
+$loop = new WP_Query( $args ); 
+
+
+/*------------------------------------------------------*/
+/*  ARRAYs for filter Select 
+/*-----------------------------------------------------*/
+
+$industry =array("");
+
+
+
+
+function showLink($link, $id ){
+  return $link ? '<a href="'.get_permalink( $id ).'" class="w-arrow">'.$link.'</a>' : '';
+ }
+//Podria hacer que cuando le de click a search guarde la cookie por js
+//y despues refresque
+//y este loop lo ejecute
 ?>
+<div id="customer-success" class="intern-pg">
+
   <!-- 0 banner -->
   <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
     <div class="container">
@@ -91,9 +110,35 @@ $cta = $pageFields['cta'];
   <?php endif; ?>
 
 
+  <?php 
+
+
+         if ( $loop ->have_posts() ) { 
+           while ( $loop ->have_posts() ) { 
+          
+
+
+
+
+            $meta = get_post_meta(get_the_ID(), '', true);
+            $industry =array("");
+array_push($industry ,$meta['[company_descr_application_form_1_description'][0]);
+
+
+///print_r($meta);
+
+
+
+          }
+        }
+        wp_reset_postdata();
+        
+        ?>
+
+
 
   <div class="bg-gray">
-    <section class="customers mt-5 d-flex flex-wrap">
+    <section class=" mt-5 d-flex flex-wrap">
       <div class="container">
         <section class="filter col-12">
           <div class="bg-purple rounded text-center d-flex  justify-content-center align-items-center">
@@ -102,6 +147,10 @@ $cta = $pageFields['cta'];
 
               <div class="col-lg-1 col-12 d-flex justify-content-center justify-content-lg-end ">
                 SORT BY
+
+
+
+
               </div>
 
               <div class="col-lg-3 col-12 ">
@@ -159,34 +208,84 @@ $cta = $pageFields['cta'];
         </section>
       </div>
       <div class="customers-boxes container">
-        <div id="customers-1" class="row p-0  gx-3 ">
+        <div id="customers-1" class=" row  p-0 gx-3 ">
+          <?php 
 
-        </div>
-      </div>
+print_r($industry);
+ $count = 0; //set up counter variable
 
-    </section>
+          if ( $loop ->have_posts() ) { 
+            while ( $loop ->have_posts() ) { 
+
+              $loop ->the_post();
+              $id =get_the_ID();
+              $pageFields = get_fields($id);
+              $count++;
+              $post = $pageFields['preview_customer_post'];
+                 // $meta = get_post_meta($id, '', true);
+              //  print_r($meta);
+              // print_r($meta['[company_descr_application_form_1_description'][0] );
+              //print_r($pageFields["preview_customer_post"] );
+//INSERT ALL POST
+              echo '<div class="col-12 col-md-4 mb-3  d-flex align-items-stretch ">
+             <div class="box d-flex align-content-start rounded p-3 border">
+             <figure class="col-12 d-flex justify-content-center align-center mb-3">
+             <img class="lazyload m-auto" src="'.$post['logo'].'"/>
+             </figure>
+             <div class="content">
+               <div class="description text-left">'.$post['content'].'</div>
+             </div>
+             '.showLink($post['link'], $id ).'
+             <div class="tag d-flex justify-content-center col-12">'.$post['label']['label_text'].'</div>
+           </div>
+         </div>';
 
 
-    <section class="testimonial bg-white shadow-top_out shadow-bottom_out  my-5 py-5">
-      <div class="container my-5">
-        <div class="d-flex flex-wrap m-0 p-0 col-12 justify-content-md-around">
-          <div class="col-lg-6 col-12 d-flex flex-wrap align-items-center mb-5 mb-md-0">
-            <img class='lazyload m-auto mb-4 m-lg-0 shadow rounded-0' src='<?php echo $quote_picture['url']; ?>'
-              alt='<?php echo $quote_picture['title']; ?>' />
 
-          </div>
-          <div class="col-lg-5 col-12 d-flex flex-wrap align-items-center mt-0 mt-sm-5">
-            <div class="quote_content col-12 "><?php echo $quote_content['quote']; ?></div>
-            <div class="quote_name col-12"><?php echo $quote_content['name']; ?></div>
-            <div class="quote_profession col-6"><?php echo $quote_content['profession']; ?></div>
-            <div class="quote_logo col-6  text-end"><img class='lazyload'
-                src='<?php echo $quote_content['logo']['url']; ?>'
-                alt='<?php echo $quote_content['logo']['title']; ?>' />
+          // INSERT testimonial             
+         if ($count === 3) {
+           ?>
+
+          <section class="testimonial  bg-white shadow-top_out shadow-bottom_out  my-5 py-5">
+            <div class="container my-5">
+              <div class="d-flex flex-wrap m-0 p-0 col-12 justify-content-md-around">
+                <div class="col-lg-6 col-12 d-flex flex-wrap align-items-center mb-5 mb-md-0">
+                  <img class='lazyload m-auto mb-4 m-lg-0 shadow rounded-0' src='<?php echo $quote_picture['url']; ?>'
+                    alt='<?php echo $quote_picture['title']; ?>' />
+
+                </div>
+                <div class="col-lg-5 col-12 d-flex flex-wrap align-items-center mt-0 mt-sm-5">
+                  <div class="quote_content col-12 "><?php echo $quote_content['quote']; ?></div>
+                  <div class="quote_name col-12"><?php echo $quote_content['name']; ?></div>
+                  <div class="quote_profession col-6"><?php echo $quote_content['profession']; ?></div>
+                  <div class="quote_logo col-6  text-end"><img class='lazyload'
+                      src='<?php echo $quote_content['logo']['url']; ?>'
+                      alt='<?php echo $quote_content['logo']['title']; ?>' />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
+
+
+
+          <?php
+        } // INSERT end testimonial    
+
+
+
+            }
+          }
+          wp_reset_postdata();
+          
+          ?>
         </div>
       </div>
+
     </section>
+
+
+
 
     <div class="customers-boxes container">
       <div id="customers-2" class="row p-0  gx-3 ">
