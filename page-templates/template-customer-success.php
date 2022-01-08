@@ -225,7 +225,7 @@ $cta = $pageFields['cta'];
                     <div class="mask half">
                       <div class="fill"></div>
                     </div>
-                    <div class="inside-circle "> 8.7 </div>
+                    <div class="inside-circle circle-1-center"> 8.7 </div>
                   </div>
                 </div>
                 <div class="text mt-2">Ease of Use</div>
@@ -240,7 +240,7 @@ $cta = $pageFields['cta'];
                     <div class="mask half">
                       <div class="fill"></div>
                     </div>
-                    <div class="inside-circle"> 9 </div>
+                    <div class="inside-circle circle-2-center"> 9 </div>
                   </div>
                 </div>
                 <div class="text mt-2">Quality of Support</div>
@@ -255,7 +255,7 @@ $cta = $pageFields['cta'];
                     <div class="mask half">
                       <div class="fill"></div>
                     </div>
-                    <div class="inside-circle"> 9 </div>
+                    <div class="inside-circle circle-3-center"> 9 </div>
                   </div>
                 </div>
                 <div class="text mt-2">Ease of Setup</div>
