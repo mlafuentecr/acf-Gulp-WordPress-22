@@ -58,19 +58,41 @@ function startFetching() {
 	})
 		.then(res => res.json())
 		.then(jsonData => {
-			//console.log(jsonData.data.customers.edges);
-			//add the array to a variable
-			const posts = jsonData.data.customers.edges;
+			addHtml(jsonData);
+		})
+		.catch(console.error);
+}
 
-			//get the box 1 where I have to put max 3 post and then get box 2 where I can put the rest
-			const box1 = document.querySelector('#customers-1');
-			const box2 = document.querySelector('#customers-2');
-			posts.forEach((item, i) => {
-				const info = item.node.pageCustomerPreview.previewCustomerPost;
-				const post_data = item.node.costumerSinglePost.companyDescr.applicationForm;
-				//Cuento 3 post y los meto en box1
-				if (i < 3) {
-					box1.innerHTML += `
+function addHtml(jsonData) {
+	//console.log(jsonData.data.customers.edges);
+	//add the array to a variable
+	const posts = jsonData.data.customers.edges;
+	const box1 = document.querySelector('#customers-1');
+	const box2 = document.querySelector('#customers-2');
+	let [industriesArr, sizesArr, locationsArr] = [[], [], [], []];
+
+	posts.forEach((item, i) => {
+		const info = item.node.pageCustomerPreview.previewCustomerPost;
+		//get categories for sort BY seccion
+		const post_data = item.node.costumerSinglePost.companyDescr.applicationForm;
+
+		if (post_data) {
+			const [architect, industry, size, location, certification] = post_data;
+
+			//Push the Array *SELECT IN HTML
+			industriesArr.push(industry.description);
+			sizesArr.push(size.description);
+			locationsArr.push(location.description);
+
+			//Fill the Array *SELECT IN HTML
+			industriesArr.filter((value, index) => industriesArr.indexOf(value) == index);
+			sizesArr.filter((value, index) => sizesArr.indexOf(value) == index);
+			locationsArr.filter((value, index) => locationsArr.indexOf(value) == index);
+		}
+
+		//Cuento 3 post y los meto en box1
+		if (i < 3) {
+			box1.innerHTML += `
             <div class="col-12 col-md-4 mb-3 ">
             <div class="box d-flex align-content-start rounded p-3 border">
 
@@ -88,8 +110,8 @@ function startFetching() {
           </div>
           
         </div>`;
-				} else {
-					box2.innerHTML += `
+		} else {
+			box2.innerHTML += `
           <div class="col-12 col-md-4 mb-3 ">
           <div class="box d-flex  align-content-start rounded p-3 border">
 
@@ -107,8 +129,23 @@ function startFetching() {
           </div>
           
         </div>`;
-				}
-			});
-		})
-		.catch(console.error);
+		}
+	});
+
+	industriesArr = Array.from(new Set(industriesArr));
+	sizesArr = Array.from(new Set(sizesArr));
+	locationsArr = Array.from(new Set(locationsArr));
+
+	console.log(industriesArr, 'industriesArr');
+	console.log(sizesArr, 'sizesArr');
+	console.log(locationsArr, 'locationsArr');
+
+	//FILL THE *SELECT IN HTML
+	const select1 = document.querySelector('#select1');
+	const select2 = document.querySelector('#select2');
+	const select3 = document.querySelector('#select3');
+
+	industriesArr.forEach(item => (select1.innerHTML += `<option value="${item.toLowerCase().replaceAll(' ', '_')}<"> ${item}</option>`));
+	sizesArr.forEach(item => (select2.innerHTML += `<option value="${item.toLowerCase().replaceAll(' ', '_')}<"> ${item}</option>`));
+	locationsArr.forEach(item => (select3.innerHTML += `<option value="${item.toLowerCase().replaceAll(' ', '_')}<"> ${item}</option>`));
 }

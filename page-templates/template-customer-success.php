@@ -98,47 +98,40 @@ $cta = $pageFields['cta'];
         <section class="filter col-12">
           <div class="bg-purple rounded text-center d-flex  justify-content-center align-items-center">
 
-            <div class="bar col-10 m-auto d-flex flex-wrap  align-items-center justify-content-around">
+            <div class="bar col-11 m-auto d-flex flex-wrap  p-5 p-md-1 align-items-center justify-content-around">
 
-              <div class="col-lg-2 col-12  ">
+              <div class="col-lg-1 col-12 d-flex justify-content-center justify-content-lg-end ">
                 SORT BY
               </div>
 
-              <div class="col-lg-2 col-12  ">
-                <select name="pets" id="select1">
+              <div class="col-lg-3 col-12 ">
+                <select name="industries" id="select1">
                   <option value=""> All Industries </option>
-                  <option value="dog">Internet</option>
-                  <option value="cat">Other</option>
                 </select>
               </div>
 
 
-              <div class="col-lg-2 col-12  ">
-                <select name="pets" id="select2">
+              <div class="col-lg-3 col-12  text-center  ">
+                <select class="px-2" name="sizes" id="select2">
                   <option value=""> All Company Sizes </option>
-                  <option value="dog">Internet</option>
-                  <option value="cat">Other</option>
                 </select>
               </div>
 
 
-              <div class="col-lg-2 col-12  ">
-                <select name="pets" id="select3">
+              <div class="col-lg-3 col-12  ">
+                <select name="locations" id="select3">
                   <option value=""> All Locations </option>
-                  <option value="dog">Internet</option>
-                  <option value="cat">Other</option>
                 </select>
               </div>
 
 
-              <div class="col-lg-2 col-12  ">
+              <!-- <div class="col-lg-2 col-12  ">
                 <a href="http://"> <img class='lazyload'
                     src='<?php echo get_template_directory_uri(); ?>/inc/images/search-btn.png' alt='search' /></a>
               </div>
+            </div> -->
 
             </div>
-
-          </div>
         </section>
       </div>
 

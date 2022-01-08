@@ -20,9 +20,9 @@
 			height: 35px;
 			background: white;
 			border: none;
-			padding: 10px;
+			padding-left: 5px;
 			margin: 5px;
-			width: 150px;
+			width: 90%;
 		}
 	}
 	.youtube {
@@ -103,12 +103,12 @@
 			height: 50%;
 			width: 1px;
 			background-color: rgb(163, 163, 163);
-			right: 50px;
+			right: 1rem;
 			display: flex;
 			position: absolute;
 			top: 25%;
 		}
-		@media (max-width: $md) {
+		@media (max-width: $lg) {
 			&:after {
 				display: none;
 			}
