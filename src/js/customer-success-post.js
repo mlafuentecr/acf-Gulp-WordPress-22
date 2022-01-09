@@ -3,9 +3,20 @@
 /*-----------------------------------------------------------------------------------*/
 let decVar = (PURL = null);
 
-//document.readyState !== 'loading' ? customerInit() : document.addEventListener('DOMContentLoaded', () => customerInit());
+document.readyState !== 'loading' ? customerInit() : document.addEventListener('DOMContentLoaded', () => customerInit());
+//FILL THE *SELECT IN HTML
+let select1 = (select2 = select3 = search_customer = '');
 
 function customerInit() {
+	//FILL THE *SELECT IN HTML
+	select1 = document.querySelector('#select1');
+	select2 = document.querySelector('#select2');
+	select3 = document.querySelector('#select3');
+	search_customer = document.querySelector('.search_customer');
+	select1.disabled = true;
+	select2.disabled = true;
+	select3.disabled = true;
+
 	//GET URL
 	location.protocol === 'http:' ? (protoCol = `http://`) : (protoCol = `https://`);
 	//ADD PUL
@@ -62,114 +73,92 @@ function startFetching() {
 		})
 		.catch(console.error);
 }
-/*
-Se me ocurre que puedo hacer un array de objetos y 
-*/
+
 function addHtml(jsonData) {
 	//console.log(jsonData.data.customers.edges);
 	//add the array to a variable
 	const posts = jsonData.data.customers.edges;
-	const box1 = document.querySelector('#customers-1');
-	const box2 = document.querySelector('#customers-2');
+
 	let [industriesArr, sizesArr, locationsArr] = [[], [], [], []];
 
-	console.log(posts, 'posts');
-
 	posts.forEach((item, i) => {
-		const info = item.node.pageCustomerPreview.previewCustomerPost;
 		//get categories for sort BY seccion
 		const post_data = item.node.costumerSinglePost.companyDescr.applicationForm;
-
 		let [architect, industry, size, location, certification] = '';
 
 		if (post_data) {
 			[architect, industry, size, location, certification] = post_data;
-
 			//Push the Array *SELECT IN HTML
 			industriesArr.push(industry.description);
 			sizesArr.push(size.description);
-			locationsArr.push(location.description);
+			if (location.description !== 'SOC 2 Type 1') locationsArr.push(location.description);
 
 			//Fill the Array *SELECT IN HTML
 			industriesArr.filter((value, index) => industriesArr.indexOf(value) == index);
 			sizesArr.filter((value, index) => sizesArr.indexOf(value) == index);
 			locationsArr.filter((value, index) => locationsArr.indexOf(value) == index);
 		}
-		//${size.description} ${location.description}
-		box1.innerHTML += `
-    <div class="col-12 col-md-4 mb-3  ">
-    <div class="box d-flex align-content-start rounded p-3 border">
-
-    <figure class="col-12 d-flex justify-content-center align-center mb-3">
-    <img class='lazyload m-auto' src='${info.logo.sourceUrl}'/>
-    </figure>
-    
-    <div class="content">
-      <div class="description text-left">${info.content}</div>
-    </div>
-
-    ${info.link !== null ? `<a href="${item.node.uri}" class="w-arrow">${info.link}</a>` : ''}
-
-    <div class="tag d-flex justify-content-center col-12">${info.label.labelText}</div>
-  </div>
-  
-</div>`;
-		//Cuento 3 post y los meto en box1
-		// if (i < 3) {
-		// 	box1.innerHTML += `
-		//         <div class="col-12 col-md-4 mb-3 ">
-		//         <div class="box d-flex align-content-start rounded p-3 border">
-
-		//         <figure class="col-12 d-flex justify-content-center align-center mb-3">
-		//         <img class='lazyload m-auto' src='${info.logo.sourceUrl}'/>
-		//         </figure>
-
-		//         <div class="content">
-		//           <div class="description text-left">${info.content}</div>
-		//         </div>
-
-		//         ${info.link !== null ? `<a href="${item.node.uri}" class="w-arrow">${info.link}</a>` : ''}
-
-		//         <div class="tag d-flex justify-content-center col-12">${info.label.labelText}</div>
-		//       </div>
-
-		//     </div>`;
-		// } else {
-		// 	box2.innerHTML += `
-		//       <div class="col-12 col-md-4 mb-3 ">
-		//       <div class="box d-flex  align-content-start rounded p-3 border">
-
-		//         <figure class="col-12 d-flex justify-content-center align-center mb-3">
-		//         <img class='lazyload m-auto' src='${info.logo.sourceUrl}'/>
-		//         </figure>
-
-		//         <div class="content">
-		//           <div class="description text-left">${info.content}</div>
-		//         </div>
-
-		//         ${info.link !== null ? `<a href="${item.node.uri}" class="w-arrow">${info.link}</a>` : ''}
-
-		//         <div class="tag d-flex justify-content-center col-12">${info.label.labelText}</div>
-		//       </div>
-
-		//     </div>`;
-		// }
 	});
 
+	//Check for repaeat Items
 	industriesArr = Array.from(new Set(industriesArr));
 	sizesArr = Array.from(new Set(sizesArr));
 	locationsArr = Array.from(new Set(locationsArr));
 
-	// console.log(industriesArr, 'industriesArr');
-	// console.log(sizesArr, 'sizesArr');
-	// console.log(locationsArr, 'locationsArr');
+	console.log(industriesArr, 'industriesArr');
+	console.log(sizesArr, 'sizesArr');
+	console.log(locationsArr, 'locationsArr');
 
-	//FILL THE *SELECT IN HTML
-	const select1 = document.querySelector('#select1');
-	const select2 = document.querySelector('#select2');
-	const select3 = document.querySelector('#select3');
+	industriesArr.forEach(item => (select1.innerHTML += `<option value="${item.toLowerCase()}"> ${item}</option>`));
+	sizesArr.forEach(item => (select2.innerHTML += `<option value="${item.toLowerCase()}"> ${item}</option>`));
+	locationsArr.forEach(item => (select3.innerHTML += `<option value="${item.toLowerCase()}"> ${item}</option>`));
+	//Set the selector on
+	select1.disabled = false;
+	select2.disabled = false;
+	select3.disabled = false;
 
-	industriesArr.forEach(item => (select1.innerHTML += `<option value="${item.toLowerCase().replaceAll(' ', '_')}<"> ${item}</option>`));
-	sizesArr.forEach(item => (select2.innerHTML += `<option value="${item.toLowerCase().replaceAll(' ', '_')}<"> ${item}</option>`));
-	locationsArr.forEach(item => (select3.innerHTML += `<option value="${item.toLowerCase().replaceAll(' ', '_')}<"> ${item}</option>`));
+	//CHECK LOCAL STORAGE
+	let customerStorage = localStorage.getItem('customerSearch').split('_');
+	console.log('customerStorage.length', customerStorage.length, customerStorage);
+	if (customerStorage.length > 1) {
+		let [localIndustry, localSize, location] = customerStorage;
+
+		localIndustry = localIndustry.split('=');
+		localIndustry = localIndustry[1];
+		localIndustry != '' ? (select1.value = localIndustry) : '';
+
+		localSize = localSize.split('=');
+		localSize = localSize[1];
+		localSize != '' ? (select2.value = localSize) : '';
+
+		location = location.split('=');
+		location = location[1];
+		location != '' ? (select3.value = location) : '';
+
+		if (localIndustry || localSize || location) {
+			console.log('alguien tiene info', localIndustry, localSize, location);
+		}
+	}
+	search_customer.addEventListener('click', () => search());
+}
+
+function search() {
+	console.log('search');
+	const sel1 = select1.value;
+	const sel2 = select2.value;
+	const sel3 = select3.value;
+
+	//get the values is they are not null
+	if (sel1 === '' && sel2 === '' && sel3 === '') {
+		console.log('Nothing here');
+		document.cookie = `customerSearch=; sameSite=Lax; path=/;`;
+		localStorage.setItem('customerSearch', ``);
+		location.reload();
+	} else {
+		console.log('start searching');
+		//Save cookie for fetching
+		document.cookie = `customerSearch=industry=${select1.value}_size=${select2.value}_location=${select3.value};sameSite=Lax; path=/;`;
+		localStorage.setItem('customerSearch', `industry=${select1.value}_size=${select2.value}_location=${select3.value}`);
+		location.reload();
+	}
 }

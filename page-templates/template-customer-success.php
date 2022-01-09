@@ -19,45 +19,79 @@ $read_more_btn = $pageFields['read_more_btn'];
 $g2_text = $pageFields['g2-text'];
 $g2_logos = $pageFields['g2-logos'];
 $cta = $pageFields['cta'];
+//CHECK IF THERE IS COOKIES && $_COOKIE['customerSearch'] !== "\'\'"
+if(isset($_COOKIE['customerSearch']) ) {
+
+  $customerSearch = $_COOKIE['customerSearch'];
+
+  if($customerSearch === ""){
+    //make a full query 
+    $args = array(  
+      'post_type' => 'customers',
+      'post_status' => 'publish',
+      'posts_per_page' => 40, 
+    );
+  }else{
+    //do a filter query
+
+    $customerInfo = explode('_', $customerSearch);
+
+    $customerIndustry = explode('=', $customerInfo[0])[1];
+
+    $customerSize =  explode('=', $customerInfo[1])[1]; 
+  
+    $customerLocation = explode('=', $customerInfo[2])[1]; 
+
+
+    $args = array(  
+      'post_type' => 'customers',
+      'post_status' => 'publish',
+      'posts_per_page' => 40, 
+      'meta_query' => array(
+        'relation' => 'OR',
+        array(
+            'key'     => 'company_descr_application_form_1_description',
+            'value'   => $customerIndustry,
+      
+        ),
+        array(
+          'key'     => 'company_descr_application_form_2_description',
+          'value'   => $customerSize ,
+        )
+        ,
+        array(
+          'key'     => 'company_descr_application_form_3_description',
+          'value'   => $customerLocation ,
+        )
+      )
+    );
+  }
+
+  
+}
 /*------------------------------------------------------*/
 /*  QUERY
 /*-----------------------------------------------------*/
-$args = array(  
-  'post_type' => 'customers',
-  'post_status' => 'publish',
-  'posts_per_page' => 40, 
-
-);
 
 $loop = new WP_Query( $args ); 
-
-
-/*------------------------------------------------------*/
-/*  ARRAYs for filter Select 
-/*-----------------------------------------------------*/
-
-$industry =array("");
-
-
-
 
 function showLink($link, $id ){
   return $link ? '<a href="'.get_permalink( $id ).'" class="w-arrow">'.$link.'</a>' : '';
  }
-//Podria hacer que cuando le de click a search guarde la cookie por js
-//y despues refresque
-//y este loop lo ejecute
+
 ?>
 <div id="customer-success" class="intern-pg">
 
   <!-- 0 banner -->
-  <section class="intro-banner" style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
-    <div class="container">
+  <section class="intro-banner mt-5 pt-5 mt-md-0 pt-md-0 "
+    style="background-image: url(<?php echo $pageFields['banner_background']; ?>);">
+    <div class="container mt-3 pt-3 mt-md-0 pt-md-0">
+
       <?php if ($pageFields['banner_title']): ?>
 
-      <div class="col-md-6 col-12 d-flex flex-wrap align-items-center">
-        <div class="main-content">
-          <p class='customer_banner_title col-12'><?php echo $banner_content['banner_title']; ?></p>
+      <div class="col-md-6 col-12 pt-sm-5 mt-sm-5  mt-md-5 pt-md-0 d-flex flex-wrap align-items-center">
+        <div class="main-content ">
+          <p class='customer_banner_title col-12 '><?php echo $banner_content['banner_title']; ?></p>
           <div class="customer_banner_subtitle col-12"><?php echo $banner_content['banner_subtitle']; ?> </div>
           <div class="customer_banner_content col-12"><?php echo $banner_content['banner_content']; ?> </div>
 
@@ -95,7 +129,7 @@ function showLink($link, $id ){
         <div class="modal-body">
           <div class="container-fluid bd-example-row">
             <div class="youtube">
-              <iframe width="100%" height="600" src="<?php echo $banner_media_content['video']; ?>" title="video Laika"
+              <iframe width="100%" height="auto" src="<?php echo $banner_media_content['video']; ?>" title="video Laika"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -109,34 +143,6 @@ function showLink($link, $id ){
   </div>
   <?php endif; ?>
 
-
-  <?php 
-
-
-         if ( $loop ->have_posts() ) { 
-           while ( $loop ->have_posts() ) { 
-          
-
-
-
-
-            $meta = get_post_meta(get_the_ID(), '', true);
-            $industry =array("");
-array_push($industry ,$meta['[company_descr_application_form_1_description'][0]);
-
-
-///print_r($meta);
-
-
-
-          }
-        }
-        wp_reset_postdata();
-        
-        ?>
-
-
-
   <div class="bg-gray">
     <section class=" mt-5 d-flex flex-wrap">
       <div class="container">
@@ -147,10 +153,7 @@ array_push($industry ,$meta['[company_descr_application_form_1_description'][0])
 
               <div class="col-lg-1 col-12 d-flex justify-content-center justify-content-lg-end ">
                 SORT BY
-
-
-
-
+                <!-- FILLED BY THE JS  -->
               </div>
 
               <div class="col-lg-3 col-12 ">
@@ -174,25 +177,26 @@ array_push($industry ,$meta['[company_descr_application_form_1_description'][0])
               </div>
 
 
-              <!-- <div class="col-lg-2 col-12  ">
-                <a href="http://"> <img class='lazyload'
-                    src='<?php echo get_template_directory_uri(); ?>/inc/images/search-btn.png' alt='search' /></a>
+              <div class="col-sm-12 col-md-1 mt-sm-3 mt-md-0 ">
+                <img class='lazyload search_customer'
+                  src='<?php echo get_template_directory_uri(); ?>/inc/images/search-btn.png' alt='search' />
               </div>
-            </div> -->
-
             </div>
+
+          </div>
         </section>
       </div>
 
       <div class="container">
         <section class="featured box  rounded p-0 m-0 my-3 d-flex ">
           <div class="d-flex flex-wrap m-0 p-0 py-3 col-12  ">
-            <div class="col-md-12 col-lg p-5 d-flex featuredstory-logo justify-content-center align-items-center ">
+            <div
+              class="col-md-12 col-lg p-5 d-flex m-sm-auto m-sm-0 featuredstory-logo justify-content-center align-items-center ">
               <img class='lazyload' src='<?php echo $featuredstory['logo']['url']; ?>'
                 alt='<?php echo $featuredstory['logo']['title']; ?>' />
             </div>
 
-            <div class="col-md-12 col-lg  p-md-5 pt-sm-0">
+            <div class="col-md-12 col-lg m-4 m-md-0 p-md-5 pt-sm-0">
               <p class="col-12 featured_text text-lg-start text-md-center">
                 <?php echo $featuredstory['featured_text']; ?></p>
               <p class="col-12 featured_content text-lg-start text-md-center">
@@ -211,7 +215,7 @@ array_push($industry ,$meta['[company_descr_application_form_1_description'][0])
         <div id="customers-1" class=" row  p-0 gx-3 ">
           <?php 
 
-print_r($industry);
+
  $count = 0; //set up counter variable
 
           if ( $loop ->have_posts() ) { 
@@ -222,9 +226,9 @@ print_r($industry);
               $pageFields = get_fields($id);
               $count++;
               $post = $pageFields['preview_customer_post'];
-                 // $meta = get_post_meta($id, '', true);
+                  $meta = get_post_meta($id, '', true);
               //  print_r($meta);
-              // print_r($meta['[company_descr_application_form_1_description'][0] );
+               //print_r($meta );
               //print_r($pageFields["preview_customer_post"] );
 //INSERT ALL POST
               echo '<div class="col-12 col-md-4 mb-3  d-flex align-items-stretch ">
@@ -300,7 +304,7 @@ print_r($industry);
     <?php endif; ?>
 
 
-    <section class="g2 bg-white mt-5 pt-5">
+    <section class="g2 bg-white mt-5 mb-5 mb-md-0 pt-5">
       <div class="container">
         <div class="d-flex flex-wrap  justify-content-md-around m-0 p-0 col-12 m-0 m-md-5 ">
           <div class="col-md-5 col-12 g2-content">
@@ -312,9 +316,10 @@ print_r($industry);
               <img class='lazyload badges m-auto ' src='<?php echo $g2_logos['url']; ?>'
                 alt='<?php echo $g2_logos['title']; ?>' />
             </div>
-            <div class="col-xl-10 col-md-12 m-auto d-flex mt-3 align-content-center justify-content-center">
+            <div
+              class="col-xl-10 col-md-12 m-auto d-flex flex-wrap flex-md-nowrap mt-3 align-content-center justify-content-center">
 
-              <div class="col m-0 p-0 text-center">
+              <div class="col-12 col-md-4   m-0 p-0 mt-3 mt-md-0 mb-5 pt-3 pt-md-0 mb-md-0 text-center">
 
                 <div class="circle-wrap m-auto">
                   <div class="circle circle-1 full-8">
@@ -330,7 +335,7 @@ print_r($industry);
                 <div class="text mt-2">Ease of Use</div>
               </div>
 
-              <div class="col m-0 p-0 text-center">
+              <div class="col-12 col-md-4 m-0 p-0 mb-5 mb-md-0 text-center">
                 <div class="circle-wrap m-auto">
                   <div class="circle circle-2 full-9">
                     <div class="mask full ">
@@ -345,7 +350,7 @@ print_r($industry);
                 <div class="text mt-2">Quality of Support</div>
               </div>
 
-              <div class="col m-0 p-0 text-center">
+              <div class="col-12 col-md-4 m-0 p-0 mb-5 mb-md-0 text-center">
                 <div class="circle-wrap m-auto">
                   <div class="circle  circle-3 full-9">
                     <div class="mask full ">
