@@ -1,18 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 	/*-----------------------------------------------------------------------------------*/
-	/*  Sticky nav NO SCROLLING ON FIREXO?
-	/*-----------------------------------------------------------------------------------*/
-	//
-	const nav = document.querySelector('#header-top');
-	let topOfNav = nav.offsetHeight;
-
-	function fixNav() {
-		if (window.scrollY >= topOfNav) document.body.classList.add('fixed-nav');
-		if (window.scrollY === 0) document.body.classList.remove('fixed-nav');
-	}
-	window.addEventListener('scroll', fixNav);
-
-	/*-----------------------------------------------------------------------------------*/
 	/*  Menu MObile
 	/*-----------------------------------------------------------------------------------*/
 	if (document.querySelector('.mobile-menu')) {

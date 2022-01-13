@@ -4,7 +4,7 @@
 //     defines
 /*-----------------------------------------------------------------------------------*/
 $GLOBALS['THEME_MLM_PATH'] 	= get_template_directory_uri();
-$GLOBALS['THEME_MLM_VER'] 	= '3.0.1';
+$GLOBALS['THEME_MLM_VER'] 	= '0.0.1';
 $GLOBALS['THEME_SETTING_PG'] 	= 2994;
 $GLOBALS['THEME_MLM_ENV'] = '';
 
@@ -14,9 +14,9 @@ $GLOBALS['THEME_MLM_ENV'] = '';
 // Get the hostname
 $http_host      = $_SERVER['HTTP_HOST'];
 $ENV            = '';
-$local          = 'heylaikadev.local';
-$staging        = 'destiny.kinsta.cloud';
-$production     = 'heylaika.com';
+$local          = 'rootstrapmario.local';
+$staging        = 'rootstrapmario.local';
+$production     = 'rootstrap.local';
 
 $environments = array(
   'local'       => $local,

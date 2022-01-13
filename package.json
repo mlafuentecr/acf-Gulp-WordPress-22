@@ -1,46 +1,31 @@
 {
-	"name": "wp-sass",
-	"version": "5.0.0",
-	"description": "A WordPress starter theme ",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mlafuentecr/laika.com"
-	},
-	"author": "Mario Lafuente",
-	"license": "GPL-2.0 AND MIT",
-	"homepage": "https://github.com/mlafuentecr/laika.com",
-	"scripts": {
-		"start": "node your-script.js",
-		"build": "gulp",
-		"scripts": "gulp scripts",
-		"styles": "gulp styles",
-		"images": "gulp images",
-		"watch": "gulp watch",
-		"sync": "gulp browsersync"
-	},
-	"dependencies": {
-		"@babel/core": "^7.13.15",
-		"@babel/preset-env": "^7.13.15",
-		"bootstrap": "^5.0.0-beta3",
-		"gulp-autoprefixer": "^7.0.1",
-		"gulp-cli": "^2.3.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-remote-src": "^0.4.4",
-		"gulp-terser": "^2.0.1",
-		"node-sass": "^4.14.1",
-		"nodejs-latest": "^1.1.0",
-		"popper.js": "^1.16.1"
-	},
-	"devDependencies": {
-		"del": "^6.0.0",
-		"gulp": "^4.0.2",
-		"gulp-babel": "^8.0.0",
-		"gulp-clean-css": "^4.3.0",
-		"gulp-imagemin": "^7.1.0",
-		"gulp-plumber": "^1.2.1",
-		"gulp-rename": "^2.0.0",
-		"gulp-sass": "^4.1.0",
-		"gulp-sourcemaps": "^3.0.0",
-		"gulp-uglify": "^3.0.2"
-	}
+  "name": "rootstrap",
+  "version": "1.0.0",
+  "description": "<br/>for Mac or Windows:",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlafuentecr/rootstrap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlafuentecr/rootstrap/issues"
+  },
+  "homepage": "https://github.com/mlafuentecr/rootstrap#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^7.0.1",
+    "sass": "^1.47.0"
+  }
 }

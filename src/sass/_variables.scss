@@ -1,22 +1,6 @@
 @import 'typography';
 
 $prim-purple: #664fb7;
-$prim-purple-light: #d8d8ff;
-$sec-purple: #3a2452;
-$sec-purple-wach: #3a2452;
-$menu-footer-sublink: #766686;
-$prim-purple-less: #b3a7db;
-$teal: #5dc1c3;
-$tealdrk: #3fa9ac;
-$dark: black;
-$gray: #616060;
-$light-blur: #7aacde;
-$gray-darker: #212428;
-$gray-lighter: #c4c4c4;
-$menu-over: #aaa;
-$highlight_color: #e8920b;
-$bg_color: #181818;
-$bg_high_color: #232323;
 
 //SIZES
 $px12: 0.75rem; //12px
@@ -47,15 +31,10 @@ $xxl: 1400px;
 // ==================================================
 // Fonts
 // ==================================================
-$font-Avenir-roman: 'Avenir-Roman', sans-serif;
-$font-Avenir: 'Avenir-Book', sans-serif;
-$font-Avenir-heavy: 'Avenir-Heavy', sans-serif;
-$font-light: 'Brown-light', helvetica, Arial, sans-serif;
-$font-Medium: 'Brown', sans-serif;
-$font-italic: 'Brown-italic', helvetica, Arial, sans-serif;
-$font-Bold: 'Brown', sans-serif;
-$font-fair: 'PlayfairDisplay', Helvetica, Arial, sans-serif;
-$font-fair-bold: 'PlayfairDisplay-bold', Helvetica, helvetica, Arial, sans-serif;
+$font-inter-regular: 'Inter-Regular', sans-serif;
+$font-inter-medium: 'Inter-Medium', sans-serif;
+$font-inter-bold: 'Inter-Bold', sans-serif;
+$font-inter-black: 'Inter-Black', sans-serif;
 
 ///line-height:
 $lh_sm: $px16;
@@ -137,55 +116,4 @@ h4 {
 	justify-content: center;
 	align-content: center;
 	align-items: center;
-}
-
-@mixin line-after {
-	content: '';
-	display: block;
-	position: absolute;
-	right: -30px; //depend of the gap
-	top: 50%;
-	height: 100%;
-	transform: translateY(-50%);
-	border-left: 1px solid #c4c4c4;
-}
-
-@mixin ul-checkmark {
-	list-style: none;
-	line-height: $lh_md;
-	ul {
-		list-style-type: none !important;
-	}
-
-	li {
-		position: relative;
-		&:before {
-			left: -30px;
-			position: absolute;
-			top: 2px;
-			content: url(../../inc/images/list-style-hexagon-check.svg);
-		}
-	}
-}
-
-@mixin shadowTop {
-	content: '';
-	position: absolute;
-	min-width: 100%;
-	background: rgb(84, 84, 84);
-	background: linear-gradient(0deg, rgb(235, 235, 235) 0%, rgba(205, 205, 205, 0) 40%);
-	height: 40px;
-	top: -40px;
-	display: flex;
-}
-@mixin shadowBottom {
-	content: '';
-	position: absolute;
-	min-width: 100%;
-	background: rgb(84, 84, 84);
-	height: 40px;
-	display: flex;
-	top: initial;
-	bottom: -40px;
-	background: linear-gradient(180deg, rgb(235, 235, 235) 0%, rgba(205, 205, 205, 0) 40%);
 }

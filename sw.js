@@ -1,5 +1,5 @@
 // const version = '0.1.19';
-// const cacheName = `heylaika-${version}`;
+// const cacheName = `rootstrap-${version}`;
 // self.addEventListener('install', e => {
 // 	e.waitUntil(
 // 		caches.open(cacheName).then(cache => {

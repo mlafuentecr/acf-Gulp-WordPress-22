@@ -7,7 +7,7 @@
       <h1>404</h1>
       <h2>Oops! Page not found</h2>
       <?php get_search_form(); ?>
-      <a class="button button-teal button-animation" href="https://heylaika.com"><span>Return Home</span></a>
+      <a class="button button-teal button-animation" href=""><span>Return Home</span></a>
     </article>
 
   </div>

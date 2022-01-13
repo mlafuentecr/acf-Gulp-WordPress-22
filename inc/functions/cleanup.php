@@ -27,9 +27,7 @@ function remove_revslider_meta_tag()
 
 // /* 0.7 remove  WordPress REST API,
 // -------------------------------------------------------------- */
-remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
-remove_action('wp_head', 'wp_oembed_add_host_js');
-remove_action('rest_api_init', 'wp_oembed_register_route');
+
 
 // // Disable REST API link tag
 remove_action('wp_head', 'rest_output_link_wp_head', 10);
@@ -64,59 +62,6 @@ remove_action('wp_head', 'adjacent_posts_rel_link');
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
 // Removes the WordPress version i.e. -
 remove_action('wp_head', 'wp_generator');
-
-// /* 0.6  Deregister CSS file
-// -------------------------------------------------------------- */
-// I can add this in webpack later
-// gutember wp-block-library-css  wp-includes/css/dist/block-library/style.min.css?ver=5.7
-// /* wp-embed It relates specifically to embeding WordPress posts from other people's blogs/websites. Embedding WordPress posts inside WordPress posts: so meta! This feature was introduced in WordPress 4.4.
-// -------------------------------------------------------------- */
-//Remove Gutenberg Block Library CSS from loading on the frontend
-function smartwp_remove_wp_block_library_css()
-{
-    wp_dequeue_style('wp-block-library');
-    wp_dequeue_style('wp-block-library-theme');
-    wp_dequeue_style('wc-block-style'); // Remove WooCommerce block CSS
-}
-add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100);
-
-
-
-
-/*-----------------------------------------------------------------------------------*/
-/*  acf
-/*-----------------------------------------------------------------------------------*/
-// disable acf css on front-end acf forms
-add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
- 
-function my_deregister_styles() {
-  wp_deregister_style( 'acf' );
-  wp_deregister_style( 'acf-field-group' );
-  wp_deregister_style( 'acf-global' );
-  wp_deregister_style( 'acf-input' );
-  wp_deregister_style( 'acf-datepicker' );
-  wp_deregister_style( 'acf-timepicker' );
-  wp_deregister_style( 'wp-color-picker' );
-  wp_deregister_style( 'select2' );
-  wp_deregister_style( 'iris-css' );
-  wp_deregister_style( 'contact-form-7' );
- 
-
-}
-add_action( 'wp_enqueue_scripts', 'my_deregister_scripts', 1000 );
- function my_deregister_scripts() {
-    wp_deregister_script( 'select2' );
-    wp_deregister_script( 'acf-pro-input' );
-    wp_deregister_script( 'acf-input' );
-    wp_deregister_script( 'acf' );
-    wp_deregister_script( 'jquery-ui-datepicker' );
-    ///puede dar problemas de jquery
-    //wp_deregister_script( 'acf' );
-    wp_deregister_script( 'jquery-migrate' );
-    wp_deregister_script( 'jquery-core' );
-}
-
-
 
 
 /**
@@ -166,12 +111,3 @@ function disable_emojis() {
    
    return $urls;
    }
-
-
-/**
- * Disable comments
- */
-add_action( 'admin_init', 'my_remove_admin_menus' );
-function my_remove_admin_menus() {
-    remove_menu_page( 'edit-comments.php' );
-}

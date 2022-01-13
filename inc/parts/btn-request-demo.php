@@ -1,6 +1,0 @@
-    <div class=" cta-btn">
-      <?php $requestDemo = get_field('request_demo_button', 'options'); ?>
-      <a class="button reques-demo   button-purple" rel="noopener"
-        href="<?php echo $requestDemo['url']; ?>"><span><?php echo $requestDemo['title']; ?></span>
-      </a>
-    </div>
