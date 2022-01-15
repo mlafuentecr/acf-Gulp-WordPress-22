@@ -23,15 +23,15 @@ add_action('wp_enqueue_scripts', 'enqueue_header');
 
 
 function enqueue_footer() {
-
+  //I used DIst direct bc if I put them on src will created a loop on gulp file
   /******************* LOAD JS ?defer  ********************/
   if ( is_front_page() ) {
-  wp_enqueue_script('main',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV']. '/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER'], true );
+  wp_enqueue_script('main',      $GLOBALS["THEME_MLM_PATH"].  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER'], true );
   }else {
-  wp_enqueue_script('intern',   $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].  '/js/bundle_intern.js?defer', array(), $GLOBALS['THEME_MLM_VER'], true );
+  wp_enqueue_script('intern',   $GLOBALS["THEME_MLM_PATH"].  '/dist/js/bundle_intern.js?defer', array(), $GLOBALS['THEME_MLM_VER'], true );
   }
   /*******************  JavaScript Bundle with Popper  CDN vr5  ********************/
-  wp_enqueue_script( 'bootstrap', $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV']. '/js/bootstrap.bundle.min.js?defer', array(), $GLOBALS['THEME_MLM_VER'],  true);
+  wp_enqueue_script( 'bootstrap', $GLOBALS["THEME_MLM_PATH"]. '/dist/js/bootstrap.bundle.min.js?defer', array(), $GLOBALS['THEME_MLM_VER'],  true);
 
   // // wp_register_style( 'Font_Awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
   // // wp_enqueue_style('Font_Awesome');

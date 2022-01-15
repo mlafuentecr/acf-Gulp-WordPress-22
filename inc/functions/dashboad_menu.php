@@ -60,14 +60,14 @@ function marioLafuente_dashboard_menu()
                     </td>
                     </tr>     
 
-                    
                     <tr>
-                    <td class="text-left">Email Subscribers</td>
-                      <td class="text-left">
-                       <a target="_blank" href="' . get_site_url() . '/wp-admin/post.php?post=2994&action=edit">Open</a>
-                      <p>Check list of email subscribers</p>
-                      </td>
-                    </tr>
+                    <td class="text-left">Modify Menus </td>
+                    <td class="text-left">
+                    <a target="_blank" href="' . get_site_url() . '/wp-admin/nav-menus.php">Open</a>
+                     <p>Footer Section is handle in widget </p>
+                    </td>
+                    </tr>  
+                 
                     </tbody>
                     </table>
                 ';

@@ -31,13 +31,12 @@ function internalScss() {
 		.pipe(dest('./src/css/'));
 }
 
-//Js
+//Js //I used DIst direct bc if I put them on src will created a loop on gulp file
 function js_bundle_Intern() {
-	return src(['./src/js/internal.js', './src/js/menu_principal.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./src/js/'));
+	return src(['./src/js/internal.js', './src/js/menu-search.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./dist/js/'));
 }
-
 function js_bundle_home() {
-	return src(['./src/js/pwa.js', './src/js/menu_principal.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_home.js')).pipe(dest('./src/js/'));
+	return src(['./src/js/pwa.js', './src/js/menu-search.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_home.js')).pipe(dest('./dist/js/'));
 }
 
 //copy to css files from dist to src and also copy map

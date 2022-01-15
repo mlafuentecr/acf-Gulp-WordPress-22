@@ -46,16 +46,18 @@ foreach($environments as $environment => $hostname) {
 $understrap_inc_dir = get_template_directory() ;
 
 $understrap_includes = array(
-   //'/inc/functions/cleanup.php', // clean all website code elements from wp
+   '/inc/functions/cleanup.php', // clean all website code elements from wp
    '/inc/functions/enqueue.php', // Enqueue scripts and styles.
    '/inc/functions/add_menus.php', // define menus
   '/inc/functions/custom_dashboard.php', // add new look to dashboad
   '/inc/functions/dashboad_menu.php', // add my menu for client use to dashboar
   '/inc/functions/custom_login_look.php', // re look the loging
   '/inc/functions/wp_support.php', // add wp supporth has thumbnails ect
-  '/inc/functions/acfAdmin.php', // Theme Settings tab
   '/inc/functions/acfToJson.php', // save acf data and load it
   '/inc/functions/add_widgets.php', // widgets support
+  '/inc/functions/add_blocks.php', // blocks support
+  '/inc/functions/add_block_editor.php', // blocks support
+  //  '/inc/functions/menutab.php', // Theme Settings tab
  
 );
 

@@ -11,4 +11,5 @@
 <?php include_once(get_template_directory() . '/inc/parts/slider_home.php'); ?>
 
 
+
 <?php get_footer(); ?>

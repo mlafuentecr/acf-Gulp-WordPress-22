@@ -1,0 +1,2 @@
+function pwa(){"serviceWorker"in navigator&&navigator.serviceWorker.register("sw.js").then(function(e){}).catch(function(e){})}"loading"!==document.readyState?pwa():document.addEventListener("DOMContentLoaded",()=>pwa());
+document.addEventListener("DOMContentLoaded",()=>{if(document.querySelector("#searchform")){const e=document.querySelector(".search-icon"),t=document.querySelector(".search-input");e.addEventListener("click",()=>t.classList.toggle("extend"))}});
