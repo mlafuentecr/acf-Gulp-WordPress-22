@@ -56,7 +56,9 @@ $understrap_includes = array(
   '/inc/functions/acfToJson.php', // save acf data and load it
   '/inc/functions/add_widgets.php', // widgets support
   '/inc/functions/add_blocks.php', // blocks support
-  '/inc/functions/add_block_editor.php', // blocks support
+  '/inc/functions/add_richText.php',
+  '/inc/functions/custom-post-type.php',
+  
   //  '/inc/functions/menutab.php', // Theme Settings tab
  
 );

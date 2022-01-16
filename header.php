@@ -51,7 +51,8 @@
         href="<?php echo esc_url(get_feed_link()); ?>">
     </head>
 
-    <body <?php body_class('d-flex flex-column  text-center text-white bg-black text-white');?>>
+    <body id="<?php echo get_post_field( 'post_name', get_post() ); ?>"
+      <?php body_class('d-flex flex-column justify-content-center text-center text-white bg-black text-white');?>>
 
       <!-- Google Tag Manager (noscript) -->
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV5QQ2" height="0" width="0"
@@ -59,9 +60,8 @@
       <!-- End Google Tag Manager (noscript) -->
 
 
-      <header class='header-top container-fluid d-flex  mb-auto mb-auto m-0 p-0 '>
-        <?php get_template_part( '/inc/parts/menu','top'); ?>
-      </header>
+      <?php get_template_part( '/inc/parts/menu','top'); ?>
+
 
 
       <!--[if lt IE 8]>

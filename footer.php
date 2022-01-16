@@ -11,7 +11,7 @@
 
 <footer class="d-flex pt-4">
 
-  <div class="container-fluid ">
+  <div class="container ">
     <div class="d-flex flex-wrap align-content-stretch">
 
       <div id="secundary-menu" class="col flex-grow-1 order-1 order-md-2 links-with-underline">
@@ -30,7 +30,7 @@
         <?php endif; ?>
       </div>
 
-      <div id="copyright" class="col col-12 col-md-4 d-flex flex-column order-3  order-md-1">
+      <div id="copyright" class="col col-12 col-md-4 d-flex justify-content-end flex-column order-3  order-md-1">
         <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
         <div class="widget-area" role="logo">
           <?php dynamic_sidebar( 'footer-3' ); ?>

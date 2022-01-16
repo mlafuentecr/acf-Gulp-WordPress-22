@@ -1,7 +1,27 @@
 {
     "key": "group_61e1c6792fc61",
     "title": "Page Home",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_61e2fee062a41",
+            "label": "home_banner_intro",
+            "name": "home_banner_intro",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
     "location": [
         [
             {
@@ -12,12 +32,12 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1642186389
+    "modified": 1642266893
 }
