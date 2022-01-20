@@ -29,7 +29,6 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	padding-top: 64px !important; //porque el menu tiene fixed
 	font-family: $font-inter-regular;
 	font-size: $px16 !important;
 	font-weight: 400;
@@ -37,7 +36,6 @@ body {
 }
 p {
 	font-size: $px16 !important;
-	line-height: 5rem !important;
 }
 h1,
 h2,

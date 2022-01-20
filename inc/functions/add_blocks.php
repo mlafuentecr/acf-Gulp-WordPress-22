@@ -10,30 +10,42 @@ function my_acf_blocks_init() {
         acf_register_block_type(array(
             'name'              => 'block_copyrights',
             'title'             => __('copyrights'),
-            'description'       => __('Boton para registrarse'),
-            'render_template'   => get_template_directory() .'/inc/parts/blocks/copyrights.php',
+            'description'       => __('copyrights'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_copyrights.php',
             'icon' => 'star-filled',
+            'category'          => 'media',
+        ));
+
+  
+        acf_register_block_type(array(
+            'name'              => 'block caseStudy headline',
+            'title'             => __('block_caseStudy_headline'), //THIS can't have spaces
+            'description'       => __('block for case_study 1 block headline 2cond block description'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_case_study_headline.php',
+            'icon'              => 'star-filled',
             'category'          => 'media',
         ));
 
         acf_register_block_type(array(
-            'name'              => 'block_case_study_sec1',
-            'title'             => __('case_study_sec1'),
-            'description'       => __('case_study_sec1'),
-            'render_template'   => get_template_directory() .'/inc/parts/blocks/case_study_sec1.php',
+            'name'              => 'block box content',
+            'title'             => __('block_box_content'),
+            'description'       => __('You can choose image , text , image & text or text & text block'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_box_content.php',
             'icon' => 'star-filled',
             'category'          => 'media',
         ));
+
+
+
 
         acf_register_block_type(array(
-            'name'              => 'block_text_description_with_line',
-            'title'             => __('text_description_with_line'),
-            'description'       => __('text_description_with_line'),
-            'render_template'   => get_template_directory() .'/inc/parts/blocks/text_description_with_line.php',
-            'icon' => 'star-filled',
+            'name'              => 'block objectives',
+            'title'             => __('block_objectives'), //THIS can't have spaces
+            'description'       => __('block objectives '),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_objectives.php',
+            'icon'              => 'star-filled',
             'category'          => 'media',
         ));
-
 
     }
 }

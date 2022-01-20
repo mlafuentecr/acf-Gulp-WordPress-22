@@ -9,9 +9,9 @@
 function wp_admin_style()
 {
     if ($GLOBALS['THEME_MLM_ENV']=== 'src') {
-        wp_register_style('admin_css', $GLOBALS['THEME_MLM_PATH']  . '/assets/src/css/admin/admin.css', false, $GLOBALS["THEME_MLM_VER"]);
+        wp_register_style('admin_css', $GLOBALS['THEME_MLM_PATH']  . '/'.$GLOBALS['THEME_MLM_ENV'].'/css/admin/admin.css', false, $GLOBALS["THEME_MLM_VER"]);
     } else {
-        wp_register_style('admin_css', $GLOBALS['THEME_MLM_PATH']  . '/assets/'.$GLOBALS['THEME_MLM_ENV'].'/css/admin/admin.css', false, $GLOBALS["THEME_MLM_VER"]);
+        wp_register_style('admin_css', $GLOBALS['THEME_MLM_PATH']  . '/'.$GLOBALS['THEME_MLM_ENV'].'/css/admin/admin.css', false, $GLOBALS["THEME_MLM_VER"]);
     }
     wp_enqueue_style('admin_css');
 }

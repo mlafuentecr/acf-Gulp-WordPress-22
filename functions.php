@@ -4,7 +4,7 @@
 //     defines
 /*-----------------------------------------------------------------------------------*/
 $GLOBALS['THEME_MLM_PATH'] 	= get_template_directory_uri();
-$GLOBALS['THEME_MLM_VER'] 	= '0.0.1';
+$GLOBALS['THEME_MLM_VER'] 	= '0.0.2';
 $GLOBALS['THEME_SETTING_PG'] 	= 2994;
 $GLOBALS['THEME_MLM_ENV'] = '';
 

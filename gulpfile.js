@@ -39,20 +39,20 @@ function blocks_backend_Scss() {
 		.pipe(cleanCSS())
 		.pipe(concat('blocks_backend.css'))
 		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./dist/css/'));
+		.pipe(dest('./src/css/'));
 }
 
 //Js //I used DIst direct bc if I put them on src will created a loop on gulp file
 function js_bundle_Intern() {
-	return src(['./src/js/internal.js', './src/js/menu-search.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./dist/js/'));
+	return src(['./src/js/internal.js', './src/js/scroll.js', './src/js/menu-search.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./dist/js/'));
 }
 function js_bundle_home() {
-	return src(['./src/js/pwa.js', './src/js/menu-search.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_home.js')).pipe(dest('./dist/js/'));
+	return src(['./src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_home.js')).pipe(dest('./dist/js/'));
 }
 
 //copy to css files from dist to src and also copy map
 function copyresources() {
-	return src('./src/css/bootstrap.min.css').pipe(dest('./dist/css/'));
+	return src('./src/css/*.*').pipe(dest('./dist/css/'));
 }
 function copyJs() {
 	return src('./src/js/bootstrap.bundle.min.js', './src/js/bundle_intern.js', './src/js/bundle_home.js').pipe(dest('./dist/js/'));
@@ -65,7 +65,8 @@ function copyadmincss() {
 function watchtask() {
 	watch('./src/sass/*.scss', internalScss);
 	watch('./src/sass/*.scss', homepageScss);
-	watch('./dist/css/blocks_backend.scss', blocks_backend_Scss);
+	watch('./src/css/blocks_backend.scss', blocks_backend_Scss);
+	watch('./src/css/*.css', copyresources);
 	watch('./src/js/*.js', js_bundle_Intern);
 	watch('./src/js/*.js', js_bundle_home);
 }

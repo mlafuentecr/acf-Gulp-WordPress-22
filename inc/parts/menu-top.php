@@ -5,7 +5,7 @@
 ?>
 
 
-<nav class="navbar d-flex navbar-expand-md px-3 navbar-dark fixed-top ">
+<nav id="menu-top" class="navbar d-flex navbar-expand-md align-items-center p-3  navbar-dark ">
 
   <section class='logo d-flex justify-content-start flex-grow-1'>
     <?php if($image[0]) : ?>
