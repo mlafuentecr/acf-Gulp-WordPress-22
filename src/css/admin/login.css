@@ -1,12 +1,12 @@
 
 body {
-    background: #605daf;
+    background: #cbbd30!important;
 }
 li#wp-admin-bar-wp-logo {
     display: none!important;
 }
 .login h1 {
-    background-image: url(/wp-content/themes/heylaika_vr3/inc/images/login-logo.png);
+    background-image: url(/wp-content/themes/rootstrap/inc/images/login-logo.png);
     background-position: center;
     background-repeat: no-repeat; 
    padding-bottom: 30px; 
@@ -18,15 +18,15 @@ li#wp-admin-bar-wp-logo {
 
 
    .login #login_error, .login .message, .login .success {
-   border-left: 4px solid #605daf!important;
+   border-left: 4px solid #cbbd30!important;
 }
 input#wp-submit{
-   background: #605daf;
- border-color: #120f5a #120f5a #120f5a;
- box-shadow: 0 1px 0 #120f5a;
- color: #fff;
+   background: #cbbd30;
+ border-color: #cbbd30 #cbbd30 #cbbd30;
+ box-shadow: 0 1px 0 #cbbd30;
+ color: black;
  text-decoration: none;
- text-shadow: 0 -1px 1px #120f5a, 1px 0 1px #120f5a, 0 1px 1px #120f5a, -1px 0 1px #120f5a;
+ text-shadow: 0 -1px 1px #cbbd30, 1px 0 1px #cbbd30, 0 1px 1px #cbbd30, -1px 0 1px #cbbd30;
 }
 
 
@@ -37,10 +37,20 @@ input#wp-submit{
 
 #login {
     left: 0%;
-    position: relative;
-    width: 320px;
+    width: 50%;
+    height: 100vh;
     padding: 8% 0 0;
     margin: auto;
+    background: black;
+    position: absolute;
+    @media only screen and (max-width: 600px) {
+        width: 100%!important;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #login {
+        width: 100%!important;
+    }
 }
 .login h1 a {
     width:100%!important;
@@ -67,9 +77,13 @@ input#wp-submit{
     margin: 0;
     padding: 0px;
 }
+.login form {
+    background: #000;
+    border: 1px solid #040404;
+}
 .login label {
     margin-left: 20px;
-    color: #777;
+    color: #cbbd30;
     font-size: 14px;
 }
 input#wp-submit {
@@ -77,7 +91,7 @@ input#wp-submit {
     width: 100%;
     height: 100%;
     padding: 10px 10px;
-    background: #664fb7; 
+    background: #cbbd30; 
     text-shadow: none;
     color: #fff;
     display: block;

@@ -6,7 +6,7 @@ li#wp-admin-bar-wp-logo {
     display: none!important;
 }
 .login h1 {
-    background-image: url(/wp-content/themes/heylaika_vr3/inc/images/login-logo.png);
+    background-image: url(/wp-content/themes/rootstrap/inc/images/login-logo.png);
     background-position: center;
     background-repeat: no-repeat; 
    padding-bottom: 30px; 
@@ -22,11 +22,11 @@ li#wp-admin-bar-wp-logo {
 }
 input#wp-submit{
    background: #605daf;
- border-color: #120f5a #120f5a #120f5a;
- box-shadow: 0 1px 0 #120f5a;
+ border-color: #cbbd30 #cbbd30 #cbbd30;
+ box-shadow: 0 1px 0 #cbbd30;
  color: #fff;
  text-decoration: none;
- text-shadow: 0 -1px 1px #120f5a, 1px 0 1px #120f5a, 0 1px 1px #120f5a, -1px 0 1px #120f5a;
+ text-shadow: 0 -1px 1px #cbbd30, 1px 0 1px #cbbd30, 0 1px 1px #cbbd30, -1px 0 1px #cbbd30;
 }
 
 
