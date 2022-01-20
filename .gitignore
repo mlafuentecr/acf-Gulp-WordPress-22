@@ -1,1 +1,4 @@
 node_modules/
+/wp-includes/videos/*
+# Log files
+*.log
