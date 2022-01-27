@@ -1,0 +1,44 @@
+{
+    "key": "group_61eb742cb0593",
+    "title": "Block RS Underline",
+    "fields": [
+        {
+            "key": "field_61eb744939783",
+            "label": "block text underline",
+            "name": "block_text_underline",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Edit this text",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/block-underline"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1643007375
+}

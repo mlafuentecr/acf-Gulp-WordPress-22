@@ -18,12 +18,12 @@
 
   ///IF IS 100%
   if($box_col_size === '100'){
-    $div .= '<section class="block-box-content  block-box-content-100  d-flex ">';
+    $div .= '<section class="block-box-content  block-box-content-100  d-flex  '.$block["className"].' ">';
 
     if($content_type === 'text'){
-      $div .= '<div class="block-content_text col-12">'.  $text1 .'</div>';
+      $div .= '<div class="block-content_text title col-12 '.$block["className"].'">'.  $text1 .'</div>';
     }if ($content_type === 'image') {
-      $div .= '<div class="block-content_img col-12">
+      $div .= '<div class="block-content_img col-12 '.$block["className"].'">
       <img class="lazyload" src="'. $image['url'] .'" alt="'. $image['title'] .'" />
       </div>';
     } 
@@ -33,15 +33,15 @@
 }else{
    
     if($content_type === 'text&image'){
-      $div .='<section class="block-box-content block-box-content_'.$col.$reverse.'  d-flex ">';
-      $div .= '<div class="block-box-content_text col-12 col-md-3">'.  $text1 .'</div>';
+      $div .='<section class="block-box-content '.$block["className"].'  block-box-content_'.$col.$reverse.'  d-flex ">';
+      $div .= '<div class="block-box-content_text title col-12 col-md-3">'.  $text1 .'</div>';
       $div .= '<div class="block-box-content_img col-12 col-md-7"> 
       <img class="lazyload" src="'. $image['url'] .'" alt="'. $image['title'] .'" />
       </div>';
     }if ($content_type === 'text&text') {
-      $div .='<section class="block-box-content block-box-content_'.$col.$reverse.' d-flex  ">';
-      $div .= '<div class="block-box-content_text col-12 col-md-3">'.  $text1 .'</div>';
-      $div .= '<div class="block-box-content_text-2 col-12 col-md-7">'.  $text2 .' </div>';
+      $div .='<section class="block-box-content '.$block["className"].' block-box-content_'.$col.$reverse.' d-flex  ">';
+      $div .= '<div class="block-box-content_text title col-12 col-md-3">'.  $text1 .'</div>';
+      $div .= '<div class="block-box-content_text-2 descrip col-12 col-md-7">'.  $text2 .' </div>';
     } 
     
   $div .= '</section>';

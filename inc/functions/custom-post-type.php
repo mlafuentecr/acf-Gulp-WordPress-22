@@ -4,8 +4,10 @@
 */
  
 function custom_post_type() {
-  
- //CASE STUDY REGISTER
+/*---------------------------------------------------------*/
+/*  CASE STUDY REGISTER
+/*---------------------------------------------------------*/
+
     $labels = array(
         'name'                => _x( 'Case study', 'Post Type General Name', 'RS' ),
         'singular_name'       => _x( 'Case study', 'Post Type Singular Name', 'RS' ),
@@ -30,7 +32,7 @@ function custom_post_type() {
       'rewrite' => array('slug' => 'case_study'),
       'query_var' => true,
       'menu_position' => 5,
-      'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+      'supports'            => array( 'title', 'editor',  'author',  'revisions', 'custom-fields', ),
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,
@@ -46,9 +48,12 @@ function custom_post_type() {
         'show_in_rest' => true,
  
     );
+//'excerpt', 'comments', 'thumbnail', 
 
     register_post_type( 'case_study', $case_study_args );
- //CASE STUDY REGISTER ENDS
+/*---------------------------------------------------------*/
+/*   CASE STUDY REGISTER ENDS
+/*---------------------------------------------------------*/
 
 
 }

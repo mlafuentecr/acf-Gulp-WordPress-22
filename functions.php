@@ -43,7 +43,7 @@ foreach($environments as $environment => $hostname) {
 /*-----------------------------------------------------------------------------------*/
 
 // UnderStrap's includes directory.
-$understrap_inc_dir = get_template_directory() ;
+$understrap_inc_dir = get_template_directory();
 
 $understrap_includes = array(
    '/inc/functions/cleanup.php', // clean all website code elements from wp
@@ -55,11 +55,12 @@ $understrap_includes = array(
   '/inc/functions/wp_support.php', // add wp supporth has thumbnails ect
   '/inc/functions/acfToJson.php', // save acf data and load it
   '/inc/functions/add_widgets.php', // widgets support
-  '/inc/functions/add_blocks.php', // blocks support
-  '/inc/functions/add_richText.php',
   '/inc/functions/custom-post-type.php',
-  
-  //  '/inc/functions/menutab.php', // Theme Settings tab
+  '/inc/functions/add_blocks.php', // blocks support
+   '/inc/functions/add_richText.php',
+   '/inc/functions/add_tiny_mce.php',
+   //'/inc/functions/shortcuts.php',
+ '/inc/functions/add_acf_theme_options.php', // Theme Settings tab
  
 );
 

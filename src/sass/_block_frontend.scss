@@ -1,21 +1,98 @@
+@import 'variables';
 .copyrights {
 	color: #808183;
 }
 /*-----------------------------------------------------------------------------------*/
-/*  Block Editor
+/*  Rich Text
 /*-----------------------------------------------------------------------------------*/
+.rs_underline {
+	background: rgba(255, 255, 0, 0.315);
+	text-decoration: underline;
+}
+.rs_dash {
+	position: relative;
+	display: inline;
+	margin-left: 55px;
+	&:before {
+		//content: url(/wp-content/themes/rootstrap/inc/images/blocks/phases_dash.svg);
 
+		content: '';
+		background-color: white;
+		width: 40px;
+		height: 2px;
+		display: inline-flex;
+		position: absolute;
+		top: 50%;
+		left: -50px;
+	}
+}
 /*-----------------------------------------------------------------------------------*/
 /*  Blocks
 /*-----------------------------------------------------------------------------------*/
-.case_study_sec_1 {
-	background-color: $bg-danger;
-	width: 100%;
-	height: auto;
-	min-height: 300px;
-	h1 {
-		font-size: $px45;
+.block-case-study-headline {
+	font-size: $px20;
+	height: 450px;
+	& > .h-600 {
+		min-height: 500px;
+	}
+	.headline {
+		font-size: $px55;
 		font-weight: 500;
-		line-height: 60px;
+		line-height: 84px;
+	}
+	.list {
+		.title {
+			font-size: $px22;
+			text-transform: uppercase;
+		}
+	}
+}
+
+// .block_background {
+// 	/* The image used */
+// 	/* Set a specific height */
+// 	min-height: 500px;
+// 	/* Create the parallax scrolling effect */
+// 	background-attachment: fixed;
+// 	background-position: center;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	//no-repeat fixed center
+// }
+
+.block_parallax {
+	.parallax_background {
+		background-size: cover;
+	}
+}
+
+.block-box-content {
+	.block-box-content_text {
+		.text-upperCase {
+			@include smallTitle;
+		}
+		p {
+			@include smallTitle;
+		}
+		@include smallTitle;
+	}
+	.descrip {
+		background-color: yellowgreen;
+	}
+	.list_items_container {
+		.text-upperCase {
+			color: red;
+		}
+	}
+}
+
+.block-objectives {
+	.title {
+		@include smallTitle;
+	}
+	.descrip {
+		.text-upperCase {
+			color: red;
+		}
 	}
 }

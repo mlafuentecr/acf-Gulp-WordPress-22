@@ -8,11 +8,11 @@ $title = $pageFields['title'];
 $objectives = $pageFields['objectives'];
  ?>
 
-<section class="block-objectives d-flex flex-wrap">
-  <div class="title col-12 col-md-2 ">
+<section class="block-objectives d-flex flex-wrap  <?php echo $block['className'] ?>">
+  <div class="title col-12 col-md-2 col-md-3 ">
     <?php echo $title; ?>
   </div>
-  <div class="col-12 col-md-10 d-flex flex-wrap ">
+  <div class="col-12 col-md-7 d-flex flex-wrap ">
 
 
     <?php

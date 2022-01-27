@@ -8,22 +8,35 @@ $headline = $pageFields['headline'];
 $client_info = $pageFields['client_info'];
  ?>
 
-<section class="block-case-study-headline d-flex flex-wrap">
-  <div class="headline col-12 col-md-10 ">
-    <?php echo $headline; ?>
-  </div>
-  <div class="col-12 col-md-2 ">
-    <div class="item">
-      <span class="title">CLIENTS</span>
-      <span class="descrip"><?php echo $client_info['clients']; ?></span>
-    </div>
-    <div class="item">
-      <span class="title">duration</span>
-      <span class="descrip"><?php echo $client_info['duration']; ?></span>
-    </div>
-    <div class="item">
-      <span class="title">team</span>
-      <span class="descrip"><?php echo $client_info['team']; ?></span>
+<section class="block-case-study-headline ignore-container  <?php echo $block['className'] ?>">
+  <div class='bg-red'>
+    <div class="container">
+
+
+      <div class="h-600  d-flex  d-inline-block justify-content-around align-items-start my-5 ">
+
+        <div class="headline col-12 col-md-8 ">
+          <?php echo $headline; ?>
+        </div>
+
+        <div class="list col-12 col-md-2  ">
+          <div class="item d-flex flex-wrap">
+            <span class="title col-12">CLIENTS</span>
+            <span class="descrip mb-4"><?php echo $client_info['clients']; ?></span>
+          </div>
+          <div class="item d-flex flex-wrap">
+            <span class="title col-12">duration</span>
+            <span class="descrip mb-4"><?php echo $client_info['duration']; ?></span>
+          </div>
+          <div class="item d-flex flex-wrap">
+            <span class="title col-12">team</span>
+            <span class="descrip mb-4"><?php echo $client_info['team']; ?></span>
+          </div>
+        </div>
+
+      </div>
+
+
     </div>
   </div>
 </section>
@@ -41,6 +54,11 @@ $client_info = $pageFields['client_info'];
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
 }
 
 .block-case-study-headline div:nth-child(1) {

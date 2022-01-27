@@ -31,44 +31,54 @@ function internalScss() {
 		.pipe(dest('./src/css/'));
 }
 
-function blocks_backend_Scss() {
-	return src(['./src/sass/blocks_backend.scss'])
+function backendScss() {
+	return src(['./src/sass/custom-editor-style.scss'])
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.init())
 		.pipe(prefix())
 		.pipe(cleanCSS())
-		.pipe(concat('blocks_backend.css'))
+		.pipe(concat('custom-editor-style.css'))
 		.pipe(sourcemaps.write('.'))
 		.pipe(dest('./src/css/'));
 }
 
-//Js //I used DIst direct bc if I put them on src will created a loop on gulp file
-function js_bundle_Intern() {
-	return src(['./src/js/internal.js', './src/js/scroll.js', './src/js/menu-search.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./dist/js/'));
-}
-function js_bundle_home() {
-	return src(['./src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js']).pipe(babel()).pipe(uglify()).pipe(concat('bundle_home.js')).pipe(dest('./dist/js/'));
-}
-
 //copy to css files from dist to src and also copy map
-function copyresources() {
+function copyCss() {
 	return src('./src/css/*.*').pipe(dest('./dist/css/'));
-}
-function copyJs() {
-	return src('./src/js/bootstrap.bundle.min.js', './src/js/bundle_intern.js', './src/js/bundle_home.js').pipe(dest('./dist/js/'));
 }
 function copyadmincss() {
 	return src('./src/css/admin/*.css').pipe(dest('./dist/css/admin/'));
 }
 
-//paca vigila cuando algo cambia corre el , layoutscss
-function watchtask() {
-	watch('./src/sass/*.scss', internalScss);
-	watch('./src/sass/*.scss', homepageScss);
-	watch('./src/css/blocks_backend.scss', blocks_backend_Scss);
-	watch('./src/css/*.css', copyresources);
-	watch('./src/js/*.js', js_bundle_Intern);
-	watch('./src/js/*.js', js_bundle_home);
+//Js //I used DIst direct bc if I put them on src will created a loop on gulp file
+const jsIntern = ['./src/js/internal.js', './src/js/scroll.js', './src/js/menu-search.js'];
+const jsHome = ['./src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js'];
+const jscopy = ['./src/js/rich-text.js', './src/js/bundle_intern.js', './src/js/bundle_home.js'];
+
+function js_bundle_Intern() {
+	return src(jsIntern).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./src/js/'));
+}
+function js_bundle_home() {
+	return src(jsHome).pipe(babel()).pipe(uglify()).pipe(concat('bundle_home.js')).pipe(dest('./src/js/'));
+}
+function copyJs() {
+	return src(jscopy).pipe(dest('./dist/js/'));
+}
+function copyboostrapJs() {
+	return src('./src/js/bootstrap.bundle.min.js').pipe(dest('./dist/js/'));
 }
 
-exports.default = series(parallel(js_bundle_home, js_bundle_Intern, series(homepageScss, internalScss, blocks_backend_Scss, copyresources, copyadmincss, copyJs, watchtask)));
+//paca vigila cuando algo cambia corre el , layoutscss
+function watchtask() {
+	watch(['./src/sass/*.scss'], internalScss);
+	watch(['./src/sass/*.scss'], homepageScss);
+
+	watch('./src/sass/custom-editor-style.scss', backendScss);
+	watch('./src/css/*.css', copyCss);
+
+	watch(jsIntern, js_bundle_Intern);
+	watch(jsHome, js_bundle_home);
+	watch(jscopy, copyJs);
+}
+
+exports.default = series(parallel(js_bundle_home, copyboostrapJs, js_bundle_Intern, backendScss, homepageScss, internalScss, series(copyCss, copyadmincss, copyJs, watchtask)));
