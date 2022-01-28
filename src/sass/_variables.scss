@@ -15,7 +15,7 @@ $px30: 1.875rem; //30
 $px32: 2rem; //32px
 $px35: 2.188rem; //32px
 $px40: 2.5rem; //40px
-$px45: 2.813rem; //45px
+$px48: 3rem; //45px
 $px50: 3.125rem; //50px
 $px55: 3.438rem; //55px
 $px60: 3.75rem; //60px
@@ -161,8 +161,4 @@ h4 {
 	font-size: $px20 !important;
 	text-transform: uppercase;
 	font-weight: 700;
-}
-
-@mixin message {
-	font-size: $px55 !important;
 }

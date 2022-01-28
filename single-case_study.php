@@ -11,9 +11,6 @@ $dataAcf = get_field('headline');
 $headline_title = $dataAcf['headline_title'];
 $ckient_info = get_field('headline_info');
 
-
-
-
 $description =  get_field('small_description');
 $type = $description['type_of_busybess'][0]->name;
 
@@ -21,22 +18,21 @@ $type = $description['type_of_busybess'][0]->name;
 ?>
 
 
-
 <header style="background-color:<?php echo $description['background_color']; ?>">
   <div class="container py-5">
-    <div class="d-flex justify-content-between text-white my-5">
+    <div class="d-flex flex-wrap justify-content-between text-white my-5">
       <h1 class="col-12 col-md-8 d-flex align-items-center"><?php echo $dataAcf['headline_title']; ?></h1>
-      <aside class="col-12 col-md-3  case_study_list">
-        <div>
-          <h3 class="case_study_title">clients</h3>
+      <aside class="col-12 col-md-3 mt-5 mt-md-0 d-flex flex-wrap case_study_list">
+        <div class="col-6 col-md-12">
+          <h3 class="subtitle">clients</h3>
           <div class="case_study_description mb-4"><?php echo $ckient_info['clients']; ?></div>
         </div>
-        <div>
-          <h3 class="case_study_title">duration</h3>
+        <div class="col-6 col-md-12 ">
+          <h3 class="subtitle">duration</h3>
           <div class="case_study_description  mb-4"><?php echo $ckient_info['duration']; ?></div>
         </div>
-        <div>
-          <h3 class="case_study_title">team</h3>
+        <div class="col-12 ">
+          <h3 class="subtitle">team</h3>
           <div class="case_study_description  mb-4"><?php echo $ckient_info['team']; ?></div>
         </div>
 
@@ -50,12 +46,12 @@ $type = $description['type_of_busybess'][0]->name;
 
 <section class="clients_objectives ">
   <div class="container py-5">
-    <div class="d-flex justify-content-between text-white my-5">
-      <div class="case_study_title  col-12 col-md-3">
+    <div class="d-flex flex-wrap justify-content-between text-white my-5">
+      <div class="case_study_title my-4 my-md-0   col-12 col-md-3">
         <?php echo get_field('objectives_title');  ?>
       </div>
       <div class="clients_objectives_descrip  col-12 col-md-9">
-        <h3><?php echo  get_field('objectives_description')['title'];  ?></h3>
+        <h3 class='subtitle'><?php echo  get_field('objectives_description')['title'];  ?></h3>
         <?php echo  get_field('objectives_description')['content'];  ?>
       </div>
     </div>
@@ -65,10 +61,10 @@ $type = $description['type_of_busybess'][0]->name;
 
 <section class="our_objectives">
   <div class="container py-5">
-    <div class="d-flex justify-content-between text-white">
-      <div class="case_study_title  col-12 col-md-3"> <?php echo  get_field('our_objectives_title'); ?> </div>
+    <div class="d-flex flex-wrap justify-content-between text-white">
+      <div class="case_study_title col-12 col-md-3"> <?php echo  get_field('our_objectives_title'); ?> </div>
 
-      <div class="our_objectives_content   gap-5 col-12 col-md-9 d-flex">
+      <div class="our_objectives_content gap-5 gap-md-2 col-12 col-md-9 d-flex">
         <?php 
         $objectives = get_field('objectives');
         if( $objectives ) {
@@ -77,7 +73,7 @@ $type = $description['type_of_busybess'][0]->name;
               $key <= 9 ? $key = ("0".$key) : $key;
                 echo "<div class='col-12 col-md-6 '>
                 <div class='number'>".$key."</div>
-                <div class='case_study_title  col-12'>".$row['title']."</div>
+                <div class='subtitle  col-12'>".$row['title']."</div>
                 <div class='our_objectives_descrip'>".$row['content']."</div>
                 </div>";
                 $key++;
@@ -90,7 +86,7 @@ $type = $description['type_of_busybess'][0]->name;
 </section>
 
 
-<section class="case_study_banner_1">
+<section class="case_study_banner_1 message_big">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php echo get_field('objectives_message'); ?>
@@ -112,12 +108,12 @@ $type = $description['type_of_busybess'][0]->name;
         $key = 1;
         if( $phase ) {
             foreach( $phase as $row ) {
-                echo "<div class='col-12 '>
+                echo "<div class='col-12 mb-5 '>
                 <div class='phase_image  col-12'>
-                <img class='lazyload' src='".$row['phase_image']['url']."' alt=".$row['phase_image']['title']." />
+                <img class='lazyload mb-3' src='".$row['phase_image']['url']."' alt=".$row['phase_image']['title']." />
                 </div>
                 <div class='our_phase_content'>
-                <div class='phase-number text-start '> the process phase  ".$key."    </div>
+                <div class='phase-number text-start '> the process <span class='dash-left'>phase</span>  ".$key."    </div>
                
                 <div class='case_study_title text-start col-12'>  ".$row['phase_title']." </div>
                 <div class='case_study_desc text-start col-12'>  ".$row['description']."</div>
@@ -132,7 +128,7 @@ $type = $description['type_of_busybess'][0]->name;
   </div>
 </section>
 
-<section class="case_study_banner_2">
+<section class="case_study_banner_2 message_big">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php echo get_field('phase_message'); ?>
@@ -157,7 +153,7 @@ $type = $description['type_of_busybess'][0]->name;
 </section>
 
 
-<section class="case_study_banner_3">
+<section class="case_study_banner_3 message_big">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php echo get_field('phase_message_2'); ?>
@@ -169,7 +165,7 @@ $type = $description['type_of_busybess'][0]->name;
 <div class="banner" style="background-image: url(<?php echo  get_field('phase_image')['url']; ?>)">
 </div>
 
-<section class="case_study_faq">
+<section class="case_study_faq faq">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <div class="col-12 title"> <?php echo  get_field('faq_title'); ?> </div>
