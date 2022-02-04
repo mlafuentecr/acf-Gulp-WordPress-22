@@ -59,8 +59,8 @@ $understrap_includes = array(
   '/inc/functions/add_blocks.php', // blocks support
    '/inc/functions/add_richText.php',
    '/inc/functions/add_tiny_mce.php',
-   //'/inc/functions/shortcuts.php',
  '/inc/functions/add_acf_theme_options.php', // Theme Settings tab
+    //'/inc/functions/shortcuts.php',
  
 );
 

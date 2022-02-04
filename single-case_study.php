@@ -11,29 +11,38 @@ $dataAcf = get_field('headline');
 $headline_title = $dataAcf['headline_title'];
 $ckient_info = get_field('headline_info');
 
+//header_font_color
 $description =  get_field('small_description');
 $type = $description['type_of_busybess'][0]->name;
+$color = $description['header_font_color'];
 
+function addFontColor( $color  ){
+  echo 'style="color: '. $color .'"';
+}
 
 ?>
 
 
-<header style="background-color:<?php echo $description['background_color']; ?>">
+<header style="background-color:<?php echo $description['background_color']; ?>;">
   <div class="container py-5">
     <div class="d-flex flex-wrap justify-content-between text-white my-5">
-      <h1 class="col-12 col-md-8 d-flex align-items-center"><?php echo $dataAcf['headline_title']; ?></h1>
-      <aside class="col-12 col-md-3 mt-5 mt-md-0 d-flex flex-wrap case_study_list">
+      <h1 class="col-12 col-md-8 d-flex align-items-center" <?php addFontColor($color); ?>>
+        <?php echo $dataAcf['headline_title']; ?></h1>
+      <aside class=" col-12 col-md-3 mt-5 mt-md-0 d-flex flex-wrap case_study_list">
         <div class="col-6 col-md-12">
-          <h3 class="subtitle">clients</h3>
-          <div class="case_study_description mb-4"><?php echo $ckient_info['clients']; ?></div>
+          <h3 class="subtitle" <?php addFontColor($color); ?>> clients</h3>
+          <div class="case_study_description mb-4" <?php addFontColor($color); ?>>
+            <?php echo $ckient_info['clients']; ?></div>
         </div>
         <div class="col-6 col-md-12 ">
-          <h3 class="subtitle">duration</h3>
-          <div class="case_study_description  mb-4"><?php echo $ckient_info['duration']; ?></div>
+          <h3 class="subtitle" <?php addFontColor($color); ?>>duration</h3>
+          <div class="case_study_description  mb-4" <?php addFontColor($color); ?>>
+            <?php echo $ckient_info['duration']; ?></div>
         </div>
         <div class="col-12 ">
-          <h3 class="subtitle">team</h3>
-          <div class="case_study_description  mb-4"><?php echo $ckient_info['team']; ?></div>
+          <h3 class="subtitle" <?php addFontColor($color); ?>>team</h3>
+          <div class="case_study_description  mb-4" <?php addFontColor($color); ?>>
+            <?php echo $ckient_info['team']; ?></div>
         </div>
 
       </aside>
@@ -165,38 +174,31 @@ $type = $description['type_of_busybess'][0]->name;
 <div class="banner" style="background-image: url(<?php echo  get_field('phase_image')['url']; ?>)">
 </div>
 
+<!-- FAQS -->
+<?php $faqs = get_field('faqs');  if( $faqs ) { ?>
 <section class="case_study_faq faq">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <div class="col-12 title"> <?php echo  get_field('faq_title'); ?> </div>
       <?php 
-      $faqs = get_field('faqs');
-      if( $faqs ) {
-        
-          foreach( $faqs as $key=>$row ) {
-           
-              echo '<div class="accordion accordion-flush col-12" id="accordionFaq">
-
-              <div class="accordion-item ">
-                <h2 class="accordion-header" id="flush-heading-'.  $key .'">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse'.  $key .'" aria-expanded="false" aria-controls="flush-collapse'.  $key .'">
-                    '.$row['title'].'
-                  </button>
-                </h2>
-                <div id="flush-collapse'.  $key .'" class="accordion-collapse collapse" aria-labelledby="flush-heading-'.  $key .'" data-bs-parent="#accordionFaq">
-                  <div class="accordion-body"> '.$row['content'].'</div>
+            foreach( $faqs as $key=>$row ) {
+                echo '<div class="accordion accordion-flush col-12" id="accordionFaq">
+                <div class="accordion-item ">
+                  <h2 class="accordion-header" id="flush-heading-'.  $key .'">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse'.  $key .'" aria-expanded="false" aria-controls="flush-collapse'.  $key .'">
+                      '.$row['title'].'
+                    </button>
+                  </h2>
+                  <div id="flush-collapse'.  $key .'" class="accordion-collapse collapse" aria-labelledby="flush-heading-'.  $key .'" data-bs-parent="#accordionFaq">
+                    <div class="accordion-body"> '.$row['content'].'</div>
+                  </div>
                 </div>
-              </div>
-            </div>';
-
-          }
-     
-      }
-      
-      ?>
+              </div>';
+            }
+        ?>
     </div>
   </div>
 </section>
-
+<?php  } //if ends ?>
 
 <?php get_footer(); ?>

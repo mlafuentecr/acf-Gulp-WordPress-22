@@ -1,28 +1,9 @@
 {
-    "key": "group_61eb742cb0593",
-    "title": "Block RS Underline",
+    "key": "group_61f4cf138bee8",
+    "title": "Block add Post",
     "fields": [
         {
-            "key": "field_61f4a82689769",
-            "label": "add container",
-            "name": "add_container",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_61f4b16b88a9e",
+            "key": "field_61f4cf5a45e5f",
             "label": "margen",
             "name": "margen",
             "type": "select",
@@ -51,11 +32,11 @@
             "placeholder": ""
         },
         {
-            "key": "field_61eb744939783",
-            "label": "block text underline",
-            "name": "block_text_underline",
-            "type": "wysiwyg",
-            "instructions": "",
+            "key": "field_61f4cf2c4c516",
+            "label": "post",
+            "name": "post",
+            "type": "relationship",
+            "instructions": "ADD POST",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -63,11 +44,17 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Edit this text",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
+            "post_type": "",
+            "taxonomy": "",
+            "filters": [
+                "post_type"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": 1,
+            "max": 2,
+            "return_format": "id"
         }
     ],
     "location": [
@@ -75,7 +62,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/block-underline"
+                "value": "acf\/block-load-post"
             }
         ]
     ],
@@ -88,5 +75,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643433847
+    "modified": 1643476422
 }

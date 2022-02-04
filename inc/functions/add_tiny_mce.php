@@ -62,6 +62,17 @@ function my_mce_before_init_insert_formats( $init_array ) {
     )
     ),
 
+        //This is not gutenber but tinymce
+        array(  
+          'title' => 'rs_link_underline',  
+          'block' => 'span',  
+          'classes' => 'rs_link_underline',
+          'wrapper' => true,
+          'styles' => array(
+            'text-decoration' => 'underline'
+        )
+        ),
+
   );
 
   // Insert the array, JSON ENCODED, into 'style_formats'

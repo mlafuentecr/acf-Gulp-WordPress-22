@@ -9,6 +9,23 @@
 	background: rgba(255, 255, 0, 0.315);
 	text-decoration: underline;
 }
+.block_text_underline {
+	p {
+		font-size: $px48 !important;
+		font-weight: 500;
+		line-height: 150%;
+	}
+	strong {
+		position: relative;
+		border-bottom: 30px solid yellow;
+		border-image: url('/wp-content/themes/rootstrap/inc/images/home_1lines.svg');
+		border-image-repeat: round;
+		border-image-slice: 300;
+		text-align: center;
+		margin: 0px auto;
+		width: 100%;
+	}
+}
 .rs_dash {
 	position: relative;
 	display: inline;
@@ -48,6 +65,23 @@
 	}
 }
 
+.what_we_do {
+	.subtitle {
+		font-weight: 700;
+		font-size: $px14;
+		line-height: 150%;
+		text-transform: uppercase;
+		color: #808183;
+	}
+	.title {
+		font-size: $px28;
+	}
+	.body {
+		color: #808183;
+		font-size: $px16;
+		line-height: 2 !important;
+	}
+}
 // .block_background {
 // 	/* The image used */
 // 	/* Set a specific height */

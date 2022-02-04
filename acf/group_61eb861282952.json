@@ -1,0 +1,189 @@
+{
+    "key": "group_61eb861282952",
+    "title": "Block RS Parallax",
+    "fields": [
+        {
+            "key": "field_61eb8a1c220e2",
+            "label": "parallax",
+            "name": "parallax",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "14",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "on",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_61eb8bddbd177",
+            "label": "full width",
+            "name": "full_width",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "14",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "on",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_61eb9ba3cc183",
+            "label": "margen",
+            "name": "margen",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "14",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "my-5": "margin 5",
+                "my-4": "margin 4",
+                "my-3": "margin 3",
+                "my-2": "margin 2",
+                "my-1": "margin 1",
+                "my-0": "margin 0"
+            },
+            "default_value": "margin 0",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61eb8f62366fe",
+            "label": "Horizontal position",
+            "name": "horizontal_position",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "center": "Center",
+                "right": "Right"
+            },
+            "default_value": "center",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61eb8fa6d53df",
+            "label": "Vertical position",
+            "name": "vertical_position",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "17",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "center": "Center",
+                "bottom": "Bottom"
+            },
+            "default_value": "center",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61eb99130f79d",
+            "label": "height in px",
+            "name": "height",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "14",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 500,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": 1000,
+            "step": ""
+        },
+        {
+            "key": "field_61eb863b2c2dd",
+            "label": "image",
+            "name": "image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "0.5",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/block-parallax"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1643426191
+}

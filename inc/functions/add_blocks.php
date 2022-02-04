@@ -27,10 +27,10 @@ function my_acf_blocks_init() {
         ));
 
         acf_register_block_type(array(
-            'name'              => 'block box content',
+            'name'              => 'block Media & text',
             'title'             => __('RS Media & text'),
             'description'       => __('You can choose image , text , image & text or text & text block'),
-            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_box_content.php',
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_media_text.php',
             'icon' => 'star-filled',
             'category'          => 'media',
         ));
@@ -78,7 +78,36 @@ function my_acf_blocks_init() {
             'category'          => 'media',
         ));
      
-     
+        acf_register_block_type(array(
+            'name'              => 'block Load post',
+            'title'             => __('RS Load post'), 
+            'description'       => __('block Load post'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_load_post.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'block_what_we_do',
+            'title'             => __('RS what we do'), 
+            'description'       => __('block what_we_do'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_what_we_do.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'block get posts',
+            'title'             => __('RS block get posts'), 
+            'description'       => __('block get posts'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_get_posts.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
+
+
+        
+
     }
 }
 

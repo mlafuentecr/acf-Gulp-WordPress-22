@@ -110,11 +110,14 @@ body {
 	&-red {
 		background-color: $bg-danger;
 	}
+	&-transparent {
+		background-color: transparent !important;
+	}
 }
 
-/*-----------------------------------------------------------------------------------*/
+/*------------------------------------------------------*/
 /*  text-white
-/*-----------------------------------------------------------------------------------*/
+/*------------------------------------------------------*/
 
 .text {
 	&-white {
@@ -122,6 +125,20 @@ body {
 		p {
 			color: white;
 		}
+	}
+	&-gray {
+		color: #808183;
+	}
+}
+
+/*------------------------------------------------------*/
+/*  card
+/*------------------------------------------------------*/
+.card {
+	&-img {
+		min-height: 300px;
+		background-position: center;
+		background-size: cover;
 	}
 }
 
@@ -164,8 +181,35 @@ body {
 		@include links-with-line;
 	}
 }
+.rs_link_underline {
+	font-size: 25px !important;
+	padding-bottom: 3px;
+	background-image: linear-gradient(transparent calc(100% - 2px), #fff 2px);
+	text-decoration: none !important;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.5s;
+
+	&:hover {
+		background-size: 0 100%;
+		color: #fff;
+	}
+}
 .links-with-underline {
 	@include links-with-line;
+}
+.link_style_white {
+	font-size: $px24 !important;
+	text-decoration: none;
+	background-image: linear-gradient(transparent calc(100% - 2px), #fff 2px);
+	background-size: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.5s;
+
+	&:hover {
+		background-size: 100% 100% !important;
+		color: #fff;
+	}
 }
 /*-----------------------------------------------------------------------------------*/
 /*  others 
@@ -210,7 +254,7 @@ body {
 			box-shadow: none;
 		}
 		&:after {
-			filter: brightness(0%) invert();
+			filter: invert(1) brightness(1);
 		}
 	}
 	.accordion-header {
@@ -270,6 +314,27 @@ body {
 				background-size: cover;
 			}
 		}
+	}
+}
+.fit-background {
+	background-position: center;
+	background-size: cover;
+}
+.small-arrow {
+	position: relative;
+	display: inline-flex;
+
+	&::after {
+		content: '';
+		width: 25px;
+		height: 25px;
+		display: flex;
+		background-image: url(/wp-content/themes/rootstrap/inc/images/white_arrow_mobile.svg);
+		left: 0px;
+		background-repeat: no-repeat;
+		top: 50%;
+		margin-top: 18px;
+		margin-left: 10px;
 	}
 }
 /*--------------------------------------------------*/

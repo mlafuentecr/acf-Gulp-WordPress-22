@@ -5,3 +5,55 @@
 /*-----------------------------------------------------------------------------------*/
 /*  HOME
 /*-----------------------------------------------------------------------------------*/
+#home {
+	.walletjoy {
+		background-color: #103831 !important;
+	}
+	.card-link {
+		.zoom_img {
+			transition: all 1s;
+			&:hover {
+				-webkit-transform: scale(1.1);
+				transform: scale(1.1);
+			}
+		}
+		strong {
+			position: relative;
+			font-size: $px28;
+			line-height: 32px;
+			text-decoration: none;
+			background-image: linear-gradient(transparent calc(100% - 2px), #fff 2px);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			transition: background-size 0.5s;
+			&:hover {
+				background-size: 100% 100% !important;
+			}
+		}
+		.card-body {
+			strong {
+				color: #fff;
+				margin: 20px 0px 0px 0px;
+				display: flex;
+				min-height: 70px;
+			}
+			p {
+				color: #ffffff91;
+			}
+		}
+	}
+	.block_post {
+		p {
+			color: #ffffff91;
+			strong {
+				color: white;
+			}
+		}
+	}
+
+	.what_we_do {
+		a {
+			color: white;
+		}
+	}
+}

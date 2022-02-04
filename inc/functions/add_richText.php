@@ -17,7 +17,7 @@ function enqueue_block_editor_assets() {
     );
 
 }
-add_action( 'enqueue_block_editor_assets', 'enqueue_block_editor_assets' );
+//add_action( 'enqueue_block_editor_assets', 'enqueue_block_editor_assets' );
 
 
 

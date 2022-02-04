@@ -5,12 +5,18 @@
 /*-----------------------------------------------------------------------------------*/
 $pageFields = get_fields();
 $block_underline_text = $pageFields['block_text_underline'];
+$addContainer = $pageFields['add_container'];
+$margen = $pageFields['margen'];
+
+
+
  ?>
 
-<section class="block_text_underline <?php echo $block['className'] ?>">
+<?php if( $addContainer ) {echo '<div class="container">';}  ?>
+<section class="block_text_underline <?php echo $block['className'].' '.$margen; ?>">
   <?php echo $block_underline_text; ?>
 </section>
-
+<?php if($addContainer ) {echo '</div>';}  ?>
 
 
 
