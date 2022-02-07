@@ -3,17 +3,17 @@
 $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 
 ?>
-<section class="author-page">
+<section class="author-page card-invert ">
 
   <header class="author-header">
 
     <div class="container">
 
-      <div class="row">
+      <div class="row py-5 ">
 
 
-        <div class="author-img col-1 col-md-4">
-          <a href="<?php echo get_author_posts_url($curauth->user_url) ?>">
+        <div class="author-img col-1 col-md-4 ">
+          <a class="rounded-circle" href="<?php echo get_author_posts_url($curauth->user_url) ?>">
             <?php  echo get_avatar($curauth->ID, 690); ?>
           </a>
         </div>
@@ -34,9 +34,9 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
   </header><!-- .entry-header -->
 
-  <section class="cards-section">
+  <section class="cards-section py-5">
     <div class="container">
-      <p class="h7 text-center my-4">
+      <p class="h7 text-center my-4 text-black">
         ARTICLES by <?php echo $curauth->display_name; ?>
       </p>
 

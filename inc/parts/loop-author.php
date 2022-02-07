@@ -11,7 +11,7 @@ $the_query = new WP_Query( array(
 while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 <div class="col">
 
-  <div class="card  bg-transparent shadow-sm ">
+  <div class="card  bg-transparent  ">
 
     <a class="card-link" href="<?php echo get_permalink(); ?>">
       <div class="card-img mb-4 zoom_img"

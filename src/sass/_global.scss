@@ -137,6 +137,7 @@ body {
 .card {
 	box-shadow: none !important;
 	border: none !important;
+
 	&-img {
 		min-height: 300px;
 		background-position: center;
@@ -150,12 +151,17 @@ body {
 		line-height: normal;
 		min-height: 80px;
 	}
-	.card {
-		.content {
-			min-height: 130px;
+
+	.content,
+	.card-text {
+		min-height: 130px;
+	}
+	.text-gray {
+		color: $gray !important;
+		p {
+			color: $gray !important;
 		}
 	}
-
 	.categories {
 		display: flex;
 		flex-wrap: wrap;
@@ -187,6 +193,7 @@ body {
 			}
 		}
 	}
+
 	.author {
 		&_pic {
 			width: 48px;
@@ -228,10 +235,30 @@ body {
 				align-items: center;
 			}
 		}
+
+		@media (max-width: $xl) {
+			&_name,
+			&_data {
+				height: auto;
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
 	}
 	.borderY-2 {
 		border-bottom: 2px solid #5e5e5e;
 		border-top: 2px solid #5e5e5e;
+	}
+
+	&-invert {
+		.card-link {
+			color: black;
+		}
+		.text-white,
+		.author_name,
+		.author_time_reading {
+			filter: invert(1);
+		}
 	}
 }
 
