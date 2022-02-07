@@ -14,8 +14,8 @@ $GLOBALS['THEME_MLM_ENV'] = '';
 // Get the hostname
 $http_host      = $_SERVER['HTTP_HOST'];
 $ENV            = '';
-$local          = 'rootstrapmario.local';
-$staging        = 'rootstrapmario.local';
+$local          = 'roostrapdev-new-vr1.local';
+$staging        = 'roostrapdev-new-vr1.local';
 $production     = 'rootstrap.local';
 
 $environments = array(
@@ -46,9 +46,9 @@ foreach($environments as $environment => $hostname) {
 $understrap_inc_dir = get_template_directory();
 
 $understrap_includes = array(
-   '/inc/functions/cleanup.php', // clean all website code elements from wp
-   '/inc/functions/enqueue.php', // Enqueue scripts and styles.
-   '/inc/functions/add_menus.php', // define menus
+  '/inc/functions/cleanup.php', // clean all website code elements from wp
+  '/inc/functions/enqueue.php', // Enqueue scripts and styles.
+  '/inc/functions/add_menus.php', // define menus
   '/inc/functions/custom_dashboard.php', // add new look to dashboad
   '/inc/functions/dashboad_menu.php', // add my menu for client use to dashboar
   '/inc/functions/custom_login_look.php', // re look the loging
@@ -57,9 +57,10 @@ $understrap_includes = array(
   '/inc/functions/add_widgets.php', // widgets support
   '/inc/functions/custom-post-type.php',
   '/inc/functions/add_blocks.php', // blocks support
-   '/inc/functions/add_richText.php',
-   '/inc/functions/add_tiny_mce.php',
- '/inc/functions/add_acf_theme_options.php', // Theme Settings tab
+  '/inc/functions/add_richText.php',
+  '/inc/functions/add_tiny_mce.php',
+  '/inc/functions/add_acf_theme_options.php', // Theme Settings tab
+  '/inc/functions/add_taxonomy.php', // Theme taxonomy
     //'/inc/functions/shortcuts.php',
  
 );

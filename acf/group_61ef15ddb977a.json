@@ -801,8 +801,8 @@
                 },
                 {
                     "key": "field_61f1d331385e0",
-                    "label": "type of busybess",
-                    "name": "type_of_busybess",
+                    "label": "type of business",
+                    "name": "type_of_business",
                     "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
@@ -812,7 +812,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "taxonomy": "post_tag",
+                    "taxonomy": "type_of_business",
                     "field_type": "checkbox",
                     "add_term": 1,
                     "save_terms": 1,
@@ -824,8 +824,8 @@
                 {
                     "key": "field_61f59465fc175",
                     "label": "thumbnail",
-                    "name": "thumbnail",
-                    "type": "image",
+                    "name": "",
+                    "type": "message",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -834,16 +834,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
+                    "message": "<h2>If you need change the thumbnail Image <\/br>please click on ( Featured image )  on the right sideBar<\/h2>",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
                 },
                 {
                     "key": "field_61f1c1ef0565d",
@@ -890,5 +883,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643484292
+    "modified": 1644121195
 }

@@ -1,12 +1,12 @@
 {
-    "key": "group_61fc9f3913fa6",
-    "title": "Block Get Posts",
+    "key": "group_6200778ab9efd",
+    "title": "single page (Post)",
     "fields": [
         {
-            "key": "field_61fc9fb763ea8",
-            "label": "get latest post?",
-            "name": "get_latest_post",
-            "type": "true_false",
+            "key": "field_620077a21c6a8",
+            "label": "Time Estimation",
+            "name": "time_estimation",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,24 +15,26 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "default_value": 5,
+            "placeholder": 5,
+            "prepend": "",
+            "append": "min read",
+            "min": 1,
+            "max": 60,
+            "step": 5
         }
     ],
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf\/block-get-posts"
+                "value": "post"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -40,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643945951
+    "modified": 1644198317
 }

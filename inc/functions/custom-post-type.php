@@ -32,7 +32,7 @@ function custom_post_type() {
       'rewrite' => array('slug' => 'case_study'),
       'query_var' => true,
       'menu_position' => 5,
-      'supports'            => array( 'title', 'editor',  'author',  'revisions', 'custom-fields', ),
+      'supports'            => array( 'title', 'editor', 'thumbnail', 'author',  'revisions', 'custom-fields', ),
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,

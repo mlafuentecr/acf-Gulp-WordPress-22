@@ -1,0 +1,10 @@
+@import 'variables';
+
+.author {
+	&-page {
+		background-color: pink;
+	}
+	&-header {
+		background-color: yellow;
+	}
+}

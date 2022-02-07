@@ -79,10 +79,10 @@ function my_acf_blocks_init() {
         ));
      
         acf_register_block_type(array(
-            'name'              => 'block Load post',
-            'title'             => __('RS Load post'), 
-            'description'       => __('block Load post'),
-            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_load_post.php',
+            'name'              => 'block load case study post',
+            'title'             => __('RS load case study post'), 
+            'description'       => __('block load case study post'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_caseStudy_post.php',
             'icon'              => 'star-filled',
             'category'          => 'media',
         ));

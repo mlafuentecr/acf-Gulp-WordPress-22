@@ -1,6 +1,6 @@
 {
     "key": "group_61f4cf138bee8",
-    "title": "Block add Post",
+    "title": "Block add Horizontal Post",
     "fields": [
         {
             "key": "field_61f4cf5a45e5f",
@@ -62,7 +62,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/block-load-post"
+                "value": "acf\/block-load-case-study-post"
             }
         ]
     ],
@@ -75,5 +75,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643476422
+    "modified": 1644165422
 }

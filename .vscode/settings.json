@@ -5,6 +5,9 @@
 	"terminal.integrated.fontSize": 16,
 	"editor.renderWhitespace": "all",
 	"liveServer.settings.donotShowInfoMsg": true,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"bracketPairColorizer.consecutivePairColors": [["<", "</"], ["<", "/>"], ["Gold", "Orchid", "LightSkyBlue"], "Red"],
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact",
 		"vue-html": "html",

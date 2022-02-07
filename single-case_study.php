@@ -13,7 +13,7 @@ $ckient_info = get_field('headline_info');
 
 //header_font_color
 $description =  get_field('small_description');
-$type = $description['type_of_busybess'][0]->name;
+$type = $description['type_of_business'][0]->name;
 $color = $description['header_font_color'];
 
 function addFontColor( $color  ){

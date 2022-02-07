@@ -3,16 +3,11 @@
 /*-----------------------------------------------------------------------------------*/
 /*  ACF Page our-value
 /*-----------------------------------------------------------------------------------*/
-$pageFields = get_fields();
-$add_container =get_fields('add_container'); 
-$postId = $pageFields['post']; 
-$numPost = count($postId);
+    $pageFields = get_fields();
+    $add_container =get_fields('add_container'); 
+    $postId = $pageFields['post']; 
+    $numPost = count($postId);
 
- ?>
-
-<?php if( $addContainer ) {echo '<div class="container">';}  ?>
-
-<?php 
   if($numPost <= 1) {
     $postFields = get_fields( $postId[0] );
     $client   = $postFields['headline_info']['clients']; 
@@ -28,7 +23,7 @@ $numPost = count($postId);
    
   ?>
 
-<section class="block_post py-5 <?php echo $client.' '.$block['className'].' '.$margen; ?>"
+<section class="block_caseStudy_post py-5 <?php echo $client.' '.$block['className'].' '.$margen; ?>"
   style="background-color: <?php  echo $bg_color; ?>">
   <div class="container  my-5 ">
     <a class='card-link' href="<?php echo get_permalink( $postId[0] ); ?>" rel="noopener noreferrer">
@@ -67,7 +62,7 @@ $numPost = count($postId);
   ?>
       <div class="col <?php echo $margen; ?>">
         <a class='card-link' href="<?php echo get_permalink( $post ); ?>" rel="noopener noreferrer">
-          <div class="card bg-transparent shadow-sm ">
+          <div class="card bg-transparent  ">
             <div class="card-img mb-4 zoom_img" style="background-image: url(<?php  echo $thumbnail; ?>);"></div>
             <div class="card-body  p-0  ">
               <?php  echo $excerpt; ?>
@@ -87,9 +82,6 @@ $numPost = count($postId);
 
 
 <?php  } ?>
-
-
-<?php if($addContainer ) {echo '</div>';}  ?>
 
 
 
