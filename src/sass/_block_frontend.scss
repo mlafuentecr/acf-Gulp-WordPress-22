@@ -119,3 +119,65 @@
 		}
 	}
 }
+
+.block_jobs {
+	color: black;
+	overflow: hidden;
+	height: auto;
+	transition: all 1s;
+	background-color: $pink;
+	&.minimize {
+		max-height: 0px;
+	}
+	.btn_applyNow {
+		white-space: nowrap;
+		font-size: 18px !important;
+		color: white;
+		filter: invert(1);
+	}
+	&_header {
+		color: black;
+		p {
+			color: black !important;
+			font-size: 20px;
+		}
+		h1 {
+			font-size: 26px;
+		}
+	}
+	.jobstable {
+		&_positions {
+			font-size: 26px;
+			height: 40px;
+			color: black;
+			overflow: hidden;
+		}
+		&_location {
+			font-size: 20px;
+			color: rgb(56, 40, 40);
+		}
+	}
+	.loadmore {
+		font-size: 20px;
+		cursor: pointer;
+		color: white;
+		filter: invert(1);
+	}
+	.minimize {
+		max-height: 0px;
+		overflow: hidden;
+		padding: 0px;
+		margin: 0px !important;
+		&.expand {
+			max-height: fit-content;
+			margin-bottom: 3rem !important;
+		}
+	}
+	.jobDiv {
+		border-right: 10px solid transparent;
+		border-left: 10px solid transparent;
+		&:hover {
+			background-color: #a166641c;
+		}
+	}
+}

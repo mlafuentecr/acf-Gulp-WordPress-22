@@ -10,7 +10,8 @@ function enqueue_header()
 
   if ( is_front_page() ) {
     wp_enqueue_style('index',         $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/homepage.min.css', array(), $GLOBALS['THEME_MLM_VER']); 
-  } else {
+  }
+   else {
     wp_enqueue_style('internal',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/internal.css', array(), $GLOBALS['THEME_MLM_VER']);
   }
   /*******************  JavaScript Bundle with Popper  CDN vr5  ********************/

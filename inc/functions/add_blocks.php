@@ -105,7 +105,14 @@ function my_acf_blocks_init() {
             'category'          => 'media',
         ));
 
-
+        acf_register_block_type(array(
+            'name'              => 'block job position',
+            'title'             => __('RS block job position'), 
+            'description'       => __('block get job position'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_get_jobs.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
         
 
     }
