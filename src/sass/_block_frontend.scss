@@ -125,7 +125,7 @@
 	overflow: hidden;
 	height: auto;
 	transition: all 1s;
-	background-color: $pink;
+	// background-color: handle by php in the page
 	&.minimize {
 		max-height: 0px;
 	}
