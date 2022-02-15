@@ -115,6 +115,23 @@ function my_acf_blocks_init() {
         ));
         
 
+        acf_register_block_type(array(
+            'name'              => 'block main contact form',
+            'title'             => __('RS main contact form'), 
+            'description'       => __('block main contact form'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_main_form.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'block bg Image',
+            'title'             => __('RS block bg Image'), 
+            'description'       => __('block block bg Image'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_background_img.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
     }
 }
 

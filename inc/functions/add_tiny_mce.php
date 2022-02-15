@@ -34,7 +34,7 @@ function my_mce_before_init_insert_formats( $init_array ) {
 
     array(  
       'title' => 'Uppercase',  
-      'block' => 'span',  
+      'inline ' => 'span',  
       'classes' => 'text-upperCase',
       'wrapper' => true,
       'styles' => array(
@@ -43,7 +43,7 @@ function my_mce_before_init_insert_formats( $init_array ) {
     ),  
     array(  
       'title' => 'Capital text',  
-      'block' => 'span',  
+      'inline ' => 'span',  
       'classes' => 'text-capital',
       'wrapper' => true,
       'styles' => array(
@@ -54,7 +54,7 @@ function my_mce_before_init_insert_formats( $init_array ) {
     //This is not gutenber but tinymce
     array(  
       'title' => 'rs_underline',  
-      'block' => 'span',  
+      'inline ' => 'span',  
       'classes' => 'rs_underline',
       'wrapper' => true,
       'styles' => array(
@@ -65,13 +65,16 @@ function my_mce_before_init_insert_formats( $init_array ) {
         //This is not gutenber but tinymce
         array(  
           'title' => 'rs_link_underline',  
-          'block' => 'span',  
+          'inline ' => 'span',  
           'classes' => 'rs_link_underline',
           'wrapper' => true,
           'styles' => array(
             'text-decoration' => 'underline'
         )
         ),
+
+   
+      
 
   );
 

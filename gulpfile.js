@@ -31,15 +31,17 @@ function internalScss() {
 		.pipe(dest('./src/css/'));
 }
 
-function backendScss() {
-	return src(['./src/sass/custom-editor-style.scss'])
-		.pipe(sass().on('error', sass.logError))
-		.pipe(sourcemaps.init())
-		.pipe(prefix())
-		.pipe(cleanCSS())
-		.pipe(concat('custom-editor-style.css'))
-		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./src/css/'));
+function individualScss() {
+	return (
+		src(['./src/sass/custom-editor-style.scss', './src/sass/login.scss'])
+			.pipe(sass().on('error', sass.logError))
+			.pipe(sourcemaps.init())
+			.pipe(prefix())
+			.pipe(cleanCSS())
+			//.pipe(concat('custom-editor-style.css'))
+			.pipe(sourcemaps.write('.'))
+			.pipe(dest('./src/css/'))
+	);
 }
 
 //copy to css files from dist to src and also copy map
@@ -73,7 +75,8 @@ function watchtask() {
 	watch(['./src/sass/*.scss'], internalScss);
 	watch(['./src/sass/*.scss'], homepageScss);
 
-	watch('./src/sass/custom-editor-style.scss', backendScss);
+	watch('./src/sass/custom-editor-style.scss', individualScss);
+	watch('./src/sass/login.scss', individualScss);
 	watch('./src/css/*.css', copyCss);
 
 	watch(jsIntern, js_bundle_Intern);
@@ -81,4 +84,4 @@ function watchtask() {
 	watch(jscopy, copyJs);
 }
 
-exports.default = series(parallel(js_bundle_home, copyboostrapJs, js_bundle_Intern, backendScss, homepageScss, internalScss, series(copyCss, copyadmincss, copyJs, watchtask)));
+exports.default = series(parallel(js_bundle_home, copyboostrapJs, js_bundle_Intern, individualScss, homepageScss, internalScss, series(copyCss, copyadmincss, copyJs, watchtask)));

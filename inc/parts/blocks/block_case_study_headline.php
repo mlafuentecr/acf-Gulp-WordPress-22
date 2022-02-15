@@ -4,9 +4,9 @@
 /*  ACF Page our-value
 /*-----------------------------------------------------------------------------------*/
 // <?php echo $block['className'] this add additional css from gutember
-$pageFields = get_fields();
-$headline = $pageFields['headline'];
-$client_info = $pageFields['client_info'];
+$pageFields   = get_fields();
+$headline     = $pageFields['headline'];
+$client_info  = $pageFields['client_info'];
  ?>
 
 <section class="block-case-study-headline ignore-container  <?php echo $block['className'] ?>">

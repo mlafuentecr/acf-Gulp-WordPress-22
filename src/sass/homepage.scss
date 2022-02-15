@@ -10,13 +10,6 @@
 		background-color: #103831 !important;
 	}
 	.card-link {
-		.zoom_img {
-			transition: all 1s;
-			&:hover {
-				-webkit-transform: scale(1.1);
-				transform: scale(1.1);
-			}
-		}
 		strong {
 			position: relative;
 			font-size: $px28;
@@ -35,7 +28,7 @@
 				color: #fff;
 				margin: 20px 0px 0px 0px;
 				display: flex;
-				min-height: 70px;
+				min-height: 95px;
 			}
 			p {
 				color: #ffffff91;

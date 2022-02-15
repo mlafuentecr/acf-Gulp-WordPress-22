@@ -136,6 +136,19 @@ h4 {
 	line-height: 24px;
 	white-space: nowrap;
 }
+@mixin rs_link_underline {
+	padding-bottom: 3px;
+	background-image: linear-gradient(transparent calc(100% - 2px), #fff 2px);
+	text-decoration: none !important;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.5s;
+
+	&:hover {
+		background-size: 0 100%;
+		color: #fff;
+	}
+}
 @mixin links-with-line {
 	a {
 		@include links-regular;

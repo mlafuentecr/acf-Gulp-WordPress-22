@@ -1,6 +1,9 @@
 <?php
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+//execute shorctuts 
+//echo do_shortcode("[name_of_your_shortcode]");
+
 
 
 /*------------------------------------------*/
@@ -56,7 +59,7 @@ function faq_func( $atts ){
   </div>' ;
       endif; 
 }
-add_shortcode( 'faqs', 'faq_func' );
+//add_shortcode( 'faqs', 'faq_func' );
 
 
 

@@ -1,8 +1,7 @@
 <?php get_header(); ?>
-
-<section class="page intern-pg">
+<main class="main-content page intern-pg">
   <?php 
-   $url = '/inc/parts/loop';
+   $url = '/inc/parts/loops/loop';
 
       if ( have_posts() ) : 
         while ( have_posts() ) : the_post(); 
@@ -16,7 +15,5 @@
       endif; 
     ?>
 
-</section>
-
-<?php get_sidebar(); ?>
+</main>
 <?php get_footer(); ?>

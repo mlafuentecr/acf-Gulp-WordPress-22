@@ -12,8 +12,8 @@
   <div class="container">
 
     <div class="row g-3 ">
-      <div class=" col-2  subtitle"><?php echo $pageFields['title']; ?></div>
-      <div class=" col-10 ">
+      <div class=" col-12 col-md-2  subtitle"><?php echo $pageFields['title']; ?></div>
+      <div class=" col-12 col-md-10 ">
         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3 ">
           <?php 
       if(  $cols ) {

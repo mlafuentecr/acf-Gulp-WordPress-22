@@ -5,8 +5,8 @@
 /*-----------------------------------------------------------------------------------*/
     $pageFields = get_fields();
     $add_container =get_fields('add_container'); 
-    $postId = $pageFields['post']; 
-    $numPost = count($postId);
+    $postId     = $pageFields['post']; 
+    $numPost    = count($postId);
 
   if($numPost <= 1) {
     $postFields = get_fields( $postId[0] );
@@ -28,10 +28,10 @@
   <div class="container  my-5 ">
     <a class='card-link' href="<?php echo get_permalink( $postId[0] ); ?>" rel="noopener noreferrer">
       <div class="d-flex flex-wrap ">
-        <div class="col-12 col-md-6  fit-background zoom_img"
+        <div class="col-12 col-md-8  fit-background zoom_img"
           style="background-image: url(<?php  echo $thumbnail; ?>);">
         </div>
-        <div class="col-12 col-md-6 ps-5 ">
+        <div class="col-12 col-md-4 ps-5 mt-5 d-flex justify-content-center flex-column align-content-center">
           <?php  echo $excerpt; ?>
         </div>
       </div>
@@ -44,7 +44,7 @@
 
 <section class="block_post<?php echo ' '.$block['className'].' '; ?>">
   <div class="container">
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3 ">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-5 ">
 
       <?php
     foreach ($postId as $post) {
@@ -104,7 +104,7 @@
 }
 
 .fit-background {
-  width: 50%;
+  min-width: 50%;
   background-position: center;
   background-size: cover;
   height: 300px;

@@ -1,0 +1,25 @@
+#our-work {
+	.main-content {
+		background-color: white;
+	}
+	.form {
+		background-color: black;
+	}
+	.case_study {
+		font-size: 16px;
+		font-weight: 500;
+		a {
+			color: black;
+		}
+		.title {
+			text-transform: uppercase;
+		}
+	}
+	.cs_category_subtitle {
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 150%;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+	}
+}

@@ -69,7 +69,7 @@
         },
         {
             "key": "field_61ff6ad5a52cc",
-            "label": "get Posts or Pages",
+            "label": "get Pages or Posts",
             "name": "get_posts",
             "type": "true_false",
             "instructions": "",
@@ -89,7 +89,7 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 0,
+            "default_value": 1,
             "ui": 1,
             "ui_on_text": "Posts",
             "ui_off_text": "Pages"
@@ -294,7 +294,8 @@
             ],
             "taxonomy": "",
             "filters": [
-                "search"
+                "search",
+                "post_type"
             ],
             "elements": [
                 "featured_image"
@@ -331,12 +332,12 @@
             },
             "post_type": [
                 "page",
-                "case_study",
-                "attachment"
+                "case_study"
             ],
             "taxonomy": "",
             "filters": [
-                "search"
+                "search",
+                "post_type"
             ],
             "elements": [
                 "featured_image"
@@ -364,5 +365,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644300265
+    "modified": 1644953686
 }
