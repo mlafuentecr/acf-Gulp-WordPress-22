@@ -329,6 +329,10 @@
 		font-weight: 500;
 		font-size: $px48;
 		line-height: $px48;
+		@media (max-width: $md) {
+			font-size: $px28;
+			line-height: $px18;
+		}
 	}
 	a {
 		color: white;
@@ -361,5 +365,185 @@
 	}
 	.fit-background {
 		min-height: 600px;
+	}
+}
+
+.block_slider {
+	margin: 100px 0px;
+	header {
+		display: flex;
+		h2 {
+			@media (min-width: $md) {
+				max-width: 346px;
+			}
+			font-size: 53px;
+		}
+	}
+	.carousel-inner {
+		.title {
+			display: flex;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 150%;
+			text-transform: uppercase;
+			color: #ffffff;
+			@media (max-width: $md) {
+				margin-bottom: 60px;
+			}
+		}
+		.reverse {
+			flex-direction: row-reverse;
+		}
+	}
+	.buttons {
+		min-height: 100px;
+		position: relative;
+		max-width: 200px;
+		margin: auto;
+	}
+}
+@mixin inverColor {
+	color: #000;
+	p {
+		color: #000;
+	}
+	a {
+		filter: invert(1);
+	}
+}
+.industries_we_serve {
+	color: white;
+	header {
+		margin-top: 80px;
+		h2 {
+			font-size: $px32;
+		}
+		p {
+			@media (max-width: $md) {
+				font-size: $px20;
+			}
+		}
+	}
+
+	.industries_we_serve_main_content {
+		h3 {
+			font-size: $px30;
+			min-width: 100%;
+			@media (max-width: $md) {
+				font-size: $px20;
+			}
+		}
+		display: flex;
+		flex-wrap: wrap;
+		font-size: $px24;
+		color: white;
+
+		p {
+			margin: 0px;
+			color: #808183;
+		}
+		.col {
+			min-width: 50%;
+		}
+	}
+
+	.rs_link_underline {
+		font-size: 16px !important;
+		max-width: 90px;
+	}
+	@media (min-width: $md) {
+		header {
+			display: flex;
+			h2 {
+				max-width: 346px;
+				font-size: 53px;
+			}
+			p {
+				display: flex;
+			}
+		}
+		h3 {
+			font-size: 22px !important;
+		}
+		.rs_link_underline {
+			position: absolute;
+			left: 20px;
+			bottom: 20px;
+		}
+
+		.industries_we_serve_main_content {
+			margin-top: 60px;
+			width: 100%;
+			height: auto;
+			display: grid;
+			grid-template-columns: auto auto auto auto;
+			grid-template-rows: 196px 51px 196px;
+
+			.col {
+				position: relative;
+				border: 1px solid #808183;
+				.industries_we_serve_item_projects {
+					line-height: 24px;
+					display: none;
+				}
+				&:hover {
+					.industries_we_serve_item_projects {
+						display: block;
+					}
+				}
+			}
+
+			p {
+				color: white;
+				font-size: 12px !important;
+				line-height: 20px;
+			}
+		}
+
+		.healthcare {
+			grid-row: 1 / span 1;
+			grid-column: 1 / span 2;
+			&:hover {
+				background-color: #cf4031;
+			}
+		}
+		.education {
+			grid-row: 1 / span 2;
+			&:hover {
+				background-color: #f1f2f5;
+				@include inverColor;
+			}
+		}
+		.business_services {
+			grid-row: 1 / span 1;
+			&:hover {
+				background-color: #0036f7;
+			}
+		}
+		.ecommerce_consumer {
+			grid-row: 2 / span 2;
+			&:hover {
+				background: #ff918e;
+			}
+		}
+		.technology {
+			grid-row: 2 / span 2;
+			&:hover {
+				background: #333;
+			}
+		}
+		.financial_services {
+			grid-row: 3 / span 1;
+			&:hover {
+				background: #cf4031;
+			}
+		}
+		.media_entertainment {
+			grid-row: 2 / span 2;
+			&:hover {
+				background: #333;
+			}
+		}
 	}
 }

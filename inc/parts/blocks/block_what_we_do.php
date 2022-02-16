@@ -52,6 +52,11 @@
   min-height: 100px;
 }
 
+.subtitle {
+  margin: 40px 0px;
+  color: white;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;

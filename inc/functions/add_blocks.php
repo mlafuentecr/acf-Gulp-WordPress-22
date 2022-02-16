@@ -132,6 +132,26 @@ function my_acf_blocks_init() {
             'icon'              => 'star-filled',
             'category'          => 'media',
         ));
+
+
+        acf_register_block_type(array(
+            'name'              => 'block Industries we serve',
+            'title'             => __('RS block Industries we serve'), 
+            'description'       => __('block block Industries we serve'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_Industries_we_serve.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'block Slider',
+            'title'             => __('RS Slider'), 
+            'description'       => __('block Slider'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_slider.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
+
     }
 }
 
