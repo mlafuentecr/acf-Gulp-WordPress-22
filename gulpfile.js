@@ -49,7 +49,7 @@ function copyCss() {
 	return src('./src/css/*.*').pipe(dest('./dist/css/'));
 }
 function copyadmincss() {
-	return src('./src/css/admin/*.css').pipe(dest('./dist/css/admin/'));
+	return src('./src/css/admin/*.css').pipe(dest('./dist/css/'));
 }
 
 //Js //I used DIst direct bc if I put them on src will created a loop on gulp file

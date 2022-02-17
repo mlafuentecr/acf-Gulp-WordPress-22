@@ -4,12 +4,10 @@
   /*---------------------------------------------------------*/
   /*  ACF Page our-value
   /*---------------------------------------------------------*/
-  $pageFields   = get_fields();
- 
-  $description  = $pageFields['description'];
-  $slider_subtitle = $pageFields['slider_subtitle'];
-  $slider_size  = $pageFields['slider_size'];
-  $slider       = $pageFields['slider'];
+  $pageFields                 = get_fields();
+  $description                = $pageFields['description'];
+  $slider_size                = $pageFields['slider_size'];
+  $slider                     = $pageFields['slider'];
   $GLOBALS['slider_subtitle'] = $pageFields['title'];
  
 
@@ -141,6 +139,23 @@
   padding: 10px;
   background-color: gray;
   min-height: 100px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.row .col-6 {
+  width: 50% !important;
+}
+
+.row .col-6 img {
+  width: 100%;
+  height: auto;
 }
 
 </style>

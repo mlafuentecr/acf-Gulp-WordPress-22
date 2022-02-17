@@ -152,6 +152,18 @@ function my_acf_blocks_init() {
             'category'          => 'media',
         ));
 
+
+        acf_register_block_type(array(
+            'name'              => 'block Tech Stack Logos',
+            'title'             => __('RS Tech Stack Logos'), 
+            'description'       => __('block Tech Stack Logos'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_tech_stack.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
+
+
+
     }
 }
 

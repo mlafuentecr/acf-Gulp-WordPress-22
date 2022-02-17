@@ -15,7 +15,7 @@
  }
  ?>
 
-<section class="industries_we_serve" tabindex='0'>
+<section class="block_industries_we_serve industries_we_serve" tabindex='0'>
   <div class="container">
     <div class="row industries_we_serve_wrapper">
 
@@ -70,17 +70,19 @@
 
 .industries_we_serve .industries_we_serve_wrapper {
   display: flex;
-  background: green;
   flex-wrap: wrap;
   min-width: 100%;
 }
 
 .industries_we_serve header {
   display: flex;
-  background: red;
-
 }
 
+.industries_we_serve header h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .industries_we_serve header h2,
 .industries_we_serve header p {
@@ -89,13 +91,15 @@
 
 .industries_we_serve_main_content {
   display: flex;
-  background: green;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   min-width: 100%;
 }
 
 .industries_we_serve_item {
   width: 50%;
   max-width: 45%;
+
 }
 
 </style>
