@@ -128,13 +128,25 @@ h4 {
 	text-decoration: none;
 	display: inline-block;
 	position: relative;
-	font-family: Inter;
 	font-style: normal;
 	font-size: 1rem;
 	margin: 0 16px;
 	font-weight: 700;
 	line-height: 24px;
 	white-space: nowrap;
+}
+@mixin link_style {
+	font-size: $px24 !important;
+	text-decoration: none;
+	background-image: linear-gradient(transparent calc(100% - 2px), #fff 2px);
+	background-size: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.5s;
+
+	&:hover {
+		background-size: 100% 100% !important;
+		color: #fff;
+	}
 }
 @mixin rs_link_underline {
 	padding-bottom: 3px;

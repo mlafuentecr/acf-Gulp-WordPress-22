@@ -14,7 +14,7 @@ $posts            = $pageFields['choose_posts'] ?: $pageFields['choose_other'];
 
 
 ?>
-<div class="get_posts">
+<div class="get_posts text-white">
   <div class="container  <?php echo $margen; ?>">
     <!-- Add a text for gutenber only if im on admin -->
     <?php if (is_admin() ) { echo 'Edit Post click the pencil to edit';} ?>
@@ -72,7 +72,7 @@ $posts            = $pageFields['choose_posts'] ?: $pageFields['choose_other'];
               <div class="author_pic px-2"
                 style='background-image: url("<?php echo get_avatar_url($authorId, array('size' => 450)); ?>");'>
               </div>
-              <div class="px-2 flex-grow-1 bd-highlight">
+              <div class="px-2 flex-grow-1 ">
                 <div class="col-12 author_name"><a href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
                     rel="noopener noreferrer"><?php echo get_the_author_meta( 'display_name',  $authorId);  ?></a>
                 </div>
@@ -116,3 +116,12 @@ $posts            = $pageFields['choose_posts'] ?: $pageFields['choose_other'];
     <!--end Row -->
   </div>
 </div>
+
+
+
+<?php
+if (!is_admin() ) {
+  // Enqueue block editor styles
+}
+wp_enqueue_script('block_tech_stack',   $GLOBALS["THEME_MLM_PATH"].  '/dist/js/block_tech_stack.js?defer', array(), $GLOBALS['THEME_MLM_VER'], true );
+?>

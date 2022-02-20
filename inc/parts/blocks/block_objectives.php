@@ -35,10 +35,6 @@ if( $objectives ) {
 ?>
 
 
-
-
-
-
   </div>
 </section>
 

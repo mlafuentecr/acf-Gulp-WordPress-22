@@ -53,9 +53,9 @@ function copyadmincss() {
 }
 
 //Js //I used DIst direct bc if I put them on src will created a loop on gulp file
-const jsIntern = ['./src/js/internal.js', './src/js/scroll.js', './src/js/menu-search.js'];
+const jsIntern = ['./src/js/internal.js', './src/js/scroll.js', './src/js/menu-search.js', './src/js/our_work.js'];
 const jsHome = ['./src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js'];
-const jscopy = ['./src/js/block_jobs.js', './src/js/rich-text.js', './src/js/bundle_intern.js', './src/js/bundle_home.js'];
+const jscopy = ['./src/js/block_jobs.js', './src/js/block_tech_stack.js', './src/js/rich-text.js', './src/js/bundle_intern.js', './src/js/bundle_home.js'];
 
 function js_bundle_Intern() {
 	return src(jsIntern).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./src/js/'));
@@ -64,7 +64,7 @@ function js_bundle_home() {
 	return src(jsHome).pipe(babel()).pipe(uglify()).pipe(concat('bundle_home.js')).pipe(dest('./src/js/'));
 }
 function copyJs() {
-	return src(jscopy).pipe(dest('./dist/js/'));
+	return src(jscopy).pipe(babel()).pipe(uglify()).pipe(dest('./dist/js/'));
 }
 function copyboostrapJs() {
 	return src('./src/js/bootstrap.bundle.min.js').pipe(dest('./dist/js/'));

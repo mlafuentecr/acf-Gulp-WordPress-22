@@ -5,7 +5,7 @@
 function taxonomi_business() {
   //put where did I used it
   register_taxonomy( 'type_of_business', 'business', array(
-      'label'        => __( 'type of business', 'textdomain' ),
+      'label'        => __( 'type of business', 'mlm' ),
       'rewrite'      => array( 'slug' => 'type_of_business' ),
       'hierarchical' => true,
   ) );

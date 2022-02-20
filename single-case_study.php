@@ -95,7 +95,7 @@ function addFontColor( $color  ){
 </section>
 
 
-<section class="case_study_banner_1 message_big">
+<section class="case_study_banner_1 message_big text-white">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php echo get_field('objectives_message'); ?>
@@ -109,7 +109,7 @@ function addFontColor( $color  ){
 
 
 
-<section class="phases">
+<section class="phases text-white">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php 
@@ -137,7 +137,7 @@ function addFontColor( $color  ){
   </div>
 </section>
 
-<section class="case_study_banner_2 message_big">
+<section class="case_study_banner_2 message_big text-white">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php echo get_field('phase_message'); ?>
@@ -154,7 +154,7 @@ function addFontColor( $color  ){
         <img class='lazyload' src=' <?php echo  get_field('phase_image_text')['phase_image']['url']; ?>'
           alt=' <?php echo  get_field('phase_image_text')['phase_image']['title']; ?>' />
       </div>
-      <div class="case_study_phase_text col-12 col-md-5 text-start">
+      <div class="case_study_phase_text text-white col-12 col-md-5 text-start">
         <?php  echo  get_field('phase_image_text')['phase_text']; ?>
       </div>
     </div>
@@ -162,7 +162,7 @@ function addFontColor( $color  ){
 </section>
 
 
-<section class="case_study_banner_3 message_big">
+<section class="case_study_banner_3 message_big text-white">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php echo get_field('phase_message_2'); ?>
@@ -176,7 +176,7 @@ function addFontColor( $color  ){
 
 <!-- FAQS -->
 <?php $faqs = get_field('faqs');  if( $faqs ) { ?>
-<section class="case_study_faq faq">
+<section class="case_study_faq faq text-white">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <div class="col-12 title"> <?php echo  get_field('faq_title'); ?> </div>

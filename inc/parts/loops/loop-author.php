@@ -36,7 +36,7 @@ while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
         <div class="author_pic px-2" style='background-image: url("<?php echo get_avatar_url($authorId); ?>");'>
         </div>
-        <div class="px-2 flex-grow-1 bd-highlight">
+        <div class="px-2 flex-grow-1 ">
           <div class="col-12 author_name"><a href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
               rel="noopener noreferrer"><?php echo get_the_author_meta( 'display_name');  ?></a>
           </div>

@@ -325,18 +325,9 @@ body {
 .links-with-underline {
 	@include links-with-line;
 }
-.link_style_white {
-	font-size: $px24 !important;
-	text-decoration: none;
-	background-image: linear-gradient(transparent calc(100% - 2px), #fff 2px);
-	background-size: 0 100%;
-	background-repeat: no-repeat;
-	transition: background-size 0.5s;
 
-	&:hover {
-		background-size: 100% 100% !important;
-		color: #fff;
-	}
+.link_style_white {
+	@include link_style;
 }
 /*-----------------------------------------------------------------------------------*/
 /*  others 

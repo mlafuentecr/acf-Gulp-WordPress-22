@@ -74,3 +74,16 @@ body {
 		text-align: center;
 	}
 }
+
+.admin-email__heading {
+	background: none !important;
+	color: white !important;
+}
+.admin-email__details {
+	color: white;
+}
+.admin-email__actions-primary {
+	.button-large {
+		background: #191919 !important;
+	}
+}

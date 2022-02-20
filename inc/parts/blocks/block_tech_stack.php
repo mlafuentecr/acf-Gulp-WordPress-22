@@ -11,51 +11,60 @@ $category   = $pageFields['category'];
  ?>
 
 
-<section class="block_tech_stack tech_stack <?php echo $block['className'].' '.$margen; ?>">
+<section class="block_tech_stack tech_stack  bg-light <?php echo $block['className'].' '.$margen; ?>">
   <div class="container">
-    <div class="row row-cols-3">
+    <div class="row row-cols-3 my-5 py-5">
 
-      <h2 class="tech_stack-title col-12 my-2"><?php echo $title; ?></h2>
+      <h2 class="tech_stack-title col-12 "><?php echo $title; ?></h2>
 
-      <nav class="tech_stack-menu d-flex flex-wrap col-3 bg-danger">
+      <nav class="tech_stack-menu d-flex flex-column col-3  ">
         <?php 
             if( $category )
             {
-              foreach( $category as $row ) {
+              foreach( $category as $index =>$row ) {
+                  $index = $index + 1;
                   $title = $row['category_title'];
-                  echo '<button class="col-12 '. $title .'">'. $title .'</button>';
+                  echo '<button  data-cat="'. $index .'" class="tech_stack_btn m-0  text-start btn-'. strtolower($title) .'">'. $title .'</button>';
               }
           }
         ?>
       </nav>
 
-      <div class="tech_stack-logos flex-grow-1 row row-cols-md-2 row-cols-md-6 bg-light">
-        <?php 
+
+      <?php 
             if( $category )
             {
-              foreach( $category as $logos ) {
+              foreach( $category as $index => $logos ) {
+               
+                
                 $logosObj = $logos['logos'];
+                $title = $logos['category_title'];
+                $index = $index + 1;
+                $divStatus = $index === 1 ? "" : $index." d-none";
+
+                echo ' <div class="tech_stack-logos align-content-center wrapper-'. $index .' flex-wrap flex-grow-1 row row-cols-2 row-cols-md-4 '.$divStatus.'    ">';
                 foreach($logosObj as $logo ) {
-                  echo "<figure class='col d-flex  flex-column justify-content-center'>";
+                  echo "<figure class='col  m-0 p-0 flex-column justify-content-center'>";
                   echo '<div class="img"><img src="'.$logo['url'].'" alt="'.$logo['alt'].'"></div>';
-                  echo "<figcaption class='text-truncate font-weight-light'>".$logo['alt']."</figcaption>";
+                  echo "<figcaption class='text-truncate font-weight-light'>".$logo['title']."</figcaption>";
                   echo "</figure>";
              }
+             echo '</div>';
         }
         }
         ?>
 
 
-      </div>
     </div>
-
   </div>
 </section>
 
 
+<?php
+wp_enqueue_script('block_tech_stack',   $GLOBALS["THEME_MLM_PATH"].  '/dist/js/block_tech_stack.js?defer', array(), $GLOBALS['THEME_MLM_VER'], true );
 
 
-<?php if (is_admin() ) { ?>
+if (is_admin() ) { ?>
 <!-- Only show this to admin -->
 <style type="text/css">
 .tech_stack {
@@ -80,6 +89,12 @@ $category   = $pageFields['category'];
 .tech_stack-logos {
   max-width: 70%;
   padding-left: 10px;
+  background: yellow;
+
+}
+
+.tech_stack-logos:nth-of-type(n+2) {
+  display: none !important;
 }
 
 .tech_stack-menu {

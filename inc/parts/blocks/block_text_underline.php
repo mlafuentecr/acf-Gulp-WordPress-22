@@ -37,5 +37,9 @@ $margen = $pageFields['margen'];
   text-decoration: underline;
 }
 
+.block_text_underline {
+  display: block !important;
+}
+
 </style>
 <?php } ?>

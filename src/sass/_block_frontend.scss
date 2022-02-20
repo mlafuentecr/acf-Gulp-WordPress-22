@@ -1,4 +1,5 @@
 @import 'variables';
+
 .copyrights {
 	color: #808183;
 }
@@ -373,10 +374,13 @@
 	header {
 		display: flex;
 		h2 {
+			font-size: $px50;
 			@media (min-width: $md) {
 				max-width: 346px;
 			}
-			font-size: $px50;
+			@media (max-width: $md) {
+				font-size: $px28;
+			}
 		}
 	}
 	.carousel-inner {
@@ -405,7 +409,13 @@
 }
 
 .block_tech_stack {
-	min-height: 600px;
+	.tech_stack-title {
+		color: #808183;
+		margin-bottom: 50px;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
 
 	figure {
 		figcaption {
@@ -420,6 +430,45 @@
 			align-items: center;
 			display: flex;
 		}
+	}
+	.tech_stack-menu {
+		button {
+			background-color: transparent;
+			border: none;
+			min-height: 55px;
+			text-decoration: none;
+			background-image: linear-gradient(transparent calc(100% - 2px), black 2px);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			transition: background-size 0.5s;
+			width: inherit;
+			&:hover {
+				background-size: 100% 100% !important;
+			}
+			&.active {
+				background-image: linear-gradient(transparent calc(100% - 2px), black 2px);
+				background-size: 100% 100% !important;
+			}
+		}
+	}
+	.tech_stack-logos {
+		background-color: puerple;
+		min-height: 390px;
+		position: relative;
+		animation-name: showLogos;
+		animation-duration: 2s;
+	}
+	figcaption {
+		text-transform: capitalize;
+	}
+}
+@keyframes showLogos {
+	0% {
+		opacity: 0;
+		transform: translateX(200px);
+	}
+	100% {
+		opacity: 1;
 	}
 }
 
@@ -438,6 +487,9 @@
 		margin-top: 80px;
 		h2 {
 			font-size: $px32;
+			@media (max-width: $md) {
+				font-size: $px28;
+			}
 		}
 		p {
 			@media (max-width: $md) {

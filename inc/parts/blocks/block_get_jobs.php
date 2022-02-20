@@ -31,7 +31,6 @@ $bg_color       = $pageFields['background_color'];
 
 if (!is_admin() ) {
   // Enqueue block editor styles
- 
 }
 wp_enqueue_script('block_jobs',   $GLOBALS["THEME_MLM_PATH"].  '/dist/js/block_jobs.js?defer', array(), $GLOBALS['THEME_MLM_VER'], true );
 

@@ -23,7 +23,7 @@
 if ( $the_query->have_posts() ) : 
    
 ?>
-<div class="get_posts">
+<div class="get_posts text-white">
   <div class="container  <?php echo $margen; ?>">
     <!-- Add a text for gutenber only if im on admin -->
     <?php if (is_admin() ) { echo 'Edit Post click the pencil to edit';} ?>
@@ -81,7 +81,7 @@ if ( $the_query->have_posts() ) :
               <div class="author_pic px-2"
                 style='background-image: url("<?php echo get_avatar_url($authorId, array('size' => 450)); ?>");'>
               </div>
-              <div class="px-2 flex-grow-1 bd-highlight"><?php echo ' $authorId '. $authorId; ?>
+              <div class="px-2 flex-grow-1 "><?php echo ' $authorId '. $authorId; ?>
                 <div class="col-12 author_name"><a href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
                     rel="noopener noreferrer"><?php echo get_the_author_meta( 'display_name',  $authorId);  ?></a>
                 </div>
