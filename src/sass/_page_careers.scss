@@ -1,0 +1,56 @@
+.careers_pg {
+	.jobsTitle {
+		h3 {
+			font-size: 80px;
+		}
+	}
+	.image-big {
+		.fit-background {
+			min-height: 300px;
+		}
+	}
+	h1 {
+		font-size: 80px;
+	}
+
+	.link-with-line-static {
+		font-size: 32px !important;
+	}
+
+	.block_jobs {
+		font-size: 80px;
+		.text-light {
+			color: white;
+			.jobstable_positions,
+			.jobstable_location {
+				color: white;
+			}
+			a,
+			.rs_link_underline {
+				filter: invert(0);
+			}
+		}
+		.text-black {
+			color: black;
+			.jobstable_positions,
+			.jobstable_location,
+			a {
+				color: black;
+			}
+		}
+	}
+	.working-with-us {
+		.imgHolder {
+			height: 800px;
+		}
+		pre {
+			font-size: 14px;
+			margin-top: 99px;
+		}
+	}
+	.lastMessage {
+		h3 {
+			font-size: 80px;
+		}
+	}
+}

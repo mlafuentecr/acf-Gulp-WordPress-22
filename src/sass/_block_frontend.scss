@@ -6,10 +6,7 @@
 /*-----------------------------------------------------------------------------------*/
 /*  Rich Text
 /*-----------------------------------------------------------------------------------*/
-.rs_underline {
-	background: rgba(255, 255, 0, 0.315);
-	text-decoration: underline;
-}
+
 .block_text_underline {
 	p {
 		color: white;
@@ -36,6 +33,7 @@
 		}
 	}
 }
+
 .rs_dash {
 	position: relative;
 	display: inline;
@@ -139,6 +137,7 @@
 	overflow: hidden;
 	height: auto;
 	transition: all 1s;
+	min-width: 100%;
 	// background-color: handle by php in the page
 	&.minimize {
 		max-height: 0px;
@@ -171,16 +170,22 @@
 			color: rgb(56, 40, 40);
 		}
 	}
-	.loadmore {
-		font-size: 20px;
-		cursor: pointer;
-		color: white;
-		filter: invert(1);
-		@media (max-width: $md) {
-			min-width: 100%;
-			margin: 0px !important;
+	.loadmore_wrap {
+		min-width: 100%;
+		.loadmore {
+			max-width: 400px;
+			white-space: nowrap;
+			font-size: 20px;
+			cursor: pointer;
+			color: white;
+			filter: invert(1);
+			@media (max-width: $md) {
+				min-width: 100%;
+				margin: 0px !important;
+			}
 		}
 	}
+
 	.minimize {
 		max-height: 0px;
 		overflow: hidden;
@@ -194,9 +199,6 @@
 	.jobDiv {
 		border-right: 10px solid transparent;
 		border-left: 10px solid transparent;
-		&:hover {
-			background-color: #a166641c;
-		}
 	}
 }
 

@@ -5,8 +5,8 @@
 /*-----------------------------------------------------------------------------------*/
 $GLOBALS['THEME_MLM_PATH'] 	= get_template_directory_uri();
 $GLOBALS['THEME_MLM_VER'] 	= '0.0.2';
-$GLOBALS['THEME_SETTING_PG'] 	= 2994;
-$GLOBALS['THEME_MLM_ENV'] = '';
+$GLOBALS['careerPg'] 	      = 9682;
+$GLOBALS['THEME_MLM_ENV']   = '';
 
 /*-----------------------------------------------------------------------------------*/
 //     Variables LOCAL OR DIST
@@ -59,7 +59,6 @@ $understrap_includes = array(
   '/inc/functions/add_blocks.php', // blocks support
   '/inc/functions/add_richText.php',
   '/inc/functions/add_tiny_mce.php',
-  '/inc/functions/add_acf_theme_options.php', // Theme Settings tab
   '/inc/functions/add_taxonomy.php', // Theme taxonomy
    //'/inc/functions/add_shortcuts.php',
  

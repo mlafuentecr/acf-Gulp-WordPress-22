@@ -117,13 +117,17 @@
 	.submenu {
 		button {
 			border: 0px;
-			height: 50px;
 			background-color: transparent;
 			text-align: left;
 			line-height: 150%;
 			width: fit-content;
 			@include link_style;
 			font-size: 16px !important;
+			&.active {
+				color: white;
+				filter: invert(1);
+				background-size: 100% 100% !important;
+			}
 			&:hover {
 				filter: invert(1);
 			}
@@ -140,7 +144,7 @@
 			&:before {
 				content: 'MENU ▼';
 				width: 100%;
-				height: 50px;
+
 				max-width: 300px;
 				margin: auto;
 				text-align: center;

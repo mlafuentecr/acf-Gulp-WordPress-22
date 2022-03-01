@@ -1,90 +1,70 @@
 <?php
 
 
-// //RICH TEXT special_underline
-// function special_underline() {
-  
-//     $blockPath = '/src/js/block-rich-text.js';
-//     wp_register_script( 'special_underline',
-//                         get_template_directory_uri() . $blockPath,
-//                         array( 'wp-rich-text','wp-editor','wp-element' ),
-//                         false, false);
-  
-//     wp_enqueue_script('block-rich-text');
-// }
-
-// add_action( 'init', 'special_underline' );
-
-
-
 /*-----------------------------------------------------------------*/
 //     ADD tiny_mce FORMATS
 /*-----------------------------------------------------------------*/
-//add place to the tinymce for styles
-function wpb_mce_button($buttons) {
-  array_unshift($buttons, 'styleselect');
-  return $buttons;
+
+
+
+add_filter('mce_buttons_2', 'add_mce_buttons_2');
+function add_mce_buttons_2($buttons)
+{
+    array_unshift($buttons, 'styleselect');
+    return $buttons;
 }
-add_filter('mce_buttons_2', 'wpb_mce_button');
 
-
-function my_mce_before_init_insert_formats( $init_array ) {  
-  // Define the style_formats array
-  $style_formats = array(  
-
-    array(  
-      'title' => 'Uppercase',  
-      'inline ' => 'span',  
-      'classes' => 'text-upperCase',
-      'wrapper' => true,
-      'styles' => array(
-        'textTransform' => 'uppercase'
-    )
-    ),  
-    array(  
-      'title' => 'Capital text',  
-      'inline ' => 'span',  
-      'classes' => 'text-capital',
-      'wrapper' => true,
-      'styles' => array(
-        'textTransform' => 'capitalize'
-    )
-    ),
-
-    //This is not gutenber but tinymce
-    array(  
-      'title' => 'rs_underline',  
-      'inline ' => 'span',  
-      'classes' => 'rs_underline',
-      'wrapper' => true,
-      'styles' => array(
-        'text-decoration' => 'underline'
-    )
-    ),
-
-        //This is not gutenber but tinymce
-        array(  
-          'title' => 'rs_link_underline',  
-          'inline ' => 'span',  
-          'classes' => 'rs_link_underline',
-          'wrapper' => true,
-          'styles' => array(
-            'text-decoration' => 'underline'
-        )
-        ),
-
+add_filter('tiny_mce_before_init', 'add_tiny_mce_before_init');
+function add_tiny_mce_before_init($settings)
+{
    
-      
+    $style_formats = array(
+      array(  
+        'title' => 'rs_underline',  
+        'inline' => 'span',  
+        'classes' => 'rs_underline',
+        'wrapper' => true,
+        'styles' => array(
+          'text-decoration' => 'underline'
+             )
+      ),  
+      array(  
+        'title' => 'rs_circle',  
+        'inline' => 'span',  
+        'classes' => 'rs_circle',
+        'wrapper' => true,
+        'styles' => array(
+          'border-radius' => '50%',
+          'border' => '1px solid gray',
+             )
+      ), 
+      array(  
+        'title' => 'Uppercase',  
+        'inline' => 'span',  
+        'classes' => 'text-upperCase',
+        'wrapper' => true,
+        'styles' => array(
+          'text-transform' => 'uppercase'
+             )
+      ),
+    );
+    // Before 3.1 you needed a special trick to send this array to the configuration.
+    // See this post history for previous versions.
+    $settings['style_formats'] = json_encode( $style_formats );
 
-  );
+    return $settings;
+}
 
-  // Insert the array, JSON ENCODED, into 'style_formats'
-  $init_array['style_formats'] = json_encode( $style_formats );  
-  return $init_array;  
-   
-} 
 
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+
+////ADD THE STYLE
+
+function add_editor_styles_sub_dir() {
+	add_editor_style( get_template_directory_uri() . '/dist/css/custom-editor-style.css' );
+}
+add_action( 'after_setup_theme', 'add_editor_styles_sub_dir' );
+
+
 
 
 ?>

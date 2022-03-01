@@ -2,21 +2,22 @@
 /*-----------------------------------------------------------------------------------*/
 /*  ACF Page our-value
 /*-----------------------------------------------------------------------------------*/
-$pageFields     = get_fields();
-$header         = $pageFields['header']; 
-$add_container  = $pageFields['add_container']; 
-$jobNumber      = $pageFields['number_of_jobs_to_show']; 
-$margen         = $pageFields['margen']; 
-$bg_color       = $pageFields['background_color']; 
+$pageField      = get_fields();
+$header         = $pageField['header']; 
+$add_container  = $pageField['add_container']; 
+$jobNumber      = $pageField['number_of_jobs_to_show'] ?: 6; 
+$margen         = $pageField['margen'] ?: 0; 
+$bg_color       = $pageField['join_a_team_bg'] ?: '#ff918e';
+$text_color     = $pageField['join_a_team_text_color'] ?: 'black';
 
  ?>
 <?php if ($add_container) {echo '<div class="container">';} ?>
 
-<div data-jobs=<?php echo $jobNumber; ?> style="background-color: <?php echo $bg_color; ?>"
-  class="block_jobs py-5  my-<?php echo $margen; ?>  minimize <?php echo $block['className']; ?>">
+<div data-jobs=<?php echo $jobNumber; ?> style="background-color: <?php echo $bg_color; ?>; "
+  class="block_jobs <?php echo $text_color; ?> py-5  my-<?php echo $margen; ?>  minimize <?php echo $block['className']; ?>">
   <div class="container">
     <?php if ($header): ?> <header class="block_jobs_header col-12"><?php echo $header; ?></header> <?php endif; ?>
-    <div class="row row-cols-2 g-3  block_jobs_rows">
+    <div class="row row-cols-2 g-3  block_jobs_rows <?php echo $text_color; ?>">
       Loading... Jobs
     </div>
   </div>
@@ -32,6 +33,7 @@ $bg_color       = $pageFields['background_color'];
 if (!is_admin() ) {
   // Enqueue block editor styles
 }
+
 wp_enqueue_script('block_jobs',   $GLOBALS["THEME_MLM_PATH"].  '/dist/js/block_jobs.js?defer', array(), $GLOBALS['THEME_MLM_VER'], true );
 
 

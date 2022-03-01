@@ -524,7 +524,7 @@
                     "key": "field_61ef200b347cf",
                     "label": "phase text",
                     "name": "phase_text",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -534,10 +534,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
                 }
             ]
         },
@@ -883,5 +883,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644121195
+    "modified": 1645458897
 }

@@ -103,6 +103,11 @@
 	}
 
 	.phases {
+		.phase_image {
+			height: 260px;
+			overflow: hidden;
+			background-size: cover;
+		}
 		.phase-number {
 			text-transform: uppercase;
 		}

@@ -2,6 +2,25 @@
 /*-----------------------------------------------------------------------------------*/
 //     Dashboard Colors
 /*-----------------------------------------------------------------------------------*/
+add_action('profile_update', function($user_id) {
+    // on profile update save the unfiltered color choice in an additional meta
+    $set = get_user_meta('admin_color', $user_id, true) ? : 'coffee';
+    update_user_meta($user_id, '_setted_admin_color', $set);
+  });
+  
+  //add_filter('get_user_option_admin_color','change_admin_color');
+  
+  function change_admin_color($result) {
+     $color = 'coffee';
+     if ( is_user_logged_in() ) { // for nono logged user output default
+        // get the unfiltered color meta
+        $setted = get_user_meta( get_current_user_id(), '_setted_admin_color', true );
+        // if present set color to that
+        if ( ! empty($setted) ) $color = $setted;
+     }
+     return $color;
+  }
+
 // /*-----------------------------------------------------------------------------------*/
 // /* ADMIN ENQUEUE
 // /*-----------------------------------------------------------------------------------*/

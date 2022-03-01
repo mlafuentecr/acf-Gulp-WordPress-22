@@ -49,6 +49,7 @@
 
   if($terms){
   
+    //Query by term
     $args = array(
       'post_type'       => 'case_study',
       'post_status'     => 'publish',
@@ -66,7 +67,8 @@
       );
 
   }else{
-
+  
+    //QUery all
     $args = array(
       'post_type'       => 'case_study',
       'post_status'     => 'publish',
@@ -83,7 +85,7 @@
 ?>
 
 <?php  if(!$terms): ?>
-<!-- feature post -->
+<!-- feature post Only first screen-->
 <section class="block_caseStudy_post feature_post py-5 <?php echo $block['className']; ?>   my-5"
   style="background-color: <?php  echo $bg_color; ?>">
   <div class="container  my-5 ">
@@ -101,6 +103,7 @@
 </section>
 <?php  endif; ?>
 
+<!-- Case studies -->
 <section class="case_study text-black">
   <div class="container  <?php echo $margen; ?>">
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-5  ">
@@ -109,8 +112,8 @@
       if ( $loop->have_posts() ) :
       while ( $loop->have_posts() ) : $loop->the_post();
       $postid = get_the_ID();
-  
-      
+      // $term_obj_list = get_the_terms( $postid, 'type_of_business' );
+      //   var_dump( $term_obj_list);
       ?>
 
       <div class="col my-0 my-md-5">

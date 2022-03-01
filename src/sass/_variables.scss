@@ -24,7 +24,8 @@ $px48: 3rem; //45px
 $px50: 3.125rem; //50px
 $px55: 3.438rem; //55px
 $px60: 3.75rem; //60px
-
+$px70: 4.375rem; //60px
+$px80: 5rem; //60px
 // ==================================
 // BREAK POINTS BASE BOOSTRAP
 // ==================================
@@ -149,17 +150,6 @@ h4 {
 	}
 }
 @mixin rs_link_underline {
-	padding-bottom: 3px;
-	background-image: linear-gradient(transparent calc(100% - 2px), #fff 2px);
-	text-decoration: none !important;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	transition: background-size 0.5s;
-
-	&:hover {
-		background-size: 0 100%;
-		color: #fff;
-	}
 }
 @mixin links-with-line {
 	a {

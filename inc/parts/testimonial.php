@@ -9,7 +9,6 @@
   $slider                     = $pageFields['slider'];
   $GLOBALS['slider_subtitle'] = $pageFields['title'];
 
-
 ?>
 
 
@@ -23,7 +22,7 @@
       <?php 
    
    if( $slider ) {
-    
+   
       $total = count($slider);
      
        foreach( $slider as $index => $testimonial ) {
@@ -39,10 +38,7 @@
            $reverse   = $testimonial['direcction'];
            $obj       = $testimonial;
            $index++;
-        
-        
-          
-           
+
            $state = $index === 1 ? "active" : "";
           
             echo "<div style='min-height:".$slider_size."px;     background-color:".$bg_color." ' class='carousel-item ".$state." '>";

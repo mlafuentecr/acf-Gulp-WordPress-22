@@ -48,14 +48,11 @@ function individualScss() {
 function copyCss() {
 	return src('./src/css/*.*').pipe(dest('./dist/css/'));
 }
-function copyadmincss() {
-	return src('./src/css/admin/*.css').pipe(dest('./dist/css/'));
-}
 
 //Js //I used DIst direct bc if I put them on src will created a loop on gulp file
 const jsIntern = ['./src/js/internal.js', './src/js/scroll.js', './src/js/menu-search.js', './src/js/our_work.js'];
-const jsHome = ['./src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js'];
-const jscopy = ['./src/js/block_jobs.js', './src/js/block_tech_stack.js', './src/js/rich-text.js', './src/js/bundle_intern.js', './src/js/bundle_home.js'];
+const jsHome = ['./src/js/newsletter.js', './src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js'];
+const jscopy = ['./src/js/block_jobs.js', './src/js/block_tech_stack.js', './src/js/bundle_intern.js', './src/js/bundle_home.js'];
 
 function js_bundle_Intern() {
 	return src(jsIntern).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./src/js/'));
@@ -84,4 +81,4 @@ function watchtask() {
 	watch(jscopy, copyJs);
 }
 
-exports.default = series(parallel(js_bundle_home, copyboostrapJs, js_bundle_Intern, individualScss, homepageScss, internalScss, series(copyCss, copyadmincss, copyJs, watchtask)));
+exports.default = series(parallel(js_bundle_home, copyboostrapJs, js_bundle_Intern, individualScss, homepageScss, internalScss, series(copyCss, copyJs, watchtask)));

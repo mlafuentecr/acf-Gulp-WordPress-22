@@ -111,15 +111,15 @@ function addFontColor( $color  ){
 
 <section class="phases text-white">
   <div class=" container">
-    <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
+    <div class="row row-cols-1 row-cols-md-2 justify-content-center align-items-start my-5  text-center">
       <?php 
         $phase = get_field('phase');
         $key = 1;
         if( $phase ) {
             foreach( $phase as $row ) {
-                echo "<div class='col-12 mb-5 '>
-                <div class='phase_image  col-12'>
-                <img class='lazyload mb-3' src='".$row['phase_image']['url']."' alt=".$row['phase_image']['title']." />
+                echo "<div class='col mb-5 '>
+                <div class='phase_image mb-4 col-12' style='background-image: url(".$row['phase_image']['url'].") '>
+               
                 </div>
                 <div class='our_phase_content'>
                 <div class='phase-number text-start '> the process <span class='dash-left'>phase</span>  ".$key."    </div>

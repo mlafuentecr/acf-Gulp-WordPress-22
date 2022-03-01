@@ -21,6 +21,8 @@ function enqueue_header()
   /******************* LOAD JS ?defer  ********************/
   if ( is_front_page() ) {
    wp_enqueue_script('main',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
+  }elseif(is_page( $GLOBALS['careerPg']  )){
+   wp_enqueue_script('block_jobs',   $GLOBALS["THEME_MLM_PATH"].  '/dist/js/block_jobs.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
   }else {
     wp_enqueue_script('intern',   $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_intern.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
   }

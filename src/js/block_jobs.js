@@ -9,12 +9,9 @@ function block_jobs() {
 /*------------------------------------------*/
 	let [jobsDiv, jobs_rows, number_jobs, jobsholder, jobstable, jobstable2, department, employment_type, experience, remote, location, position, position_url] = '';
 	if (document.querySelector('.block_jobs')) {
-		console.log('block_jobs2');
-
 		jobsDiv = document.querySelector('.block_jobs');
 		jobs_rows = document.querySelector('.block_jobs_rows');
 		number_jobs = jobsDiv.dataset.jobs;
-		console.log(jobsDiv, 'number_jobs');
 		number_jobs ? number_jobs : (number_jobs = 7);
 		startFetching();
 	}
@@ -85,7 +82,7 @@ function block_jobs() {
 		});
 		//make div table for jobs jobstable2
 		jobsholder += jobstable + jobstable2;
-		jobsholder += `<div class="loadmore rs_link_underline my-5 mx-auto col-1 text-center">See all open opportunities</div>
+		jobsholder += `<div class="loadmore_wrap"> <div class="loadmore rs_link_underline my-5 mx-auto  text-center">See all open opportunities</div></div>
     
 		</div>
     </section>
