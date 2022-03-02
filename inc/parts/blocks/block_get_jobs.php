@@ -3,7 +3,7 @@
 /*  ACF Page our-value
 /*-----------------------------------------------------------------------------------*/
 $pageField      = get_fields();
-$header         = $pageField['header']; 
+$header         = $pageField['header_jobs']; 
 $add_container  = $pageField['add_container']; 
 $jobNumber      = $pageField['number_of_jobs_to_show'] ?: 6; 
 $margen         = $pageField['margen'] ?: 0; 
@@ -13,10 +13,14 @@ $text_color     = $pageField['join_a_team_text_color'] ?: 'black';
  ?>
 <?php if ($add_container) {echo '<div class="container">';} ?>
 
-<div data-jobs=<?php echo $jobNumber; ?> style="background-color: <?php echo $bg_color; ?>; "
+<div id="positions" data-jobs=<?php echo $jobNumber; ?> style="background-color: <?php echo $bg_color; ?>; "
   class="block_jobs <?php echo $text_color; ?> py-5  my-<?php echo $margen; ?>  minimize <?php echo $block['className']; ?>">
   <div class="container">
-    <?php if ($header): ?> <header class="block_jobs_header col-12"><?php echo $header; ?></header> <?php endif; ?>
+    <?php if ($header): ?>
+    <header class="block_jobs_header col-12">
+      <?php echo $header; ?>
+    </header>
+    <?php endif; ?>
     <div class="row row-cols-2 g-3  block_jobs_rows <?php echo $text_color; ?>">
       Loading... Jobs
     </div>

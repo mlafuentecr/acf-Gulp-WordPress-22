@@ -104,12 +104,12 @@
 .block-box-content {
 	.block-box-content_text {
 		.text-upperCase {
-			@include smallTitle;
+			@include title_small;
 		}
 		p {
-			@include smallTitle;
+			@include title_small;
 		}
-		@include smallTitle;
+		@include title_small;
 	}
 	.descrip {
 		background-color: yellowgreen;
@@ -123,7 +123,7 @@
 
 .block-objectives {
 	.title {
-		@include smallTitle;
+		@include title_small;
 	}
 	.descrip {
 		.text-upperCase {
@@ -138,7 +138,14 @@
 	height: auto;
 	transition: all 1s;
 	min-width: 100%;
-	// background-color: handle by php in the page
+	h1 {
+		color: black;
+		font-weight: 700;
+		font-size: $px20;
+	}
+	.position_subtitle {
+		font-weight: normal;
+	}
 	&.minimize {
 		max-height: 0px;
 	}
@@ -149,7 +156,8 @@
 		filter: invert(1);
 	}
 	&_header {
-		color: black;
+		color: red !important;
+		line-height: 150%;
 		p {
 			color: black !important;
 			font-size: 20px;

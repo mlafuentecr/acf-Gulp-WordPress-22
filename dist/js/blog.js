@@ -1,0 +1,1 @@
+function blog(){if(document.querySelector("#blog")){console.log("BLOG");const o=document.querySelector("#menu-top");var e=document.querySelector(".main-header").dataset.color;o.style.backgroundColor=""+e}}"loading"!==document.readyState?blog():document.addEventListener("DOMContentLoaded",()=>blog());

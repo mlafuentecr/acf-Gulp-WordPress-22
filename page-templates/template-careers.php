@@ -23,7 +23,7 @@ $full_image_height2 = $pageFields['full_image_height2'];
 ///What sets us apart
 $what_sets_us_heigh = $pageFields['what_sets_us_heigh'];
 //jobs BLock Join a team
-$join_a_team_title =  $pageFields['join_a_team_title'];
+$join_a_team_title =  $pageFields['header_jobs'];
 
 //working with us
 $workingwithus_bg   =  $pageFields['working_bg_color'];
@@ -35,6 +35,7 @@ $workingwithus_txt  =  $pageFields['reason'];
 $lasttxt            =  $pageFields['last_text'];
 $lastimg            =  $pageFields['full_width_image2'];
 $lastimgHeight      =  $pageFields['full_image_height2'];
+
 
 
 
@@ -68,12 +69,12 @@ $lastimgHeight      =  $pageFields['full_image_height2'];
   </section>
   <?php endif; ?>
 
-  <section class=" sets-us-apart bg-light">
+  <section class="sets-us-apart py-5 bg-light">
     <div class="container" style='height: <?php echo $what_sets_us_heigh.'px'; ?>'>
       <div class="d-flex align-items-center  h-100">
 
         <div class="wrapper">
-          <h2><?php echo $what_title; ?></h2>
+          <h2 class='title_small'><?php echo $what_title; ?></h2>
           <div class="content">
             <?php echo $what_content;  ?>
           </div>
@@ -84,10 +85,12 @@ $lastimgHeight      =  $pageFields['full_image_height2'];
           if( $reasons ) {
             
               foreach( $reasons as $key => $row ) {
-                  $key++;
+                $key++;
+                $key < 10 ? $key = '0'.$key : $key;
+                  
                   echo '<article class="item_career">';
                   echo '<span class="number">'.$key.'</span>';
-                  echo '<div class="number">'.$row['reason'].'</div>';   
+                  echo '<div class="reason">'.$row['reason'].'</div>';   
                   echo '</article>';
               }
              
@@ -100,18 +103,9 @@ $lastimgHeight      =  $pageFields['full_image_height2'];
   </section>
 
   <!-- API CALL JOBS -->
-
   <?php if($join_a_team_title): ?>
-
   <section class="get-jobs ">
-
-    <header class="jobsTitle text-white">
-      <div class="container">
-        <h3><?php echo $join_a_team_title; ?></h3>
-      </div>
-    </header>
     <?php include get_theme_file_path('/inc/parts/blocks/block_get_jobs.php'); ?>
-
   </section>
   <?php endif; ?>
 
@@ -122,9 +116,11 @@ $lastimgHeight      =  $pageFields['full_image_height2'];
   <section class="working-with-us"
     style="background-color:<?php echo $workingwithus_bg; ?>; min-height:<?php echo $full_image_height1; ?>px; );">
     <div class="d-flex flex-wrap row-col-2">
-      <div class="col"
-        style="background-size: cover; background-image: url(<?php echo $workingwithus_img1['url'];  ?>;"></div>
-      <div class="col"> <img class='lazyload' src='<?php echo $workingwithus_img2['url']; ?>'
+      <div class="col img1">
+        <img class='lazyload' src='<?php echo $workingwithus_img1['url']; ?>'
+          alt='<?php echo $workingwithus_img2['title']; ?>' />
+      </div>
+      <div class="col img2"> <img class='lazyload' src='<?php echo $workingwithus_img2['url']; ?>'
           alt='<?php echo $workingwithus_img2['title']; ?>' /></div>
     </div>
 

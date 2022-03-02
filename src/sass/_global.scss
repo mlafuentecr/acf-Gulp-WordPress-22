@@ -335,7 +335,7 @@ body {
 		color: #fff;
 	}
 }
-.link_style_white {
+.link_main_style {
 	color: white;
 	@include link_style;
 }
@@ -494,6 +494,16 @@ body {
 			-webkit-transform: scale(1.05);
 			transform: scale(1.05);
 		}
+	}
+}
+
+.title {
+	&_small {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 150%;
+		text-transform: uppercase;
 	}
 }
 /*--------------------------------------------------*/

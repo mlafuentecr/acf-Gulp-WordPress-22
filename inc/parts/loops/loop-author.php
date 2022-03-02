@@ -21,7 +21,7 @@ while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
     <div class="card-body  p-0  ">
       <a class="card-link" href="<?php echo get_permalink(); ?>">
-        <div class="title link_style_white text-white">
+        <div class="title link_main_style text-white">
           <?php echo get_the_title(); ?>
         </div>
       </a>

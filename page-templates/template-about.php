@@ -56,7 +56,7 @@ $pageFields = get_fields();
   <section class="abit_about_us pt-5 p-md-5"
     style="background-color: <?php echo $pageFields['a_bit_about_us_color'];  ?>;">
     <div class="container">
-      <h3 class="bit_about_us_small_title smallTitle"><?php echo $pageFields['bit_about_us_small_title'];  ?></h3>
+      <h3 class="bit_about_us_small_title title_small"><?php echo $pageFields['bit_about_us_small_title'];  ?></h3>
       <div class="content"><?php echo $pageFields['bit_about_us_main_text'];  ?></div>
       <?php if( $pageFields['next_link']):  ?> <a class='arrow' href="<?php echo $pageFields['next_link']['url']; ?>"
         target="_blank" rel="noopener noreferrer"><?php echo $pageFields['next_link']['title']; ?>
@@ -97,7 +97,7 @@ $pageFields = get_fields();
           
             echo "<div style='min-height:".$slider_size."px;     background-color:".$bg_color." ' class='carousel-item ".$state." '>";
             echo "<div class='container my-5'> ";
-            echo '  <h3 class="smallTitle" >Our Jorney</h3>';
+            echo '  <h3 class="title_small" >Our Jorney</h3>';
             echo "<div class='mt-5' style='color: ".$text_color."!important;'> ";
             echo '<span class="title" style="color: '.$text_color.'" > '. $GLOBALS['slider_subtitle']  .' </span>';
             echo "<div class='slideNumber'> " .  $index.' - '. $total  .  "</div>";
@@ -159,7 +159,7 @@ $pageFields = get_fields();
   <?php if ($pageFields['embody_title']): ?>
   <section class="embody py-5" style="background-color: url(<?php echo $pageFields['embody_color'];  ?>;">
     <div class="container py-5">
-      <h3 class='smallTitle text-white'> <?php echo$pageFields['embody_title']; ?></h3>
+      <h3 class='title_small text-white'> <?php echo$pageFields['embody_title']; ?></h3>
       <div class="row   row-cols-1  row-cols-md-2 row-cols-lg-<?php echo $pageFields['embody_columns'];  ?> ">
         <?php 
         $rows = get_field('embody');
@@ -183,7 +183,7 @@ $pageFields = get_fields();
   <!-- Clients -->
   <section class="clients py-5" style="background-color: white;">
     <div class="container py-5">
-      <h3 class='smallTitle'> Clients</h3>
+      <h3 class='title_small'> Clients</h3>
       <div class="row   row-cols-2 row-cols-lg-3  row-cols-xl-<?php echo $pageFields['clients_columns'];  ?> ">
         <?php 
         $rows = get_field('clients_logos');
@@ -204,7 +204,7 @@ $pageFields = get_fields();
   <!-- awards -->
   <section class="awards py-5" style="background-color: white;">
     <div class="container py-5">
-      <h3 class='smallTitle text-black col-12 mb-5'> awards</h3>
+      <h3 class='title_small text-black col-12 mb-5'> awards</h3>
       <div class="row g-2 ">
         <?php 
         $rows = get_field('awards');
@@ -226,7 +226,7 @@ $pageFields = get_fields();
   <!-- our offices -->
   <section class="office py-5" style="background-color: white;">
     <div class="container py-5">
-      <h3 class='smallTitle text-black'> our offices</h3>
+      <h3 class='title_small text-black'> our offices</h3>
     </div>
 
     <div class="d-flex flex-wrap ">

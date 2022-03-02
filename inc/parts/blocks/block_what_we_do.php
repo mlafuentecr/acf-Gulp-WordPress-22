@@ -22,7 +22,7 @@
           
               $link = $row['link'] ?  $link = $row['link']['url'] : $link = '';
               echo '<div class="col">';
-                if($link){echo '<a class="link_style_white" href="'.$link.'">';}
+                if($link){echo '<a class="link_main_style" href="'.$link.'">';}
                 echo '<div class="title small-arrow">'.$row['title'].'</div>';
                 echo '<div class="body text-gray">'.$row['body'].'</div>';
                 if($link){echo '</a>';}

@@ -45,7 +45,7 @@ $posts            = $pageFields['choose_posts'] ?: $pageFields['choose_other'];
 
             <?php if($add_title): ?>
             <a class="card-link text-gray" href="<?php  get_permalink(  $post->ID ); ?>" rel="noopener noreferrer">
-              <div class="title link_style_white text-white">
+              <div class="title link_main_style text-white">
                 <?php  echo $post->post_title; ?>
               </div>
             </a>

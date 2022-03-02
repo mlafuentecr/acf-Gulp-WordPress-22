@@ -1,6 +1,12 @@
 <?php 
   // Load values and assign defaults.
-  $pageFields       = get_fields();
+  if(is_page( 'Blog' )){
+    $id = get_the_ID();
+    $pageFields       = get_fields($id);
+  }else{
+    $pageFields       = get_fields();
+  }
+  
   $add_container    = $pageFields['add_container']; 
   $add_headline     = $pageFields['add_headline']; 
   $margen           = $pageFields['margen']; 
@@ -9,6 +15,12 @@
   $cols             = $pageFields['cols'];
   $post_quantity    = $pageFields['post_quantity'];
 
+  $add_title        = $pageFields['add_title'];
+  $add_excerpt      = $pageFields['add_excerpt'];
+  $add_author       = $pageFields['add_author_info']; 
+ 
+ 
+  
   // The Query
   $args = array(
     'posts_per_page'  => $post_quantity-1, 
@@ -19,11 +31,12 @@
     );
 
     $the_query = new WP_Query( $args );
-  
+
+
 if ( $the_query->have_posts() ) : 
    
 ?>
-<div class="get_posts text-white">
+<div class="get_posts ">
   <div class="container  <?php echo $margen; ?>">
     <!-- Add a text for gutenber only if im on admin -->
     <?php if (is_admin() ) { echo 'Edit Post click the pencil to edit';} ?>
@@ -36,9 +49,6 @@ if ( $the_query->have_posts() ) :
     while ( $the_query->have_posts() ) : $the_query->the_post(); 
         //acf
         $excerpt        = get_the_excerpt();
-        $add_title      = $pageFields['add_title'];
-        $add_excerpt    = $pageFields['add_excerpt'];
-        $add_author     = $pageFields['add_author_info']; 
         //wp
         $post           = get_post();
         ?>
@@ -55,7 +65,7 @@ if ( $the_query->have_posts() ) :
           <div class="card-body  p-0  ">
             <?php if($add_title): ?>
             <a class="card-link text-gray" href="<?php  get_permalink(  $post->ID ); ?>" rel="noopener noreferrer">
-              <div class="title link_style_white text-white">
+              <div class="title link_main_style ">
                 <?php  echo $post->post_title; ?>
               </div>
             </a>
@@ -81,7 +91,7 @@ if ( $the_query->have_posts() ) :
               <div class="author_pic px-2"
                 style='background-image: url("<?php echo get_avatar_url($authorId, array('size' => 450)); ?>");'>
               </div>
-              <div class="px-2 flex-grow-1 "><?php echo ' $authorId '. $authorId; ?>
+              <div class="px-2 flex-grow-1 ">
                 <div class="col-12 author_name"><a href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
                     rel="noopener noreferrer"><?php echo get_the_author_meta( 'display_name',  $authorId);  ?></a>
                 </div>
