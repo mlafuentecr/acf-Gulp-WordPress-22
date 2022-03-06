@@ -272,7 +272,7 @@
             "key": "field_621dd0af50f18",
             "label": "View All Articles QUE HACE ESTE",
             "name": "view_all_articles",
-            "type": "text",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -281,11 +281,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "array"
         },
         {
             "key": "field_621dd0cd35ec0",
@@ -304,6 +300,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_621ff6fb68c1e",
+            "label": "News Letter",
+            "name": "news_letter",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_621dd0fbec96a",
             "label": "Features Articles",
             "name": "",
@@ -318,6 +333,25 @@
             },
             "placement": "left",
             "endpoint": 0
+        },
+        {
+            "key": "field_622031c48e3c4",
+            "label": "article_title",
+            "name": "article_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Featured Articles",
+            "placeholder": "Featured Articles",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_621dd137ec96c",
@@ -370,7 +404,7 @@
             "key": "field_621dd168ec96d",
             "label": "View All Features Articles QUE HACE ESTE (copy)",
             "name": "view_all_features_articles",
-            "type": "text",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -379,11 +413,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "array"
         },
         {
             "key": "field_621dd18a0bbc0",
@@ -402,11 +432,30 @@
             "endpoint": 0
         },
         {
+            "key": "field_622036b9a8f02",
+            "label": "headline",
+            "name": "headline",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_621dd1f8d3145",
             "label": "team pictures",
             "name": "team_pictures",
             "type": "gallery",
-            "instructions": "",
+            "instructions": "IMPORTANT title: name of the person, Description: Position, & alt: img description",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -441,8 +490,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
+            "default_value": "See all Autors",
+            "placeholder": "See all Autors",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -516,5 +565,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646245304
+    "modified": 1646522311
 }

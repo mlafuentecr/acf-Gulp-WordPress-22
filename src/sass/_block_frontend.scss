@@ -217,6 +217,9 @@
 		font-size: $px48;
 		line-height: 150%;
 		color: #ffffff;
+		@media (max-width: $md) {
+			font-size: $px30;
+		}
 	}
 	p {
 		color: white;

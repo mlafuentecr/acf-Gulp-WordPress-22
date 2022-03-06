@@ -38,10 +38,9 @@ if ( $the_query->have_posts() ) :
 ?>
 <div class="get_posts ">
   <div class="container  <?php echo $margen; ?>">
-    <!-- Add a text for gutenber only if im on admin -->
-    <?php if (is_admin() ) { echo 'Edit Post click the pencil to edit';} ?>
+
     <!-- if have headline on -->
-    <?php if($add_headline): ?> <header class='col-12'> <?php echo $headline; ?> </header><?php  endif; ?>
+    <?php if($add_headline): ?> <header class='col-12 mt-5'> <?php echo $headline; ?> </header><?php  endif; ?>
     <div
       class="row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
 
@@ -56,7 +55,7 @@ if ( $the_query->have_posts() ) :
       <div class="col my-5">
 
         <div class="card post-<?php echo $post->ID; ?> bg-transparent ">
-          <a class="card-link" href="<?php echo  get_permalink(  $post->ID ); ?>" rel="noopener noreferrer">
+          <a class="card-link " href="<?php echo  get_permalink(  $post->ID ); ?>" rel="noopener noreferrer">
             <div class="card-img mb-4 zoom_img"
               style="background-image: url(<?php   echo get_the_post_thumbnail_url( $post->ID ); ?>);">
             </div>
@@ -64,8 +63,9 @@ if ( $the_query->have_posts() ) :
 
           <div class="card-body  p-0  ">
             <?php if($add_title): ?>
-            <a class="card-link text-gray" href="<?php  get_permalink(  $post->ID ); ?>" rel="noopener noreferrer">
-              <div class="title link_main_style ">
+            <a class="card-link text-gray" href="<?php echo   get_permalink(   $post->ID ); ?>"
+              rel="noopener noreferrer">
+              <div class="title link_main_style links-with-line">
                 <?php  echo $post->post_title; ?>
               </div>
             </a>

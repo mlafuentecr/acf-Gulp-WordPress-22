@@ -58,7 +58,7 @@ categoriesName();
   $array = array_unique($catArr, SORT_REGULAR);
 
   //Add all
-  echo '<button data-name="all" class="all mb-2">All</button>';
+  echo '<button data-name="all" class="all my-2">All</button>';
   //print uniques names
   foreach($array as  $key=>$type){
     if($type){ echo '<button data-name="' . $key . '" class=" mb-2 '. $key .'">' . $type . '</button>';}
@@ -70,7 +70,7 @@ categoriesName();
 
   <header class=" my-0 my-md-5">
     <div class="container ">
-      <div class="row my-0 my-md-5">
+      <div class="row my-0 mb-5 my-md-5">
         <div class="col my-5 my-md-0">
           <?php echo $header; ?>
         </div>

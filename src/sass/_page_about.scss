@@ -100,6 +100,15 @@
 		.carousel-item {
 			background: white;
 			min-height: 600px;
+
+			@media (max-width: $md) {
+				.container {
+					display: flex !important;
+					justify-content: center;
+					align-content: center;
+					align-items: center;
+				}
+			}
 		}
 		.carousel-control-prev-icon,
 		.carousel-control-next-icon {
@@ -115,6 +124,9 @@
 		flex: none;
 		order: 0;
 		flex-grow: 0;
+		@media (max-width: $md) {
+			font-size: $px30;
+		}
 	}
 	.journey_content {
 		font-style: normal;
@@ -125,6 +137,10 @@
 		flex: none;
 		order: 0;
 		flex-grow: 0;
+		@media (max-width: $md) {
+			font-size: $px22;
+			line-height: 150%;
+		}
 	}
 	.embody {
 		.number {

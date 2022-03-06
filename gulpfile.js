@@ -70,7 +70,7 @@ function copyboostrapJs() {
 //paca vigila cuando algo cambia corre el , layoutscss
 function watchtask() {
 	watch(['./src/sass/*.scss'], internalScss);
-	watch(['./src/sass/*.scss'], homepageScss);
+	watch(['./src/sass/*.scss'], homebpageScss);
 
 	watch('./src/sass/custom-editor-style.scss', individualScss);
 	watch('./src/sass/login.scss', individualScss);

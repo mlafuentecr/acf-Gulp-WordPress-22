@@ -9,7 +9,7 @@ get_header();
 /*  ACF Page our-value
 /*-----------------------------------------------------------------------------------*/
 $pageFields = get_fields();
-
+$video_url = $pageFields['video_url'];
 ?>
 <main id="about" class="intern-pg">
 
@@ -39,9 +39,9 @@ $pageFields = get_fields();
         <div class="modal-dialog modal-lg  modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-body">
-              <iframe width="100%" height="500" src="https://www.youtube.com/embed/Sw1S-jy86sQ"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              <iframe id="player" width="100%" height="500"
+                src="https://www.youtube.com/embed/<?php echo $video_url; ?>" title="YouTube video player"
+                frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
             </div>
           </div>
@@ -52,17 +52,8 @@ $pageFields = get_fields();
   <?php endif; ?>
 
 
-  <!-- bit about us -->
-  <section class="abit_about_us pt-5 p-md-5"
-    style="background-color: <?php echo $pageFields['a_bit_about_us_color'];  ?>;">
-    <div class="container">
-      <h3 class="bit_about_us_small_title title_small"><?php echo $pageFields['bit_about_us_small_title'];  ?></h3>
-      <div class="content"><?php echo $pageFields['bit_about_us_main_text'];  ?></div>
-      <?php if( $pageFields['next_link']):  ?> <a class='arrow' href="<?php echo $pageFields['next_link']['url']; ?>"
-        target="_blank" rel="noopener noreferrer"><?php echo $pageFields['next_link']['title']; ?>
-        one!</a><?php endif;  ?>
-    </div>
-  </section>
+
+
 
   <!-- Slider -->
   <div id="carouseJourney" class="carousel slide" data-bs-ride="carousel">
@@ -85,7 +76,7 @@ $pageFields = get_fields();
           $dont_put_year  = $journey_slider['dont_put_year'];
           $journey_year   = $journey_slider['journey_year'];
           $journey_title  = $journey_slider['journey_title'];
-         
+         $slider_size = $journey_slider['journey_title'] ?: '600';
         
           
            $obj           = $journey_slider;
@@ -95,18 +86,19 @@ $pageFields = get_fields();
 
            $state = $index === 1 ? "active" : "";
           
-            echo "<div style='min-height:".$slider_size."px;     background-color:".$bg_color." ' class='carousel-item ".$state." '>";
-            echo "<div class='container my-5'> ";
-            echo '  <h3 class="title_small" >Our Jorney</h3>';
-            echo "<div class='mt-5' style='color: ".$text_color."!important;'> ";
+            echo "<div style='    background-color:".$bg_color." ' class='carousel-item ".$state." '>";
+            echo "<div style='min-height:".$slider_size."px!important;' class='container mt-2 my-5'> ";
+            echo "<div   class='jorneyDiv '> ";
+            echo '  <h3 class="title_small mt-md-5 mt-md-0" >Our Jorney</h3>';
+            echo "<div class='mt-1 mt-md-5' style='color: ".$text_color."!important;'> ";
             echo '<span class="title" style="color: '.$text_color.'" > '. $GLOBALS['slider_subtitle']  .' </span>';
             echo "<div class='slideNumber'> " .  $index.' - '. $total  .  "</div>";
           
               if($type === 'text'){ 
                 echo  '<div class="row text-wrap "  style="color: '.$text_color.'" >';
                 echo  '<div class="col-12 ">
-                <div class="col-12 journey_year mt-5">'.  $title .'</div>
-                <div class="col-12 mt-5 journey_content">'. $journey_slider['journey_content'] .'</div>
+                <div class="col-12 journey_year mt-1 mt-md-5">'.  $title .'</div>
+                <div class="col-12  mt-1  mt-md-5 journey_content">'. $journey_slider['journey_content'] .'</div>
                 </div>';
               echo  '</div>';
 
@@ -120,13 +112,13 @@ $pageFields = get_fields();
 
                 echo  '<div class="col-12 col-md-6 mt-3 mt-md-0 mb-4 mb-md-0  ">
                 <div class="col-12 journey_year">'. $title .'</div>
-                <div class="col-12 journey_content">'. $journey_slider['journey_content'] .'</div>
+                <div class="col-12 mt-2  journey_content">'. $journey_slider['journey_content'] .'</div>
                 </div>';
 
                 echo  '</div>';
 
               }
-
+              echo '</div>';
           echo '</div>';
           echo '</div>';
           echo '</div>';
@@ -139,7 +131,7 @@ $pageFields = get_fields();
 
     </div>
 
-    <div class="buttons bg-danger">
+    <div class="buttons ">
       <button class="carousel-control-prev" type="button" data-bs-target="#carouseJourney" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>

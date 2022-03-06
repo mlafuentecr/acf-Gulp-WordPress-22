@@ -100,8 +100,8 @@
             "key": "field_621b934d175d7",
             "label": "video_url",
             "name": "video_url",
-            "type": "url",
-            "instructions": "",
+            "type": "text",
+            "instructions": "ONLY PASTE THE CODE 8nCSpHKvWkA from youtube",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -109,8 +109,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "default_value": "8nCSpHKvWkA",
+            "placeholder": "8nCSpHKvWkA",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_621b937a0a2d4",
@@ -941,5 +944,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646107985
+    "modified": 1646538424
 }

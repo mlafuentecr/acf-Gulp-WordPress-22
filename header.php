@@ -42,9 +42,9 @@
       <meta name="msapplication-TileColor" content="#da532c">
       <meta name="theme-color" content="#ffffff">
       <!-- no-cache -->
-      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+      <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
       <meta http-equiv="Pragma" content="no-cache" />
-      <meta http-equiv="Expires" content="0" />
+      <meta http-equiv="Expires" content="0" /> -->
 
       <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed"
         href="<?php echo esc_url(get_feed_link()); ?>">

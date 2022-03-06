@@ -5,6 +5,32 @@
 /*------------------------------------------*/
 #blog {
 	background-color: white;
+	.btn-cta {
+		background: black !important;
+		color: white !important;
+	}
+
+	@mixin smalltitle {
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px !important;
+		line-height: 150%;
+		text-align: center;
+		text-transform: uppercase;
+		color: #000000;
+	}
+	.smalltitle {
+		@include smalltitle;
+	}
+	.rs_link_underline {
+		filter: invert(1);
+		justify-content: center;
+		display: flex;
+		max-width: 250px;
+		margin: auto;
+		white-space: nowrap;
+	}
+
 	header {
 		.links-with-line {
 			@include link_style;
@@ -13,71 +39,177 @@
 			font-weight: bold;
 			font-size: $px48 !important;
 			line-height: 150%;
-		}
-	}
-	.author {
-		&-info {
-			a {
-				font-style: normal;
-				font-weight: normal;
-				font-size: 16px;
-				line-height: 150%;
-				color: white;
-				text-decoration: none;
-				display: flex;
+			@media (max-width: $md) {
+				font-weight: 500;
+				line-height: 1.2;
+				font-size: $px30 !important;
 			}
 		}
-		&-name-date {
-			display: flex;
-			flex-wrap: wrap;
+		.excerpt {
+			color: white;
 		}
-		&-name {
-			min-width: 100%;
+
+		h3 {
+			@include smalltitle;
 		}
-		&_time_reading,
-		&-date {
-			font-style: normal;
-			font-weight: normal;
-			font-size: 16px;
+	}
+	//get lates post
+
+	.card {
+		.content {
+			height: 145px;
 			line-height: 150%;
 		}
-		&-img {
-			max-width: 45px;
+		.borderY-2 {
+			border: none !important;
 		}
-	}
-	.main-header {
-		.col {
-			max-height: 500px;
+		.link_main_style {
+			color: #030303;
 		}
-	}
-	.card {
-		.card-body {
-			.link_main_style {
-				color: black;
+		.author {
+			&_data {
+				display: flex;
+				flex-wrap: wrap;
 			}
-			.author_data {
-				.author_date,
-				.author_time_reading {
+			&-info {
+				a {
 					font-style: normal;
 					font-weight: normal;
-					font-size: $px14;
+					font-size: 16px;
+					line-height: 150%;
+					color: rgb(0, 0, 0);
+					text-decoration: none;
+					display: flex;
+				}
+			}
+			&_name {
+				color: #0c0c0c !important;
+				a {
+					font-weight: bold;
+					font-size: 16px;
 					line-height: 150%;
 					color: #0c0c0c !important;
 				}
 			}
-			.author_name {
+			&-name-date {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			&_time_reading,
+			&-date {
 				font-style: normal;
-				font-weight: bold;
+				font-weight: normal;
 				font-size: $px16;
 				line-height: 150%;
-				color: #0c0c0c !important;
-				a {
-					color: #0c0c0c !important;
-				}
+				color: #808183 !important;
+			}
+			&-img {
+				max-width: 45px;
 			}
 		}
-		.borderY-2 {
-			border: none;
+	}
+
+	.main-header {
+		.col {
+			max-height: 500px;
+		}
+		.author {
+			&-info {
+				a {
+					display: flex;
+					color: white;
+				}
+			}
+
+			&-img {
+				max-width: $px48;
+			}
+
+			&-post-date {
+				display: flex;
+				font-style: normal;
+				font-weight: normal;
+				font-size: $px16 !important;
+				line-height: 150% !important;
+				color: #ffffff;
+			}
+		}
+	}
+
+	.feature_article {
+		.card {
+			.content {
+				min-height: 10px;
+			}
+		}
+	}
+	#carouselAuthors {
+		.buttons {
+			position: absolute;
+			min-width: 200px;
+			bottom: 80px;
+			left: calc(50% - 100px);
+		}
+		.masonry-with-columns {
+			max-width: 90%;
+			display: flex;
+			flex-flow: row wrap; /* Shorthand – you could use ‘flex-direction: column’ and ‘flex-wrap: wrap’ instead */
+			justify-content: space-around;
+			align-items: flex-start;
+			margin: auto;
+
+			.imgHolder:nth-child(2n) {
+				padding-top: 2rem;
+			}
+
+			.imgHolder {
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: stretch;
+				align-items: center;
+				min-height: 490px;
+
+				@media (max-width: $lg) {
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: space-evenly;
+					align-items: flex-start;
+					min-height: 50%;
+				}
+				@media (max-width: $md) {
+					width: 100% !important;
+				}
+			}
+			figure {
+				margin: 0px;
+				min-height: 50%;
+				width: auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				margin-bottom: 1rem;
+				padding: 5px;
+				figcaption {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					.title {
+						font-style: normal;
+						font-weight: bold;
+						font-size: 16px;
+						line-height: 150%;
+						color: #000000;
+					}
+					.description {
+						font-style: normal;
+						font-weight: normal;
+						font-size: 14px;
+						line-height: 150%;
+						color: #808183;
+					}
+				}
+			}
 		}
 	}
 }

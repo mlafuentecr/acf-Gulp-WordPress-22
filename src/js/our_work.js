@@ -1,8 +1,9 @@
 document.readyState !== 'loading' ? ourWork() : document.addEventListener('DOMContentLoaded', () => ourWork());
 let { submenu } = '';
-
+console.log('1our-work');
 function ourWork() {
-	if (document.querySelector('.submenux')) {
+	if (document.querySelector('#our-work')) {
+		console.log('our-work');
 		setMenuToActive();
 		submenu = document.querySelector('.submenu');
 		//CHeck if we are on our work
