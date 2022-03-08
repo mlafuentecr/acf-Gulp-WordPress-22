@@ -81,20 +81,18 @@ categoriesName();
     </div>
   </header>
 
-
   <!-- case_study loop -->
-  <?php include_once(get_template_directory() . '/inc/parts/loops/loop_case_study.php'); ?>
-
+  <?php get_template_part("/inc/parts/content", "caseStudy"); ?>
 
   <!-- testimonials -->
-  <?php include_once(get_template_directory() . '/inc/parts/testimonial.php'); ?>
+  <?php get_template_part("/inc/parts/content", "testimonial"); ?>
 
 
-  <!-- GET FORM -->
-  <?php if ( is_active_sidebar( 'form' ) ) : ?>
-  <section class="form">
-    <?php dynamic_sidebar( 'form' ); ?>
-  </section>
-  <?php endif; ?>
+  <!-- form -->
+  <?php get_template_part("/inc/parts/content", "form"); ?>
+
+
 
 </main>
+
+<?php get_footer(); ?>

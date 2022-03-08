@@ -39,9 +39,9 @@
            $obj       = $testimonial;
            $index++;
 
-           $state = $index === 1 ? "active" : "";
-          
-            echo "<div style='min-height:".$slider_size."px;     background-color:".$bg_color." ' class='carousel-item ".$state." '>";
+           $state = $index === 1 ? "carousel-item active" : "carousel-item";
+            
+            echo " <div class='".$state." ' style='min-height:".$slider_size."px;  background-color:".$bg_color.";' >";
             echo "<div class='container '> ";
             echo "<div class='mt-5' style='color: ".$text_color."!important;'> ";
             echo '<span class="title" style="color: '.$text_color.'" > '. $GLOBALS['slider_subtitle']  .' </span>';

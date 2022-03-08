@@ -15,7 +15,7 @@ function enqueue_header()
     //  //js
      wp_enqueue_script('index',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
 
-  }elseif(is_page( 'blog'  )){
+  }elseif(is_page( 'blog'  ) || is_single()){
 
     //css
     wp_enqueue_style('blog',         $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css', array(), $GLOBALS['THEME_MLM_VER']);
@@ -24,8 +24,7 @@ function enqueue_header()
     wp_enqueue_script('blog',   $GLOBALS["THEME_MLM_PATH"] .    '/dist/js/blog.js', array(), $GLOBALS['THEME_MLM_VER']);
     wp_enqueue_script('intern',   $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_intern.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
 
-  }
-  else {
+  }else {
 
     wp_enqueue_style('intern',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/internal.css', array(), $GLOBALS['THEME_MLM_VER']);
     wp_enqueue_script('intern',   $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_intern.js?defer', array(), $GLOBALS['THEME_MLM_VER']);

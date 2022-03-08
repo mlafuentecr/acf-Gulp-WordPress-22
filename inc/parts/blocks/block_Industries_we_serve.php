@@ -8,11 +8,7 @@
  $description = $pageFields['description'] ?: 'Add description';
  $ind_row     = $pageFields['industry'];
 
- function removeSpace($item){
-  
-  $item  =  strtolower(str_replace(" ","_", $item));
-  return  str_replace("_&_","_", $item);
- }
+
  ?>
 
 <section class="block_industries_we_serve industries_we_serve" tabindex='0'>

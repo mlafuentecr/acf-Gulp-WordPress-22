@@ -89,7 +89,6 @@ if (is_admin() ) { ?>
 .tech_stack-logos {
   max-width: 70%;
   padding-left: 10px;
-  background: yellow;
 
 }
 

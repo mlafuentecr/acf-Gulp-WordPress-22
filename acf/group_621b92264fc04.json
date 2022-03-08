@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_621b92a133c69",
-            "label": "Header",
+            "label": "Headline",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -944,5 +944,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646538424
+    "modified": 1646698372
 }

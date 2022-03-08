@@ -6,9 +6,9 @@
 
 <?php
   if( $get_latest_post ){
-    get_template_part("/inc/parts/loops/loop-getlatespost");
+    get_template_part("/inc/parts/content", "getlatespost"); 
   }else{
-    get_template_part("/inc/parts/loops/loop-getpost");
+    get_template_part("/inc/parts/content/getpost");
    }
 
 ?>

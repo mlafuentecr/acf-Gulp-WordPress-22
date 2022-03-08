@@ -36,6 +36,7 @@ function sendDataToUrl(e) {
 
 function setMenuToActive() {
 	let term = '';
+	submenu = document.querySelector('.submenu');
 	//If there is a term in the url
 	if (window.location.search) {
 		//get term from url
@@ -48,7 +49,7 @@ function setMenuToActive() {
 		menuItem.classList.add('active');
 	} else {
 		//get parent div
-		const activeItems = document.querySelectorAll('.active');
+		const activeItems = submenu.querySelectorAll('.active');
 		//remove active item from all
 		activeItems.forEach(item => item.classList.remove('active'));
 	}

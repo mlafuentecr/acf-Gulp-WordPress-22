@@ -64,12 +64,16 @@ add_image_size('brand-slider-image-size', 1024, 580, true);
 function my_excerpt_length($length)
 {
  if (is_front_page() && is_home()) {
-  return 80;
+  return 50;
  } else {
   return 20;
  }
 }
 add_filter('excerpt_length', 'my_excerpt_length', 999);
+
+
+
+
 
 add_theme_support('title-tag');
 

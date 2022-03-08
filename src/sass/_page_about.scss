@@ -46,9 +46,13 @@
 			background-position: center;
 		}
 	}
-	.abit_about_us {
+	.bit_about_us {
 		min-height: 800px;
 		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
 		@media (max-width: $md) {
 			min-height: 500px !important;
 		}
@@ -59,7 +63,7 @@
 				margin-top: 1rem;
 			}
 		}
-		.content {
+		.bit_about_us_content {
 			p {
 				font-style: normal;
 				font-weight: 500;
@@ -99,7 +103,7 @@
 	#carouseJourney {
 		.carousel-item {
 			background: white;
-			min-height: 600px;
+			min-height: 630px;
 
 			@media (max-width: $md) {
 				.container {

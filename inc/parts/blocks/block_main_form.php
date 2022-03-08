@@ -7,7 +7,7 @@
 
  ?>
 
-<div class="block_form mt-5 mb-5 <?php echo $block['className']; ?>">
+<div class="block_form pt-5 pb-5 <?php echo $block['className']; ?>">
   <div class="container">
 
     <div class=" col-12  subtitle"><?php echo $pageFields['subtitle']; ?></div>

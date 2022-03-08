@@ -113,14 +113,10 @@ function wrapImages($i, $pics,  $divCounter ){
 ?>
 
 
-
-
-
-
 <main id="blog" style="color: <?php echo $blog_headline_text_color; ?>;  ">
 
 
-  <header class='main-header ' style='background-color:<?php echo $blog_headline_bg_color; ?>'
+  <header class='main-header getColor' style='background-color:<?php echo $blog_headline_bg_color; ?>'
     data-color='<?php echo $blog_headline_bg_color; ?>'>
     <div class='container'>
       <div class="row  row-cols-1  row-cols-md-2 d-flex flex-wrap align-content-center justify-content-center "
@@ -172,7 +168,7 @@ function wrapImages($i, $pics,  $divCounter ){
   <!-- //getlatespost -->
   <div class="container  ">
     <h3 class="smalltitle my-5 col-12">Lates Post </h3>
-    <?php get_template_part("/inc/parts/loops/loop-getlatespost"); ?>
+    <?php get_template_part("/inc/parts/content", "getlatespost"); ?>
     <a class='rs_link_underline' href="<?php echo $view_all_articles['url']; ?>" class="link">
       <?php echo $view_all_articles['title']; ?></a>
   </div>
@@ -314,12 +310,14 @@ function wrapImages($i, $pics,  $divCounter ){
   </div>
 
 
+
   <!-- GET FORM -->
-  <?php if ( is_active_sidebar( 'form' ) ) : ?>
-  <section class="form bg-black py-5">
-    <?php dynamic_sidebar( 'form' ); ?>
-  </section>
-  <?php endif; ?>
+  <div class="bg-black">
+    <?php get_template_part("/inc/parts/content","form");  ?>
+  </div>
+
+
+
 
 </main>
 

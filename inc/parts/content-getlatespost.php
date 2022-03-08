@@ -47,9 +47,9 @@ if ( $the_query->have_posts() ) :
       <?php 
     while ( $the_query->have_posts() ) : $the_query->the_post(); 
         //acf
-        $excerpt        = get_the_excerpt();
+        $excerpt  = get_the_excerpt();
         //wp
-        $post           = get_post();
+        $post     = get_post();
         ?>
 
       <div class="col my-5">

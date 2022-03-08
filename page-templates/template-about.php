@@ -16,7 +16,7 @@ $video_url = $pageFields['video_url'];
 
   <!-- headline -->
   <?php if ($pageFields['headline']): ?>
-  <header class="headline bg-danger py-5 text-white">
+  <header class="headline  py-5 text-white">
     <div class="container py-5">
       <div class="content d-flex flex-wrap  ">
         <h1 class="title col-12 col-md-7  me-auto "><?php echo $pageFields['headline']; ?></h1>
@@ -27,7 +27,7 @@ $video_url = $pageFields['video_url'];
   <?php endif; ?>
 
 
-  <!-- hero Image -->
+  <!-- Video -->
   <?php if ($pageFields['video_thumbnail']): ?>
   <section class="heroImage"
     style="background-size: cover; background-image: url(<?php echo $pageFields['video_thumbnail']['url'];  ?>;">
@@ -52,6 +52,19 @@ $video_url = $pageFields['video_url'];
   <?php endif; ?>
 
 
+  <!-- A bit about Us -->
+  <?php if ($pageFields['bit_about_us_main_text']): ?>
+  <section class="bit_about_us py-5" style="background-color: <?php echo $pageFields['a_bit_about_us_color'];  ?>;">
+    <div class="container py-5">
+      <h3 class='title_small text-black'> <?php echo$pageFields['bit_about_us_small_title']; ?></h3>
+      <div class="row  bit_about_us_content">
+        <?php echo $pageFields['bit_about_us_main_text'];  ?>
+        <a class='text-black arrow' href="http://"><?php echo  $pageFields['next_link']['title']; ?></a>
+      </div>
+
+    </div>
+  </section>
+  <?php endif; ?>
 
 
 
@@ -92,7 +105,7 @@ $video_url = $pageFields['video_url'];
             echo '  <h3 class="title_small mt-md-5 mt-md-0" >Our Jorney</h3>';
             echo "<div class='mt-1 mt-md-5' style='color: ".$text_color."!important;'> ";
             echo '<span class="title" style="color: '.$text_color.'" > '. $GLOBALS['slider_subtitle']  .' </span>';
-            echo "<div class='slideNumber'> " .  $index.' - '. $total  .  "</div>";
+            echo "<div class='slideNumber'> " .  $index.' — '. $total  .  "</div>";
           
               if($type === 'text'){ 
                 echo  '<div class="row text-wrap "  style="color: '.$text_color.'" >';
@@ -149,7 +162,7 @@ $video_url = $pageFields['video_url'];
 
   <!-- Embody -->
   <?php if ($pageFields['embody_title']): ?>
-  <section class="embody py-5" style="background-color: url(<?php echo $pageFields['embody_color'];  ?>;">
+  <section class="embody py-5" style="background-color: <?php echo $pageFields['embody_color'];  ?>;">
     <div class="container py-5">
       <h3 class='title_small text-white'> <?php echo$pageFields['embody_title']; ?></h3>
       <div class="row   row-cols-1  row-cols-md-2 row-cols-lg-<?php echo $pageFields['embody_columns'];  ?> ">
