@@ -1,6 +1,6 @@
 {
     "key": "group_6200778ab9efd",
-    "title": "single page (Post)",
+    "title": "Page blog  single  (Post)",
     "fields": [
         {
             "key": "field_620077a21c6a8",
@@ -42,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644198317
+    "modified": 1646929665
 }

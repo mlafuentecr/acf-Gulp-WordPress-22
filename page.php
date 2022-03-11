@@ -3,7 +3,12 @@
   <?php 
       if ( have_posts() ) : 
         while ( have_posts() ) : the_post(); 
+        if ( is_page( array( 'latest-post' ) ) ) {
+        echo get_template_part('/inc/parts/content', 'allPost'); 
+     } else {
         the_content(); 
+      }
+        
         if ( comments_open() || get_comments_number() ) { comments_template();	}
         endwhile; 
       else:

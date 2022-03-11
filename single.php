@@ -14,7 +14,7 @@ get_header();
     <?php 
 if ( have_posts() ) : 
   while ( have_posts() ) : the_post(); 
-    get_template_part( 'loop-templates/content', 'single' );
+    get_template_part( 'inc/parts/content', 'single' );
    // if ( comments_open() && !post_password_required() ) { comments_template( '', true ); } 
   endwhile; 
 else: 

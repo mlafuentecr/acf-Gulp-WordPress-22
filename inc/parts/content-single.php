@@ -1,8 +1,16 @@
 <?php
+$authorId     = $post->post_author; 
+$user         = get_userdata($authorId);
+$data         = get_field('author_info', 'user_'. $authorId);
+
+$name                 = $data['data']['author_name_and_lastname'];
+$author_profession    = $data['data']['author_profession'];
+$author_description   = $data['data']['author_description'];
+$author_picture       = $data['author_picture'];
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-  $authorId = $post->post_author; 
+  
   ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
@@ -22,8 +30,9 @@ defined( 'ABSPATH' ) || exit;
 
       <div class="col-12 author_name">
         <a href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
-          rel="noopener noreferrer"><?php echo get_the_author_meta( 'display_name',  $authorId);  ?>
+          rel="noopener noreferrer"><?php echo $name; ?>
         </a>
+
       </div>
       <div class="author_date"><?php echo date("F j, Y", strtotime($post->post_date)) . "<br>"; ?></div>
       <div class="author_time_reading"> <?php echo get_field( 'time_estimation', $post->ID) ?: '5'; ?> min
@@ -52,9 +61,7 @@ defined( 'ABSPATH' ) || exit;
 
     <!-- Show Author info -->
     <div class="author mt-3 py-3 d-flex borderY-2">
-
-      <div class="author_pic px-2"
-        style='background-image: url("<?php echo get_avatar_url($authorId, array('size' => 450)); ?>");'>
+      <div class="author_pic px-2" style='background-image: url("<?php echo $author_picture['url']; ?>");'>
       </div>
       <div class="ps-3">
         <div class="col-12 author_name">
@@ -62,8 +69,7 @@ defined( 'ABSPATH' ) || exit;
             rel="noopener noreferrer"><?php echo get_the_author_meta( 'display_name',  $authorId);  ?>
           </a>
         </div>
-        <p class="hiring">Want to work with <?php echo get_the_author_meta( 'display_name',  $authorId);  ?>? <span
-            class="underline">We are hiring :)</span></p>
+        <p class="hiring">Want to work with <?php echo $name; ?>? <span class="underline">We are hiring :)</span></p>
       </div>
     </div>
 

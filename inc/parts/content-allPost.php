@@ -1,49 +1,53 @@
 <?php 
-  // Load values and assign defaults.
-  if(is_page( 'Blog' )){
-    $id = get_the_ID();
-    $pageFields       = get_fields($id);
-  }else{
-    $pageFields       = get_fields();
-  }
-  $view_all_articles= $pageFields['view_all_articles']; 
-  $add_container    = $pageFields['add_container']; 
-  $add_headline     = $pageFields['add_headline']; 
-  $margen           = $pageFields['margen']; 
-  $headline         = $pageFields['headline'];
-  $add_excerpt      = $pageFields['add_excerpt'];
-  $cols             = $pageFields['cols'];
-  $post_quantity    = $pageFields['post_quantity'];
+$pageFields       = get_fields();
+$view_all_articles= $pageFields['view_all_articles']; 
+$add_container    = $pageFields['add_container']; 
+$add_headline     = $pageFields['add_headline']; 
+$margen           = $pageFields['margen']; 
+$headline         = $pageFields['headline'];
+$add_excerpt      = $pageFields['add_excerpt'];
+$cols             = $pageFields['cols'];
+$post_quantity    = $pageFields['post_quantity'];
 
-  $add_title        = $pageFields['add_title'];
-  $add_excerpt      = $pageFields['add_excerpt'];
-  $add_author       = $pageFields['add_author_info']; 
+$add_title        = $pageFields['add_title'];
+$add_excerpt      = $pageFields['add_excerpt'];
+$add_author       = $pageFields['add_author_info']; 
+
+
+// The Query
+$args = array(
+  'posts_per_page'  => 3, 
+  'orderby'         => 'post_date',
+  'order'           => 'DESC',
+  'post_type'       => 'post', 
+  'post_status'     => 'publish'
+  );
+
+  $the_query = new WP_Query( $args );
  
-
-  // The Query
-  $args = array(
-    'posts_per_page'  => $post_quantity-1, 
-    'orderby'         => 'post_date',
-    'order'           => 'DESC',
-    'post_type'       => 'post', 
-    'post_status'     => 'publish'
-    );
-
-    $the_query = new WP_Query( $args );
-
-
-if ( $the_query->have_posts() ) : 
-   
 ?>
-<div class="get_posts ">
-  <div class="container  <?php echo $margen; ?>">
 
-    <!-- if have headline on -->
-    <?php if($add_headline): ?> <header class='col-12 mt-5'> <?php echo $headline; ?> </header><?php  endif; ?>
-    <div
-      class="row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
+<h1>HACER UN JS QUE CARGUE AL SCROLL</h1>
+<main class="bg-white  ">
+  <header class=" bg-dark text-white">
+    <div class="container">
+      <div class="row row-cols-1  py-5 ">
+        <div class="content col-1 col-md-6 d-flex flex-column justify-content-center">
+          <h1 class="entry-title">
+            <?php the_title(  ); ?>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header><!-- .entry-header -->
+
+  <div class="container py-5">
+
+
+    <div class="row row-cols-1  row-cols-md-3 g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
 
       <?php 
+      if ( $the_query->have_posts() ) : 
     while ( $the_query->have_posts() ) : $the_query->the_post(); 
         //acf
         $excerpt  = get_the_excerpt();
@@ -61,30 +65,30 @@ if ( $the_query->have_posts() ) :
           </a>
 
           <div class="card-body  p-0  ">
-            <?php if($add_title): ?>
+
             <a class="card-link text-gray" href="<?php echo   get_permalink(   $post->ID ); ?>"
               rel="noopener noreferrer">
-              <div class="title link_main_style links-with-line">
+              <div class="title text-dark link_main_style links-with-line">
                 <?php  echo $post->post_title; ?>
               </div>
             </a>
-            <?php endif; ?>
+
 
             <!-- Show excerpt -->
             <div class="content text-gray">
               <?php 
-              if($add_excerpt):
+             
               if( $pageFields['small_description']['excerpt'] ){
                 echo $pageFields['small_description']['excerpt'];
               }else{
                 echo $excerpt;
               }
-              endif;
+            
               ?>
             </div>
 
             <!-- Show Author info -->
-            <?php  if($add_author): ?>
+
             <div class="author mt-3 py-4 d-flex borderY-2">
               <?php  
                 $post_id = $row->ID;
@@ -106,7 +110,7 @@ if ( $the_query->have_posts() ) :
 
               <div class="px-2 flex-grow-1 ">
 
-                <div class="col-12 author_name">
+                <div class="col-12 author_name text-black">
                   <a href="<?php echo $author_url;  ?>" target="_blank" rel="noopener noreferrer"><?php echo $name; ?>
                   </a>
                 </div>
@@ -122,7 +126,7 @@ if ( $the_query->have_posts() ) :
 
               </div>
             </div>
-            <?php endif; ?>
+
 
             <!-- Show Categories -->
             <div class="categories mt-3">
@@ -144,10 +148,9 @@ if ( $the_query->have_posts() ) :
 
 
       <?php endwhile; ?>
+      <?php endif; ?>
+      <?php wp_reset_postdata(); ?>
+
     </div>
-  </div>
-</div>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-<a class='rs_link_underline' href="<?php echo $view_all_articles['url']; ?>" class="link">
-  <?php echo $view_all_articles['title']; ?></a>
+</main>
+<?php get_footer(); ?>

@@ -6,6 +6,7 @@
 $GLOBALS['THEME_MLM_PATH'] 	= get_template_directory_uri();
 $GLOBALS['THEME_MLM_VER'] 	= '0.0.2';
 $GLOBALS['careerPg'] 	      = 9682;
+$GLOBALS['blog'] 	          = 10020;
 $GLOBALS['THEME_MLM_ENV']   = '';
 
 /*-----------------------------------------------------------------------------------*/

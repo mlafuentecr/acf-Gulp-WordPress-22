@@ -1,44 +1,50 @@
 <?php
 $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-$the_query = new WP_Query( array(
-  'author'          => $author_ID,
+
+$authorId     =  $curauth->data->ID;
+$user         = get_userdata($authorId);
+$data         = get_field('author_info', 'user_'. $authorId);
+
+$name                 = $data['data']['author_name_and_lastname'];
+$author_profession    = $data['data']['author_profession'];
+$author_description   = $data['data']['author_description'];
+$author_picture       = $data['author_picture'];
+
+
+
+$query_author_post = new WP_Query( array(
+  'author'          => $authorId,
 )); 
 ?>
 <section class="author-page card-invert ">
 
   <header class="author-header">
-
     <div class="container">
+      <div class="row row-cols-1  row-cols-md-2 py-5 ">
 
-      <div class="row py-5 ">
-
-
-        <div class="author-img col-1 col-md-4 ">
-          <a class="rounded-circle" href="<?php echo get_author_posts_url($curauth->user_url) ?>">
-            <?php  echo get_avatar($curauth->ID, 690); ?>
-          </a>
+        <div class="author-img col-1 col-md-4 text-center ">
+          <?php echo  '<img class="rounded-circle" width="185px" src="'. $author_picture['url'] .'" alt="'. $author_picture['alt'] .'" >' ?>
         </div>
 
-        <div class="content col-1 col-md-6">
+        <div class="content col-1 col-md-6 d-flex flex-column justify-content-center">
           <div class="author-name ">
-            <h3><?php echo $curauth->display_name; ?></h3>
+            <h3><?php echo $name; ?></h3>
           </div>
           <div class="author-bio">
-            <?php echo $curauth->description; ?>
+            <?php echo $author_profession; ?>
+            <dd><?php echo $author_description; ?></dd>
           </div>
         </div>
 
 
       </div>
     </div>
-
-
   </header><!-- .entry-header -->
 
   <section class="cards-section py-5">
     <div class="container">
       <p class="h7 text-center my-4 text-black">
-        ARTICLES by <?php echo $curauth->display_name; ?>
+        ARTICLES by <?php echo $name; ?>
       </p>
 
       <div class="cards-articles">
@@ -46,11 +52,9 @@ $the_query = new WP_Query( array(
         <div class="row row-cols-1 row-cols-md-3">
           <?php set_query_var('author_ID', $curauth->ID); ?>
           <?php
-while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+while ( $query_author_post->have_posts() ) : $query_author_post->the_post(); ?>
           <div class="col">
-
             <div class="card  bg-transparent  ">
-
               <a class="card-link" href="<?php echo get_permalink(); ?>">
                 <div class="card-img mb-4 zoom_img"
                   style="background-image: url(<?php   echo get_the_post_thumbnail_url( get_the_ID() ); ?>);">
@@ -63,7 +67,7 @@ while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     <?php echo get_the_title(); ?>
                   </div>
                 </a>
-                <p class="card-text  text-gray"><?php echo get_the_excerpt(); ?></p>
+                <p class="card-text  text-gray"><?php echo wp_trim_words( get_the_excerpt(), 40, '...' ); ?></p>
 
 
                 <!-- Show Author info -->
@@ -103,13 +107,8 @@ while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
     }
   ?>
                 </div>
-
-
               </div>
             </div>
-
-
-
           </div>
           <?php 
     endwhile; 
@@ -121,9 +120,4 @@ while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
     </div>
   </section>
-
-  <footer class="entry-footer">
-
-  </footer><!-- .entry-footer -->
 </section>
-<!-- #post-

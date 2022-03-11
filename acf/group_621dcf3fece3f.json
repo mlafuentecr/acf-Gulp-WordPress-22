@@ -401,21 +401,6 @@
             "return_format": "object"
         },
         {
-            "key": "field_621dd168ec96d",
-            "label": "View All Features Articles QUE HACE ESTE (copy)",
-            "name": "view_all_features_articles",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
             "key": "field_621dd18a0bbc0",
             "label": "Meet the team",
             "name": "",
@@ -565,5 +550,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646522311
+    "modified": 1646940158
 }
