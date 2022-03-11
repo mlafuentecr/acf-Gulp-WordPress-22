@@ -169,9 +169,10 @@
 	}
 	img:nth-of-type(1) {
 		display: flex;
-
 		max-width: 716px;
 		margin: 3rem auto;
+		background: white;
+		padding: 2rem;
 	}
 	.entry-header {
 		.author_name {

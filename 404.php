@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="bg-white text-black pg-404">
+<main class="bg-white text-black pg-404" role='main'>
   <div class="container py-5">
     <div class="d-flex flex-wrap justify-content-between text-white my-5">
 

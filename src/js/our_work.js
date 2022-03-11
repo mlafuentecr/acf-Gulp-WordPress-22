@@ -1,6 +1,6 @@
 document.readyState !== 'loading' ? ourWork() : document.addEventListener('DOMContentLoaded', () => ourWork());
 let { submenu } = '';
-console.log('1our-work');
+
 function ourWork() {
 	if (document.querySelector('#our-work')) {
 		console.log('our-work');
