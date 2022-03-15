@@ -110,9 +110,9 @@
 	"beautify.ignore": "",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"workbench.colorCustomizations": {
-		"titleBar.activeForeground": "#bb9169",
+		"titleBar.activeForeground": "#ffffff",
 		"titleBar.inactiveForeground": "#cecececc",
-		"titleBar.activeBackground": "#ebd86d",
+		"titleBar.activeBackground": "#a59437",
 		"titleBar.inactiveBackground": "#a59437"
 	},
 	"workbench.colorTheme": "Cobalt2",

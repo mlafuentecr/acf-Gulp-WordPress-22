@@ -1,0 +1,92 @@
+{
+    "key": "group_61eb742cb0593",
+    "title": "Block RS Underline",
+    "fields": [
+        {
+            "key": "field_61f4a82689769",
+            "label": "add container",
+            "name": "add_container",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_61f4b16b88a9e",
+            "label": "margen",
+            "name": "margen",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "14",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "my-5": "margin 5",
+                "my-4": "margin 4",
+                "my-3": "margin 3",
+                "my-2": "margin 2",
+                "my-1": "margin 1",
+                "my-0": "margin 0"
+            },
+            "default_value": "margin 0",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61eb744939783",
+            "label": "block text underline",
+            "name": "block_text_underline",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Edit this text",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/block-underline"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1644027727
+}
