@@ -1,0 +1,184 @@
+@import 'typography';
+
+$prim-purple: #664fb7;
+$bg-danger: #cf4031;
+$gray: #808183;
+$alert: #eae639;
+$pink: #ff918e;
+$pink-darker: #8a4947;
+
+//SIZES
+$px12: 0.75rem; //12px
+$px14: 0.875rem; //14px
+$px16: 1rem; //16px
+$px18: 1.125rem; //18px
+$px20: 1.25rem; //20px
+$px22: 1.375rem; //22px
+$px24: 1.5rem; //24px
+$px28: 1.75rem; //28px
+$px30: 1.875rem; //30
+$px32: 2rem; //32px
+$px35: 2.188rem; //32px
+$px40: 2.5rem; //40px
+$px48: 3rem; //45px
+$px50: 3.125rem; //50px
+$px55: 3.438rem; //55px
+$px60: 3.75rem; //60px
+$px70: 4.375rem; //60px
+$px80: 5rem; //60px
+// ==================================
+// BREAK POINTS BASE BOOSTRAP
+// ==================================
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// ==================================================
+// Fonts
+// ==================================================
+$font-inter-regular: 'Inter-Regular', sans-serif;
+$font-inter-medium: 'Inter-Medium', sans-serif;
+$font-inter-bold: 'Inter-Bold', sans-serif;
+$font-inter-black: 'Inter-Black', sans-serif;
+
+///line-height:
+$lh_sm: $px16;
+$lh_md: $px40;
+$lh_lg: $px60;
+
+//Paddings
+$p_sm: 2.25rem 0px;
+$p_md: 4.25rem 0px;
+$p_lg: 6.25rem 0px;
+$p_xl: 9.5rem 0px;
+
+//gaps
+$gap_sm: $px16;
+$gap_md: $px20;
+$gap_lg: $px40;
+
+//font SIzes
+$f_sm: $px12;
+$f_sm2: $px14;
+$f_md: $px18;
+$f_paragraph: $px18;
+$f_paragraph_title: $px20;
+$f_lg: $px30;
+$f_title_entry: $px32;
+
+///line-height
+$lh-sm: $px30;
+$lh-md: $px40;
+$lh-lg: $px50;
+
+//Margin
+$m-sm: $px16;
+$m-md: $px30;
+$m-lg: $px32;
+$m-l: $px30;
+$mb-titles: $px16; //30px
+$m-block: 6.25rem auto;
+$m-headline: 6.25rem auto;
+
+//Full bar size
+$fullbar-small: 400px;
+$fullbar-medium: 500px;
+
+$f_h1: $px40;
+$f_h2: $px30;
+$f_h3: $px22;
+$f_h4: $px20;
+
+h1 {
+	font-size: $f_h1; //60px
+	line-height: $lh_lg;
+}
+h2 {
+	font-size: $f_h2;
+}
+h3 {
+	font-size: $f_h3;
+}
+h4 {
+	font-size: $f_h4;
+}
+.sub-title {
+	font-size: $px24;
+}
+
+.block {
+	margin: $m-block;
+}
+.block-padding {
+	padding: $p_lg;
+}
+
+// ==================================================
+// mixing
+// ==================================================
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+@mixin links-regular {
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+	font-style: normal;
+	font-size: 1rem;
+	margin: 0 16px;
+	font-weight: 700;
+	line-height: 24px;
+	white-space: nowrap;
+}
+@mixin link_style {
+	font-size: $px24 !important;
+	text-decoration: none;
+	background-image: linear-gradient(transparent calc(100% - 2px), #fff 2px);
+	background-size: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.5s;
+
+	&:hover {
+		background-size: 100% 100% !important;
+		color: #fff;
+	}
+}
+@mixin rs_link_underline {
+}
+@mixin links-with-line {
+	a {
+		@include links-regular;
+		&:after {
+			position: absolute;
+			left: 0;
+			content: '';
+			width: 100%;
+			height: 2px;
+			background: currentColor;
+			bottom: -4px;
+			transform: scale(0, 1);
+			transition: transform 0.3s;
+			transform-origin: right top;
+		}
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+			&:after {
+				transform-origin: left top;
+				transform: scale(1, 1);
+			}
+		}
+	}
+}
+
+@mixin title_small {
+	font-size: $px20 !important;
+	text-transform: uppercase;
+	font-weight: 700;
+}

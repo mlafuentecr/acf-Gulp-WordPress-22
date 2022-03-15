@@ -1,0 +1,140 @@
+.careers_pg {
+	.jobsTitle {
+		h3 {
+			p {
+				font-size: $px80;
+			}
+		}
+	}
+	.image-big {
+		.fit-background {
+			@media (max-width: $md) {
+				min-height: 300px !important;
+			}
+		}
+	}
+	h1 {
+		font-size: $px80;
+	}
+
+	.link-with-line-static {
+		font-size: $px32 !important;
+	}
+	.sets-us-apart {
+		.content {
+			font-size: $px30;
+			margin: 3rem 0px;
+		}
+		.container {
+			height: auto !important;
+			margin-top: 4rem;
+		}
+	}
+	.block_jobs {
+		&_header {
+			color: white;
+			p {
+				color: white !important;
+				font-size: $px80;
+				margin: 4rem 0px;
+				@media (max-width: $md) {
+					font-size: $px30;
+				}
+			}
+		}
+		font-size: $px80;
+		.text-light {
+			color: white;
+			.jobstable_positions,
+			.jobstable_location {
+				color: white;
+			}
+			a,
+			.rs_link_underline {
+				filter: invert(0);
+			}
+		}
+		.text-black {
+			color: black;
+			.jobstable_positions,
+			.jobstable_location,
+			a {
+				color: black;
+			}
+		}
+		&_header {
+			font-size: $px50;
+		}
+		&_rows {
+			padding-top: 4rem;
+		}
+		.jobstable {
+			margin-bottom: 4rem;
+		}
+	}
+	.working-with-us {
+		.img1 {
+			width: 60%;
+
+			img {
+				width: 100%;
+			}
+		}
+		.img2 {
+			width: 40%;
+
+			img {
+				width: 100%;
+			}
+		}
+		@media (max-width: $md) {
+			.img1 {
+				width: 100%;
+			}
+			.img2 {
+				display: none;
+			}
+		}
+		.small-img {
+			display: flex;
+			margin-left: auto;
+		}
+		.content {
+			margin: 2rem 0px;
+			@media (min-width: $md) {
+				padding: 2rem;
+			}
+			table {
+				margin: 2rem 0px;
+			}
+		}
+		.imgHolder {
+			height: 800px;
+		}
+		pre {
+			font-size: 14px;
+			margin-top: 99px;
+		}
+		li {
+			font-size: 1.5rem;
+			font-weight: 700;
+			line-height: 200%;
+			@media (max-width: $md) {
+				font-size: $px18;
+			}
+		}
+	}
+	.lastMessage {
+		h3 {
+			p {
+				font-size: $px80;
+				@media (max-width: $md) {
+					font-size: $px30;
+				}
+			}
+		}
+	}
+	.number {
+		font-weight: 700;
+	}
+}
