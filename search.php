@@ -85,7 +85,7 @@
         <?php endwhile; ?>
       </div>
       <div class="nav nav-tag d-flex col-12">
-        <?php get_template_part( 'inc/parts/nav', 'below' ); ?>
+        <?php get_template_part( 'inc/parts/menu', 'next' ); ?>
       </div>
       <?php else : ?>
 

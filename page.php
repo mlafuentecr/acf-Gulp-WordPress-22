@@ -7,7 +7,7 @@
           the_post(); 
 
             if ( is_page( array( 'latest-post' ) ) ) {
-              echo get_template_part('/inc/parts/content', 'allPost'); 
+              echo get_template_part('/inc/parts/content', 'getAllPost'); 
             } else {
               echo '<div class="container my-5">';
               the_content(); 
@@ -26,3 +26,4 @@
 
 </main>
 <?php get_footer(); ?>
+<a href="" target='blanck'></a>

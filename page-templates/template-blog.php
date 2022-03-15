@@ -116,8 +116,6 @@ $author_url             = get_author_posts_url($authorId);
   <!-- Meet the TEam -->
   <?php echo get_template_part('/inc/parts/slider', 'authorQuery'); ?>
 
-
-
   <!-- GET FORM -->
   <div class="bg-black">
     <?php get_template_part("/inc/parts/content","form");  ?>

@@ -1,4 +1,5 @@
 <?php 
+ 
 $pageFields       = get_fields();
 $view_all_articles= $pageFields['view_all_articles']; 
 $add_container    = $pageFields['add_container']; 
@@ -25,10 +26,12 @@ $args = array(
 
   $the_query = new WP_Query( $args );
  
+
 ?>
 
 <h1>HACER UN JS QUE CARGUE AL SCROLL</h1>
-<main class="bg-white  ">
+<main class="bg-white post-list" data-page="<?php echo get_query_var('paged') ? get_query_var('paged') : 1;  ?>"
+  data-max="<?php echo $wp_query->max_num_pages;  ?>">
   <header class=" bg-dark text-white">
     <div class="container">
       <div class="row row-cols-1  py-5 ">
@@ -42,10 +45,7 @@ $args = array(
   </header><!-- .entry-header -->
 
   <div class="container py-5">
-
-
     <div class="row row-cols-1  row-cols-md-3 g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
-
       <?php 
       if ( $the_query->have_posts() ) : 
     while ( $the_query->have_posts() ) : $the_query->the_post(); 
@@ -150,7 +150,9 @@ $args = array(
       <?php endwhile; ?>
       <?php endif; ?>
       <?php wp_reset_postdata(); ?>
-
     </div>
+
+    <button type="button" class="btn btn-primary load-more-post"> Load More</button>
+
+
 </main>
-<?php get_footer(); ?>

@@ -62,6 +62,7 @@ $understrap_includes = array(
   '/inc/functions/add_tiny_mce.php',
   '/inc/functions/add_taxonomy.php', // Theme taxonomy
   '/inc/functions/helpers.php', // 
+  '/inc/functions/load-more-ajax.php', // 
    //'/inc/functions/add_shortcuts.php',
  
 );

@@ -20,7 +20,7 @@ $posts            = $pageFields['choose_posts'] ?: $pageFields['choose_other'];
     <?php if (is_admin() ) { echo 'Edit Post click the pencil to edit';} ?>
 
     <!-- if have headline on -->
-    <?php if($add_headline): ?> <header class='col-12 text-white'> <?php echo $headline; ?> </header><?php  endif; ?>
+    <?php if($add_headline): ?> <header class='col-12'> <?php echo $headline; ?> </header><?php  endif; ?>
 
     <div
       class="row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">

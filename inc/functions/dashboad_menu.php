@@ -36,38 +36,59 @@ function marioLafuente_dashboard_menu()
                     </thead>
                     <tbody class="table-hover">
     
-                    <tr>
-                    <td class="text-left">Modify Site here </td>
-                    <td class="text-left">
-                    <a target="_blank" href="' . get_site_url() . '/wp-admin/admin.php?page=theme-general-settings">Open</a>
-                     <p>manage general theme </p>
-                    </td>
-                    </tr>
-
+            
                     <tr>
                     <td class="text-left">Modify Home Page </td>
                     <td class="text-left">
-                    <a target="_blank" href="' . get_site_url() . '/wp-admin/post.php?post=5&action=edit">Open</a>
+                    <a target="_blank" href="' . get_site_url() . '/wp-admin/post.php?post=6&action=edit">Home Page</a>
                      <p>manage all about index page </p>
                     </td>
                     </tr>     
 
+                       
                     <tr>
-                    <td class="text-left">Modify Menus </td>
+                    <td class="text-left">Modify Blog Index </td>
                     <td class="text-left">
-                    <a target="_blank" href="' . get_site_url() . '/wp-admin/nav-menus.php">Open</a>
-                     <p>manage all Menus </p>
+                    <a target="_blank" href="' . get_site_url() . '/wp-admin/post.php?post=10020&action=edit">Blog</a>
+                     <p>manage Blog page </p>
+                    </td>
+                    </tr>     
+
+
+
+                    <tr>
+                    <td class="text-left">Case study </td>
+                    <td class="text-left">
+                    <a target="_blank" href="' . get_site_url() . '/wp-admin/edit.php?post_type=case_study">Case study</a>
+                     <p>Modify or add + Case Studies </p>
                     </td>
                     </tr>     
 
                     <tr>
                     <td class="text-left">Modify Menus </td>
                     <td class="text-left">
-                    <a target="_blank" href="' . get_site_url() . '/wp-admin/nav-menus.php">Open</a>
-                     <p>Footer Section is handle in widget </p>
+                    <a target="_blank" href="' . get_site_url() . '/wp-admin/nav-menus.php">Menus</a>
+                     <p>Modify Main menues in here  </p>
                     </td>
                     </tr>  
                  
+                    <tr>
+                    <td class="text-left">Modify Social Media  </td>
+                    <td class="text-left">
+                    <a target="_blank" href="' . get_site_url() . '/wp-admin/nav-menus.php">Social Media</a>
+                     <p>In Menu Secciont look for social media at the top  </p>
+                    </td>
+                    </tr>  
+
+                    <tr>
+                    <td class="text-left">Modify Footer </td>
+                    <td class="text-left">
+                    <a target="_blank" href="' . get_site_url() . '/wp-admin/widgets.php">Footer</a>
+                     <p>manage general theme </p>
+                    </td>
+                    </tr>
+
+
                     </tbody>
                     </table>
                 ';

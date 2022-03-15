@@ -436,33 +436,6 @@
             "delay": 0
         },
         {
-            "key": "field_621dd1f8d3145",
-            "label": "team pictures",
-            "name": "team_pictures",
-            "type": "gallery",
-            "instructions": "IMPORTANT title: name of the person, Description: Position, & alt: img description",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "insert": "append",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_621dd2c38b922",
             "label": "See all Autor",
             "name": "see_all_autor",
@@ -550,5 +523,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646940158
+    "modified": 1647022227
 }
