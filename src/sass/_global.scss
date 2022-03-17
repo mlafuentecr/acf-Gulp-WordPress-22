@@ -825,6 +825,14 @@ footer {
 	}
 }
 
+/*CARD*/
+@mixin title {
+	font-style: normal;
+	font-weight: 400;
+	font-size: $px20;
+	line-height: 150%;
+	color: #000000;
+}
 /*--------------------------------------------------*/
 /*  Global Responsive
 /*--------------------------------------------------*/

@@ -2,9 +2,12 @@
 /*  Variables
 /*-----------------------------------------------------------------------------------*/
 document.readyState !== 'loading' ? internal() : document.addEventListener('DOMContentLoaded', () => internal());
+let current_page = '';
+let postsDiv = '';
 
 function internal() {
 	console.log('intern ');
+
 	//ABOUT
 	if (document.querySelector('#youtubeModal')) {
 		console.log('Yuutube video detected intern.js');
@@ -15,11 +18,71 @@ function internal() {
 	///FOR LATES POST (is a page)
 	//If I font load more post
 	if (document.querySelector('.load-more-post')) {
-		console.log('load more is present');
+		postsDiv = document.querySelector('.post-list');
+
+		console.log('load more is present', postsDiv);
 		const btnLoadMore = document.querySelector('.load-more-post');
-		btnLoadMore.addEventListener('click', () => fetchPost2());
+		btnLoadMore.addEventListener('click', () => fetchPost());
+		current_page = postsDiv.dataset.page;
 	}
 }
+
+function fetchPost() {
+	console.log(postsDiv);
+	const postInsert = document.querySelector('.postInsert');
+	const max_post = postsDiv.dataset.max;
+	current_page++;
+
+	console.log('current_page ', current_page);
+	const url = '/wp-admin/admin-ajax.php?action=loadmore_posts';
+	const data = `current_page=${current_page}&posts_per_page=${max_post}`;
+
+	//FETCHING DATA BY XMLHttpRequest
+	//startHttpRequest(url, data);
+	fetchinRequest(url, data, postInsert);
+}
+
+/* FETCHING DATA BY XMLHttpRequest*/
+function fetchinRequest(url, data, postInsert) {
+	fetch(url, {
+		method: 'POST', // or 'PUT'
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		body: data,
+	})
+		.then(response => response.text())
+		.then(data => {
+			const content = JSON.parse(data);
+			postInsert.innerHTML += content.data;
+			//console.log('Success:', content);
+		})
+		.catch(error => {
+			console.error('Error:', error);
+		});
+}
+
+/* FETCHING DATA BY XMLHttpRequest*/
+function startHttpRequest(url, data) {
+	if (!window.XMLHttpRequest) {
+		alert('Your browser does not support the native XMLHttpRequest object.');
+		return;
+	}
+	const oReq = new XMLHttpRequest();
+	oReq.addEventListener('load', reqListener);
+	oReq.addEventListener('error', transferFailed);
+	oReq.open('POST', url, true);
+	oReq.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	oReq.send(data);
+}
+
+function reqListener() {
+	console.log(this);
+}
+function transferFailed(evt) {
+	console.log('An error occurred while transferring the file.');
+}
+//////////////////////////////////////////
 
 //stop video when someone click out of the popup
 function stopVideo() {
@@ -29,81 +92,4 @@ function stopVideo() {
 	document.querySelectorAll('video').forEach(v => {
 		v.pause();
 	});
-}
-
-function fetchPost() {
-	const dataVid = document.querySelector('.post-list');
-	console.log(dataVid);
-	const max_post = dataVid.dataset.max;
-	const current_page = dataVid.dataset.page;
-
-	var data = {
-		action: 'loadmore_posts',
-		current_page: current_page,
-		max_post: max_post,
-		data: JSON.stringify(data),
-	};
-
-	var ajaxscript = { ajax_url: `${window.location.hostname}/wp-admin/admin-ajax.php` };
-
-	let xhttp = new XMLHttpRequest();
-	xhttp.onload = function () {
-		myFunction1(xhttp);
-	};
-	xhttp.open('POST', ajaxscript);
-	xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-	xhttp.send(encodeURI(data));
-}
-
-function fetchPost2() {
-	const dataVid = document.querySelector('.post-list');
-
-	var ppp = 9;
-	var loaded = ppp;
-	var max_post = 50;
-	let current_page = 1;
-	var ajaxurl = { ajax_url: `${window.location.hostname}/wp-admin/admin-ajax.php` };
-	var ajaxurl2 = `/wp-admin/admin-ajax.php`;
-
-	const data = new FormData();
-
-	data.append('action', 'loadmore_posts');
-
-	fetch(ajaxurl2, {
-		method: 'POST',
-		credentials: 'same-origin',
-		body: JSON.stringify(data),
-		headers: {
-			'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-		},
-	})
-		.then(response => response.json())
-		.then(data => {
-			console.log(data);
-		})
-		.catch(error => {
-			console.log('ERROR');
-			console.error(error);
-		});
-
-	var data1 = {
-		action: 'loadmore_posts',
-		current_page: current_page,
-		max_post: max_post,
-		//data: JSON.stringify(data),
-	};
-
-	// console.log(ajaxurl.ajax_url);
-
-	// let xhttp = new XMLHttpRequest();
-	// xhttp.open('POST', ajaxurl.ajax_url);
-
-	// xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-	// xhttp.send();
-}
-
-function myFunction1(xhttp) {
-	// action goes here
-	//document.getElementById('demo').innerHTML = this.responseText;
-	console.log('respuesta: ', JSON.stringify(xhttp));
 }

@@ -56,6 +56,9 @@
 	//get lates post
 
 	.card {
+		.title {
+			@include title;
+		}
 		.content {
 			min-height: 125px;
 			line-height: 150%;
