@@ -13,6 +13,10 @@
   $headline         = $pageFields['headline'];
   $post_quantity    = $pageFields['post_quantity'];
  
+  $cols             = $pageFields['cols'] ?: 3;
+  $add_title        = $pageFields['add_title'] ?: true;
+  $add_excerpt      = $pageFields['add_excerpt'] ?: true;
+  $add_author       = $pageFields['add_author_info'] ?: true;
 
   // The Query
   $args = array(
@@ -37,12 +41,12 @@ if ( $the_query->have_posts() ) :
     <header class='col-12 mt-5 '> <?php echo $headline; ?> </header>
     <?php  endif; ?>
     <div
-      class="text-white row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
+      class="text-white  row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
 
       <?php 
       while ( $the_query->have_posts() ) : $the_query->the_post(); 
         $post     = get_post();
-        echo get_template_part('/inc/parts/card', 'getlatespost'); 
+        echo get_template_part('/inc/parts/card', 'latespost'); 
       endwhile; 
       
       ?>

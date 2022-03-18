@@ -75,6 +75,7 @@ function watchtask() {
 	watch('./src/sass/custom-editor-style.scss', individualScss);
 	watch('./src/sass/login.scss', individualScss);
 	watch('./src/sass/blog.scss', individualScss);
+	watch('./src/sass/_latest_post.scss', individualScss);
 	watch('./src/css/*.css', copyCss);
 
 	watch(jsIntern, js_bundle_Intern);

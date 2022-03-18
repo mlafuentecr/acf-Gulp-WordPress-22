@@ -11,25 +11,24 @@ function enqueue_header()
   if ( is_front_page() ) {
 
      //css
-     wp_enqueue_style('index1',         $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/homepage.min.css', array(), $GLOBALS['THEME_MLM_VER']);
+     wp_enqueue_style('index',         $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/homepage.min.css', array(), $GLOBALS['THEME_MLM_VER']);
     //  //js
-     wp_enqueue_script('index1',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
+     wp_enqueue_script('index',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
 
-  }elseif(is_page( 'blog'  ) || is_single()){
+  }elseif(is_page( 'blog'  ) || is_single() || is_page('latest-post')){
 
     //css
-    wp_enqueue_style('blog2',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css', array(), $GLOBALS['THEME_MLM_VER']);
-    wp_enqueue_style('intern2',    $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/internal.css', array(), $GLOBALS['THEME_MLM_VER']);
+    wp_enqueue_style('blog',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css', array(), $GLOBALS['THEME_MLM_VER']);
     //js
     wp_enqueue_script('blog2',     $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/blog.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
-    wp_enqueue_script('intern2',   $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_intern.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
-
+    //AJAx
+    wp_localize_script( 'ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
   }else {
 
     wp_enqueue_style('intern3',    $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/internal.css', array(), $GLOBALS['THEME_MLM_VER']);
     wp_enqueue_script('intern3',   $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_intern.js?defer',  array(), $GLOBALS['THEME_MLM_VER']);
-    wp_localize_script( 'intern3', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+    
     
     
   }

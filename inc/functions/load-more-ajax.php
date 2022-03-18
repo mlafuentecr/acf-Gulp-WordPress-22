@@ -4,36 +4,35 @@
 
 
 function loadmore_posts(){
-  
-  $paged = !empty($_POST['paged']) ? $_POST['paged'] : 1;
-  $posts_per_page = !empty($_POST['posts_per_page']) ? $_POST['posts_per_page'] : 1;
+ 
+  //Get all _Post data
+  $postdata = file_get_contents("php://input");
+  //make data and obj
+  $data = json_decode($postdata);
+  $current_page     = !empty($data->current_page) ? $data->current_page : 1;
+  $offset           = !empty($data->offset) ? $data->offset : 1;
+  $posts_per_page   = !empty($data->posts_per_page) ? $data->posts_per_page : 1;
 
+  //var_dump($GLOBALS);
 
-  $args = array(
-          'paged'           => $_POST['current_page'] + 1,
-          'posts_per_page'  => 3,
-          'post_type'       => 'post',
-          'post_status'     => 'publish',
-          'order'          => 'DESC',
-          'offset'         => 3
+ 
+    $args = array(
+        'posts_per_page' => $posts_per_page,
+        'post_type'       => 'post',
+        'post_status'     => 'publish',
+        'paged'           => $current_page,
     );
-
-
-
     $the_query = new WP_Query( $args );
-
 
 
     if ( $the_query->have_posts() ) {
       ob_start();
-      // run the loop
       while ( $the_query->have_posts() ) : $the_query->the_post(); 
       $post     = get_post();
-      echo  $_POST['current_page'];
-      echo get_template_part('/inc/parts/card', 'getlatespost'); 
+      echo get_template_part('/inc/parts/card', 'latespost'); 
       endwhile; 
       wp_send_json_success(ob_get_clean());
-      //wp_reset_postdata(); 
+     // wp_reset_postdata(); 
     }else{
       echo '<h1>ERROR NOTHING</h1>';
     }

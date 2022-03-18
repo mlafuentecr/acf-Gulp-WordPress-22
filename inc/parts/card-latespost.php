@@ -1,19 +1,13 @@
 <?php 
   $id = get_the_ID();   
-  if(is_page( 'Blog' )){
-    $pageFields       = get_fields();
-  }else{
-    $pageFields       = get_fields($id);
-  }
-  
+
+ $pageFields       = get_fields($id);
  $cols             = $pageFields['cols'] ?: 3;
  $add_title        = $pageFields['add_title'] ?: true;
  $add_excerpt      = $pageFields['add_excerpt'] ?: true;
  $add_author       = $pageFields['add_author_info'] ?: true;
 ?>
-<div class="col my-5">
-
-  <?php echo $id; ?>
+<div class="col my-5 text-black">
   <div class="card post-<?php echo $id; ?> bg-transparent ">
     <a class="card-link " href="<?php echo  get_permalink(  $id ); ?>" rel="noopener noreferrer">
       <div class="card-img mb-4 zoom_img"
@@ -39,9 +33,9 @@
       <?php  if($add_author): ?>
       <div class="author mt-3 py-4 d-flex borderY-2">
         <?php  
-        $post_id = $row->ID;
+        //$post_id = $row->ID;
            //Author
-        $authorId             = get_post_field('post_author' , $post_id);
+        $authorId             = get_post_field('post_author' , $id);
         $user                 = get_userdata($authorId);
         $data                 = get_field('author_info', 'user_'. $authorId);
         

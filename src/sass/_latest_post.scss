@@ -1,8 +1,23 @@
 #latest-post {
-	main {
-		.card {
-			.link_main_style {
-				filter: invert(1);
+	button {
+		&.load-more-post {
+			background: transparent;
+			border-top: 0px;
+			border-right: 0px;
+			border-left: 0px;
+		}
+	}
+	.rs_link_underline {
+		filter: invert(1) !important;
+	}
+
+	.card {
+		.title {
+			color: black;
+		}
+		.categories {
+			a {
+				color: $gray !important;
 			}
 		}
 	}

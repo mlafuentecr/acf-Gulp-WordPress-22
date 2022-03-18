@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'global';
+@import '_latest_post';
 /*------------------------------------------*/
 /*   BLog
 /*------------------------------------------*/
@@ -60,12 +61,13 @@
 			@include title;
 		}
 		.content {
-			min-height: 125px;
-			line-height: 150%;
+			min-height: 100px;
+			line-height: 200%;
+			p {
+				font-size: $px16;
+			}
 		}
-		.borderY-2 {
-			border: none !important;
-		}
+
 		.link_main_style {
 			color: #030303;
 		}
@@ -105,10 +107,15 @@
 				font-weight: normal;
 				font-size: $px16;
 				line-height: 150%;
-				color: #808183 !important;
+				color: $gray !important;
 			}
 			&-img {
 				max-width: 45px;
+			}
+		}
+		.categories {
+			a {
+				color: $gray !important;
 			}
 		}
 	}
@@ -176,6 +183,7 @@
 		margin: 3rem auto;
 		background: white;
 		padding: 2rem;
+		width: 100%;
 	}
 	.entry-header {
 		.author_name {
@@ -239,6 +247,14 @@
 			font-weight: 600;
 			font-size: 1.5rem;
 			margin: 0;
+		}
+	}
+	.categories {
+		a {
+			margin: 0px 5px;
+			&:hover {
+				opacity: 0.8;
+			}
 		}
 	}
 }
