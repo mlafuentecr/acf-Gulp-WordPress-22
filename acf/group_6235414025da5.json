@@ -1,0 +1,138 @@
+{
+    "key": "group_6235414025da5",
+    "title": "Page Contact us",
+    "fields": [
+        {
+            "key": "field_6235416093d30",
+            "label": "form",
+            "name": "form",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<!-- form (start)-->\r\n                            <!--[if lte IE 8]>\r\n                            <script charset=\"utf-8\" type=\"text\/javascript\"\r\n                                    src=\"\/\/js.hsforms.net\/forms\/v2-legacy.js\"><\/script>\r\n                            <![endif]-->\r\n                            <script charset=\"utf-8\" type=\"text\/javascript\" src=\"\/\/js.hsforms.net\/forms\/v2.js\"><\/script>\r\n                            <script>\r\n                                hbspt.forms.create({\r\n                                    portalId: \"7851520\",\r\n                                    formId: \"606a62f4-7121-48e8-be68-8aa3e6755e10\"\r\n                                });\r\n                            <\/script>\r\n                            <!-- form (end)-->",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "full",
+            "delay": 0
+        },
+        {
+            "key": "field_623541a869657",
+            "label": "sec 2",
+            "name": "sec_2",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_623541bd69658",
+                    "label": "job opportunities?",
+                    "name": "job_opportunities",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Interested in job opportunities?",
+                    "placeholder": "Interested in job opportunities?",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_623541f469659",
+                    "label": "job opportunities link",
+                    "name": "job_opportunities_link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_62354220d2e3f",
+                    "label": "job opportunities img",
+                    "name": "job_opportunities_img",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        },
+        {
+            "key": "field_6235424663d8e",
+            "label": "send us a email",
+            "name": "send_us_a_email",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Rather send us an email?\r\nhello@rootstrap.com",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "10266"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1647725291
+}

@@ -11,7 +11,7 @@ get_header();
   // Load values and assign defaults.
   $pageFields       = get_fields();
   $post_quantity     = $pageFields['post_quantity']-1;
-  $posts_per_page    = $pageFields['posts_per_page']-1;
+  $posts_per_page    = $pageFields['posts_per_page'] ?: 3;
 
   $title             = $pageFields['title'];
   $content           = $pageFields['content'];
@@ -23,7 +23,7 @@ get_header();
 
   // The Query
   $args = array(
-    'posts_per_page'  => $posts_per_page, 
+    'posts_per_page'  => $post_quantity, 
     'orderby'         => 'post_date',
     'order'           => 'DESC',
     'post_type'       => 'post', 
@@ -61,7 +61,7 @@ get_header();
       <?php  endif; ?>
       <div data-test="<?php  echo $paged = get_query_var( 'paged', 1 );  ?>"
         data-offset="<?php echo $post_quantity+1; ?>" data-max="<?php echo $totalPgs; ?>"
-        data-posts_per_page="<?php echo $$posts_per_page; ?>" data-currentPg="1" class=" text-black post-list row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3
+        data-posts_per_page="<?php echo $posts_per_page; ?>" data-currentPg="1" class=" text-black post-list row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3
         <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
 
         <?php 

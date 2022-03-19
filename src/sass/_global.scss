@@ -278,6 +278,123 @@ body {
 	}
 }
 
+/*------------------------------------------------------*/
+/*  Form
+/*------------------------------------------------------*/
+.hbspt-form {
+	p {
+		color: white;
+		font-size: 20px !important;
+	}
+
+	a {
+		color: white;
+		font-size: 20px !important;
+		@include rs_link_underline;
+		margin-left: 20px;
+	}
+	form {
+		display: flex;
+		flex-wrap: wrap;
+
+		.field {
+			padding: 0px 20px;
+			min-width: 50%;
+			max-width: inherit !important;
+			@media (max-width: $md) {
+				min-width: 100%;
+				max-width: 100%;
+			}
+		}
+		input {
+			background: transparent;
+			border: none;
+			border-bottom: 2px solid gray;
+			min-width: 100%;
+		}
+		label {
+			font-style: normal;
+			font-weight: bold;
+			font-size: $px14;
+			line-height: 150%;
+			color: #b5b5b8;
+		}
+
+		textarea {
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid gray;
+			width: 100%;
+		}
+		.hs_recaptcha {
+			max-height: 80px;
+			margin-top: 20px;
+			@media (max-width: $md) {
+				.grecaptcha-badge {
+					margin: auto;
+				}
+			}
+		}
+		//select
+		#contact_reason-a05f201e-aa74-4680-b48e-914ca61dd1d9 {
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid #b5b5b8;
+			color: #b5b5b8;
+			font-size: 16px;
+			line-height: 150%;
+			padding-bottom: 13px;
+			width: 100%;
+			overflow: hidden;
+			white-space: initial;
+
+			option {
+				font-size: 18px;
+				background-color: black;
+			}
+
+			option:before {
+				content: '>';
+				font-size: 20px;
+				display: none;
+				padding-right: 10px;
+				padding-left: 5px;
+				color: #fff;
+			}
+
+			option:hover:before {
+				display: inline;
+			}
+		}
+
+		.hs_submit {
+			width: 50%;
+			max-width: 200px;
+			margin-left: calc(50% + 20px);
+			margin-top: -30px;
+			@media (max-width: $md) {
+				width: 100%;
+				margin: 20px auto;
+			}
+			.hs-button {
+				color: white;
+				border: 1px solid white;
+				width: 80%;
+				margin: auto;
+				@media (max-width: $md) {
+					border: 1px solid white;
+					border-right: 2px solid white;
+				}
+
+				&:hover {
+					color: black;
+					background-color: white;
+				}
+			}
+		}
+	}
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*  icons 
 /*-----------------------------------------------------------------------------------*/
@@ -362,6 +479,9 @@ body {
 	text-align: center;
 	margin: 0 auto;
 	border-image: url('/wp-content/themes/rootstrap/inc/images/simple_line.svg') 30;
+	&:hover {
+		color: white;
+	}
 }
 .rs_circle {
 	width: 100%;

@@ -2,17 +2,10 @@
   //Logo
   $logo = get_theme_mod( 'custom_logo' );
   $image = wp_get_attachment_image_src( $logo , 'full' );
-
-  //Get menu object
-  $locations = get_nav_menu_locations();
-  $menu_id   = $locations[ 'primary' ] ;
-  $menu = wp_get_nav_menu_object( $menu_id );
-  $get_in_touch = get_field( "get_in_touch",  $menu);
-  
 ?>
 
 <!-- Menu -->
-<nav id="menu-top" class="navbar d-flex navbar-expand-md align-items-center p-3  navbar-dark ">
+<nav id="menu-top" class="navbar d-flex navbar-expand-md align-items-center p-3  navbar-light bg-light ">
   <section class='logo d-flex justify-content-start flex-grow-1'>
     <?php if($image[0]) : ?>
     <a class="d-flex justify-content-between align-center" href="<?php echo home_url(); ?>">
@@ -26,14 +19,8 @@
   </button>
   <div class="navbar-collapse collapse" id="navbarCollapse">
     <?php get_template_part( '/inc/parts/menu', 'primary'); ?>
-    <form role="search" method="get" id="searchform" class="search-box searchform d-none d-md-flex"
-      action="<?php echo site_url()?>">
-      <img class="search-icon" src="<?php echo get_template_directory_uri(); ?>/inc/'images/navbar_search_white.svg'"
-        alt="search button">
-      <input class="search-input" type="text" name="s" id="s" placeholder="Search">
-    </form>
-    <a class="btn btn-cta d-none d-md-flex"
-      href="<?php echo $get_in_touch['url']; ?>"><?php echo $get_in_touch['title']; ?></a>
-
+    xxxxxxx
+    <a class="btn btn-cta d-none d-md-flex" href="<?php echo get_permalink( get_page_by_title( 'Contact' ) ); ?>">Get
+      In Touch</a>
   </div>
 </nav>

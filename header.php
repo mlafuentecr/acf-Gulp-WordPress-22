@@ -56,7 +56,20 @@
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV5QQ2" height="0" width="0"
           style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
-      <?php get_template_part( '/inc/parts/menu','top'); ?>
+
+      <?php 
+      $landing_pages = array( 'quality-assurance-testing-services', );
+        if ( is_page( $landing_pages ) ) {
+        // for landing pages
+        get_template_part( '/inc/parts/menu','top_landing_Pags');
+        } else {
+          //For the site and blog
+          get_template_part( '/inc/parts/menu','top');
+        }
+      
+      ?>
+
+
 
       <!--[if lt IE 8]>
   <p class="browserupgrade">
