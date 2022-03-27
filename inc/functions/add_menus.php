@@ -2,19 +2,11 @@
 /*-----------------------------------------------------------------------------------*/
 /* Register menus for Wordpress use
 /*-----------------------------------------------------------------------------------*/
-register_nav_menus(array(
- 'primary' => __('Primary Menu', 'mlm'),
-));
-register_nav_menus(array(
- 'mobile' => __('Mobile Menu', 'mlm'),
-));
-register_nav_menus(array(
- 'footer' => __('Footer Menu', 'mlm'),
-));
-register_nav_menus(array(
- 'social' => __('Social Media', 'mlm'),
-));
-
+register_nav_menus(array('top'      => __('Top',     'mlm'),));
+register_nav_menus(array('mobile'   => __('Mobile',  'mlm'),));
+register_nav_menus(array('footer'   => __('Footer',  'mlm'),));
+register_nav_menus(array('social'   => __('Social',  'mlm'),));
+//register_nav_menus(array('blog'     => __('Blog',    'mlm'), ));
 /*-----------------------------------------------------------------------------------*/
 /* add active
 /*-----------------------------------------------------------------------------------*/

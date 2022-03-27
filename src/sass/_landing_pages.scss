@@ -1,0 +1,163 @@
+.single-services {
+	main {
+		ul {
+			list-style-type: disc !important;
+			line-height: 1.625rem;
+			font-size: 0.9907rem;
+			margin-left: 0.2rem;
+			li {
+				margin-bottom: 0.2rem;
+			}
+		}
+		p {
+			font-size: 18px;
+			line-height: 29px;
+		}
+	}
+	.btn-success {
+		color: #000 !important;
+		background-color: #0eca70 !important;
+		border-color: #0eca70 !important;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+	//group_1
+
+	//group_2
+
+	//group_3
+	.group_3_boxes {
+		img {
+			max-height: 105px;
+		}
+	}
+	.group_3_boxes2 {
+		.number {
+			line-height: 3.3125rem;
+			font-size: 2.3529rem;
+		}
+	}
+	.benefits {
+		h4 {
+			text-align: left;
+		}
+		.content {
+			text-align: left;
+		}
+	}
+
+	.aboutus {
+		.x_7b2817bf {
+			text-align: left;
+			line-height: 2.375rem;
+			font-size: 1.4861rem;
+		}
+		.sec8_title_img {
+			img {
+				max-width: 285px !important;
+			}
+		}
+		.sec8_item {
+			img {
+				max-width: 123px;
+			}
+
+			h4 {
+				min-height: 60px;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+				display: flex;
+			}
+			.content {
+				color: gray;
+			}
+		}
+	}
+	.news {
+		.box {
+			min-height: 265px;
+			width: 30%;
+			display: flex;
+			flex-wrap: wrap;
+			line-height: 150%;
+			@media (max-width: $md) {
+				width: 100%;
+			}
+			img {
+				height: 65px;
+			}
+			.content {
+				text-align: left;
+				min-height: 100px;
+			}
+		}
+		.img-fluid {
+			min-width: 100%;
+		}
+	}
+	.footer_landing {
+		min-height: 320px;
+	}
+	footer {
+		@media (max-width: $md) {
+			min-height: auto !important;
+			background-size: contain;
+		}
+		.message {
+			opacity: 0.7;
+		}
+
+		#social-menu {
+			white-space: nowrap;
+			font-size: $px16;
+			opacity: 0.7;
+			max-width: 100%;
+			a {
+				&:hover {
+					color: white;
+					opacity: 0.7;
+				}
+			}
+			#menu-social {
+				column-count: 6;
+				gap: 0.5rem;
+				@media (max-width: $md) {
+					gap: 0rem;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					li {
+						width: 50%;
+						@media (max-width: $md) {
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+		#copyright {
+			#block-2 {
+				margin: auto;
+			}
+			.copyrights {
+				min-height: 50px;
+				background: red;
+				text-align: center;
+				color: #c4c4c4 !important;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+			}
+
+			.widget-area {
+				align-items: flex-end;
+			}
+			#block-4 {
+				display: none;
+			}
+		}
+	}
+}

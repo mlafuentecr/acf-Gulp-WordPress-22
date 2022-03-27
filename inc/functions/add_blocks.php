@@ -163,6 +163,16 @@ function my_acf_blocks_init() {
         ));
 
 
+        acf_register_block_type(array(
+            'name'              => 'block text media1',
+            'title'             => __('RS text media1'), 
+            'description'       => __('block text media1'),
+            'render_template'   => get_template_directory() .'/inc/parts/blocks/block_text_media.php',
+            'icon'              => 'star-filled',
+            'category'          => 'media',
+        ));
+
+
 
     }
 }

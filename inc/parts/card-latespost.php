@@ -7,7 +7,7 @@
  $add_excerpt      = $pageFields['add_excerpt'] ?: true;
  $add_author       = $pageFields['add_author_info'] ?: true;
 ?>
-<div class="col my-5 text-black">
+<div class="col my-5 ">
   <div class="card post-<?php echo $id; ?> bg-transparent ">
     <a class="card-link " href="<?php echo  get_permalink(  $id ); ?>" rel="noopener noreferrer">
       <div class="card-img mb-4 zoom_img"

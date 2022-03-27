@@ -58,8 +58,9 @@
       <!-- End Google Tag Manager (noscript) -->
 
       <?php 
-      $landing_pages = array( 'quality-assurance-testing-services', );
-        if ( is_page( $landing_pages ) ) {
+    
+      
+        if ( get_post_type() === 'services' ) {
         // for landing pages
         get_template_part( '/inc/parts/menu','top_landing_Pags');
         } else {

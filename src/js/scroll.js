@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Not a ton of code, but hard to
-	const nav = document.querySelector('#menu-top');
+	const nav = document.querySelector('#main-menu-top');
 	let topOfNav = nav.offsetHeight / 2;
 
 	function fixNav() {

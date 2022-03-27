@@ -1,23 +1,6 @@
 <?php
 /*
-Template Name:  Services
+Since we have services has a CPT the root is /services/name_pg
+ so then we can't make a template-services.php intead we need do a archive
+ and from there call the page services that has the same name has CPT
 */
-defined( 'ABSPATH' ) || exit;
-get_header(); 
-
-?>
-
-<main class="main-content services">
-
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-    the_content();
-    // form 
-    get_template_part("/inc/parts/content","form"); 
-  endwhile; else: ?>
-  <p>Sorry, no posts matched your criteria.</p>
-  <?php endif; ?>
-
-</main>
-
-
-<?php get_footer(); ?>

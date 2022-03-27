@@ -14,27 +14,25 @@ function enqueue_header()
      wp_enqueue_style('index',         $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/homepage.min.css', array(), $GLOBALS['THEME_MLM_VER']);
     //  //js
      wp_enqueue_script('index',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
-
-  }elseif(is_page( 'blog'  ) || is_single() || is_page('latest-post')){
+   
+      //&& !is_post_type('services')
+  }elseif(is_page( 'blog'  ) ||  is_single( ) && get_post_type() !== 'services' || is_page('latest-post')  ){
 
     //css
-    wp_enqueue_style('blog',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css', array(), $GLOBALS['THEME_MLM_VER']);
+    wp_enqueue_style('blog'.get_post_type().'',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css', array(), $GLOBALS['THEME_MLM_VER']);
     //js
-    wp_enqueue_script('blog2',     $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/blog.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
-    //AJAx
+    wp_enqueue_script('blog',     $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/blog.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
+    //AJAx Fetch for Load more
     wp_localize_script( 'ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
   }else {
 
     wp_enqueue_style('intern3',    $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/internal.css', array(), $GLOBALS['THEME_MLM_VER']);
     wp_enqueue_script('intern3',   $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_intern.js?defer',  array(), $GLOBALS['THEME_MLM_VER']);
-    
-    
-    
+  
   }
 
 
-   
  
   /*******************  bootstrap CSS  ********************/
   wp_enqueue_script('bootstrapjs', $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bootstrap.bundle.min.js', array(), $GLOBALS['THEME_MLM_VER']);

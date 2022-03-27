@@ -142,6 +142,9 @@ body {
 		a {
 			color: black !important;
 		}
+		p {
+			color: black;
+		}
 	}
 }
 
@@ -663,33 +666,26 @@ body {
 		}
 	}
 }
+
 footer {
 	a {
 		font-size: $px16 !important;
 		font-weight: 400 !important;
 	}
-	#copyright {
-		.widget-area {
-			display: flex;
-			justify-content: space-between;
-			height: 100%;
-			img {
-				height: 15px;
-			}
-		}
-	}
+
 	#secundary-menu {
 		@include menu-footer;
+		@media (max-width: $sm) {
+			min-width: 100%;
+		}
 	}
 	#social-menu {
 		@include menu-footer;
-		max-width: 130px;
+
 		li {
 			margin-bottom: 10px;
 			cursor: pointer;
-			@media (max-width: $md) {
-				background-image: none;
-			}
+
 			@media (min-width: $md) {
 				a {
 					&:hover {
@@ -728,6 +724,9 @@ footer {
 						margin: 0px;
 						padding: 0px;
 						text-indent: 200%;
+						&:hover {
+							opacity: 0.8;
+						}
 					}
 				}
 			}
@@ -736,26 +735,44 @@ footer {
 			columns: 2;
 			display: block !important;
 		}
-		#copyright {
-			.widget-area {
+	}
+
+	//LOGO AND COPYRIGH
+	.widget-area {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		#menu-social {
+			flex-direction: row !important;
+			justify-content: space-between !important;
+			li {
+				width: 30px !important;
+				padding: 15px 0px;
+			}
+		}
+
+		//logo
+		.wp-image-8997 {
+			height: 20px;
+		}
+		#block-2,
+		#block-4 {
+			width: 50%;
+			display: flex;
+			justify-content: flex-start;
+			align-content: center;
+
+			figure {
 				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				align-items: flex-start;
-				img {
-					height: 15px;
-				}
+				justify-content: flex-start;
+				align-items: center;
+				margin: 0px;
 			}
 		}
 	}
-
-	//copyrights
-	#block-11 {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
 }
+
 .intern-pg {
 	position: relative;
 }
@@ -767,6 +784,7 @@ footer {
 		}
 	}
 }
+
 /*--------------------------------------------------*/
 /*  Home Newsletter ACF
 /*--------------------------------------------------*/

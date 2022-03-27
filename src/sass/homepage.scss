@@ -58,4 +58,18 @@
 			margin-bottom: 6rem;
 		}
 	}
+	.card {
+		.borderY-2 {
+			border-bottom: 2px solid #202020;
+			border-top: 2px solid #202020;
+		}
+		.author {
+			&_name {
+				color: white;
+			}
+			&_time_reading {
+				color: white;
+			}
+		}
+	}
 }

@@ -21,7 +21,7 @@ function blog() {
 }
 
 function changeHeaderColor() {
-	const header = document.querySelector('#menu-top');
+	const header = document.querySelector('#main-menu-top');
 	const div_color = document.querySelector('.getColor');
 	const bgColor = div_color.dataset.color;
 	header.style.backgroundColor = `${bgColor}`;

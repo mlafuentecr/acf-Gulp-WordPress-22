@@ -31,7 +31,7 @@
         <div class="col-12 col-md-8  fit-background zoom_img"
           style="background-image: url(<?php  echo $thumbnail; ?>);">
         </div>
-        <div class="col-12 col-md-4 ps-5 mt-5 d-flex justify-content-center flex-column align-content-center">
+        <div class="col-12 col-md-4 ps-0 ps-md-5 mt-5 d-flex justify-content-center flex-column align-content-center">
           <?php  echo $excerpt; ?>
         </div>
       </div>

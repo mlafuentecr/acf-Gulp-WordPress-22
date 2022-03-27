@@ -3,9 +3,9 @@
     "title": "Menu Main",
     "fields": [
         {
-            "key": "field_6236445ea7360",
+            "key": "field_62408332c3f23",
             "label": "Get In Touch",
-            "name": "get_in_touch",
+            "name": "contact_us",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -23,7 +23,7 @@
             {
                 "param": "nav_menu",
                 "operator": "==",
-                "value": "location\/primary"
+                "value": "location\/top"
             }
         ]
     ],
@@ -36,5 +36,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1647723635
+    "modified": 1648395932
 }

@@ -15,7 +15,8 @@ body {
 		padding: 0px;
 		height: 100vh;
 		@media (max-width: 600px) {
-			height: 100vh;
+			height: 100%;
+			position: relative;
 		}
 		h1,
 		form,
@@ -35,6 +36,9 @@ body {
 
 .login {
 	height: 100vh;
+	@media only screen and (max-width: 600px) {
+		height: 50vh;
+	}
 	h1 {
 		background-image: url(/wp-content/themes/rootstrap/inc/images/login-logo.png);
 		background-position: center;
@@ -48,6 +52,9 @@ body {
 	form {
 		background-color: transparent;
 		border: none;
+		@media only screen and (max-width: 600px) {
+			padding: 0%;
+		}
 		label {
 			color: white;
 			font-size: 1rem !important;

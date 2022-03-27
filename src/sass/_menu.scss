@@ -11,6 +11,47 @@
 	margin: 0px;
 	padding: 0px;
 }
+#menu-top {
+	.phone {
+		display: flex;
+
+		justify-content: center;
+		font-size: 1.5em;
+		font-weight: 300;
+		text-align: center;
+		text-transform: uppercase;
+		img {
+			filter: invert(0) !important;
+			@media (min-width: $md) {
+				min-width: 20px !important;
+			}
+		}
+		@media (max-width: $md) {
+			min-width: 100%;
+		}
+	}
+	a {
+		:hover {
+			opacity: 0.8;
+		}
+	}
+	@media (max-width: $md) {
+		right: 0;
+		left: 0;
+		top: 0px;
+		z-index: 100;
+		animation-duration: 0.5s;
+		width: 70%;
+		a {
+			font-size: 38px !important;
+			text-align: start;
+			&:hover {
+				color: white !important;
+				opacity: 1;
+			}
+		}
+	}
+}
 
 .navbar {
 	img {
@@ -20,6 +61,11 @@
 	}
 	a {
 		font-weight: 400 !important;
+	}
+	.logo {
+		img {
+			height: 15px !important;
+		}
 	}
 	@media (min-width: $md) {
 		//when is laptop make all smaller
@@ -44,12 +90,13 @@
 	}
 	//mobile
 	@media (max-width: $md) {
+		top: 0px;
+		right: 0px;
+		width: 100%;
+		background: black;
+		z-index: 100;
 		a {
 			overflow: hidden;
-			width: 50px;
-			img {
-				min-width: 180px;
-			}
 		}
 		.menu-item {
 			@include item;
@@ -67,11 +114,23 @@
 		&.fixed-top {
 			box-shadow: none !important;
 		}
+
+		.btn-cta {
+			width: auto;
+			@media (max-width: $md) {
+				width: 70%;
+				margin: auto;
+				margin-top: auto;
+				padding: 3rem;
+				margin-top: 2rem;
+				font-size: 38px !important;
+			}
+		}
 	}
 
 	#navbarCollapse {
-		justify-content: flex-end;
 		@media (max-width: $md) {
+			padding-top: 2rem;
 			.navbar-wrap {
 				height: 100vh;
 			}
@@ -94,9 +153,6 @@
 			flex-grow: initial;
 			flex-basis: initial;
 			justify-content: space-evenly;
-			@media (max-width: $md) {
-				height: 90vh;
-			}
 
 			a {
 				text-decoration: none;
@@ -114,11 +170,16 @@
 					font-size: 48px;
 					font-family: Inter;
 					font-weight: 700;
+					justify-content: center !important;
 				}
 				&:hover {
 					&:after {
 						transform-origin: left top;
 						transform: scale(1, 1);
+						z-index: 100;
+						@media (max-width: $md) {
+							height: 5px;
+						}
 					}
 				}
 				&::after {
@@ -139,10 +200,99 @@
 	&.fixed-top {
 		top: 0;
 		position: fixed;
-		animation-name: navbar;
 		animation-duration: 0.5s;
 		box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
 		background-color: black;
+		animation-name: navbar;
+	}
+
+	/*------------------------------------*/
+	/*  Hambumger animation
+/*------------------------------------*/
+	.bar {
+		width: 35px;
+		height: 2px;
+		background-color: white;
+		margin: 8px 0;
+		transition: 0.4s;
+	}
+
+	:not(.collapsed) .bar1 {
+		-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+		transform: rotate(-45deg) translate(-9px, 6px);
+	}
+
+	:not(.collapsed) .bar2 {
+		opacity: 0;
+	}
+
+	:not(.collapsed) .bar3 {
+		-webkit-transform: rotate(45deg) translate(-8px, -8px);
+		transform: rotate(45deg) translate(-8px, -8px);
+	}
+}
+
+/*------------------------------------*/
+/*  Menu Footer
+/*------------------------------------*/
+footer {
+	#secundary-menu {
+		ul {
+			display: flex;
+			flex-direction: row !important;
+			flex-wrap: wrap;
+			text-transform: capitalize;
+			li {
+				width: 50%;
+			}
+		}
+	}
+	#social-menu {
+		//social
+		#nav_menu-6 {
+			min-width: 100%;
+		}
+		ul {
+			justify-content: space-evenly;
+			display: flex !important;
+			flex-wrap: wrap;
+			flex-direction: row;
+			li {
+				text-align: left;
+				overflow: hidden;
+				width: 50px;
+				padding: 15px;
+				text-indent: 150px;
+				a {
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+		}
+	}
+	#menu-footer {
+		a {
+			margin: 0px;
+		}
+	}
+	.widget-area {
+		#nav_menu-4 {
+			margin-bottom: 2rem !important;
+			width: 80%;
+			margin: auto;
+		}
+	}
+	#copyright {
+		@media (max-width: $md) {
+			#block-4,
+			#block-2 {
+				margin: auto;
+				.copyrights {
+					margin: auto;
+				}
+			}
+		}
 	}
 }
 
@@ -209,5 +359,16 @@
 				width: 100px;
 			}
 		}
+	}
+}
+
+/*------------------------------------*/
+//Phone nomber should show only
+//in some cases and mobile
+/*------------------------------------*/
+.phoneNumber {
+	display: none;
+	@media (max-width: $md) {
+		display: block;
 	}
 }

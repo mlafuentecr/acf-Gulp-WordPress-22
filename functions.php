@@ -55,6 +55,7 @@ $understrap_includes = array(
   '/inc/functions/custom_login_look.php', // re look the loging
   '/inc/functions/wp_support.php', // add wp supporth has thumbnails ect
   '/inc/functions/acfToJson.php', // save acf data and load it
+  '/inc/functions/add_acf_theme_options.php', // save acf data and load it
   '/inc/functions/add_widgets.php', // widgets support
   '/inc/functions/custom-post-type.php',
   '/inc/functions/add_blocks.php', // blocks support
@@ -62,7 +63,7 @@ $understrap_includes = array(
   '/inc/functions/add_tiny_mce.php',
   '/inc/functions/add_taxonomy.php', // Theme taxonomy
   '/inc/functions/helpers.php', // 
-  '/inc/functions/load-more-ajax.php', // 
+  '/inc/functions/load-more-ajax.php',
    //'/inc/functions/add_shortcuts.php',
  
 );

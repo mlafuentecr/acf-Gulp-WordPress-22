@@ -11,7 +11,7 @@
   $add_headline     = $pageFields['add_headline']; 
   $margen           = $pageFields['margen']; 
   $headline         = $pageFields['headline'];
-  $post_quantity    = $pageFields['post_quantity'];
+  $post_quantity    = $pageFields['post_quantity']-1;
  
   $cols             = $pageFields['cols'] ?: 3;
   $add_title        = $pageFields['add_title'] ?: true;
@@ -20,7 +20,7 @@
 
   // The Query
   $args = array(
-    'posts_per_page'  => $post_quantity-1, 
+    'posts_per_page'  => $post_quantity, 
     'orderby'         => 'post_date',
     'order'           => 'DESC',
     'post_type'       => 'post', 
@@ -34,14 +34,14 @@ if ( $the_query->have_posts() ) :
    
 ?>
 <div class="get_latest_posts ">
-  <div class="container  <?php echo $margen; ?>">
 
+  <div class="container  <?php echo $margen; ?>">
     <!-- if have headline on -->
     <?php if($add_headline): ?>
     <header class='col-12 mt-5 '> <?php echo $headline; ?> </header>
     <?php  endif; ?>
     <div
-      class="text-white  row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
+      class="  row row-cols-1 row-cols-sm-1 row-cols-md-<?php echo $cols; ?> g-3  <?php echo  $getPosts ?   'get_posts_wrap' :  'get_pages_wrap'  ?>">
 
       <?php 
       while ( $the_query->have_posts() ) : $the_query->the_post(); 

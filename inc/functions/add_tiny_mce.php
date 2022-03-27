@@ -1,18 +1,22 @@
 <?php
 
-
+  /*-----------------------------------------------------------------*/
+//     ADD tiny_mce style btn
 /*-----------------------------------------------------------------*/
-//     ADD tiny_mce FORMATS
-/*-----------------------------------------------------------------*/
-
 
 
 add_filter('mce_buttons_2', 'add_mce_buttons_2');
 function add_mce_buttons_2($buttons)
 {
-    array_unshift($buttons, 'styleselect');
+ 
+   array_unshift($buttons, 'styleselect');
     return $buttons;
 }
+
+
+/*-----------------------------------------------------------------*/
+//     ADD tiny_mce FORMATS
+/*-----------------------------------------------------------------*/
 
 add_filter('tiny_mce_before_init', 'add_tiny_mce_before_init');
 function add_tiny_mce_before_init($settings)
@@ -45,6 +49,20 @@ function add_tiny_mce_before_init($settings)
         'wrapper' => true,
         'styles' => array(
           'text-transform' => 'uppercase'
+             )
+      ),
+
+      array(  
+        'title' => 'Contact Us Button',  
+        'inline' => 'a',  
+        'classes' => 'btn-contact btn btn-success py-3 px-5',
+        'wrapper' => true,
+        'styles' => array(
+          'text-transform' => 'uppercase',
+          'padding'=> '1rem 3rem',
+          'background-color'=> '#198754',
+          'color'=> 'white',
+          'text-decoration:'=> ' none'
              )
       ),
     );
