@@ -59,7 +59,7 @@ $video_url = $pageFields['video_url'];
       <h3 class='title_small text-black'> <?php echo$pageFields['bit_about_us_small_title']; ?></h3>
       <div class="row  bit_about_us_content">
         <?php echo $pageFields['bit_about_us_main_text'];  ?>
-        <a class='text-black arrow' href="http://"><?php echo  $pageFields['next_link']['title']; ?></a>
+        <a class='text-black arrow' href="https://"><?php echo  $pageFields['next_link']['title']; ?></a>
       </div>
 
     </div>
