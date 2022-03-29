@@ -668,6 +668,8 @@ body {
 }
 
 footer {
+	background-repeat: no-repeat;
+	background-size: cover;
 	a {
 		font-size: $px16 !important;
 		font-weight: 400 !important;

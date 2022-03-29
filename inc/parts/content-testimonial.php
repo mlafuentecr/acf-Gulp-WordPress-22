@@ -61,7 +61,7 @@
                 echo  '<div class="row image_text  '.$reverse.' ">';
 
                 echo  '<div class="col-12 col-md-6">';
-                echo  '<iframe width="100%" height="375" src="https://www.youtube.com/embed/'.$obj['video'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                echo  '<iframe title="youtube video" width="100%" height="375" src="https://www.youtube.com/embed/'.$obj['video'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                 echo  '</div>';
                 
                 echo  '<div class="col-12 col-md-6 mt-3 mt-md-0 mb-4 mb-md-0 ">

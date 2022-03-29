@@ -35,5 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (window.scrollY <= 500) wait = 10;
 	}
 
-	window.addEventListener('scroll', debounce(fixNav, wait));
+	if (document.querySelector('#main-menu-top')) window.addEventListener('scroll', debounce(fixNav, wait));
 });

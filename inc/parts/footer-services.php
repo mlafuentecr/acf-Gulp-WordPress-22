@@ -12,19 +12,28 @@
         </div>
       </div>
 
-      <div id="social-menu" class="col-12 col-md-8 mb-5 mb-md-0   d-flex  flex-wrap text-white">
-        <div class="mb-3 mb-md-0 call col-12 col-md-6"> CALL US <a
+      <div id="social-menu" class="col-12 col-md-8 mb-5 mb-md-0  m-0 d-flex  flex-wrap text-white">
+        <!-- //Callus -->
+        <div class="mb-3 mb-md-0 call  d-flex justify-content-center align-items-center "> CALL
+          US <a
             href="tel:+<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
         </div>
+
+        <!-- Social -->
         <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-        <div class=" col-6 m-auto col-md-6 widget-area  " role="social icons">
+        <div class=" col-6 ms-4 col-md-6 widget-area  " role="social icons">
           <?php dynamic_sidebar( 'footer-2' ); ?>
         </div>
         <?php endif; ?>
+
+
+
+
+
       </div>
-      <div id="copyright" class=" col-12 col-md-6 col-md-4">
+      <div id="copyright" class=" col-12  col-md-4">
         <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-        <div class="widget-area" role="logo">
+        <div class="widget-area">
           <?php dynamic_sidebar( 'footer-3' ); ?>
         </div>
         <?php endif; ?>
