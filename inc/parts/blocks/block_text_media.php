@@ -35,8 +35,7 @@ if($add_container){$div .= '<div class="container ">';}
     if($content_type === 'text'){
       $div .= '<div class="block-content_text title col-12 '.$block["className"].' '.$margin.'">'.  $text1 .'</div>';
     }if ($content_type === 'image') {
-      $div .= '<div class="block-content_img text-center col-12 '.$block["className"].' '.$margin.'">
-      <img class="lazyload" src="'. $image['url'] .'" alt="'. $image['title'] .'" />
+      $div .= 'xxxx<div class="block-content_img text-center col-12 '.$block["className"].' '.$margin.'"  role="img" aria-label="'. $image['title'] .'" style="background-image: url('. $image['url'] .')" >
       </div>';
     } 
     $div .= '</section>';
@@ -99,10 +98,12 @@ if($add_container){$div .= '<div class="container ">';}
 }
 
 .block-box-content_30>.block-box-content_text {
+  min-height: 500px;
   flex: 3;
 }
 
 .block-box-content_30>.block-box-content_img {
+  min-height: 500px;
   flex: 7;
 }
 

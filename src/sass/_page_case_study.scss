@@ -3,7 +3,7 @@
 .single-case_study {
 	header {
 		h1 {
-			font-size: $px55;
+			@include title_big;
 		}
 
 		.case_study_description {

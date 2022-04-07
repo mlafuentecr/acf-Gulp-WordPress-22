@@ -14,6 +14,11 @@ function internal() {
 		const video = document.querySelector('#youtubeModal');
 		video.addEventListener('click', () => stopVideo());
 	}
+
+	//SERVICES Change contact us name
+	if (document.querySelector('.contactUs')) {
+		document.querySelector('.contactUs').innerHTML = 'GET STARTED';
+	}
 }
 
 //stop video when someone click out of the popup

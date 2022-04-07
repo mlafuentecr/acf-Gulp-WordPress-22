@@ -1,6 +1,6 @@
 {
     "key": "group_62389681130b9",
-    "title": "Landing page Global",
+    "title": "Global",
     "fields": [
         {
             "key": "field_6237d79ed02e3",
@@ -593,5 +593,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1648102030
+    "modified": 1649302831
 }

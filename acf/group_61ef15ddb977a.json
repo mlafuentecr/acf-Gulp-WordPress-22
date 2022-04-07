@@ -335,7 +335,7 @@
             },
             "default_value": "",
             "tabs": "all",
-            "toolbar": "basic",
+            "toolbar": "full",
             "media_upload": 0,
             "delay": 0
         },
@@ -542,6 +542,25 @@
             ]
         },
         {
+            "key": "field_62450886db81a",
+            "label": "title",
+            "name": "phase_message_2_title",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
             "key": "field_61ef202b347d0",
             "label": "phase message 2",
             "name": "phase_message_2",
@@ -550,7 +569,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "60",
                 "class": "",
                 "id": ""
             },
@@ -883,5 +902,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645458897
+    "modified": 1648691753
 }

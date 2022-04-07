@@ -20,7 +20,8 @@
     $thumb    = $postFields['small_description']['thumbnail'];
     //Get thumbnail image if is not then take the other image
     $thumbnail = $thumb ? $thumbnail = $thumb['url'] : $thumbnail = $image['url'];
-   
+    $thumbnailalt = $thumb ? $thumbnailalt = $thumb['alt'] : $thumbnailalt = $image['alt'];
+  
   ?>
 
 <section class="block_caseStudy_post py-5 <?php echo $client.' '.$block['className'].' '.$margen; ?>"
@@ -28,7 +29,7 @@
   <div class="container  my-5 ">
     <a class='card-link' href="<?php echo get_permalink( $postId[0] ); ?>" rel="noopener noreferrer">
       <div class="d-flex flex-wrap ">
-        <div class="col-12 col-md-8  fit-background zoom_img"
+        <div class="col-12 col-md-8  fit-background zoom_img" role="img" aria-label="<?php echo $thumbnailalt; ?>"
           style="background-image: url(<?php  echo $thumbnail; ?>);">
         </div>
         <div class="col-12 col-md-4 ps-0 ps-md-5 mt-5 d-flex justify-content-center flex-column align-content-center">

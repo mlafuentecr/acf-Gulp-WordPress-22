@@ -1,4 +1,14 @@
-.single-services {
+.landing-pg-services {
+	#main-menu-top {
+		background-color: white;
+		.bar {
+			filter: invert(1);
+		}
+		#menu-top,
+		.logo {
+			filter: invert(1);
+		}
+	}
 	main {
 		ul {
 			list-style-type: disc !important;
@@ -38,6 +48,73 @@
 			font-size: 2.3529rem;
 		}
 	}
+
+	//TRINGLES
+	.triangles {
+		position: relative;
+		.row {
+			z-index: 2;
+			position: relative;
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			width: 100px;
+			height: 100%;
+			display: flex;
+			left: 0px;
+			top: 0px;
+			background-image: url('/wp-content/themes/rootstrap/inc/images/triangles.svg');
+			background-repeat: repeat-y;
+			background-position: right top;
+			background-size: 330px 700px;
+			z-index: 1;
+			left: -5vw;
+		}
+		&::before {
+			position: absolute;
+			content: '';
+			width: 100px;
+			height: 100%;
+			display: flex;
+			top: 0px;
+			background-image: url('/wp-content/themes/rootstrap/inc/images/triangles.svg');
+			background-repeat: repeat-y;
+			background-position: right top;
+			background-size: 330px 700px;
+			z-index: 1;
+			right: -5vw;
+			transform: scaleX(-1);
+		}
+		@media (max-width: $md) {
+			&::after {
+				display: none;
+			}
+			&::before {
+				display: none;
+			}
+		}
+	}
+	.bg-line {
+		position: relative;
+		white-space: nowrap;
+		&:after {
+			content: '';
+			width: calc(100% - 150px);
+			height: 2px;
+			border-bottom: 3px dashed rgb(255, 255, 255);
+			text-align: right;
+			font-size: 12px;
+			position: absolute;
+			left: 0px;
+		}
+		&.justify-content-start {
+			&:after {
+				left: initial;
+				right: 0px;
+			}
+		}
+	}
 	.benefits {
 		h4 {
 			text-align: left;
@@ -45,8 +122,48 @@
 		.content {
 			text-align: left;
 		}
+		/// remove 50 caption
+		#caption-attachment-11432 {
+			display: none;
+		}
+		figure {
+			min-width: 50%;
+			text-align: center;
+			min-height: 250px;
+			line-height: 100%;
+			figcaption {
+				display: flex;
+				justify-content: center;
+				width: 50%;
+				margin: auto;
+			}
+		}
 	}
-
+	.avoid {
+		h2 {
+			position: relative;
+			display: inline;
+			&:after {
+				content: '';
+				width: 50%;
+				height: 5px;
+				background-color: #11f573;
+				position: absolute;
+				bottom: -10px;
+				left: 0px;
+				display: flex;
+			}
+		}
+	}
+	.devops_title_dev,
+	.devops_title_ops {
+		color: #11f573;
+		line-height: 2.8125rem;
+		font-size: 1.7337rem;
+	}
+	.devops_title_ops {
+		color: #f0f511;
+	}
 	.aboutus {
 		.x_7b2817bf {
 			text-align: left;
@@ -136,14 +253,13 @@
 					}
 				}
 			}
+			.menu-social-container {
+				justify-content: flex-start;
+			}
 		}
 		#copyright {
-			#block-2 {
-				margin: auto;
-			}
 			.copyrights {
 				min-height: 50px;
-				background: red;
 				text-align: center;
 				color: #c4c4c4 !important;
 				display: flex;

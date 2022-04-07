@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
                 $categories = get_the_category( $post->ID );
                 if ( ! empty( $categories ) ) {
                     foreach( $categories as $category ) {
-                      echo ' <a href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer"> ' . esc_html( $category->name ) . ' </a> ';
+                      echo ' <a aria-label="' . esc_html( $category->name ) . ' " href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer"> ' . esc_html( $category->name ) . ' </a> ';
                     }
                   }
                 ?>
@@ -29,7 +29,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="entry-meta d-flex flex-column text-center text-white">
 
       <div class="col-12 author_name">
-        <a href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
+        <a aria-label="<?php echo $name; ?>" href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
           rel="noopener noreferrer"><?php echo $name; ?>
         </a>
 
@@ -53,7 +53,7 @@ defined( 'ABSPATH' ) || exit;
                 $categories = get_the_category( $post->ID );
                 if ( ! empty( $categories ) ) {
                     foreach( $categories as $category ) {
-                      echo '<a href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer">' . esc_html( $category->name ) . '</a>';
+                      echo '<a aria-label="' . esc_html( $category->name ) . '"  href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer">' . esc_html( $category->name ) . '</a>';
                     }
                   }
                 ?>
@@ -65,7 +65,8 @@ defined( 'ABSPATH' ) || exit;
       </div>
       <div class="ps-3">
         <div class="col-12 author_name">
-          <a href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
+          <a aria-label="<?php echo get_the_author_meta( 'display_name',  $authorId);  ?>"
+            href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
             rel="noopener noreferrer"><?php echo get_the_author_meta( 'display_name',  $authorId);  ?>
           </a>
         </div>

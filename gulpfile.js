@@ -32,16 +32,13 @@ function internalScss() {
 }
 
 function individualScss() {
-	return (
-		src(['./src/sass/custom-editor-style.scss', './src/sass/login.scss', './src/sass/blog.scss'])
-			.pipe(sass().on('error', sass.logError))
-			.pipe(sourcemaps.init())
-			.pipe(prefix())
-			.pipe(cleanCSS())
-			//.pipe(concat('custom-editor-style.css'))
-			.pipe(sourcemaps.write('.'))
-			.pipe(dest('./src/css/'))
-	);
+	return src(['./src/sass/custom-editor-style.scss', './src/sass/login.scss', './src/sass/blog.scss'])
+		.pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.init())
+		.pipe(prefix())
+		.pipe(cleanCSS())
+		.pipe(sourcemaps.write('.'))
+		.pipe(dest('./src/css/'));
 }
 
 //copy to css files from dist to src and also copy map
@@ -51,7 +48,7 @@ function copyCss() {
 
 //Js //I used DIst direct bc if I put them on src will created a loop on gulp file
 const jsIntern = ['./src/js/internal.js', './src/js/scroll.js', './src/js/menu-search.js', './src/js/our_work.js'];
-const jsHome = ['./src/js/newsletter.js', './src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js'];
+const jsHome = ['./src/js/newsletter.js', './src/js/slider_home.js', './src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js'];
 const jscopy = ['./src/js/block_jobs.js', './src/js/blog.js', './src/js/block_tech_stack.js', './src/js/bundle_intern.js', './src/js/bundle_home.js'];
 
 function js_bundle_Intern() {

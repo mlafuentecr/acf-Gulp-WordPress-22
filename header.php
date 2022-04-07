@@ -62,7 +62,8 @@
       
         if ( get_post_type() === 'services' ) {
         // for landing pages
-        get_template_part( '/inc/parts/menu','top_landing_Pags');
+        //get_template_part( '/inc/parts/menu','top_landing_Pags');
+        get_template_part( '/inc/parts/menu','top');
         } else {
           //For the site and blog
           get_template_part( '/inc/parts/menu','top');
