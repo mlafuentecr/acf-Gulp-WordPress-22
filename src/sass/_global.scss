@@ -29,6 +29,7 @@ html {
 	box-sizing: inherit;
 	font-family: $font-inter-regular !important;
 }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -625,7 +626,24 @@ body {
 		text-transform: uppercase;
 	}
 }
+.ul-check {
+	list-style: none !important;
 
+	& li {
+		list-style: none !important;
+		position: relative;
+		margin-bottom: 2rem;
+		&:before {
+			content: '✓';
+			color: #5257c6;
+			left: -30px;
+			top: -15px;
+			font-size: 2rem;
+			font-weight: 600;
+			position: absolute;
+		}
+	}
+}
 /*--------------------------------------------------*/
 /*  Margin
 /*--------------------------------------------------*/
@@ -838,6 +856,15 @@ footer {
 		h2 {
 			display: none;
 		}
+	}
+}
+.btn-success,
+.btn-contact {
+	border-color: #04d78a;
+	background-color: #04d78a !important;
+	text-decoration: none !important;
+	&:hover {
+		opacity: 0.8;
 	}
 }
 

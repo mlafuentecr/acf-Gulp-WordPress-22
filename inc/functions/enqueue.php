@@ -7,9 +7,9 @@
 function enqueue_header()
 {
   
-  /*******************  enqueue_header   ********************/
+ 
   if ( is_front_page() ) {
-
+    /******************* IF IS HOME PAGE  ********************/
      //css
      wp_enqueue_style('index',         $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/homepage.min.css', array(), $GLOBALS['THEME_MLM_VER']);
     //  //js
@@ -17,7 +17,8 @@ function enqueue_header()
    
       //&& !is_post_type('services')
   }elseif(is_page( 'blog'  ) ||  is_single( ) && get_post_type() !== 'services' || is_page('latest-post')  ){
-
+    
+    /******************* IF IS BLOG INDEX and not post services also if latespost  ********************/
     //css
     wp_enqueue_style('blog'.get_post_type().'',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css', array(), $GLOBALS['THEME_MLM_VER']);
     //js
@@ -26,7 +27,7 @@ function enqueue_header()
     wp_localize_script( 'ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
   }else {
-
+/******************* IF IS Regular PAGE  ********************/
     wp_enqueue_style('intern3',    $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/internal.css', array(), $GLOBALS['THEME_MLM_VER']);
     wp_enqueue_script('intern3',   $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_intern.js?defer',  array(), $GLOBALS['THEME_MLM_VER']);
   

@@ -579,50 +579,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_621b9694503ee",
-            "label": "clients_title",
-            "name": "clients_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "60",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "AT roostrap we embody",
-            "placeholder": "AT roostrap we embody",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_621d941542964",
-            "label": "clients_columns",
-            "name": "clients_columns",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 5,
-            "placeholder": 5,
-            "prepend": "",
-            "append": "",
-            "min": 0,
-            "max": 5,
-            "step": ""
-        },
-        {
-            "key": "field_621c5903bf6c7",
-            "label": "clients_logos",
-            "name": "clients_logos",
-            "type": "gallery",
+            "key": "field_6254abd670629",
+            "label": "Edit Clients",
+            "name": "",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -631,19 +591,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "medium",
-            "insert": "append",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "message": "<a href=\"\/wp-admin\/admin.php?page=global\" class=\"button button-primary button-large add-field\">Edit Clients<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_621ba42d503ef",
@@ -944,5 +894,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646698372
+    "modified": 1649716356
 }

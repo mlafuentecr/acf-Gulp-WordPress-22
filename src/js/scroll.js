@@ -22,18 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Not a ton of code, but hard to
-	const nav = document.querySelector('#main-menu-top');
-	let topOfNav = nav.offsetHeight / 2;
+	if (document.querySelector('#main-menu-top')) {
+		const nav = document.querySelector('#main-menu-top');
+		let topOfNav = nav.offsetHeight / 2;
 
-	function fixNav() {
-		scrollY = window.scrollY;
-		if (window.scrollY >= topOfNav) {
-			nav.classList.add('fixed-top');
-			wait = 30;
+		function fixNav() {
+			scrollY = window.scrollY;
+			if (window.scrollY >= topOfNav) {
+				nav.classList.add('fixed-top');
+				wait = 30;
+			}
+			if (window.scrollY <= topOfNav) nav.classList.remove('fixed-top');
+			if (window.scrollY <= 500) wait = 10;
 		}
-		if (window.scrollY <= topOfNav) nav.classList.remove('fixed-top');
-		if (window.scrollY <= 500) wait = 10;
-	}
 
-	if (document.querySelector('#main-menu-top')) window.addEventListener('scroll', debounce(fixNav, wait));
+		if (document.querySelector('#main-menu-top')) window.addEventListener('scroll', debounce(fixNav, wait));
+	}
 });

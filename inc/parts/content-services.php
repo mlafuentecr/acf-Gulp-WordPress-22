@@ -17,13 +17,29 @@
 
   </section>
 
-  <!--  Fortune 500 -->
+  <!--  Fortune 500 Logos Client -->
   <section class="sec7 pt-5">
     <div class="container">
-      <h3 class='text-center'><?php the_field('sec7_title', 'option'); ?></h3>
-      <?php $sec7_logos =  get_field('sec7_logos', 'option'); ?>
-      <img class='py-3 my-0 py-md-5 my-md-5' src="<?php echo $sec7_logos['url']; ?>"
-        alt="<?php  echo $sec7_logos['alt']; ?>">
+      <!-- Clients -->
+      <section class="clients py-5">
+        <div class="container py-5">
+          <h3 class='text-center'> <?php the_field('sec7_title', 'option'); ?></h3>
+          <div class="row   row-cols-2 row-cols-lg-3  row-cols-xl-<?php  the_field('clients_columns', 'option');  ?> ">
+            <?php 
+        $rows = get_field('clients_logos', 'option');
+        if( $rows ) {
+            foreach( $rows as $item => $row ) { ?>
+
+            <div class="col text-center my-5"> <img max-width='122px' height='auto'
+                src="<?php echo esc_url($row['url']); ?>" class=' lazyload'
+                alt="<?php echo esc_attr($row['alt']); ?>" />
+            </div>
+            <?php  }
+      }
+      ?>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 

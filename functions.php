@@ -16,7 +16,7 @@ $GLOBALS['THEME_MLM_ENV']   = '';
 $http_host      = $_SERVER['HTTP_HOST'];
 $ENV            = '';
 $local          = 'roostrapdev-new-vr1.local';
-$staging        = 'rootstrap.kinsta.cloud';
+$staging        = 'staging-rootstrap.kinsta.cloud';
 $production     = 'rootstrap.local';
 
 $environments = array(

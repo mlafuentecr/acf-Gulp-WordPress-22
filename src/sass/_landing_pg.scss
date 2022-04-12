@@ -2,18 +2,54 @@
 /*   
 /*-----------------------------------------------------------------------------------*/
 //LANDING PAGE
-#landing-page {
+
+#annual-report-online-education-statistics,
+.page-template-template-landing_page {
+	nav {
+		background: black;
+		filter: invert(1);
+	}
+	//SHow phone
+	.phoneNumber {
+		display: block !important;
+	}
+	.contactUs {
+		filter: invert(1);
+		border-radius: 50px;
+	}
+
+	.bg-black {
+		a {
+			color: white;
+			&:hover {
+				color: white;
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+.landing-pg {
+	a,
+	.blue-links {
+		color: black;
+		&:hover {
+			color: black;
+			opacity: 0.8;
+		}
+	}
+	ul {
+		margin-left: 2rem !important;
+		list-style-type: circle !important;
+	}
+
 	.sec7 {
 		background-color: #f0f3f5;
 		.container {
 			text-align: center;
 		}
 	}
-	.sec1 {
-		a {
-			color: #fff;
-			text-decoration: underline !important;
-		}
+	.uagb-section__inner-wrap {
 		.wp-block-button__link {
 			text-decoration: none !important;
 		}
@@ -36,14 +72,6 @@
 			opacity: 0.8;
 		}
 	}
-	.btn-success {
-		border-color: #04d78a;
-		background-color: #04d78a !important;
-		text-decoration: none !important;
-		&:hover {
-			opacity: 0.8;
-		}
-	}
 
 	//TRINGLES
 	.triangles {
@@ -58,14 +86,14 @@
 			width: 100px;
 			height: 100%;
 			display: flex;
-			left: 0px;
+
 			top: 0px;
 			background-image: url('/wp-content/themes/rootstrap/inc/images/triangles.svg');
 			background-repeat: repeat-y;
 			background-position: right top;
 			background-size: 330px 700px;
 			z-index: 1;
-			left: 5vw;
+			left: 0vw;
 		}
 		&::before {
 			position: absolute;
@@ -79,7 +107,7 @@
 			background-position: right top;
 			background-size: 330px 700px;
 			z-index: 1;
-			right: 5vw;
+			right: 0vw;
 			transform: scaleX(-1);
 		}
 		@media (max-width: $md) {
@@ -90,5 +118,43 @@
 				display: none;
 			}
 		}
+	}
+
+	//.why_rootstrap
+	.why_rootstrap {
+		.btn-contact {
+			background-color: #03d387 !important;
+			border-color: #03d387 !important;
+		}
+	}
+}
+
+.blue-links {
+	.uagb-section__inner-wrap {
+		padding: 20px;
+	}
+	background-color: #f0f3f5;
+	.wp-block-columns {
+		width: 80%;
+		margin: auto;
+		padding: 20px;
+		line-height: 150%;
+	}
+}
+
+footer {
+	#social-menu {
+		#menu-social {
+			display: flex !important;
+			gap: initial;
+			flex: 1;
+		}
+	}
+	.social-wrap {
+		flex: 1;
+	}
+
+	.widget-area {
+		justify-content: center;
 	}
 }

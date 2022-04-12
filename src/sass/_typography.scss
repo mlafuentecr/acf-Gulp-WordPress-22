@@ -1,23 +1,27 @@
 // Fonts
 // ---------
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
 @font-face {
 	font-family: 'Inter-Regular';
+	src: url('../../inc/fonts/Inter/Inter-Regular.ttf') format('truetype');
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Inter-Medium';
+	src: url('../../inc/fonts/Inter/Inter-Medium.ttf') format('truetype');
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Inter-Bold';
+	src: url('../../inc/fonts/Inter/Inter-Bold.ttf') format('truetype');
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Inter-Black';
+	src: url('../../inc/fonts/Inter/Inter-Black.ttf') format('truetype');
 	font-display: swap;
 }

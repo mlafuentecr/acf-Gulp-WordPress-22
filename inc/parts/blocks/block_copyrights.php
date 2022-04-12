@@ -1,4 +1,4 @@
-<div class="copyrights"><?php echo date('Y');?> © Rootstrap </div>
+<div class="copyrights"><?php echo date('Y');?> © Rootstrap All rights reserved.</div>
 
 
 <?php
