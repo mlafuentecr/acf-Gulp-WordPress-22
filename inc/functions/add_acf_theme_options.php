@@ -20,13 +20,13 @@ function my_acf_op_init() {
         */
    
         acf_add_options_page(array(
-            'page_title' 	=> __('Testimonial'),
-            'menu_title'    => __('Testimonial'),
-            'menu_slug'     => 'testimonial',
+            'page_title' 	=> __('Landing page setting'),
+            'menu_title'    => __('global'),
+            'menu_slug'     => 'global',
             'capability'    => 'edit_posts',
             'redirect'      => false,
             'icon_url'      => 'dashicons-screenoptions',
-            'position'      => 6
+            'position'      => 1
         ));
     }
 }

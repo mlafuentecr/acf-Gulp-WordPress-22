@@ -5,12 +5,14 @@
   ?>
 
 <?php
+echo '<div class="get_post">';
+
   if( $get_latest_post ){
-    get_template_part("/inc/parts/content", "getlatespost"); 
+    get_template_part("/inc/parts/content", "latespost"); 
   }else{
     get_template_part("/inc/parts/content/getpost");
    }
-
+echo '</div>';
 ?>
 
 
@@ -22,6 +24,13 @@
 <?php if (is_admin() ) { ?>
 <!-- Only show this to admin -->
 <style type="text/css">
+.get_post {
+  margin: 10px;
+  padding: 10px;
+  background-color: #e7e7e7;
+  min-height: 100px;
+}
+
 .get-posts {
   margin: 10px;
   padding: 10px;

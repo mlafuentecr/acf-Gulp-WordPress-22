@@ -1,7 +1,7 @@
 {
-	"name": "https://www.rootstrap.com",
+	"name": "https://rootstrap.kinsta.cloud",
 	"short_name": "rootstrap",
-	"start_url": "/",
+	"start_url": "https://rootstrap.kinsta.cloud",
 	"lang": "en",
 	"background_color": "#000000",
 	"theme_color": "#cdbf33",

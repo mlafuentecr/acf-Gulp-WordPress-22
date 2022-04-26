@@ -17,7 +17,10 @@ $type = $description['type_of_business'][0]->name;
 $color = $description['header_font_color'];
 
 function addFontColor( $color  ){
-  echo 'style="color: '. $color .'"';
+  if($color){
+    echo 'style="color: '. $color .'"';
+  }
+ 
 }
 
 ?>
@@ -73,14 +76,14 @@ function addFontColor( $color  ){
     <div class="d-flex flex-wrap justify-content-between text-white">
       <div class="case_study_title col-12 col-md-3"> <?php echo  get_field('our_objectives_title'); ?> </div>
 
-      <div class="our_objectives_content gap-5 gap-md-2 col-12 col-md-9 d-flex">
+      <div class="our_objectives_content  col-12 col-md-9 d-flex flex-wrap">
         <?php 
         $objectives = get_field('objectives');
         if( $objectives ) {
           $key = 1;
             foreach( $objectives as $row ) {
               $key <= 9 ? $key = ("0".$key) : $key;
-                echo "<div class='col-12 col-md-6 '>
+                echo "<div class='col-12 col-md-6 p-4'>
                 <div class='number'>".$key."</div>
                 <div class='subtitle  col-12'>".$row['title']."</div>
                 <div class='our_objectives_descrip'>".$row['content']."</div>
@@ -95,13 +98,13 @@ function addFontColor( $color  ){
 </section>
 
 
-<section class="case_study_banner_1 message_big text-white">
+<h2 class="case_study_banner_1 message_big text-white">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php echo get_field('objectives_message'); ?>
     </div>
   </div>
-</section>
+</h2>
 
 
 <div class="banner" style="background-image: url(<?php echo  get_field('message_image')['url']; ?>)">
@@ -164,6 +167,9 @@ function addFontColor( $color  ){
 
 <section class="case_study_banner_3 message_big text-white">
   <div class=" container">
+    <div class="col-12 title message_big">
+      <p> <?php echo  get_field('phase_message_2_title'); ?></p>
+    </div>
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
       <?php echo get_field('phase_message_2'); ?>
     </div>

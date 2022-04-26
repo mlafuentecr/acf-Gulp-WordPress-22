@@ -1,23 +1,30 @@
 <?php
 /*
-Template Name:  Services
+Template Name: Page Servicesx 
 */
-defined( 'ABSPATH' ) || exit;
-get_header(); 
 
+get_header();
 ?>
 
 <main class="main-content services">
 
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-    the_content();
-    // form 
-    get_template_part("/inc/parts/content","form"); 
-  endwhile; else: ?>
-  <p>Sorry, no posts matched your criteria.</p>
-  <?php endif; ?>
+  <?php  
+if ( have_posts() ) {
+	while ( have_posts() ) {
+		the_post(); 
 
+  the_content();
+  get_template_part("/inc/parts/content","form");?>
+  <?php 	} // end while
+} // end if ?>
 </main>
+
+
+<?php 
+
+
+
+?>
 
 
 <?php get_footer(); ?>

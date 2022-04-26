@@ -1,4 +1,6 @@
-<div class="copyrights"><?php echo date('Y');?> © Rootstrap </div>
+<?php $text = get_field('copyrights') ?: '© Rootstrap All rights reserved'; ?>
+
+<div class="copyrights"><?php echo date('Y');?> <?php echo $text; ?></div>
 
 
 <?php

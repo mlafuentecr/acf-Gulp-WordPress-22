@@ -189,9 +189,9 @@ $video_url = $pageFields['video_url'];
   <section class="clients py-5" style="background-color: white;">
     <div class="container py-5">
       <h3 class='title_small'> Clients</h3>
-      <div class="row   row-cols-2 row-cols-lg-3  row-cols-xl-<?php echo $pageFields['clients_columns'];  ?> ">
+      <div class="row   row-cols-2 row-cols-lg-3  row-cols-xl-<?php  the_field('clients_columns', 'option');  ?> ">
         <?php 
-        $rows = get_field('clients_logos');
+        $rows = get_field('clients_logos', 'option');
         if( $rows ) {
             foreach( $rows as $item => $row ) { ?>
 

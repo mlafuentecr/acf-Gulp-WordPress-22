@@ -26,7 +26,7 @@
       <meta charset="<?php bloginfo('charset');?>" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="ahrefs-site-verification" content="0b9562a2d0aadf12aeef9882336237ead90ff952810b53e14829c7acdb1f1992">
-      <title><?php wp_title('| Rootstrap', true, 'right'); ?></title>
+      <!-- <title><?php wp_title(''); ?></title> -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <?php wp_head();?>
       <!-- favicons -->
@@ -56,7 +56,22 @@
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV5QQ2" height="0" width="0"
           style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
-      <?php get_template_part( '/inc/parts/menu','top'); ?>
+
+      <?php 
+    
+      
+        if ( get_post_type() === 'services' ) {
+        // for landing pages
+        //get_template_part( '/inc/parts/menu','top_landing_Pags');
+        get_template_part( '/inc/parts/menu','top');
+        } else {
+          //For the site and blog
+          get_template_part( '/inc/parts/menu','top');
+        }
+      
+      ?>
+
+
 
       <!--[if lt IE 8]>
   <p class="browserupgrade">

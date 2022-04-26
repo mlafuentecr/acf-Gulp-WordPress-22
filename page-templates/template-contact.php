@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: About Page
+Template Name: Contact
 */
 defined( 'ABSPATH' ) || exit;
 get_header(); 
@@ -9,68 +9,43 @@ get_header();
 /*  ACF Page our-value
 /*-----------------------------------------------------------------------------------*/
 
-$bannerTitle = get_field('banner_title');
-$bannerContent = get_field('banner_content');
+$form = get_field('form');
+$sec_2 = get_field('sec_2');
 
 ?>
 
-<main id="contact-us" class="intern-pg">
+<main id="contact-us" class="intern-pg bg-black text-white">
+  <section class=" py-5   my-5">
+    <div class="container  my-5 ">
+      <div class="d-flex flex-wrap ">
 
-  <!-- 0 banner -->
-  <section class="intro-banner">
-    <div class="container">
-      <div class="row">
-        <article class="headline">
-          <?php if($bannerTitle): ?>
-          <h1><?php echo $bannerTitle; ?></h1>
-          <?php endif; ?>
-          <?php if($bannerContent): ?>
-          <p class="subhead"><?php echo $bannerContent; ?></p>
-          <?php endif; ?>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="block  form">
-    <div class="container">
-
-      <div class="row moveup">
-        <div class="box-with-tab ">
-
-          <?php if( have_rows('form_content') ): while( have_rows('form_content') ): the_row(); 
-					$title = get_sub_field('title');
-					$caption = get_sub_field('caption');
-					?>
-          <article>
-            <?php if ($title): ?>
-            <h2><?php echo $title; ?></h2>
-            <?php endif; ?>
-            <?php if ($caption): ?>
-            <p><?php echo $caption; ?></p>
-            <?php endif; ?>
-            <!-- form (start)-->
-            <!--[if lte IE 8]>
-                            <script charset="utf-8" type="text/javascript"
-                                    src="//js.hsforms.net/forms/v2-legacy.js"></script>
-                            <![endif]-->
-            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-            <script>
-            hbspt.forms.create({
-              portalId: "7851520",
-              formId: "606a62f4-7121-48e8-be68-8aa3e6755e10"
-            });
-            </script>
-            <!-- form (end)-->
-
-          </article>
-          <?php endwhile; endif; ?>
+        <div class="col-12 col-md-8 form ">
+          <?php echo $form ?>
         </div>
-        <div class="bg-lines2"> </div>
+
+
+        <?php if($sec_2['job_opportunities_link']):  ?>
+        <div class="col-12 col-md-4 ps-0 ps-md-5 mt-5 d-flex justify-content-center flex-column align-content-center">
+          <h2 class=" mt-5"><strong> <?php echo $sec_2['job_opportunities']; ?></strong></h2>
+          <a class='rs_link_underline' href="<?php echo $sec_2['job_opportunities_link']['url']; ?>">
+            <?php echo $sec_2['job_opportunities_link']['title']; ?></a>
+          <img class='lazyload my-5' src='<?php echo $sec_2['job_opportunities_img']['url']; ?>'
+            alt='<?php echo $sec_2['job_opportunities_img']['alt']; ?>' />
+        </div>
+        <?php endif; ?>
+
+        <?php  if( get_field('send_us_a_email') ): ?>
+        <div class="col-12 my-5 text-center">
+          <h2><strong> <?php echo get_field('send_us_a_email'); ?></strong></h2>
+        </div>
+        <?php endif; ?>
+
+
       </div>
 
     </div>
   </section>
+
 
 </main>
 

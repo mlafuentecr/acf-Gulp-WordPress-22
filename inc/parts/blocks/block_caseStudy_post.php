@@ -20,7 +20,8 @@
     $thumb    = $postFields['small_description']['thumbnail'];
     //Get thumbnail image if is not then take the other image
     $thumbnail = $thumb ? $thumbnail = $thumb['url'] : $thumbnail = $image['url'];
-   
+    $thumbnailalt = $thumb ? $thumbnailalt = $thumb['alt'] : $thumbnailalt = $image['alt'];
+  
   ?>
 
 <section class="block_caseStudy_post py-5 <?php echo $client.' '.$block['className'].' '.$margen; ?>"
@@ -28,10 +29,10 @@
   <div class="container  my-5 ">
     <a class='card-link' href="<?php echo get_permalink( $postId[0] ); ?>" rel="noopener noreferrer">
       <div class="d-flex flex-wrap ">
-        <div class="col-12 col-md-8  fit-background zoom_img"
+        <div class="col-12 col-md-8  fit-background zoom_img" role="img" aria-label="<?php echo $thumbnailalt; ?>"
           style="background-image: url(<?php  echo $thumbnail; ?>);">
         </div>
-        <div class="col-12 col-md-4 ps-5 mt-5 d-flex justify-content-center flex-column align-content-center">
+        <div class="col-12 col-md-4 ps-0 ps-md-5 mt-5 d-flex justify-content-center flex-column align-content-center">
           <?php  echo $excerpt; ?>
         </div>
       </div>
@@ -59,11 +60,15 @@
       $thumb      = $postFields['small_description']['thumbnail']; //
       //Get thumbnail image if is not then take the other image
       $thumbnail  = $thumb ? $thumbnail = $thumb['url'] : $thumbnail = $image['url'];
+      
+      $image_id = get_post_thumbnail_id( $post->ID  );
+      $alt_text = get_post_meta($image_id , '_wp_attachment_image_alt', true);
   ?>
       <div class="col <?php echo $margen; ?>">
         <a class='card-link' href="<?php echo get_permalink( $post ); ?>" rel="noopener noreferrer">
           <div class="card bg-transparent  ">
-            <div class="card-img mb-4 zoom_img" style="background-image: url(<?php  echo $thumbnail; ?>);"></div>
+            <div class="card-img mb-4 zoom_img" role="img" aria-label="<?php echo $alt_text; ?>"
+              style="background-image: url(<?php  echo $thumbnail; ?>);"></div>
             <div class="card-body  p-0  ">
               <?php  echo $excerpt; ?>
             </div>

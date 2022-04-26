@@ -40,7 +40,7 @@ function block_jobs() {
 		//console.log('data', data);
 
 		jobsholder = `<section class='jobstable col-12' >
-		<div class='container'>
+		<div class=''>
 			<div class='row row-cols-1 row-cols-md-2'>`;
 		jobstable = '';
 		jobstable2 = '';
@@ -63,7 +63,7 @@ function block_jobs() {
 			}
 
 			if (index < number_jobs) {
-				jobstable += `<div class='col jobDiv mb-5'>
+				jobstable += `<div class='col jobDiv pe-5 mb-5'>
         <div class='jobstable_positions  col-12'>${position}</div>
         <div class='info d-flex'>
           <div class='jobstable_location flex-grow-1 col-9 gap-2 '>${location}</div>
@@ -71,7 +71,7 @@ function block_jobs() {
         </div>
       </div>`;
 			} else {
-				jobstable2 += `<div class='col mb-5 jobDiv  jobs2 minimize'>
+				jobstable2 += `<div class='col mb-5 jobDiv pe-5 jobs2 minimize'>
         <div class='jobstable_positions col-12'>${position}</div>
         <div class='info d-flex'>
           <div class='jobstable_location flex-grow-1 col-9 gap-2 '>${location}</div>

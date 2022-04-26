@@ -104,7 +104,7 @@ $lastimgHeight      =  $pageFields['full_image_height2'];
 
   <!-- API CALL JOBS -->
   <?php if($join_a_team_title): ?>
-  <section class="get-jobs ">
+  <section id="career-block" class="get-jobs ">
     <?php include get_theme_file_path('/inc/parts/blocks/block_get_jobs.php'); ?>
   </section>
   <?php endif; ?>

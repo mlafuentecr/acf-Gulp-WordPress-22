@@ -4,7 +4,7 @@
 //     defines
 /*-----------------------------------------------------------------------------------*/
 $GLOBALS['THEME_MLM_PATH'] 	= get_template_directory_uri();
-$GLOBALS['THEME_MLM_VER'] 	= '0.0.2';
+$GLOBALS['THEME_MLM_VER'] 	= '0.0.4';
 $GLOBALS['careerPg'] 	      = 9682;
 $GLOBALS['blog'] 	          = 10020;
 $GLOBALS['THEME_MLM_ENV']   = '';
@@ -15,8 +15,8 @@ $GLOBALS['THEME_MLM_ENV']   = '';
 // Get the hostname
 $http_host      = $_SERVER['HTTP_HOST'];
 $ENV            = '';
-$local          = 'roostrapdev-new-vr1.local';
-$staging        = 'roostrapdev-new-vr1.local';
+$local          = 'rs-dev-mario.local';
+$staging        = 'rootstrap.kinsta.cloud';
 $production     = 'rootstrap.local';
 
 $environments = array(
@@ -55,6 +55,7 @@ $understrap_includes = array(
   '/inc/functions/custom_login_look.php', // re look the loging
   '/inc/functions/wp_support.php', // add wp supporth has thumbnails ect
   '/inc/functions/acfToJson.php', // save acf data and load it
+  '/inc/functions/add_acf_theme_options.php', // save acf data and load it
   '/inc/functions/add_widgets.php', // widgets support
   '/inc/functions/custom-post-type.php',
   '/inc/functions/add_blocks.php', // blocks support
@@ -62,7 +63,7 @@ $understrap_includes = array(
   '/inc/functions/add_tiny_mce.php',
   '/inc/functions/add_taxonomy.php', // Theme taxonomy
   '/inc/functions/helpers.php', // 
-  '/inc/functions/load-more-ajax.php', // 
+  '/inc/functions/load-more-ajax.php',
    //'/inc/functions/add_shortcuts.php',
  
 );

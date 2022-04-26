@@ -182,3 +182,8 @@ h4 {
 	text-transform: uppercase;
 	font-weight: 700;
 }
+@mixin title_big {
+	font-size: $px48 !important;
+	line-height: 5rem;
+	min-width: 100%;
+}

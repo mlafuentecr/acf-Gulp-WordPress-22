@@ -65,10 +65,13 @@ $the_query = new WP_Query( array(
         <div class="col my-5">
 
 
-
+          <?php 
+       $image_id = get_post_thumbnail_id( $post->ID );
+       $alt_text = get_post_meta($image_id , '_wp_attachment_image_alt', true);
+      ?>
           <div class="card post-<?php echo $post->ID; ?> bg-transparent ">
             <a class="card-link " href="<?php echo  get_permalink(  $post->ID ); ?>" rel="noopener noreferrer">
-              <div class="card-img mb-4 zoom_img"
+              <div class="card-img mb-4 zoom_img" role="img" aria-label="<?php echo $alt_text; ?>"
                 style="background-image: url(<?php   echo get_the_post_thumbnail_url( $post->ID ); ?>);">
               </div>
             </a>

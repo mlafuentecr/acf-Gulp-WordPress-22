@@ -1,6 +1,6 @@
 <?php
 /*---------------------------------------------------------*/
-/*  ACF Page our-value
+/*  
 /*---------------------------------------------------------*/
 $pageFields = get_fields();
 //If dont fin color in acf then use defaulth put it in a css variable datacolor is for menu color
