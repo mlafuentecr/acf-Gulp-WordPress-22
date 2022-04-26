@@ -35,6 +35,27 @@ then leave them running in the background
 
 ```
  To config variables in gulp open gulpfile.js
+npm install --save-dev @babel/register @babel/core @babel/preset-env
+
+ IF THERE IS ANY PROBLEM
+ # Uninstall previous Gulp installation and related packages, if any
+$ npm rm gulp -g
+$ npm rm gulp-cli -g
+$ cd [your-project-dir/]
+$ npm rm gulp --save-dev
+$ npm rm gulp --save
+$ npm rm gulp --save-optional
+$ npm cache clean # for npm < v5
+
+# Install the latest Gulp CLI tools globally
+# if you are on win run this as administrator
+$ npm install --global gulp-cli
+
+# Install Gulp 4 into your project as dev dependency
+$ npm install gulp --save-dev
+
+# RUN GULP OR npx gulp
+$ npx gulp
 ```
 
 ## 🌋 wp

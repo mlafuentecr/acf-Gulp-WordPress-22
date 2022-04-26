@@ -502,7 +502,8 @@ body {
 /*  others 
 /*-----------------------------------------------------------------------------------*/
 
-.invert-color {
+.invert-color,
+.invert_colors {
 	filter: invert(1);
 }
 
@@ -742,6 +743,10 @@ body {
 footer {
 	background-repeat: no-repeat;
 	background-size: cover;
+	.widget-area {
+		justify-content: flex-start !important;
+	}
+
 	a {
 		font-size: $px16 !important;
 		font-weight: 400 !important;
@@ -749,8 +754,9 @@ footer {
 
 	#secundary-menu {
 		@include menu-footer;
-		@media (max-width: $sm) {
+		@media (max-width: $md) {
 			min-width: 100%;
+			background-color: red;
 		}
 	}
 	#social-menu {
@@ -786,18 +792,16 @@ footer {
 				align-items: center;
 			}
 			#menu-social {
-				column-count: 3;
+				column-count: 3 !important;
 				gap: 4rem;
-				display: block !important;
-				height: auto !important;
-				align-items: flex-end;
+
 				li {
 					max-width: 35px;
 					overflow: hidden;
 					a {
 						margin: 0px;
 						padding: 0px;
-						text-indent: 200%;
+						// text-indent: 200%;
 						&:hover {
 							opacity: 0.8;
 						}
@@ -818,11 +822,18 @@ footer {
 		justify-content: space-between;
 		height: 100%;
 		#menu-social {
-			flex-direction: row !important;
+			min-height: 100%;
 			justify-content: space-between !important;
+			column-count: 6 !important;
+			display: block !important;
+			height: auto !important;
+			align-items: flex-end;
+
 			li {
 				width: 30px !important;
 				padding: 15px 0px;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 

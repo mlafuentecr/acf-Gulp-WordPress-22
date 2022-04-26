@@ -1,6 +1,6 @@
 {
     "key": "group_6236a61e8098d",
-    "title": "Block text  media",
+    "title": "Block text  media off",
     "fields": [
         {
             "key": "field_6236a61e8e307",
@@ -318,8 +318,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649100882
+    "modified": 1650347374
 }

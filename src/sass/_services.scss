@@ -258,6 +258,7 @@
 			}
 		}
 		#copyright {
+			background-color: red !important;
 			.copyrights {
 				min-height: 50px;
 				text-align: center;
@@ -267,7 +268,10 @@
 				align-content: center;
 				align-items: center;
 			}
-
+			img {
+				margin: auto;
+				background-color: red !important;
+			}
 			.widget-area {
 				align-items: flex-end;
 			}

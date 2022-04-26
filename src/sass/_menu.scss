@@ -254,7 +254,7 @@ footer {
 		}
 		ul {
 			justify-content: space-evenly;
-			display: flex !important;
+
 			flex-wrap: wrap;
 			flex-direction: row;
 			li {
@@ -262,11 +262,14 @@ footer {
 				overflow: hidden;
 				width: 50px;
 				padding: 15px;
-				text-indent: 150px;
+
 				a {
-					&:hover {
-						opacity: 0.8;
-					}
+					font-size: 0px !important;
+					min-width: 100%;
+					min-height: 100%;
+				}
+				&:hover {
+					opacity: 0.8;
 				}
 			}
 		}

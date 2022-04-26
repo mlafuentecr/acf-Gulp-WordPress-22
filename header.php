@@ -26,7 +26,7 @@
       <meta charset="<?php bloginfo('charset');?>" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="ahrefs-site-verification" content="0b9562a2d0aadf12aeef9882336237ead90ff952810b53e14829c7acdb1f1992">
-      <title><?php wp_title('| Rootstrap', true, 'right'); ?></title>
+      <!-- <title><?php wp_title(''); ?></title> -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <?php wp_head();?>
       <!-- favicons -->

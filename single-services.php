@@ -1,7 +1,5 @@
 <?php
-/*
-Template Name: Services
-*/
+
 defined( 'ABSPATH' ) || exit;
 get_header();
 /*---------------------------------------------------------*/

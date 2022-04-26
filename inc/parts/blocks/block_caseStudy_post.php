@@ -60,11 +60,15 @@
       $thumb      = $postFields['small_description']['thumbnail']; //
       //Get thumbnail image if is not then take the other image
       $thumbnail  = $thumb ? $thumbnail = $thumb['url'] : $thumbnail = $image['url'];
+      
+      $image_id = get_post_thumbnail_id( $post->ID  );
+      $alt_text = get_post_meta($image_id , '_wp_attachment_image_alt', true);
   ?>
       <div class="col <?php echo $margen; ?>">
         <a class='card-link' href="<?php echo get_permalink( $post ); ?>" rel="noopener noreferrer">
           <div class="card bg-transparent  ">
-            <div class="card-img mb-4 zoom_img" style="background-image: url(<?php  echo $thumbnail; ?>);"></div>
+            <div class="card-img mb-4 zoom_img" role="img" aria-label="<?php echo $alt_text; ?>"
+              style="background-image: url(<?php  echo $thumbnail; ?>);"></div>
             <div class="card-body  p-0  ">
               <?php  echo $excerpt; ?>
             </div>

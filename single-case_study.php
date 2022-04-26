@@ -76,14 +76,14 @@ function addFontColor( $color  ){
     <div class="d-flex flex-wrap justify-content-between text-white">
       <div class="case_study_title col-12 col-md-3"> <?php echo  get_field('our_objectives_title'); ?> </div>
 
-      <div class="our_objectives_content gap-5 gap-md-2 col-12 col-md-9 d-flex">
+      <div class="our_objectives_content  col-12 col-md-9 d-flex flex-wrap">
         <?php 
         $objectives = get_field('objectives');
         if( $objectives ) {
           $key = 1;
             foreach( $objectives as $row ) {
               $key <= 9 ? $key = ("0".$key) : $key;
-                echo "<div class='col-12 col-md-6 '>
+                echo "<div class='col-12 col-md-6 p-4'>
                 <div class='number'>".$key."</div>
                 <div class='subtitle  col-12'>".$row['title']."</div>
                 <div class='our_objectives_descrip'>".$row['content']."</div>

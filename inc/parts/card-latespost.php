@@ -6,11 +6,15 @@
  $add_title        = $pageFields['add_title'] ?: true;
  $add_excerpt      = $pageFields['add_excerpt'] ?: true;
  $add_author       = $pageFields['add_author_info'] ?: true;
+ $image_id = get_post_thumbnail_id($id );
+ $alt_text = get_post_meta($image_id , '_wp_attachment_image_alt', true);
+
 ?>
+
 <div class="col my-5 ">
   <div class="card post-<?php echo $id; ?> bg-transparent ">
     <a class="card-link " href="<?php echo  get_permalink(  $id ); ?>" rel="noopener noreferrer">
-      <div class="card-img mb-4 zoom_img"
+      <div class="card-img mb-4 zoom_img" role="img" aria-label='<?php echo $alt_text; ?>'
         style="background-image: url(<?php   echo get_the_post_thumbnail_url( $id ); ?>);">
       </div>
     </a>
@@ -45,9 +49,11 @@
         $author_picture       = $data['author_picture'];
         $author_url           = get_author_posts_url($authorId);
       
+
       
       ?>
-        <div class="author_pic px-2" style='background-image: url("<?php echo $author_picture['url']; ?>");'>
+        <div class="author_pic px-2" role="img" aria-label='<?php $author_picture['alt']; ?>'
+          style='background-image: url("<?php echo $author_picture['url']; ?>");'>
         </div>
 
         <div class="px-2 flex-grow-1 ">

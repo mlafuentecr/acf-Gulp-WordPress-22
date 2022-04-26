@@ -7,8 +7,8 @@ add_theme_support('post-thumbnails');
 /* Increase the Maximum File Upload Size
 /*-----------------------------------------------------------------------------------*/
 
-@ini_set('upload_max_size', '64M');
-@ini_set('post_max_size', '64M');
+@ini_set('upload_max_size', '1M');
+@ini_set('post_max_size', '1M');
 @ini_set('max_execution_time', '300');
 
 /*-----------------------------------------------------------------------------------*/
@@ -58,6 +58,25 @@ add_theme_support( 'customize-selective-refresh-widgets' );
 
 // Add custom size
 add_image_size('brand-slider-image-size', 1024, 580, true);
+
+
+//LIMIT IMAGES IF THEY ARE TOO BIG
+function deny_giant_images($file){
+  $type = explode('/',$file['type']);
+
+  if($type[0] == 'image'){
+      list( $width, $height, $imagetype, $hwstring, $mime, $rgb_r_cmyk, $bit ) = getimagesize( $file['tmp_name'] );
+      if($width * $height > 3200728){ // I added 100,000 as sometimes there are more rows/columns than visible pixels depending on the format
+          $file['error'] = 'This image is too large, resize it prior to uploading, ideally below 0.6MP or 2048x1536';
+      }
+  }
+  return $file;
+}
+add_filter('wp_handle_upload_prefilter','deny_giant_images');
+
+
+
+
 /*-----------------------------------------------------------------------------------*/
 /* EXCERPT
 /*-----------------------------------------------------------------------------------*/

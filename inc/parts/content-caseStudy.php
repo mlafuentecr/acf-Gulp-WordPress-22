@@ -113,14 +113,14 @@ defined( 'ABSPATH' ) || exit;
       if ( $loop->have_posts() ) :
       while ( $loop->have_posts() ) : $loop->the_post();
       $postid = get_the_ID();
-      // $term_obj_list = get_the_terms( $postid, 'type_of_business' );
-      //   var_dump( $term_obj_list);
+      $image_id = get_post_thumbnail_id( $postid );
+     $alt_text = get_post_meta($image_id , '_wp_attachment_image_alt', true);
       ?>
 
       <div class="col my-0 my-md-5">
         <a class="card-link" href="<?php echo get_the_permalink(); ?>" rel="noopener noreferrer">
           <div class='card bg-transparent case-<?php echo $post->ID; ?>'>
-            <div class="card-img mb-4 zoom_img"
+            <div class="card-img mb-4 zoom_img" role="img" aria-label="<?php echo $alt_text; ?>"
               style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID ); ?>);">
             </div>
             <div class="card-body  p-0  ">
