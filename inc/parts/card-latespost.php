@@ -30,63 +30,12 @@
 
       <!-- Show excerpt -->
       <div class="content text-gray">
-        <?php the_excerpt($id); ?>
+        <?php // the_excerpt($id); ?>
+        <?php echo wp_trim_words(get_the_excerpt($id), 35); ?>
       </div>
 
-      <!-- Show Author info -->
-      <?php  if($add_author): ?>
-      <div class="author mt-3 py-4 d-flex borderY-2">
-        <?php  
-        //$post_id = $row->ID;
-           //Author
-        $authorId             = get_post_field('post_author' , $id);
-        $user                 = get_userdata($authorId);
-        $data                 = get_field('author_info', 'user_'. $authorId);
-        
-        $name                 = $data['data']['author_name_and_lastname'];
-        $author_profession    = $data['data']['author_profession'];
-        $author_description   = $data['data']['author_description'];
-        $author_picture       = $data['author_picture'];
-        $author_url           = get_author_posts_url($authorId);
-      
+      <?php get_template_part("/inc/parts/card", "author"); ?>
 
-      
-      ?>
-        <div class="author_pic px-2" role="img" aria-label='<?php $author_picture['alt']; ?>'
-          style='background-image: url("<?php echo $author_picture['url']; ?>");'>
-        </div>
-
-        <div class="px-2 flex-grow-1 ">
-
-          <div class="col-12 author_name">
-            <a href="<?php echo $author_url;  ?>" target="_blank" rel="noopener noreferrer"><?php echo $name; ?>
-            </a>
-          </div>
-
-          <div class="author_data d-flex">
-            <div class="author_date">
-              <?php echo date("F j, Y", strtotime($post->post_date)) . "<br>"; ?>
-            </div>
-            <div class="author_time_reading">
-              <?php echo get_field( 'time_estimation', $id) ?: '5'; ?> min read
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <?php endif; ?>
-
-      <!-- Show Categories -->
-      <div class="categories mt-3">
-        <?php 
-        $categories = get_the_category( $id );
-        if ( ! empty( $categories ) ) {
-            foreach( $categories as $category ) {
-              echo '<a href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer">' . esc_html( $category->name ) . '</a>';
-            }
-          }
-        ?>
-      </div>
 
     </div>
     <!-- end card-body -->

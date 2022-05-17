@@ -70,7 +70,7 @@ categoriesName();
 
   <header class=" my-0 my-md-5">
     <div class="container ">
-      <div class="row my-0 mb-5 my-md-5">
+      <div class="row my-0  my-md-5">
         <div class="col my-5 my-md-0">
           <?php echo $header; ?>
         </div>
@@ -86,7 +86,6 @@ categoriesName();
 
   <!-- testimonials -->
   <?php get_template_part("/inc/parts/content", "testimonial"); ?>
-
 
   <!-- form -->
   <?php get_template_part("/inc/parts/content", "form"); ?>

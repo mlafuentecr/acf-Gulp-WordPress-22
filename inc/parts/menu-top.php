@@ -30,10 +30,12 @@
     <?php get_template_part( '/inc/parts/content', 'menuPrimary'); ?>
     <form role="search" method="get" id="searchform" class="search-box searchform d-none d-md-flex"
       action="<?php echo site_url()?>">
-      <img class="search-icon" src="<?php echo get_template_directory_uri(); ?>/inc/'images/navbar_search_white.svg'"
-        alt="Search ">
-      <input tabindex="-1" class="search-input" type="text" name="s" id="s" placeholder="Search">
+      <img class="search-icon" height='32'
+        src="<?php echo get_template_directory_uri(); ?>/inc/'images/navbar_search_white.svg'" alt="Search ">
+      <input tabindex="-1" class="search-input" type="text" name="s" id="s" value="<?php the_search_query(); ?>"
+        placeholder="Search">
     </form>
-    <a class="contactUs btn btn-cta " href="<?php echo $contactus['url']; ?>"><?php echo $contactus['title']; ?></a>
+    <a class="contactUs btn btn-cta  border-0 "
+      href="<?php echo $contactus['url']; ?>"><?php echo $contactus['title']; ?></a>
   </div>
 </nav>

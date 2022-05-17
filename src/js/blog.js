@@ -5,6 +5,7 @@ function blog() {
 		console.log('BLOG');
 		//Get COLOR AND PUT IT IN HEADER
 		changeHeaderColor();
+		searchForm();
 	}
 
 	///FOR LATES POST (is a page)
@@ -25,6 +26,26 @@ function changeHeaderColor() {
 	const div_color = document.querySelector('.getColor');
 	const bgColor = div_color.dataset.color;
 	header.style.backgroundColor = `${bgColor}`;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Menu Search
+	/*-----------------------------------------------------------------------------------*/
+function searchForm() {
+	if (document.querySelector('#searchform')) {
+		console.log('searchform2******');
+		const searchform = document.querySelector('.search-icon');
+		const searchinput = document.querySelector('.search-input');
+
+		searchform.addEventListener('click', () => {
+			searchinput.classList.toggle('extend');
+			if (searchinput.classList.contains('extend')) {
+				searchinput.setAttribute('tabindex', '0');
+			} else {
+				searchinput.setAttribute('tabindex', '-1');
+			}
+		});
+	}
 }
 
 /*   LOAD MORE JS */

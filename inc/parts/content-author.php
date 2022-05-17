@@ -101,7 +101,7 @@ $the_query = new WP_Query( array(
 
               <!-- Show Author info -->
               <?php  if($add_author): ?>
-              <div class="author mt-3 py-4 d-flex borderY-2">
+              <div class="author mt-3 py-4 d-flex borderY-2 ">
                 <?php  
                 $post_id = $row->ID;
                    //Author

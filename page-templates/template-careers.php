@@ -69,7 +69,7 @@ $lastimgHeight      =  $pageFields['full_image_height2'];
   </section>
   <?php endif; ?>
 
-  <section class="sets-us-apart py-5 bg-light">
+  <section class="sets-us-apart py-5 my-5 bg-lightGray">
     <div class="container" style='height: <?php echo $what_sets_us_heigh.'px'; ?>'>
       <div class="d-flex align-items-center  h-100">
 

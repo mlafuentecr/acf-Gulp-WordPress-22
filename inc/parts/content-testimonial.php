@@ -101,15 +101,19 @@
   ?>
 
     </div>
-    <div class=" buttons">
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouseTestimonial" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouseTestimonial" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <div class="container bg-light">
+      <div class="  buttons col-4 m-0 d-flex ">
+        <div class="col-6 m-auto position-relative">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouseTestimonial" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouseTestimonial" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>

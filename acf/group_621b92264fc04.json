@@ -612,6 +612,44 @@
             "endpoint": 0
         },
         {
+            "key": "field_627b01894b087",
+            "label": "title",
+            "name": "awards_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_627b019d4b088",
+            "label": "awards subtitle",
+            "name": "awards_subtitle",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_621ba445503f0",
             "label": "Awards",
             "name": "awards",
@@ -650,10 +688,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_621ba474503f2",
-                    "label": "Awards description",
-                    "name": "awards_description",
-                    "type": "textarea",
+                    "key": "field_62755dc640859",
+                    "label": "awards_Link",
+                    "name": "awards_link",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -662,11 +700,28 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 4,
-                    "new_lines": "wpautop"
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_62794c2f36e6b",
+                            "label": "link",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ]
                 }
             ]
         },
@@ -894,5 +949,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649716356
+    "modified": 1652228574
 }

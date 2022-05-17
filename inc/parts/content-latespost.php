@@ -53,8 +53,8 @@ if ( $the_query->have_posts() ) :
     </div>
 
     <div class="col text-center">
-      <a aria-label="latest post" class='rs_link_underline m-auto' href="/latest-post/" class="link"> View more articles
-      </a>
+      <a aria-label="latest post" class='rs_link_underline m-auto' href="/latest-post/" class="link"> View more
+        articles</a>
     </div>
   </div>
 </div>
