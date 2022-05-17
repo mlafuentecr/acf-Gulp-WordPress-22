@@ -22,12 +22,22 @@
 	}
 	.sets-us-apart {
 		.content {
-			font-size: $px30;
+			font-size: $px24;
 			margin: 3rem 0px;
 		}
 		.container {
 			height: auto !important;
 			margin-top: 4rem;
+		}
+		article {
+			p {
+				font-size: $px22;
+			}
+			.rs_underline {
+				&:hover {
+					color: black;
+				}
+			}
 		}
 	}
 	.block_jobs {

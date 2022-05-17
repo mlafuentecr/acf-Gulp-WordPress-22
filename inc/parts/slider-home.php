@@ -1,4 +1,5 @@
 <?php  ?>
+<!-- THIS VIDEOS ARE LOAD IN JS ON slider_home.js -->
 <div class="video_hero_container">
   <?php if ( !wp_is_mobile() ) : ?>
   <video id="video-desktop" data-video="<?php  echo bloginfo('template_url') . '/inc/videos/rootstrap-reel-13.mp4';?>"

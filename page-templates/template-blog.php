@@ -102,7 +102,7 @@ $author_url             = get_author_posts_url($authorId);
 
   <!-- //getlatespost -->
   <div class="container  ">
-    <h3 class="smalltitle my-5 col-12">Lates Post </h3>
+    <h3 class="smalltitle my-5 col-12">LATEST ARTICLES </h3>
     <?php get_template_part("/inc/parts/content", "latespost"); ?>
   </div>
 

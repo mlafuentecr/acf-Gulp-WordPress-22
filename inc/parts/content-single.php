@@ -14,16 +14,16 @@ defined( 'ABSPATH' ) || exit;
   ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-  <header class="entry-header">
+  <header class="entry-header d-flex flex-column justify-content-center align-content-center align-items-center">
     <div class="categories  text-center text-white mt-3">
       <?php 
-                $categories = get_the_category( $post->ID );
-                if ( ! empty( $categories ) ) {
-                    foreach( $categories as $category ) {
-                      echo ' <a aria-label="' . esc_html( $category->name ) . ' " href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer"> ' . esc_html( $category->name ) . ' </a> ';
-                    }
-                  }
-                ?>
+          $categories = get_the_category( $post->ID );
+          if ( ! empty( $categories ) ) {
+              foreach( $categories as $category ) {
+                echo ' <a aria-label="' . esc_html( $category->name ) . ' " href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer"> ' . esc_html( $category->name ) . ' </a> ';
+              }
+            }
+          ?>
     </div>
     <?php the_title( '<h1 class="entry-title mx-auto mt-2 mb-3 text-center">', '</h1>' ); ?>
     <div class="entry-meta d-flex flex-column text-center text-white">
@@ -39,38 +39,44 @@ defined( 'ABSPATH' ) || exit;
         read
       </div>
 
+      <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
     </div><!-- .entry-meta -->
   </header><!-- .entry-header -->
 
-  <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+
 
   <div class="entry-content">
     <?php the_content(); ?>
 
     <!-- Show Categories -->
     <div class="categories tags my-3">
+
       <?php 
-                $categories = get_the_category( $post->ID );
-                if ( ! empty( $categories ) ) {
-                    foreach( $categories as $category ) {
-                      echo '<a aria-label="' . esc_html( $category->name ) . '"  href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer">' . esc_html( $category->name ) . '</a>';
-                    }
-                  }
-                ?>
+			$author_id = get_the_author_meta('ID'); 
+			$tags = get_the_terms(get_the_ID(), "post_tag");
+		?>
+      <div class="tags">
+        <?php foreach ( $tags as $tag ) { ?>
+        <a href="<?php echo get_tag_link( $tag->term_id ); ?> " rel="nofollow"><?php echo $tag->name; ?></a>
+        <?php } ?>
+      </div>
+
+
     </div>
 
     <!-- Show Author info -->
-    <div class="author mt-3 py-3 d-flex borderY-2">
-      <div class="author_pic px-2 col-12" style='background-image: url("<?php echo $author_picture['url']; ?>");'>
+    <div class="wantToWork mt-4 py-3 d-flex borderY-2">
+      <div class="wantToWork_pic px-2 col-12" style='background-image: url("<?php echo $author_picture['url']; ?>");'>
       </div>
       <div class="ps-3">
-        <div class="col-12 author_name">
+        <div class=" wantToWork_name">
           <a aria-label="<?php echo get_the_author_meta( 'display_name',  $authorId);  ?>"
             href="<?php echo get_author_posts_url($authorId); ?>" target="_blank"
             rel="noopener noreferrer"><?php echo get_the_author_meta( 'display_name',  $authorId);  ?>
           </a>
         </div>
-        <p class="hiring">Want to work with <?php echo $name; ?>? <a href="/careers/#career-block" class="underline">We
+        <p class="wantToWork_hiring">Want to work with <?php echo $name; ?>?</br><a href="/careers/#career-block"
+            class="underline">We
             are hiring :)</a></p>
       </div>
     </div>
@@ -86,5 +92,6 @@ defined( 'ABSPATH' ) || exit;
 		);
 		?>
   </div><!-- .entry-content -->
+
 
 </article><!-- #post-## -->

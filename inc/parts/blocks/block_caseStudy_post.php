@@ -46,7 +46,6 @@
 <section class="block_post<?php echo ' '.$block['className'].' '; ?>">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-5 ">
-
       <?php
     foreach ($postId as $post) {
       $postFields = get_fields( $post );

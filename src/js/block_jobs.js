@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------------------*/
-/*  Variables
+/*  Get commet  JOB CAREER
 /*-----------------------------------------------------------------------------------*/
 document.readyState !== 'loading' ? block_jobs() : document.addEventListener('DOMContentLoaded', () => block_jobs());
 
@@ -13,10 +13,52 @@ function block_jobs() {
 		jobs_rows = document.querySelector('.block_jobs_rows');
 		number_jobs = jobsDiv.dataset.jobs;
 		number_jobs ? number_jobs : (number_jobs = 7);
-		startFetching();
+
+		/*
+		 Look Local Storage and fill data, then comapre agains fetching
+		 if they are different  fetch and save data
+		*/
+
+		if (localStorage.getItem('jobs')) {
+			console.log('1GETTING STORAGE JOBS');
+			let savedJobs = localStorage.getItem('jobs');
+
+			savedJobs = JSON.parse(savedJobs);
+			console.log('2GETTING STORAGE JOBS', savedJobs);
+
+			fill_div_jobs(savedJobs);
+			//Now Compare old stoarege with fetch
+			compareLocalStorageAndFetch(savedJobs);
+		} else {
+			fetchAndSave();
+		}
 	}
 
-	function startFetching() {
+	async function compareLocalStorageAndFetch(savedJobs) {
+		console.log('compareLocalStorageAndFetch');
+		const fetchJobs = await startFetching();
+		let jobsInfo = '';
+
+		/// 2. now fetch an compare with local
+		if (fetchJobs !== savedJobs) {
+			console.log('%c fetchJobs Y savedJobs son DIFFERENTES', 'color:red');
+			saveJobs(fetchJobs);
+			fill_div_jobs(fetchJobs);
+		} else {
+			console.log('%c All is updated', 'color:yellow');
+		}
+	}
+
+	async function fetchAndSave() {
+		const result = await startFetching();
+		console.log('%c 1 fetchAndSave', 'color:red');
+		console.log(result, 'result');
+		fill_div_jobs(result);
+		saveJobs(result);
+	}
+
+	async function startFetching() {
+		console.log('%c 2 Fetching', 'color:red');
 		var myHeaders = new Headers();
 		myHeaders.append(
 			'Cookie',
@@ -29,15 +71,22 @@ function block_jobs() {
 			redirect: 'follow',
 		};
 
-		fetch('https://www.comeet.co/careers-api/2.0/company/46.003/positions?token=6432592643C86190C12C93218385B0385B', requestOptions)
+		//2 try to fetch data and compare with the one I saved if is differente save it a load id
+		return fetch('https://www.comeet.co/careers-api/2.0/company/46.003/positions?token=6432592643C86190C12C93218385B0385B', requestOptions)
 			.then(response => response.text())
-			.then(result => (result ? fill_div_jobs(result) : ''))
+			.then(fetchJobs => fetchJobs)
 			.catch(error => console.log('error', error));
+	}
+
+	function saveJobs(result) {
+		localStorage.setItem('jobs', JSON.stringify(result));
 	}
 
 	function fill_div_jobs(result) {
 		let data = JSON.parse(result);
-		//console.log('data', data);
+		//let data = result;
+		console.log('%c 2 fill_div_jobs ', 'color:red');
+		console.log('data', data);
 
 		jobsholder = `<section class='jobstable col-12' >
 		<div class=''>
@@ -64,18 +113,18 @@ function block_jobs() {
 
 			if (index < number_jobs) {
 				jobstable += `<div class='col jobDiv pe-5 mb-5'>
-        <div class='jobstable_positions  col-12'>${position}</div>
-        <div class='info d-flex'>
-          <div class='jobstable_location flex-grow-1 col-9 gap-2 '>${location}</div>
-          <a target="_blank" rel="noopener noreferrer nofollow"  href='${position_url}' class='btn_applyNow rs_link_underline'>Apply Now </a>
+        <div class='jobstable_positions col-12 col-md-9'>${position}</div>
+        <div class='info d-flex flex-wrap'>
+          <div class='jobstable_location flex-grow-1 col-12 col-md-9 gap-2 '>${location}</div>
+          <a target="_blank" rel="noopener noreferrer nofollow"  href='${position_url}' class='btn_applyNow rs_link_underline col-xs-12 '>Apply Now </a>
         </div>
       </div>`;
 			} else {
 				jobstable2 += `<div class='col mb-5 jobDiv pe-5 jobs2 minimize'>
-        <div class='jobstable_positions col-12'>${position}</div>
-        <div class='info d-flex'>
+        <div class='jobstable_positions col-12 col-md-9'>${position}</div>
+        <div class='info d-flex  flex-wrap'>
           <div class='jobstable_location flex-grow-1 col-9 gap-2 '>${location}</div>
-          <a target="_blank" href='${position_url}' class='btn_applyNow rs_link_underline'>Apply Now </a>
+          <a target="_blank" href='${position_url}' class='btn_applyNow rs_link_underline col-xs-12 '>Apply Now </a>
         </div>
       </div>`;
 			}

@@ -15,7 +15,7 @@ $GLOBALS['THEME_MLM_ENV']   = '';
 // Get the hostname
 $http_host      = $_SERVER['HTTP_HOST'];
 $ENV            = '';
-$local          = 'rs-dev-mario.local';
+$local          = 'roostrapdev-new-vr1.local';
 $staging        = 'rootstrap.kinsta.cloud';
 $production     = 'rootstrap.local';
 

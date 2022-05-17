@@ -12,6 +12,9 @@
 // 	@return calc($target / $vw-context) * 1vw;
 // }
 
+.hbspt-form {
+	overflow: hidden;
+}
 .ignore-container {
 	& > div {
 		width: 100vw;
@@ -39,7 +42,7 @@ body {
 	line-height: 2 !important;
 }
 p {
-	font-size: $px20;
+	font-size: $px16;
 }
 h1,
 h2,
@@ -74,6 +77,16 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+.container-900 {
+	max-width: 992px;
+
+	@media (max-width: $md) {
+		max-width: 820px !important;
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
 /*-----------------------------------------------------------------------------------*/
 /*  button
 /*-----------------------------------------------------------------------------------*/
@@ -99,14 +112,17 @@ body {
 	}
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*  bg 
-/*-----------------------------------------------------------------------------------*/
-
+/*--------------------------------------------------*/
+/* bacgrounds
+/*--------------------------------------------------*/
 .bg {
 	&-black {
 		background-color: black !important;
 	}
+	&-yellow {
+		background-color: #eae639 !important;
+	}
+
 	&-danger-2 {
 		background-color: $bg-danger !important;
 	}
@@ -115,6 +131,9 @@ body {
 	}
 	&-transparent {
 		background-color: transparent !important;
+	}
+	&-lightGray {
+		background-color: #f1f2f5;
 	}
 }
 
@@ -172,7 +191,7 @@ body {
 
 	.content,
 	.card-text {
-		min-height: 130px;
+		min-height: 100px;
 		font-size: $px14;
 		line-height: 240%;
 	}
@@ -297,10 +316,11 @@ body {
 		@include rs_link_underline;
 		margin-left: 20px;
 	}
+
 	form {
 		display: flex;
 		flex-wrap: wrap;
-
+		position: relative;
 		.field {
 			padding: 0px 20px;
 			min-width: 50%;
@@ -315,6 +335,7 @@ body {
 			border: none;
 			border-bottom: 2px solid gray;
 			min-width: 100%;
+			color: white;
 		}
 		label {
 			font-style: normal;
@@ -323,12 +344,22 @@ body {
 			line-height: 150%;
 			color: #b5b5b8;
 		}
-
+		.hs-error-msg {
+			color: #c78080 !important;
+		}
+		.hs-error-msgs {
+			color: #c78080 !important;
+			label {
+				color: #c78080 !important;
+				padding: 0 20px;
+			}
+		}
 		textarea {
 			background-color: transparent;
 			border: none;
 			border-bottom: 1px solid gray;
 			width: 100%;
+			color: white;
 		}
 		.hs_recaptcha {
 			max-height: 80px;
@@ -376,9 +407,15 @@ body {
 			max-width: 200px;
 			margin-left: calc(50% + 20px);
 			margin-top: -30px;
+
 			@media (max-width: $md) {
 				width: 100%;
 				margin: 20px auto;
+			}
+
+			@media (min-width: $md) {
+				position: absolute;
+				bottom: 0px;
 			}
 			.hs-button {
 				color: white;
@@ -426,6 +463,28 @@ body {
 		background-image: url(/wp-content/themes/rootstrap/inc/images/logo-dribbble-white.svg);
 	}
 }
+
+/*-----------------------------------------------------------------------------------*/
+/*  Form homepage 
+/*-----------------------------------------------------------------------------------*/
+#hbspt-form-1651008109122-8124054897 {
+	color-scheme: dark;
+}
+//SEARCH
+
+.search {
+	nav,
+	.searchResult {
+		background-color: #eae639;
+		.logo,
+		.search-icon,
+		.contactUs,
+		li {
+			filter: invert(1) !important;
+		}
+	}
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*  links 
 /*-----------------------------------------------------------------------------------*/
@@ -498,6 +557,32 @@ body {
 	position: relative;
 	padding: 10px;
 }
+
+.small-arrow-2 {
+	position: relative;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 150%;
+	color: #0c0c0c;
+	display: inline-flex;
+	&:hover {
+		color: #0c0c0c;
+		opacity: 0.9;
+	}
+	&::after {
+		content: '';
+		background-image: url(/wp-content/themes/rootstrap/inc/images/arrow-about.svg);
+		background-repeat: no-repeat;
+		min-width: 15px;
+		min-height: 15px;
+		display: flex;
+		margin-left: 10px;
+		margin-top: 5px;
+		background-size: 80%;
+	}
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*  others 
 /*-----------------------------------------------------------------------------------*/
@@ -603,8 +688,9 @@ body {
 		left: 0px;
 		background-repeat: no-repeat;
 		top: 50%;
-		margin-top: 18px;
+		margin-top: 10px;
 		margin-left: 10px;
+		background-size: 80%;
 	}
 }
 
@@ -756,7 +842,6 @@ footer {
 		@include menu-footer;
 		@media (max-width: $md) {
 			min-width: 100%;
-			background-color: red;
 		}
 	}
 	#social-menu {
@@ -847,7 +932,9 @@ footer {
 			display: flex;
 			justify-content: flex-start;
 			align-content: center;
-
+			@media (max-width: $md) {
+				width: 100%;
+			}
 			figure {
 				display: flex;
 				justify-content: flex-start;
@@ -889,6 +976,7 @@ footer {
 	font-size: 14px;
 	position: relative;
 	height: 130px;
+	color-scheme: dark;
 	@media (max-width: $md) {
 		flex-direction: column;
 	}
@@ -963,17 +1051,9 @@ footer {
 	}
 }
 
-/*--------------------------------------------------*/
-/* bacgrounds
-/*--------------------------------------------------*/
-.bg {
-	&-black {
-		background-color: black !important;
-	}
-}
-
 #carouselAuthors {
 	min-height: 980px;
+
 	.buttons {
 		position: absolute;
 		min-width: 200px;
@@ -1079,7 +1159,61 @@ footer {
 		font-size: $px30 !important;
 	}
 }
-// @media (min-width: $md) {
-// }
-// @media (min-width: $lg) {
-// }
+/*--------------------------------------------------*/
+/*  SEARCH
+/*--------------------------------------------------*/
+.pg-search {
+	#searchform {
+		input {
+			color: black !important;
+		}
+	}
+	&__header {
+		min-height: 300px;
+	}
+	.info {
+		h2 {
+			text-align: center;
+		}
+	}
+	.card {
+		.link_main_style {
+			color: black;
+		}
+		.content {
+			min-height: 200px !important;
+		}
+	}
+	//search field
+	.search-field {
+		font-size: 80px;
+		font-family: $font-inter-bold !important;
+		font-weight: 700;
+		background: transparent;
+		border: none;
+		border-bottom-color: currentcolor;
+		border-bottom-style: none;
+		border-bottom-width: medium;
+		border-bottom: 1px solid black;
+		width: 100%;
+	}
+
+	.search-submit {
+		display: none;
+	}
+	#carouselAuthors {
+		.headline .container div {
+			text-align: center;
+			margin: auto;
+			margin-top: 20px;
+		}
+	}
+}
+.search {
+	#searchform input {
+		color: black !important;
+	}
+	.contactUs {
+		border: 0 !important;
+	}
+}

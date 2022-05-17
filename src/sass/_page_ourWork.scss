@@ -48,10 +48,10 @@
 	}
 	.block_caseStudy_imgBg {
 		background-position: center;
+		background-size: cover;
 		@media (max-width: $md) {
 			background-position: center;
 			min-height: 400px;
-			background-size: cover;
 		}
 	}
 	#carouseTestimonial {
@@ -90,13 +90,9 @@
 			}
 		}
 		.buttons {
-			height: 100px;
-			width: 200px;
-			margin: auto;
+			max-width: inherit;
 			position: absolute;
-			left: calc(50% - 100px);
 			bottom: 0px;
-			z-index: 4;
 		}
 		.image_text {
 			@media (max-width: $md) {

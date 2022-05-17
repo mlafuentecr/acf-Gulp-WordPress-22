@@ -11,7 +11,7 @@
 .block_text_underline {
 	p {
 		color: white;
-		font-size: $px48 !important;
+		font-size: $px40;
 		font-weight: 300;
 		line-height: 150%;
 	}
@@ -20,7 +20,7 @@
 		border-bottom: 30px solid yellow;
 		border-image: url('/wp-content/themes/rootstrap/inc/images/home_1lines.svg');
 		border-image-repeat: round;
-		border-image-slice: 300;
+		border-image-slice: 200;
 		text-align: center;
 		margin: 0px auto;
 		width: 100%;
@@ -31,6 +31,11 @@
 		}
 		strong {
 			border-image-slice: 200;
+		}
+	}
+	@media (min-width: $md) {
+		p {
+			font-size: $px32;
 		}
 	}
 }
@@ -52,6 +57,7 @@
 		left: -50px;
 	}
 }
+
 /*-----------------------------------------------------------------------------------*/
 /*  Blocks
 /*-----------------------------------------------------------------------------------*/
@@ -84,7 +90,7 @@
 	}
 	.title {
 		color: white;
-		font-size: $px28;
+		font-size: $px22;
 	}
 	.body {
 		color: #808183;
@@ -139,6 +145,11 @@
 	height: auto;
 	transition: all 1s;
 	min-width: 100%;
+	@media (max-width: $sm) {
+		.jobstable_location {
+			font-size: 100% !important;
+		}
+	}
 	h1 {
 		color: black;
 		font-weight: 700;
@@ -157,11 +168,10 @@
 		filter: invert(1);
 	}
 	&_header {
-		color: red !important;
-		line-height: 150%;
 		p {
 			color: black !important;
-			font-size: 20px;
+			font-size: $px40;
+			line-height: 120%;
 		}
 		h1 {
 			font-size: 26px;
@@ -181,6 +191,7 @@
 	}
 	.loadmore_wrap {
 		min-width: 100%;
+		font-size: 140% !important;
 		.loadmore {
 			max-width: 400px;
 			white-space: nowrap;
@@ -306,10 +317,16 @@
 		}
 
 		.hs_submit {
-			width: 50%;
-			max-width: 200px;
-			margin-left: calc(50% + 20px);
+			width: 100%;
+			max-width: initial;
+			position: relative;
+			min-height: 50px;
 			margin-top: -30px;
+			.actions {
+				position: absolute;
+				left: 0;
+				max-width: 200px;
+			}
 			@media (max-width: $md) {
 				width: 100%;
 				margin: 20px auto;
@@ -342,11 +359,13 @@
 	}
 	strong {
 		font-weight: 500;
-		font-size: $px48;
+		font-size: $px24;
 		line-height: $px48;
+		background-color: red;
 		@media (max-width: $md) {
 			font-size: $px28;
 			line-height: $px18;
+			background-color: green;
 		}
 	}
 	a {
@@ -434,6 +453,9 @@
 		font-size: 16px;
 		font-weight: 700;
 		text-transform: uppercase;
+		@media (max-width: $md) {
+			text-align: center;
+		}
 	}
 
 	figure {
@@ -480,7 +502,35 @@
 	figcaption {
 		text-transform: capitalize;
 	}
+	.tech_stack-menu {
+		@media (max-width: $md) {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			display: flex !important;
+			justify-content: flex-start !important;
+			align-items: center !important;
+			cursor: pointer;
+			height: 40px;
+			overflow: hidden;
+			&.expand {
+				height: auto;
+				&:before {
+					content: 'MENU ▼';
+				}
+			}
+			&:before {
+				content: 'MENU ▲';
+				display: flex;
+				height: 40px;
+				width: 100%;
+				justify-content: center;
+				border: 2px solid gray !important;
+			}
+		}
+	}
 }
+
 @keyframes showLogos {
 	0% {
 		opacity: 0;

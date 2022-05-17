@@ -209,16 +209,28 @@ $video_url = $pageFields['video_url'];
   <!-- awards -->
   <section class="awards py-5" style="background-color: white;">
     <div class="container py-5">
-      <h3 class='title_small text-black col-12 mb-5'> awards</h3>
-      <div class="row g-2 ">
+      <h3 class='title_small text-black col-12 '> <?php the_field('awards_title'); ?></h3>
+      <p><?php the_field('awards_subtitle'); ?></p>
+      <div class="col-12 link_award g-2 ">
         <?php 
         $rows = get_field('awards');
         if( $rows ) {
             foreach( $rows as $item => $row ) { 
-              echo "<div class='col  col-12 col-md-4 '>";
-              echo "<h4 class='col-12'>".  $row['awards_title'] ."</h4>";
-              echo "<div class='content'>".  $row['awards_description'] ."</div>";
-              echo "</div>";
+             $links = $row['awards_link'];
+            
+              echo "<div class='col-item'>
+                    <h4 class='col-12'>".  $row['awards_title'] ."</h4>";
+                    
+                  if($links){
+                    foreach ($links as $link){
+                  
+                      echo " <a class='small-arrow-2' href='".  $link['link']['url'] ."' target='_blank rel='noopener noreferrer'>
+                        ".  $link['link']['title'] ."
+                        </a> "; 
+                      }  
+                    }
+
+                    echo " </div> ";
         }
       }
       ?>
@@ -247,7 +259,7 @@ $video_url = $pageFields['video_url'];
            echo '<div class="container ">';
            echo "<div class='".$name."_main-content '> ";
            
-              echo "<div class='".$name."_text'>";
+              echo "<div class='".$name."_text me-2'>";
               echo "<div class='".$name."_details my-4'>";
                 echo "<h4>".  $row['our_offices_title'] ."</h4>";
                 echo "<b class='".$name."_subtitle'>".  $row['our_offices_subtitle'] ."</b>";
@@ -281,6 +293,8 @@ $video_url = $pageFields['video_url'];
 
 
 
+  <!-- form -->
+  <?php get_template_part("/inc/parts/content", "form"); ?>
 
 
 </main>
