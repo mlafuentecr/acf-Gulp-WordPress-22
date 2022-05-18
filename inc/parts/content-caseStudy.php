@@ -132,7 +132,7 @@ defined( 'ABSPATH' ) || exit;
                 
                 if ( $term ) {
                     foreach( $term as $category ) {
-                      echo '<span class="cs_category_subtitle">'.$category->name .'</span>';
+                      echo '<h3 class="cs_category_subtitle">'.$category->name .'</h3>';
                     }
                   }
                 ?>

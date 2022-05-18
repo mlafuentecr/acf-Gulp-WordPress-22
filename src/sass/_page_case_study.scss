@@ -1,153 +1,167 @@
 @import 'variables';
-
 .single-case_study {
-	header {
-		h1 {
-			@include title_big;
-		}
-
-		.case_study_description {
-			font-size: $px22;
-			margin-top: 0;
-			margin-bottom: 0;
-			line-height: 150%;
-			font-style: normal;
-			font-weight: 400;
-		}
-	}
-	.banner {
-		height: 600px;
-		min-width: 100%;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-
-	@mixin text-gray {
-		font-size: $px16;
-		color: #b5b5b8;
-	}
-	.case_study_title {
-		text-transform: uppercase;
-		font-size: $px20;
-		font-weight: 700;
-		margin: 0px;
-		@media (max-width: $lg) {
-			font-size: $px16;
-		}
-		@media (max-width: $md) {
-			font-size: $px22;
-		}
-	}
-
-	.clients_objectives {
-		&_descrip {
-			@include text-gray;
-			p {
-				@include text-gray;
-			}
-		}
-	}
-	.our_objectives {
-		&_descrip {
-			@include text-gray;
-			p {
-				@include text-gray;
-			}
-			h3 {
-				text-transform: uppercase;
-				font-size: $px20;
-				font-weight: 700;
-				margin: 0px;
-				@media (max-width: $lg) {
-					font-size: $px16;
-				}
-				@media (max-width: $md) {
-					font-size: $px35;
-				}
-			}
-		}
-		.case_study_title {
-			text-transform: capitalize;
-		}
-	}
-
-	.case_study_banner_2 {
-		span {
-			&::after {
-				bottom: -5px;
-			}
-		}
-	}
-	.case_study_banner_3 {
-		p {
-			font-size: $px40 !important;
-			line-height: 150%;
-		}
-		span {
-			position: relative;
-			text-decoration: none !important;
-			white-space: nowrap;
-			&::after {
-				background-image: url('/wp-content/themes/rootstrap/inc/images/masterclass_banner_3_1.svg');
-				background-repeat: no-repeat;
-				position: absolute;
-				left: -1rem;
-				display: inline-block;
-				width: 190px;
-				height: 100px;
-				content: '';
-				top: -2rem;
-				background-size: cover;
-			}
-		}
-	}
-
-	.phases {
-		.phase_image {
-			height: 260px;
-			overflow: hidden;
-			background-size: cover;
-		}
-		.phase-number {
+	& header {
+		.subtitle {
+			font-size: 20px;
 			text-transform: uppercase;
 		}
-		.description_paragraph {
-			font-size: 16px;
-		}
-	}
-	.case_study_phase_text {
-		line-height: 150%;
-		font-style: normal;
-		font-weight: 400;
-		font-size: $px30;
-		@media (max-width: $lg) {
-			font-size: $px22;
-		}
-	}
-
-	.subtitle {
-		text-transform: uppercase;
-		font-size: $px20;
-		font-weight: 700;
-		margin: 0px;
-		color: white;
-		@media (max-width: $lg) {
-			font-size: $px16;
-		}
-		@media (max-width: $md) {
-			font-size: $px35;
-		}
-		@media (max-width: $md) {
-			font-size: $px22;
-		}
 	}
 }
 
-//masterclass
-#masterclass {
-	.navbar {
-		background-color: $bg-danger;
-	}
-}
+// .single-case_study {
+// 	background-color: red !important;
+// 	header {
+// 		display: none !important;
+// 		h1 {
+// 			@include title_big;
+// 		}
+// 		.subtitle {
+// 			text-transform: uppercase;
+// 			font-size: $px20;
+// 			background-color: red;
+// 		}
+// 		.case_study_description {
+// 			font-size: $px22;
+// 			margin-top: 0;
+// 			margin-bottom: 0;
+// 			line-height: 150%;
+// 			font-style: normal;
+// 			font-weight: 400;
+// 		}
+// 	}
+// 	.banner {
+// 		height: 600px;
+// 		min-width: 100%;
+// 		background-repeat: no-repeat;
+// 		background-size: cover;
+// 	}
 
-//font-size: 48px;
+// 	@mixin text-gray {
+// 		font-size: $px16;
+// 		color: #b5b5b8;
+// 	}
+// 	.case_study_title {
+// 		text-transform: uppercase;
+// 		font-size: $px20;
+// 		font-weight: 700;
+// 		margin: 0px;
+// 		@media (max-width: $lg) {
+// 			font-size: $px16;
+// 		}
+// 		@media (max-width: $md) {
+// 			font-size: $px22;
+// 		}
+// 	}
+
+// 	.clients_objectives {
+// 		&_descrip {
+// 			@include text-gray;
+// 			p {
+// 				@include text-gray;
+// 			}
+// 		}
+// 	}
+// 	.our_objectives {
+// 		&_descrip {
+// 			@include text-gray;
+// 			p {
+// 				@include text-gray;
+// 			}
+// 			h3 {
+// 				text-transform: uppercase;
+// 				font-size: $px20;
+// 				font-weight: 700;
+// 				margin: 0px;
+// 				@media (max-width: $lg) {
+// 					font-size: $px16;
+// 				}
+// 				@media (max-width: $md) {
+// 					font-size: $px35;
+// 				}
+// 			}
+// 		}
+// 		.case_study_title {
+// 			text-transform: capitalize;
+// 		}
+// 	}
+
+// 	.case_study_banner_2 {
+// 		span {
+// 			&::after {
+// 				bottom: -5px;
+// 			}
+// 		}
+// 	}
+// 	.case_study_banner_3 {
+// 		p {
+// 			font-size: $px40 !important;
+// 			line-height: 150%;
+// 		}
+// 		span {
+// 			position: relative;
+// 			text-decoration: none !important;
+// 			white-space: nowrap;
+// 			&::after {
+// 				background-image: url('/wp-content/themes/rootstrap/inc/images/masterclass_banner_3_1.svg');
+// 				background-repeat: no-repeat;
+// 				position: absolute;
+// 				left: -1rem;
+// 				display: inline-block;
+// 				width: 190px;
+// 				height: 100px;
+// 				content: '';
+// 				top: -2rem;
+// 				background-size: cover;
+// 			}
+// 		}
+// 	}
+
+// 	.phases {
+// 		.phase_image {
+// 			height: 260px;
+// 			overflow: hidden;
+// 			background-size: cover;
+// 		}
+// 		.phase-number {
+// 			text-transform: uppercase;
+// 		}
+// 		.description_paragraph {
+// 			font-size: 16px;
+// 		}
+// 	}
+// 	.case_study_phase_text {
+// 		line-height: 150%;
+// 		font-style: normal;
+// 		font-weight: 400;
+// 		font-size: $px30;
+// 		@media (max-width: $lg) {
+// 			font-size: $px22;
+// 		}
+// 	}
+
+// 	.subtitle {
+// 		text-transform: uppercase;
+// 		font-size: $px20;
+// 		font-weight: 700;
+// 		margin: 0px;
+// 		color: white;
+// 		@media (max-width: $lg) {
+// 			font-size: $px16;
+// 		}
+// 		@media (max-width: $md) {
+// 			font-size: $px35;
+// 		}
+// 		@media (max-width: $md) {
+// 			font-size: $px22;
+// 		}
+// 	}
+// }
+
+// //masterclass
+// #masterclass {
+// 	.navbar {
+// 		background-color: $bg-danger;
+// 	}
+// }
+
+// //font-size: 48px;
