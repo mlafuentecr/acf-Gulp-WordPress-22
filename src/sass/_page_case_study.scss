@@ -1,10 +1,141 @@
 @import 'variables';
+@mixin title {
+	text-transform: uppercase;
+	font-size: $px16;
+	font-weight: 700;
+}
+@mixin subTitle {
+	@include title;
+}
+
+@mixin number {
+	@include title;
+}
+@mixin description {
+	color: #b5b5b8;
+}
+
+@mixin bigText {
+	@media (max-width: $md) {
+		p {
+			font-size: $px22 !important;
+			line-height: 250%;
+		}
+		strong {
+			border-image-slice: 200;
+		}
+	}
+	@media (min-width: $md) {
+		p {
+			font-size: $px28 !important;
+			line-height: 150%;
+		}
+	}
+
+	@media (min-width: $lg) {
+		p {
+			font-size: $px32 !important;
+		}
+		strong {
+			border-image-slice: 200;
+		}
+	}
+}
 .single-case_study {
-	& header {
-		.subtitle {
+	.message_big {
+		@include bigText;
+	}
+
+	.single-case_banner {
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	// HEADER
+	.header {
+		&--subtitle {
 			font-size: 20px;
 			text-transform: uppercase;
 		}
+		&--banner {
+			min-height: 300px;
+			background-size: cover;
+			@media (min-width: $md) {
+				min-height: 600px;
+			}
+		}
+	}
+	// THE CLIENT
+	.clientsObjs {
+		&--title {
+			@include title;
+		}
+		&--content {
+			&-subTitle {
+				@include subTitle;
+			}
+			&-number {
+				@include number;
+			}
+			&-image {
+				min-height: 300px;
+				background-size: cover;
+				background-position: center;
+			}
+			&-descrip {
+				@include description;
+			}
+		}
+	}
+
+	// OUR OBJECTIVES
+	.ourObjs {
+		&--title {
+			@include title;
+		}
+		&--content {
+			&-subTitle {
+				@include subTitle;
+			}
+			&-number {
+				@include number;
+			}
+			&-image {
+				min-height: 300px;
+				background-size: cover;
+				background-position: center;
+			}
+			&-descrip {
+				@include description;
+			}
+		}
+	}
+
+	// process
+	.process {
+		&--title {
+			@include title;
+		}
+		&--content {
+			&-subTitle {
+				@include subTitle;
+			}
+			&-number {
+				@include number;
+			}
+			&-image {
+				min-height: 300px;
+				background-size: cover;
+				background-position: center;
+			}
+			&-descrip {
+				@include description;
+			}
+		}
+	}
+	.bannerFooter {
+		background-size: cover;
 	}
 }
 

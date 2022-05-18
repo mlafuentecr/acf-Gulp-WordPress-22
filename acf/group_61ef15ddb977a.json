@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_61ef1848a5aeb",
-            "label": "header",
+            "label": "Header",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -177,7 +177,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "30",
+                "width": "15",
                 "class": "",
                 "id": ""
             },
@@ -196,11 +196,11 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "70",
+                "width": "85",
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_61ef198d867fd",
@@ -251,7 +251,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "30",
+                "width": "15",
                 "class": "",
                 "id": ""
             },
@@ -270,14 +270,14 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "85",
                 "class": "",
                 "id": ""
             },
             "collapsed": "field_61ef1b1e9caef",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "row",
             "button_label": "Add Objectives",
             "sub_fields": [
                 {
@@ -340,15 +340,71 @@
             "delay": 0
         },
         {
-            "key": "field_61ef1c8806bc6",
-            "label": "message image",
-            "name": "message_image",
-            "type": "image",
+            "key": "field_628487c25f943",
+            "label": "Add FULL WIDTH  image",
+            "name": "add_full_width__image",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62848758d5c19",
+            "label": "objectives message image height",
+            "name": "message_image_height",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_628487c25f943",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 400,
+            "placeholder": 400,
+            "prepend": "",
+            "append": "px",
+            "min": 400,
+            "max": 800,
+            "step": 100
+        },
+        {
+            "key": "field_61ef1c8806bc6",
+            "label": "objectives message image FULL WIDTH",
+            "name": "message_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_628487c25f943",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "80",
                 "class": "",
                 "id": ""
             },
@@ -365,7 +421,7 @@
         },
         {
             "key": "field_61ef1d87569fa",
-            "label": "phase",
+            "label": "The Process",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -380,15 +436,34 @@
             "endpoint": 0
         },
         {
+            "key": "field_628460fdabf7d",
+            "label": "process title",
+            "name": "process_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "The Process:",
+            "placeholder": "The Process:",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_61ef1da2569fb",
-            "label": "phase",
+            "label": "Process",
             "name": "phase",
             "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "85",
                 "class": "",
                 "id": ""
             },
@@ -400,7 +475,7 @@
             "sub_fields": [
                 {
                     "key": "field_61ef1de3569fc",
-                    "label": "phase image",
+                    "label": "process image",
                     "name": "phase_image",
                     "type": "image",
                     "instructions": "",
@@ -424,7 +499,7 @@
                 },
                 {
                     "key": "field_61ef1dfe569fd",
-                    "label": "phase title",
+                    "label": "process sub title",
                     "name": "phase_title",
                     "type": "text",
                     "instructions": "",
@@ -443,7 +518,7 @@
                 },
                 {
                     "key": "field_61ef1e62569fe",
-                    "label": "description",
+                    "label": "process  description",
                     "name": "description",
                     "type": "wysiwyg",
                     "instructions": "",
@@ -463,34 +538,138 @@
             ]
         },
         {
-            "key": "field_61ef1f3b347cc",
-            "label": "phase message",
-            "name": "phase_message",
-            "type": "wysiwyg",
+            "key": "field_62847efd55563",
+            "label": "Ad message Big",
+            "name": "add_process_message",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62847ff650237",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62847efd55563",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "90",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61ef1f3b347cc",
+            "label": "Process message",
+            "name": "phase_message",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62847efd55563",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "90",
                 "class": "",
                 "id": ""
             },
             "default_value": "MasterClass went from a burgeoning\r\nearly stage startup to a massive online education empire.",
             "tabs": "all",
-            "toolbar": "basic",
+            "toolbar": "full",
             "media_upload": 0,
             "delay": 0
         },
         {
-            "key": "field_61ef1fc9347cd",
-            "label": "phase image text",
-            "name": "phase_image_text",
-            "type": "group",
+            "key": "field_62847f9b1ce12",
+            "label": "Add  Image and Text",
+            "name": "add_process_image_and_text",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6284803e04ecd",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62847f9b1ce12",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "90",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61ef1fc9347cd",
+            "label": "Process: Image and Text Block",
+            "name": "process_image_text",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62847f9b1ce12",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "90",
                 "class": "",
                 "id": ""
             },
@@ -498,8 +677,8 @@
             "sub_fields": [
                 {
                     "key": "field_61ef1ff0347ce",
-                    "label": "phase image",
-                    "name": "phase_image",
+                    "label": "process image",
+                    "name": "process_it_image",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -522,8 +701,8 @@
                 },
                 {
                     "key": "field_61ef200b347cf",
-                    "label": "phase text",
-                    "name": "phase_text",
+                    "label": "process text",
+                    "name": "process_it_text",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -542,53 +721,142 @@
             ]
         },
         {
-            "key": "field_62450886db81a",
-            "label": "title",
-            "name": "phase_message_2_title",
-            "type": "textarea",
+            "key": "field_6284841b9f20e",
+            "label": "Add message 2",
+            "name": "add_process_message2",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "40",
+                "width": "10",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": ""
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6284845f909f2",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6284841b9f20e",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "90",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_61ef202b347d0",
-            "label": "phase message 2",
+            "label": "Process message 2 BIg",
             "name": "phase_message_2",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6284841b9f20e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "60",
+                "width": "85",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "tabs": "all",
-            "toolbar": "basic",
+            "toolbar": "full",
             "media_upload": 0,
             "delay": 0
         },
         {
-            "key": "field_61ef2066347d1",
-            "label": "phase image",
-            "name": "phase_image",
-            "type": "image",
+            "key": "field_628484d7d3cf8",
+            "label": "Add Big image Footer",
+            "name": "add_process_big_image_footer",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62848f92d44de",
+            "label": "Big image Footer height",
+            "name": "big_image_footer_height",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_628484d7d3cf8",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 400,
+            "placeholder": 400,
+            "prepend": "",
+            "append": "px",
+            "min": 400,
+            "max": 800,
+            "step": 100
+        },
+        {
+            "key": "field_61ef2066347d1",
+            "label": "Big image Footer",
+            "name": "process_big_image_footer",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_628484d7d3cf8",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "75",
                 "class": "",
                 "id": ""
             },
@@ -902,5 +1170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1648691753
+    "modified": 1652854733
 }
