@@ -20,6 +20,8 @@ $sec_2 = get_field('sec_2');
       <div class="d-flex flex-wrap ">
 
         <div class="col-12 col-md-8 form ">
+
+          <?php the_content( 'Read more ...' ); ?>
           <?php echo $form ?>
         </div>
 

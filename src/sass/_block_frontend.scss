@@ -391,7 +391,10 @@
 
 .block_caseStudy_post {
 	color: white;
-
+	&.cs_category_subtitle {
+		font-size: 20px;
+		text-transform: uppercase;
+	}
 	a {
 		color: white;
 		&:hover {

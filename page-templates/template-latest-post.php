@@ -42,7 +42,7 @@ get_header();
   <header class=" bg-dark text-white <?php echo $margen; ?>">
     <div class="container">
       <div class="row row-cols-1  py-5 ">
-        <div class="content col-1 col-md-12 d-flex flex-column justify-content-center">
+        <div class="content col-12 col-md-12 d-flex flex-column justify-content-center">
           <h1 class="entry-title"> <?php echo $title; ?></h1>
           <div class="content"><?php echo $content; ?></div>
         </div>

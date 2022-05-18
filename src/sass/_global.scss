@@ -403,20 +403,24 @@ body {
 		}
 
 		.hs_submit {
-			width: 50%;
-			max-width: 200px;
-			margin-left: calc(50% + 20px);
-			margin-top: -30px;
+			position: absolute;
+			bottom: 0;
+
+			width: calc(50% - 20px);
+			right: 0px;
 
 			@media (max-width: $md) {
+				position: relative;
+				text-align: center;
 				width: 100%;
 				margin: 20px auto;
+
+				.actions {
+					position: relative;
+					margin: auto !important;
+				}
 			}
 
-			@media (min-width: $md) {
-				position: absolute;
-				bottom: 0px;
-			}
 			.hs-button {
 				color: white;
 				border: 1px solid white;
