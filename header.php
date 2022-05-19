@@ -2,8 +2,7 @@
   <html class="h-100" <?php language_attributes();?>>
 
     <head id="header-top" name="top">
-      <script type="text/javascript" src="https://app.termly.io/embed.min.js" data-auto-block="on"
-        data-website-uuid="097ae153-7870-4783-a192-e2b268cc4a9c"></script>
+
       <!-- Google Tag Manager -->
       <script>
       (function(w, d, s, l, i) {

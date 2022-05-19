@@ -76,8 +76,7 @@ defined( 'ABSPATH' ) || exit;
           </a>
         </div>
         <p class="wantToWork_hiring">Want to work with <?php echo $name; ?>?</br><a href="/careers/#career-block"
-            class="underline">We
-            are hiring :)</a></p>
+            class="underline">We are hiring :)</a></p>
       </div>
     </div>
 

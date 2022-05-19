@@ -29,8 +29,11 @@ function addFontColor( $color  ){
 <header style="background-color:<?php echo $description['background_color']; ?>;">
   <div class="container py-5">
     <div class="d-flex flex-wrap justify-content-between text-white my-5">
-      <h1 class="col-12 col-md-8 d-flex align-items-start" <?php addFontColor($color); ?>>
-        <?php echo $dataAcf['headline_title']; ?></h1>
+      <div class="col-12 col-md-8 d-flex align-items-start">
+        <h1 class="" <?php addFontColor($color); ?>>
+          <?php echo $dataAcf['headline_title']; ?></h1>
+      </div>
+
       <aside class=" col-12 col-md-3 mt-5 mt-md-0 d-flex flex-wrap case_study_list">
         <div class="col-6 col-md-12">
           <h3 class="header--subtitle" <?php addFontColor($color); ?>> clients</h3>
@@ -169,6 +172,24 @@ function addFontColor( $color  ){
   </div>
 </section>
 
+
+
+
+<!-- the_results  -->
+<section class="results ">
+  <div class="container py-5">
+    <div class="d-flex flex-wrap justify-content-between text-white my-5">
+
+      <div class="results--title my-4 my-md-0   col-12 col-md-3">
+        <?php echo get_field('the_results');  ?>
+      </div>
+
+      <div class="results--content col-12 col-md-9">
+        <?php echo  get_field('the_results_description');  ?>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 

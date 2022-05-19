@@ -3,10 +3,14 @@
 		.title {
 			font-style: normal;
 			font-weight: 500;
-			font-size: $px80 !important;
+			font-size: $px60 !important;
 			line-height: 125%;
+
 			@media (max-width: $md) {
 				font-size: $px30 !important;
+			}
+			@media (min-width: $md) {
+				font-size: $px32;
 			}
 		}
 	}
@@ -47,11 +51,11 @@
 		}
 	}
 	.bit_about_us {
-		min-height: 800px;
+		min-height: 600px;
 		position: relative;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
 
 		@media (max-width: $md) {
 			min-height: 500px !important;
@@ -67,10 +71,14 @@
 			p {
 				font-style: normal;
 				font-weight: 500;
-				font-size: $px70;
+				font-size: $px60;
 				line-height: 130%;
+
 				@media (max-width: $md) {
 					font-size: $px30 !important;
+				}
+				@media (min-width: $md) {
+					font-size: $px32;
 				}
 			}
 		}
@@ -103,10 +111,12 @@
 	#carouseJourney {
 		.carousel-item {
 			background: white;
-			min-height: 630px;
-
+			@media (min-width: $md) {
+				height: 630px;
+			}
 			@media (max-width: $md) {
 				.container {
+					min-height: 300px !important;
 					display: flex !important;
 					justify-content: center;
 					align-content: center;
@@ -223,10 +233,15 @@
 	.office {
 		h4 {
 			font-style: normal;
-			font-size: 64px;
 			line-height: 130%;
 			color: #000000;
 			font-weight: bold;
+			@media (max-width: $md) {
+				font-size: $px60 !important;
+			}
+			@media (min-width: $md) {
+				font-size: $px32;
+			}
 		}
 		ul {
 			list-style: disc !important;
@@ -326,5 +341,34 @@
 		bottom: 4rem;
 		right: 2rem;
 		width: 200px;
+	}
+
+	.bit_about_us_text {
+		position: relative;
+		.about_item {
+			position: absolute;
+			opacity: 0px;
+			transform: translateY(-100%);
+			transition: all 1s;
+			width: auto;
+			font-size: 33px;
+			font-weight: 500;
+			line-height: 150%;
+			max-height: 0px;
+			overflow: hidden;
+			@media (max-width: $md) {
+				position: relative;
+			}
+			&.active {
+				opacity: 1;
+				top: 50%;
+				transform: translateY(0%);
+				max-height: initial;
+				@media (max-width: $md) {
+					top: auto;
+					position: relative;
+				}
+			}
+		}
 	}
 }

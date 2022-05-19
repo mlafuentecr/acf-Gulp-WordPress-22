@@ -1,0 +1,154 @@
+.hbspt-form,
+.block_form {
+	color-scheme: dark;
+	h2 {
+		font-style: normal;
+		font-weight: bold;
+		font-size: $px48;
+		line-height: 150%;
+		color: #ffffff;
+
+		@media (max-width: $md) {
+			font-size: $px30 !important;
+		}
+		@media (min-width: $md) {
+			font-size: $px32;
+		}
+	}
+	p {
+		color: white;
+		font-size: $px18 !important;
+	}
+
+	a {
+		color: white;
+		font-size: $px18 !important;
+		@include rs_link_underline;
+		margin-left: 10px;
+	}
+	.hs_error_rollup {
+		display: flex;
+		bottom: 0px;
+		width: 50%;
+		right: 0px;
+
+		@media (min-width: $md) {
+			padding-left: 20px;
+			bottom: 140px;
+			position: absolute;
+		}
+		label {
+			color: red !important;
+		}
+	}
+	.hs-error-msg {
+		color: red !important;
+	}
+
+	form {
+		border: none;
+		color: #b5b5b8;
+		font-size: 16px;
+		line-height: 150%;
+		padding-bottom: 13px;
+		width: 100%;
+		white-space: initial;
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+
+		.hs_recaptcha {
+			position: absolute;
+			bottom: -60px;
+			max-height: 80px;
+			margin: 0px;
+			@media (max-width: $md) {
+				.grecaptcha-badge {
+					margin: auto;
+				}
+			}
+		}
+
+		.field {
+			width: 50%;
+			padding: 0px 20px;
+			margin-bottom: 20px;
+			@media (max-width: $md) {
+				min-width: 100%;
+			}
+		}
+		input {
+			background: transparent;
+			border: none;
+			border-bottom: 2px solid gray;
+			min-width: 100%;
+			min-height: 30px;
+		}
+		label {
+			font-style: normal;
+			font-weight: bold;
+			font-size: $px14;
+			line-height: 150%;
+			color: #b5b5b8;
+			margin-bottom: 20px;
+		}
+
+		textarea {
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid gray;
+			width: 100%;
+		}
+
+		//select
+		select {
+			font-size: 18px;
+			background-color: black;
+			min-height: 40px;
+			min-width: 100%;
+			border: none;
+			border-bottom: 1px solid white;
+		}
+		select:before {
+			content: '>';
+			font-size: 20px;
+			display: none;
+			padding-right: 10px;
+			padding-left: 5px;
+			color: #fff;
+		}
+		select:hover:before {
+			display: inline;
+		}
+
+		.hs_submit {
+			width: 25%;
+			padding-left: 20px;
+			display: flex;
+			align-items: flex-end !important;
+			height: 90px;
+			@media (max-width: $md) {
+				width: 100%;
+				margin: 10px auto;
+			}
+			.actions {
+				width: 100%;
+				.hs-button {
+					color: white;
+					border: 1px solid white;
+					padding: 20px;
+
+					@media (max-width: $md) {
+						border: 1px solid white;
+						border-right: 2px solid white;
+					}
+
+					&:hover {
+						color: black;
+						background-color: white;
+					}
+				}
+			}
+		}
+	}
+}
