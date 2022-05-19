@@ -1,11 +1,12 @@
 {
-	"name": "https://rootstrap.kinsta.cloud",
-	"short_name": "rootstrap",
-	"start_url": "https://rootstrap.kinsta.cloud",
+	"name": "https://rootstrap.kinsta.cloud/",
+	"short_name": "Roostrap",
+	"start_url": "/",
 	"lang": "en",
 	"background_color": "#000000",
 	"theme_color": "#cdbf33",
-	"display": "fullscreen",
+	"display": "standalone",
+	"description": "At Rootstrap, we help companies scale people, processes, and products through outcome-driven development.",
 	"icons": [
 		{
 			"src": "favicon-48x48.png",
