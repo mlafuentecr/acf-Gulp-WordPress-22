@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------------------*/
 /*  Get commet  JOB CAREER
 /*-----------------------------------------------------------------------------------*/
-document.readyState !== 'loading' ? block_jobs() : document.addEventListener('DOMContentLoaded', () => block_jobs());
+document.readyState !== 'loading' ? block_jobs() : document.addEventListener('DOMContentLoaded', () => setTimeout(block_jobs(), 3000));
 
 function block_jobs() {
 	/*------------------------------------------*/
@@ -20,11 +20,11 @@ function block_jobs() {
 		*/
 
 		if (localStorage.getItem('jobs')) {
-			console.log('1GETTING STORAGE JOBS');
+			//console.log('1GETTING STORAGE JOBS');
 			let savedJobs = localStorage.getItem('jobs');
 
 			savedJobs = JSON.parse(savedJobs);
-			console.log('2GETTING STORAGE JOBS', savedJobs);
+			//console.log('2GETTING STORAGE JOBS', savedJobs);
 
 			fill_div_jobs(savedJobs);
 			//Now Compare old stoarege with fetch
@@ -35,30 +35,30 @@ function block_jobs() {
 	}
 
 	async function compareLocalStorageAndFetch(savedJobs) {
-		console.log('compareLocalStorageAndFetch');
+		//console.log('compareLocalStorageAndFetch');
 		const fetchJobs = await startFetching();
 		let jobsInfo = '';
 
 		/// 2. now fetch an compare with local
 		if (fetchJobs !== savedJobs) {
-			console.log('%c fetchJobs Y savedJobs son DIFFERENTES', 'color:red');
+			//console.log('%c fetchJobs Y savedJobs son DIFFERENTES', 'color:red');
 			saveJobs(fetchJobs);
 			fill_div_jobs(fetchJobs);
 		} else {
-			console.log('%c All is updated', 'color:yellow');
+			//console.log('%c All is updated', 'color:yellow');
 		}
 	}
 
 	async function fetchAndSave() {
 		const result = await startFetching();
-		console.log('%c 1 fetchAndSave', 'color:red');
-		console.log(result, 'result');
+		//console.log('%c 1 fetchAndSave', 'color:red');
+		//console.log(result, 'result');
 		fill_div_jobs(result);
 		saveJobs(result);
 	}
 
 	async function startFetching() {
-		console.log('%c 2 Fetching', 'color:red');
+		//console.log('%c 2 Fetching', 'color:red');
 		var myHeaders = new Headers();
 		myHeaders.append(
 			'Cookie',
@@ -85,8 +85,8 @@ function block_jobs() {
 	function fill_div_jobs(result) {
 		let data = JSON.parse(result);
 		//let data = result;
-		console.log('%c 2 fill_div_jobs ', 'color:red');
-		console.log('data', data);
+		//console.log('%c 2 fill_div_jobs ', 'color:red');
+		//console.log('data', data);
 
 		jobsholder = `<section class='jobstable col-12' >
 		<div class=''>
@@ -95,7 +95,7 @@ function block_jobs() {
 		jobstable2 = '';
 
 		data.forEach((item, index) => {
-			//console.log(item.department);
+			////console.log(item.department);
 			item.department ? (department = item.department) : (department = '');
 
 			if (item.location) {

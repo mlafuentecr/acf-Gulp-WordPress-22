@@ -16,20 +16,12 @@ function pwa() {
 			.register('sw.js')
 			.then(function (registration) {
 				//console.log('Service worker registration succeeded:', registration);
-				// return cache.addAll([
-				//   '/',
-				//   '/index.html',
-				//   '/index.html?homescreen=1',
-				//   '/?homescreen=1',
-				//   '/styles/main.css',
-				//   '/scripts/main.min.js',
-				//   '/sounds/airhorn.mp3'
-				// ]);
+				return cache.addAll(['/', '/wp-content/themes/rootstrap/dist/js/bootstrap.bundle.min.js']);
 			})
 			.catch(function (error) {
-				//console.log('Service worker registration failed:', error);
+				console.log('Service worker registration failed:', error);
 			});
 	} else {
-		//console.log('Service workers are not supported.');
+		console.log('Service workers are not supported.');
 	}
 }

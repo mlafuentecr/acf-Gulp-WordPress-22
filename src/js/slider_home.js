@@ -15,10 +15,10 @@ function sliderHome() {
 			divVideo = document.querySelector('#video-mobile');
 		}
 		//Check content
-		console.log(divVideo, 'divVideo');
+		//console.log(divVideo, 'divVideo');
 		//get video from data
 		videoUrl = divVideo.dataset.video;
-		console.log(videoUrl);
+		//console.log(videoUrl);
 		divVideo.innerHTML = `<source src="${videoUrl}" type="video/mp4" />`;
 	}, 3500);
 }

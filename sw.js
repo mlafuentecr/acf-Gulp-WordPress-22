@@ -1,48 +1,32 @@
-// const version = '0.1.19';
-// const cacheName = `rootstrap-${version}`;
+// let cacheName = 'rs-pwa';
+// let filesToCache = ['/', '/manifest.json', '/wp-content/themes/rootstrap/dist/js/bootstrap.bundle.min.js', '/wp-content/themes/rootstrap/dist/js/bundle_home.js', '/styles/inline.css'];
+
+// /* Start the service worker and cache all of the app's content */
 // self.addEventListener('install', e => {
 // 	e.waitUntil(
-// 		caches.open(cacheName).then(cache => {
-// 			return cache.addAll([`/`]).then(() => self.skipWaiting());
+// 		caches.open(cacheName).then(function (cache) {
+// 			return cache.addAll(filesToCache);
 // 		})
 // 	);
 // });
 
-// // // during the install phase you usually want to cache static assets
-// // self.addEventListener('install', function(e) {
-// // 	// once the SW is installed, go ahead and fetch the resources to make this work offline
-// // 	e.waitUntil(
-// // 			caches.open(cacheName).then(function(cache) {
-// // 					return cache.addAll([
-// // 							'./',
-// // 							'./dist/css/homepage.min.css',
-// // 							'./dist/css/internal.css',
-// // 							'./dist/js/bootstrap.min.js',
-// // 							'./dist/js/bundle_home.js',
-// // 							'./dist/js/popper.min.js',
-// // 							'./dist/js/jquery-3.6.0.min.js',
-// // 					]).then(function() {
-// // 							self.skipWaiting();
-// // 					});
-// // 			})
-// // 	);
-// // });
-
-// self.addEventListener('activate', event => {
-// 	event.waitUntil(self.clients.claim());
-// });
-
-// self.addEventListener('fetch', event => {
-// 	event.respondWith(
-// 		caches
-// 			.open(cacheName)
-// 			.then(cache => cache.match(event.request, { ignoreSearch: true }))
-// 			.then(response => {
-// 				return response || fetch(event.request);
-// 			})
+// /* Serve cached content when offline */
+// self.addEventListener('fetch', e => {
+// 	e.respondWith(
+// 		caches.match(e.request).then(response => {
+// 			return response || fetch(e.request);
+// 		})
 // 	);
 // });
+
 self.addEventListener('fetch', function (event) {
 	// do nothing here, just log all the network requests
 	console.log(event.request.url);
+});
+
+self.addEventListener('install', event => {
+	console.log('Service worker installed');
+});
+self.addEventListener('activate', event => {
+	console.log('Service worker activated');
 });

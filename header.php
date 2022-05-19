@@ -22,12 +22,16 @@
       </script>
       <!-- End Google Tag Manager -->
 
+      <!--=== META TAGS ===-->
       <meta charset="<?php bloginfo('charset');?>" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta charset="<?php bloginfo( 'charset' ); ?>" />
+      <meta name="description" content="Keywords">
+      <meta name="author" content="Name">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
       <meta name="ahrefs-site-verification" content="0b9562a2d0aadf12aeef9882336237ead90ff952810b53e14829c7acdb1f1992">
-      <!-- <title><?php wp_title(''); ?></title> -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <?php wp_head();?>
+
+      <!--=== LINK TAGS ===-->
       <!-- favicons -->
       <!--[if IE]><link rel="shortcut icon" href="favicon.ico" /><![endif]-->
       <link rel="apple-touch-icon" sizes="180x180"
@@ -44,9 +48,15 @@
       <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
       <meta http-equiv="Pragma" content="no-cache" />
       <meta http-equiv="Expires" content="0" /> -->
+      <!--=== TITLE ===-->
+      <title><?php wp_title(); ?> - <?php bloginfo( 'name' ); ?></title>
+
 
       <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed"
         href="<?php echo esc_url(get_feed_link()); ?>">
+
+      <!--=== WP_HEAD() ===-->
+      <?php wp_head(); ?>
     </head>
 
     <body id="<?php echo get_post_field( 'post_name', get_post() ); ?>"
