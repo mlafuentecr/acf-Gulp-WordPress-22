@@ -58,8 +58,21 @@ $video_url = $pageFields['video_url'];
     <div class="container py-5">
       <h3 class='title_small text-black'> <?php echo$pageFields['bit_about_us_small_title']; ?></h3>
       <div class="row  bit_about_us_content">
-        <?php echo $pageFields['bit_about_us_main_text'];  ?>
-        <a class='text-black arrow' href="http://"><?php echo  $pageFields['next_link']['title']; ?></a>
+
+        <div class="bit_about_us_text">
+
+          <?php 
+           foreach ($pageFields['bit_about_us_main_text'] as $key => $value) {
+             $text = $value['text'];
+             $class = $key === 0 ? 'active' : '';
+             echo "<div class='about_item about_item_$key $class'> $text</div><br>";
+          }
+          
+          ?>
+        </div>
+
+
+        <a class='text-black arrow btn_next' href="http://"><?php echo  $pageFields['next_link']['title']; ?></a>
       </div>
 
     </div>
@@ -70,7 +83,7 @@ $video_url = $pageFields['video_url'];
 
   <!-- Slider -->
   <div id="carouseJourney" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner ">
 
       <?php 
    $slider = $pageFields['slider_our_journey']; 
@@ -99,8 +112,8 @@ $video_url = $pageFields['video_url'];
 
            $state = $index === 1 ? "active" : "";
           
-            echo "<div style='    background-color:".$bg_color." ' class='carousel-item ".$state." '>";
-            echo "<div style='min-height:".$slider_size."px!important;' class='container mt-2 my-5'> ";
+            echo "<div style='    background-color:".$bg_color." ' class='carousel-item py-5 ".$state." '>";
+            echo "<div style='min-height:".$slider_size."px' class='container mt-2 my-5'> ";
             echo "<div   class='jorneyDiv '> ";
             echo '  <h3 class="title_small mt-md-5 mt-md-0" >Our Jorney</h3>';
             echo "<div class='mt-1 mt-md-5' style='color: ".$text_color."!important;'> ";
@@ -162,8 +175,8 @@ $video_url = $pageFields['video_url'];
 
   <!-- Embody -->
   <?php if ($pageFields['embody_title']): ?>
-  <section class="embody py-5" style="background-color: <?php echo $pageFields['embody_color'];  ?>;">
-    <div class="container py-5">
+  <section class="embody py-md-5" style="background-color: <?php echo $pageFields['embody_color'];  ?>;">
+    <div class="container py-md-5">
       <h3 class='title_small text-white'> <?php echo$pageFields['embody_title']; ?></h3>
       <div class="row   row-cols-1  row-cols-md-2 row-cols-lg-<?php echo $pageFields['embody_columns'];  ?> ">
         <?php 

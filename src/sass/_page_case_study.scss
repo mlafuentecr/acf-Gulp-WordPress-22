@@ -85,6 +85,9 @@
 			}
 			&-descrip {
 				@include description;
+				p {
+					@include description;
+				}
 			}
 		}
 	}
@@ -108,6 +111,9 @@
 			}
 			&-descrip {
 				@include description;
+				p {
+					@include description;
+				}
 			}
 		}
 	}
@@ -131,9 +137,39 @@
 			}
 			&-descrip {
 				@include description;
+				p {
+					@include description;
+				}
 			}
 		}
 	}
+
+	// THE CLIENT
+	.results {
+		&--title {
+			@include title;
+		}
+		&--content {
+			&-subTitle {
+				@include subTitle;
+			}
+			&-number {
+				@include number;
+			}
+			&-image {
+				min-height: 300px;
+				background-size: cover;
+				background-position: center;
+			}
+			&-descrip {
+				@include description;
+				p {
+					@include description;
+				}
+			}
+		}
+	}
+
 	.bannerFooter {
 		background-size: cover;
 	}
