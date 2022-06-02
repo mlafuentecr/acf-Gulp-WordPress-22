@@ -16,9 +16,9 @@ function enqueue_header()
      wp_enqueue_script('index',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
    
       //&& !is_post_type('services')
-  }elseif(is_page( 'blog'  ) ||  is_single( ) && get_post_type() !== 'services' && get_post_type() !== 'case_study' || is_page('latest-post')  ){
+  }elseif(is_page( 'blog'  ) ||  is_single( ) && get_post_type() !== 'services' && get_post_type() !== 'case_study'  && get_post_type() !== 'case_study1' || is_page('latest-post')  ){
     
-    /******************* IF IS BLOG INDEX and not post services also if latespost  ********************/
+    /******************* IF IS BLOG INDEX and sigle post ********************/
     //css
     wp_enqueue_style('blog'.get_post_type().'',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css?defer', array(), $GLOBALS['THEME_MLM_VER']);
     //js

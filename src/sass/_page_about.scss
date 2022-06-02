@@ -1,4 +1,7 @@
 #about {
+
+
+
 	.headline {
 		.title {
 			font-style: normal;
@@ -111,9 +114,7 @@
 	#carouseJourney {
 		.carousel-item {
 			background: white;
-			@media (min-width: $md) {
-				height: 630px;
-			}
+		
 			@media (max-width: $md) {
 				.container {
 					min-height: 300px !important;
@@ -339,8 +340,8 @@
 	.buttons {
 		position: absolute;
 		bottom: 4rem;
-		right: 2rem;
 		width: 200px;
+
 	}
 
 	.bit_about_us_text {

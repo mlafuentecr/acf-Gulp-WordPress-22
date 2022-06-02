@@ -239,6 +239,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_628ff16a032f7",
+            "label": "small title",
+            "name": "slider_our_journey_small_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our Journey",
+            "placeholder": "Our Journey",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_621b94eecb47a",
             "label": "Slider Our Journey",
             "name": "slider_our_journey",
@@ -970,5 +989,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652932496
+    "modified": 1653600655
 }

@@ -48,21 +48,17 @@ defined( 'ABSPATH' ) || exit;
   <div class="entry-content">
     <?php the_content(); ?>
 
-    <!-- Show Categories -->
-    <div class="categories tags my-3">
 
-      <?php 
-			$author_id = get_the_author_meta('ID'); 
-			$tags = get_the_terms(get_the_ID(), "post_tag");
-		?>
-      <div class="tags">
-        <?php foreach ( $tags as $tag ) { ?>
-        <a href="<?php echo get_tag_link( $tag->term_id ); ?> " rel="nofollow"><?php echo $tag->name; ?></a>
-        <?php } ?>
-      </div>
+  <?php 
+  //  <!-- Show TAGS NEW -->
+  get_template_part( 'inc/parts/list', 'tags' );
+  ?>
 
-
-    </div>
+  <?php 
+  // Show Categories 
+  // set_query_var( 'postId', absint( $post->ID ) ); 
+  // get_template_part( 'inc/parts/list', 'categories' ); 
+  ?> 
 
     <!-- Show Author info -->
     <div class="wantToWork mt-4 py-3 d-flex borderY-2">

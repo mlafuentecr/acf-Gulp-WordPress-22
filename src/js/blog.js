@@ -52,7 +52,9 @@ function searchForm() {
 function fetchPost() {
 	current_page++;
 	max_post = postsDiv.dataset.max;
-	offset = postsDiv.dataset.offset;
+	offset =  Number(postsDiv.dataset.offset);
+	console.log('xxxdataofset check'.offset);
+	
 	posts_per_page = postsDiv.dataset.posts_per_page;
 	const url = `/wp-admin/admin-ajax.php?action=loadmore_posts`;
 	const data = {
@@ -68,7 +70,7 @@ function fetchPost() {
 
 /* FETCHING DATA BY XMLHttpRequest*/
 function fetchingRequest(url, data) {
-	console.log(url, data, postsDiv);
+	console.log(url, data, postsDiv, 'fetchingRequest');
 	////CHECK IF I REACH THE MAX PAGES
 	if (max_post <= current_page) {
 		console.log('NO more post remove load more btn', max_post);

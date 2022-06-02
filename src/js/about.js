@@ -11,7 +11,8 @@ function about() {
 
 		about_itemArr[0].classList.add('active');
 
-		btn_next.addEventListener('click', () => {
+		btn_next.addEventListener('click', e => {
+			e.preventDefault();
 			console.log('click', clickIndex, totalIems);
 			clickIndex > totalIems - 1 ? (clickIndex = 0) : '';
 

@@ -41,7 +41,8 @@
 		}
 	}
 }
-.single-case_study {
+.single-case_study,
+.single-case_study1 {
 	.message_big {
 		@include bigText;
 	}
@@ -52,6 +53,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
+
 	// HEADER
 	.header {
 		&--subtitle {

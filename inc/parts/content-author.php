@@ -20,17 +20,19 @@ $the_query = new WP_Query( array(
   'author'          => $authorId,
 )); 
 ?>
+
+
 <section class="author-page card-invert ">
 
   <header class="author-header">
     <div class="container">
       <div class="row row-cols-1  row-cols-md-2 py-5 ">
 
-        <div class="author-img col-1 col-md-4 text-center ">
+        <div class="author-img col-12 col-md-4 text-center ">
           <?php echo  '<img class="rounded-circle" width="185px" src="'. $author_picture['url'] .'" alt="'. $author_picture['alt'] .'" >' ?>
         </div>
 
-        <div class="content col-1 col-md-6 d-flex flex-column justify-content-center">
+        <div class="content col-12 col-md-6 d-flex flex-column justify-content-center">
           <div class="author-name ">
             <h3><?php echo $name; ?></h3>
           </div>
@@ -140,17 +142,19 @@ $the_query = new WP_Query( array(
               </div>
               <?php endif; ?>
 
-              <!-- Show Categories -->
-              <div class="categories mt-3">
-                <?php 
-                $categories = get_the_category( $post->ID );
-                if ( ! empty( $categories ) ) {
-                    foreach( $categories as $category ) {
-                      echo '<a href="'. get_category_link( $category->term_id ) .'"  alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"target="_blank" rel="noopener noreferrer">' . esc_html( $category->name ) . '</a>';
-                    }
-                  }
-                ?>
-              </div>
+
+
+              <?php 
+            //  <!-- Show TAGS NEW -->
+            //get_template_part( 'inc/parts/list', 'tags' );
+            ?>
+
+              <?php 
+              // Show Categories 
+            // set_query_var( 'postId', absint( $post->ID ) ); 
+            // get_template_part( 'inc/parts/list', 'categories' ); 
+            ?>
+
 
             </div>
             <!-- end card-body -->

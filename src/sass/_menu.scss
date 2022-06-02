@@ -57,13 +57,9 @@
 /*------------------------------------*/
 .navbar {
 	.contactUs {
-		border: 1px solid black !important;
+		border: 1px solid rgba(0, 0, 0, 0) !important;
 		@media (max-width: $md) {
 			background-color: transparent !important;
-			border: none !important;
-			&:hover {
-				border: none !important;
-			}
 		}
 	}
 	img {
@@ -163,7 +159,6 @@
 				display: none;
 			}
 			.btn-cta {
-				width: 100 !important;
 				padding: 0% !important;
 				margin: 0px !important;
 				font-size: 38px !important;
@@ -173,7 +168,7 @@
 				flex-basis: initial;
 				justify-content: start !important;
 				height: 15vh;
-
+				width: 100%;
 				position: relative !important;
 
 				&:hover {
