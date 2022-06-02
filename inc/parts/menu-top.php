@@ -14,7 +14,7 @@
 
 <!-- Menu -->
 <nav id="main-menu-top" class="navbar d-flex navbar-expand-md align-items-center p-3  navbar-dark ">
-  <section class='logo d-flex justify-content-start flex-grow-1'>
+  <section class='logo d-flex justify-content-start '>
     <?php if($image[0]) : ?>
     <a class="d-flex justify-content-between align-center" href="<?php echo home_url(); ?>">
       <img loading=“lazy” width="180" height="106.3" src=" <?php echo $image[0]; ?>" alt="Rootstrap Home page"></a>

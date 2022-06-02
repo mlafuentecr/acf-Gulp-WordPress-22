@@ -99,7 +99,7 @@
 		right: 0px;
 		width: 100%;
 		background: black;
-		z-index: 100;
+		z-index: 9999;
 		a {
 			overflow: hidden;
 		}
@@ -139,6 +139,7 @@
 		@media (max-width: $md) {
 			padding-top: 2rem;
 			margin-left: 0rem;
+			padding: 15px !important;
 			.navbar-wrap {
 				height: 100vh;
 			}

@@ -100,14 +100,15 @@
 
 
 <div id="carouselAuthors" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
   <header class="headline">
     <div class="container">
-
       <div class="col-12 col-md-8">
         <?php echo get_field('headline', $GLOBALS['blog']); ?>
       </div>
     </div>
   </header>
+  <!-- header -->
   <div class="carousel-inner">
     <?php 
       if( $authorsArr ) {
@@ -135,7 +136,7 @@
 
       ?>
   </div>
-  <!-- <a class="rs_link_underline my-5" href="#">See All Authors </a> -->
+
   <div class="buttons">
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselAuthors" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -146,5 +147,7 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
+  <!-- buttons -->
 </div>
+</div>
+<!-- carouselAuthors -->

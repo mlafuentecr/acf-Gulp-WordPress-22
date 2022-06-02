@@ -67,7 +67,7 @@ echo get_template_part('/inc/parts/list', 'tags');
             </a>
           </h1>
 
-          <?php if ($excerpt): ?><div class="excerpt"><?php echo $excerpt; ?></div><?php endif; ?>
+          <?php if ($excerpt): ?><div class="excerpt mb-3"><?php echo $excerpt; ?></div><?php endif; ?>
 
 
           <div class="author-info d-flex">
