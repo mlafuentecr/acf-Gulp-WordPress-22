@@ -20,6 +20,7 @@
 html {
 	box-sizing: border-box !important;
 }
+
 *,
 *:before,
 *:after {
@@ -521,7 +522,7 @@ body {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	transition: background-size 0.5s;
-	margin-left: 20px;
+	//margin-left: 20px;
 	&:hover {
 		background-size: 0 100%;
 		color: #fff;
@@ -945,15 +946,9 @@ footer {
 
 .intern-pg {
 	position: relative;
+	overflow: hidden;
 }
-.pg-404 {
-	#carouselAuthors {
-		min-height: 780px;
-		h2 {
-			display: none;
-		}
-	}
-}
+
 .btn-success,
 .btn-contact {
 	border-color: #04d78a;
@@ -1051,11 +1046,14 @@ footer {
 
 #carouselAuthors {
 	min-height: 980px;
-
+	.carousel-inner {
+		min-height: 650px;
+	}
 	.buttons {
 		position: absolute;
 		min-width: 200px;
 		left: calc(50% - 100px);
+		bottom: 30px;
 	}
 	.masonry-with-columns {
 		max-width: 90%;
@@ -1198,7 +1196,7 @@ footer {
 	.search-submit {
 		display: none;
 	}
-	#carouselAuthors {
+	& #carouselAuthors {
 		.headline .container div {
 			text-align: center;
 			margin: auto;
@@ -1212,5 +1210,17 @@ footer {
 	}
 	.contactUs {
 		border: 0 !important;
+	}
+}
+
+/*--------------------------------------------------*/
+/*  pg-404
+/*--------------------------------------------------*/
+.pg-404 {
+	#carouselAuthors {
+		min-height: 780px;
+		h2 {
+			display: none;
+		}
 	}
 }

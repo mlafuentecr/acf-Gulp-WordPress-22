@@ -145,11 +145,7 @@
 	height: auto;
 	transition: all 1s;
 	min-width: 100%;
-	@media (max-width: $sm) {
-		.jobstable_location {
-			font-size: 100% !important;
-		}
-	}
+
 	h1 {
 		color: black;
 		font-weight: 700;
