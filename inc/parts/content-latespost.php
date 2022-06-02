@@ -1,4 +1,7 @@
 <?php 
+//get this variable from  set_query_var( 'totalLatest', 6); 
+  $totalLatest = get_query_var('totalLatest');
+
   // Load values and assign defaults.
   if(is_page( 'Blog' )){
     $id = get_the_ID();
@@ -11,7 +14,16 @@
   $add_headline     = $pageFields['add_headline']; 
   $margen           = $pageFields['margen']; 
   $headline         = $pageFields['headline'];
-  $post_quantity    = $pageFields['post_quantity']-1;
+  $post_quantity    = 1;
+
+ if($totalLatest){
+    if($totalLatest > 3){ 
+       $post_quantity = $totalLatest;
+      }
+  }else{
+  $post_quantity  = $pageFields['post_quantity'];
+}
+
  
   $cols             = $pageFields['cols'] ?: 3;
   $add_title        = $pageFields['add_title'] ?: true;
@@ -20,11 +32,13 @@
 
   // The Query
   $args = array(
-    'posts_per_page'  => $post_quantity, 
+    'posts_per_page'  => $post_quantity-1, 
     'orderby'         => 'post_date',
+    'paged'     => 1,
     'order'           => 'DESC',
     'post_type'       => 'post', 
-    'post_status'     => 'publish'
+    'post_status'     => 'publish',
+    // 'offset' => 3
     );
 
     $the_query = new WP_Query( $args );
@@ -33,6 +47,7 @@
 if ( $the_query->have_posts() ) : 
    
 ?>
+
 <div class="get_latest_posts ">
 
   <div class="container  <?php echo $margen; ?>">

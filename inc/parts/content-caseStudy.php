@@ -1,9 +1,11 @@
 <?php 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-  /*---------------------------------------------------------*/
-  /*  ACF Page our-value
-  /*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*  ACF Page our-value
+/*---------------------------------------------------------*/
+$pageFields = get_fields();
+$header     = $pageFields['header'];
 
   //Get featrure image
   $feature_a_post = $pageFields['feature_a_post'];
@@ -83,7 +85,75 @@ defined( 'ABSPATH' ) || exit;
 
   $loop = new WP_Query( $args );
 
+  $catArr     = array();
+
+
+  //get all terms in taxonomy from case of study
+  
+  function categoriesName(){
+   //Get all type of business names  for MENU
+    $args = array(
+      'post_type'       => 'case_study',
+      'post_status'     => 'publish',
+      'posts_per_page'  => -1,
+      'orderby'         => 'title',
+      'order'           => 'ASC',
+      );
+  
+   $catsLoop = new WP_Query( $args );
+  
+  
+   /* FIll the menu of taxonomy terms */
+    /// foreach posts get_the_terms 
+    if ( $catsLoop->have_posts() ) :
+      
+      while ( $catsLoop->have_posts() ) : $catsLoop->the_post();
+      $terms = get_the_terms( get_the_ID(), 'type_of_business' );
+      global $catArr;
+      
+      if (is_array($terms) || is_object($terms))
+          {
+            foreach($terms as $type){
+              $name =  $type->name;
+              $slug =  $type->slug;
+              $catArr[$slug] = $name;
+            }
+        
+          }
+  
+    endwhile; 
+    endif;
+  }
+  categoriesName();
+  
+ function getCat(){
+  //Bring global cat array
+ global $catArr;
+ //look for unique names
+ $array = array_unique($catArr, SORT_REGULAR);
+
+ //Add all
+ echo '<button data-name="all" class="all my-2">All</button>';
+ //print uniques names
+ foreach($array as  $key=>$type){
+   if($type){ echo '<button data-name="' . $key . '" class=" mb-2 '. $key .'">' . $type . '</button>';}
+ }
+}
+
 ?>
+
+<header class=" my-0 my-md-5">
+  <div class="container ">
+    <div class="row my-0  my-md-5">
+      <div class="col my-5 my-md-0">
+        <?php echo $header; ?>
+      </div>
+      <div class="submenu d-flex  flex-column justify-content-center align-content-between hide col-3 my-5 my-md-0">
+        <?php echo getCat(); ?>
+      </div>
+    </div>
+  </div>
+</header>
 
 <?php  if(!$terms): ?>
 <!-- feature post Only first screen-->
@@ -118,7 +188,7 @@ defined( 'ABSPATH' ) || exit;
       ?>
 
       <div class="col my-0 my-md-5">
-        <a class="card-link" href="<?php echo get_the_permalink(); ?>" rel="noopener noreferrer">
+        <a class="card-link" href="<?php echo get_the_permalink( $postid ); ?>" rel="noopener noreferrer">
           <div class='card bg-transparent case-<?php echo $post->ID; ?>'>
             <div class="card-img mb-4 zoom_img" role="img" aria-label="<?php echo $alt_text; ?>"
               style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID ); ?>);">

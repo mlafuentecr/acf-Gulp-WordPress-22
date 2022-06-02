@@ -153,8 +153,8 @@
             ]
         },
         {
-            "key": "field_61ef1860fb5ee",
-            "label": "Client objectives",
+            "key": "field_62851ffc68ced",
+            "label": "The Client",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -170,7 +170,7 @@
         },
         {
             "key": "field_61ef19bc9caec",
-            "label": "objectives title",
+            "label": "The Client",
             "name": "objectives_title",
             "type": "text",
             "instructions": "",
@@ -189,7 +189,7 @@
         },
         {
             "key": "field_61ef1944867fc",
-            "label": "objectives_description",
+            "label": "The Client description",
             "name": "objectives_description",
             "type": "group",
             "instructions": "",
@@ -236,11 +236,27 @@
                     },
                     "default_value": "",
                     "tabs": "all",
-                    "toolbar": "basic",
+                    "toolbar": "full",
                     "media_upload": 0,
                     "delay": 0
                 }
             ]
+        },
+        {
+            "key": "field_61ef1860fb5ee",
+            "label": "Objectives",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
             "key": "field_61ef1a599caed",
@@ -872,6 +888,60 @@
             "mime_types": ""
         },
         {
+            "key": "field_6285203897694",
+            "label": "The Results",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6285204a97695",
+            "label": "The Results",
+            "name": "the_results",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "The Results",
+            "placeholder": "The Results",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6285206597698",
+            "label": "the results description",
+            "name": "the_results_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "85",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_61ef20812cea0",
             "label": "FAQ",
             "name": "",
@@ -1154,6 +1224,13 @@
                 "operator": "==",
                 "value": "case_study"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case_study1"
+            }
         ]
     ],
     "menu_order": 0,
@@ -1170,5 +1247,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652854733
+    "modified": 1654116125
 }

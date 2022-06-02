@@ -1,3 +1,4 @@
+// PUT IT IN THE ROOT
 // let cacheName = 'rs-pwa';
 // let filesToCache = ['/', '/manifest.json', '/wp-content/themes/rootstrap/dist/js/bootstrap.bundle.min.js', '/wp-content/themes/rootstrap/dist/js/bundle_home.js', '/styles/inline.css'];
 

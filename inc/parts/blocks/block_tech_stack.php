@@ -15,9 +15,9 @@ $category   = $pageFields['category'];
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 my-5 py-5">
 
-      <h2 class="tech_stack-title col-12 "><?php echo $title; ?></h2>
+      <h2 class="tech_stack-title col-12  col-md-2  "><?php echo $title; ?></h2>
 
-      <nav class="tech_stack-menu d-flex flex-column col-7 col-md-3    ">
+      <nav class="tech_stack-menu d-flex flex-column col-7 col-md-2   ">
         <?php 
             if( $category )
             {
