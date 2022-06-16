@@ -28,9 +28,9 @@
   </button>
   <div class="justify-content-end navbar-collapse collapse" id="navbarCollapse">
     <?php get_template_part( '/inc/parts/content', 'menuPrimary'); ?>
-    <form role="search" method="get" id="searchform" class="search-box searchform d-none d-md-flex"
+    <form role="search" abindex="-1" method="get" id="searchform" class="search-box searchform d-none d-md-flex"
       action="<?php echo site_url()?>">
-      <img class="search-icon" height='32'
+      <img tclass="search-icon" height='32'
         src="<?php echo get_template_directory_uri(); ?>/inc/'images/navbar_search_white.svg'" alt="Search ">
       <input tabindex="-1" class="search-input" type="text" name="s" id="s" value="<?php the_search_query(); ?>"
         placeholder="Search">

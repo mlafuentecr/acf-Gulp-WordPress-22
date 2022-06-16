@@ -11,7 +11,7 @@
 
 ?>
 
-<div class="col my-5 ">
+<div class="col m-0 my-5 ">
   <div class="card post-<?php echo $id; ?> bg-transparent ">
     <a class="card-link " href="<?php echo  get_permalink(  $id ); ?>" rel="noopener noreferrer">
       <div class="card-img mb-4 zoom_img" role="img" aria-label='<?php echo $alt_text; ?>'

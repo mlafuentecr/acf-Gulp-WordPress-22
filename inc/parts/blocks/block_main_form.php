@@ -8,7 +8,17 @@ $form_script                 = get_field('form_script', 'option');
 
  ?>
 
-<div class="block_form pt-5 pb-5 bg-black <?php echo $block['className']; ?>">
+<?php 
+  if (!empty($block['data']['_is_preview']) ) :
+    echo '<div class="block_image  h-100 col-12 d-flex flex-wrap  justify-content-center">
+      <div class="h-100 col-12 flex-column text-center">
+          <img src="'.$block['data']['pic'].'">
+      </div>
+    </div>
+    ';
+   else :
+    ?>
+<div id='main-form' class="block_form pt-5 pb-5 bg-black <?php echo $block['className']; ?>">
   <div class="container">
 
     <div class=" col-12  subtitle"><?php echo $form_title; ?></div>
@@ -18,6 +28,12 @@ $form_script                 = get_field('form_script', 'option');
 
   </div>
 </div>
+<?php 
+endif;
+?>
+
+
+
 
 
 
@@ -51,6 +67,11 @@ $form_script                 = get_field('form_script', 'option');
   background: white;
   margin: 5px;
   padding: 10px;
+}
+
+.bg-black {
+  color: white;
+  background-color: black;
 }
 
 </style>

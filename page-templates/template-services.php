@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page Servicesx 
+Template Name: Page Services 
 */
 
 get_header();
@@ -18,11 +18,6 @@ if ( have_posts() ) {
 </main>
 
 
-<?php 
-
-
-
-?>
 
 
 <?php get_footer(); ?>

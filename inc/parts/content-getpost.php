@@ -35,7 +35,7 @@ $posts            = $pageFields['choose_posts'] ?: $pageFields['choose_other'];
             $alt_text = get_post_meta($image_id , '_wp_attachment_image_alt', true);
       ?>
 
-      <div class="col my-5">
+      <div class="col m-0 my-5">
 
         <div class="card mb-4 post-<?php echo $post->ID; ?> bg-transparent ">
           <a class="card-link" href="<?php echo  get_permalink(  $post->ID ); ?>" rel="noopener noreferrer">

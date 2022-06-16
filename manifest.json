@@ -1,22 +1,22 @@
 {
-	"name": "https://www.rootstrap.com/",
-	"short_name": "Roostrap",
+	"name": "https://www.clientName.com/",
+	"short_name": "clientName",
 	"start_url": "/",
 	"lang": "en",
 	"background_color": "#000000",
 	"theme_color": "#cdbf33",
 	"display": "standalone",
-	"description": "At Rootstrap, we help companies scale people, processes, and products through outcome-driven development.",
+	"description": "At clientName, we help companies scale people, processes, and products.",
 	"icons": [
 		{
-			"src": "favicon-48x48.png",
-			"sizes": "48x48",
+			"src": "favicon-96x96.png",
+			"sizes": "96x96",
 			"type": "image/png",
 			"density": "1.0"
 		},
 		{
-			"src": "favicon-512x512.png",
-			"sizes": "512x512",
+			"src": "favicon-310x310.png",
+			"sizes": "310x310",
 			"type": "image/png",
 			"density": "1.5"
 		},

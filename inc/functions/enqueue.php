@@ -10,21 +10,15 @@ function enqueue_header()
  
   if ( is_front_page() ) {
     /******************* IF IS HOME PAGE  ********************/
-     //css
-     wp_enqueue_style('index',         $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/homepage.min.css?defer', array(), $GLOBALS['THEME_MLM_VER']);
-    //  //js
-     wp_enqueue_script('index',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
+     wp_enqueue_style('index',       $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/homepage.min.css?defer', array(), $GLOBALS['THEME_MLM_VER']); //css
+     wp_enqueue_script('index',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);  //js
    
-      //&& !is_post_type('services')
-  }elseif(is_page( 'blog'  ) ||  is_single( ) && get_post_type() !== 'services' && get_post_type() !== 'case_study'  && get_post_type() !== 'case_study1' || is_page('latest-post')  ){
     
-    /******************* IF IS BLOG INDEX and sigle post ********************/
-    //css
-    wp_enqueue_style('blog'.get_post_type().'',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css?defer', array(), $GLOBALS['THEME_MLM_VER']);
-    //js
-    wp_enqueue_script('blog',     $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/blog.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
-    //AJAx Fetch for Load more
-    wp_localize_script( 'ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+  }elseif(is_page( 'blog'  ) ||  is_single( ) && get_post_type() !== 'landing_services' && get_post_type() !== 'case_study'  && get_post_type() !== 'case_study1' || is_page('latest-post')  ){
+    /******************* IF IS BLOG INDEX and sigle post ********************/  //&& !is_post_type('services')
+    wp_enqueue_style('blog'.get_post_type().'',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css?defer', array(), $GLOBALS['THEME_MLM_VER']);   //css
+    wp_enqueue_script('blog',    $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/js/blog.js?defer', array(), $GLOBALS['THEME_MLM_VER']);     //js
+    wp_localize_script( 'ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );     //AJAx Fetch for Load more
 
   }else {
   /******************* IF IS Regular PAGE  ********************/
@@ -32,11 +26,9 @@ function enqueue_header()
     wp_enqueue_script('intern3',   $GLOBALS["THEME_MLM_PATH"] .'/dist/js/bundle_intern.js?defer',  array(), $GLOBALS['THEME_MLM_VER']);
   
   }
-
-
  
-  /*******************  bootstrap CSS  ********************/
-  wp_enqueue_script('bootstrapjs', $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bootstrap.bundle.min.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
+  /*******************  ALWAYS bootstrap CSS  ********************/
+  wp_enqueue_script('bootstrapjs',  $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/js/bootstrap.bundle.min.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
   wp_enqueue_style('bootstrap',     $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/bootstrap.min.css?defer', array(), $GLOBALS['THEME_MLM_VER']);
   //'http://roostrapdev-new-vr1.local/wp-includes/css/dist/block-library/style.min.css?ver=5.9' type='text/css' media='all' /
 }

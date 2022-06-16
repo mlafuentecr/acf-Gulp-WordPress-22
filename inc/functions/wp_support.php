@@ -114,3 +114,11 @@ function wpcontent_svg_mime_type( $mimes = array() ) {
   return $mimes;
 }
 add_filter( 'upload_mimes', 'wpcontent_svg_mime_type' );   
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* editor-styles blocks
+/*-----------------------------------------------------------------------------------*/
+add_theme_support('editor-styles');
+add_editor_style( 'style-editor.css' );

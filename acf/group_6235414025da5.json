@@ -107,7 +107,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Rather send us an email?\r\nhello@rootstrap.com",
+            "default_value": "Rather send us an email?\r\nhello@staging-rootstrap.kinsta.cloud",
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
@@ -117,9 +117,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page",
                 "operator": "==",
-                "value": "page-templates\/template-contact.php"
+                "value": "10266"
             }
         ]
     ],
@@ -132,5 +132,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654037536
+    "modified": 1654271689
 }

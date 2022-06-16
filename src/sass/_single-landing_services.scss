@@ -1,0 +1,30 @@
+.col7 {
+	.col {
+		line-height: 100%;
+		border-right: 1px solid gray;
+		padding: 10px !important;
+		min-height: 190px;
+		text-align: center;
+		&:last-child {
+			border-right: none;
+		}
+		@media (max-width: $md) {
+			max-width: unset;
+			text-align: center;
+			border-right: none;
+		}
+		@media (max-width: $sm) {
+			min-width: 100%;
+			text-align: center;
+			border-right: none;
+		}
+	}
+}
+.semantic {
+	.block_cols {
+		display: flex;
+		justify-content: center;
+		align-content: flex-end;
+		align-items: flex-end;
+	}
+}

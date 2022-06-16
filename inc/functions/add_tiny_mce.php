@@ -24,6 +24,45 @@ function add_tiny_mce_before_init($settings)
    
     $style_formats = array(
       array(  
+        'title' => 'rs_font 1',  
+        'inline' => 'span',  
+        'classes' => 'fs-1',
+        'wrapper' => true,
+      ),  
+      array(  
+        'title' => 'rs_font 2',  
+        'inline' => 'span',  
+        'classes' => 'fs-2',
+        'wrapper' => true,
+      ),  
+      array(  
+        'title' => 'rs_font 3',  
+        'inline' => 'span',  
+        'classes' => 'fs-3',
+        'wrapper' => true,
+      ),
+      array(  
+        'title' => 'rs_font 4',  
+        'inline' => 'span',  
+        'classes' => 'fs-4',
+        'wrapper' => true,
+      ),
+      array(  
+        'title' => 'rs_font 5',  
+        'inline' => 'span',  
+        'classes' => 'fs-5',
+        'wrapper' => true,
+        'styles' => array(
+          'font-size' => '12px'
+             )
+      ),
+      array(  
+        'title' => 'rs_font 6',  
+        'inline' => 'span',  
+        'classes' => 'fs-6',
+        'wrapper' => true,
+      ),
+      array(  
         'title' => 'rs_underline',  
         'inline' => 'span',  
         'classes' => 'rs_underline',

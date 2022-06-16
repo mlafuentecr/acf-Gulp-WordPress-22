@@ -35,7 +35,7 @@ if($add_container){$div .= '<div class="container ">';}
     if($content_type === 'text'){
       $div .= '<div class="block-content_text title col-12 '.$block["className"].' '.$margin.'">'.  $text1 .'</div>';
     }if ($content_type === 'image') {
-      $div .= 'xxxx<div class="block-content_img text-center col-12 '.$block["className"].' '.$margin.'"  role="img" aria-label="'. $image['title'] .'" style="background-image: url('. $image['url'] .')" >
+      $div .= '<div class="block-content_img text-center col-12 '.$block["className"].' '.$margin.'"  role="img" aria-label="'. $image['title'] .'" style="background-image: url('. $image['url'] .')" >
       </div>';
     } 
     $div .= '</section>';
@@ -63,6 +63,7 @@ if($add_container){$div .= '<div class="container ">';}
 //Print the contennt
  echo $div; 
  ?>
+
 
 
 <?php if (is_admin() ) { ?>

@@ -1,7 +1,26 @@
 {
     "key": "group_61f4cf138bee8",
-    "title": "Block add Horizontal Post",
+    "title": "Block add Post \/ case study",
     "fields": [
+        {
+            "key": "field_62a8b462d70f2",
+            "label": "add container",
+            "name": "add_container",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
         {
             "key": "field_61f4cf5a45e5f",
             "label": "margen",
@@ -75,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645853820
+    "modified": 1655278202
 }

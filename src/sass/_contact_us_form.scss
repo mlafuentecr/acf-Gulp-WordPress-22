@@ -21,7 +21,7 @@
 	}
 
 	a {
-		color: white;
+		color: white !important;
 		font-size: $px18 !important;
 		@include rs_link_underline;
 		margin-left: 10px;

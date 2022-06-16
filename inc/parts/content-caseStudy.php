@@ -4,8 +4,8 @@ defined( 'ABSPATH' ) || exit;
 /*---------------------------------------------------------*/
 /*  ACF Page our-value
 /*---------------------------------------------------------*/
-$pageFields = get_fields();
-$header     = $pageFields['header'];
+  $pageFields = get_fields();
+  $header     = $pageFields['header'];
 
   //Get featrure image
   $feature_a_post = $pageFields['feature_a_post'];

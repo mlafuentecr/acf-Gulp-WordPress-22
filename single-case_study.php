@@ -7,9 +7,19 @@ get_header();
 /*---------------------------------------------------------*/
 /*  ACF 
 /*---------------------------------------------------------*/
-$dataAcf = get_field('headline');
+$dataAcf        = get_field('headline');
 $headline_title = $dataAcf['headline_title'];
-$ckient_info = get_field('headline_info');
+$ckient_info    = get_field('headline_info');
+//Switchs
+$objectivesSW   =  get_field('switch')['objectives_sw'];
+$challengesSW  =  get_field('switch')['challenges_sw'];
+$solutionsSW    =  get_field('switch')['solutions_sw'];
+
+$processSW     =  get_field('switch')['process_sw'];
+$resultsSW     =  get_field('switch')['results_sw'];
+$faqSW         =  get_field('switch')['faq_sw'];
+
+
 
 //header_font_color
 $description =  get_field('small_description');
@@ -22,6 +32,9 @@ function addFontColor( $color  ){
   }
  
 }
+
+
+
 
 ?>
 
@@ -59,6 +72,7 @@ function addFontColor( $color  ){
 
 <div class="header--banner" style="background-image: url(<?php echo $dataAcf['headline_image']['url']; ?>)">
 </div>
+
 <!-- THE CLIENT  -->
 <section class="clientsObjs ">
   <div class="container py-5">
@@ -83,7 +97,47 @@ function addFontColor( $color  ){
 </section>
 
 
+<!-- THE Challenges -->
+<?php if($challengesSW ): ?>
+<section class="challenges ">
+  <div class="container py-5">
+    <div class="d-flex flex-wrap justify-content-between text-white my-5">
+
+      <div class="challenges--title my-4 my-md-0   col-12 col-md-3">
+        <?php echo get_field('challenges_title');  ?>
+      </div>
+
+      <div class="challenges--content col-12 col-md-9">
+        <p> <?php the_field('challenges_description') ?> </p>
+      </div>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
+
+
+<!-- THE Solutions -->
+<?php if($solutionsSW ): ?>
+<section class="solutions">
+  <div class="container py-5">
+    <div class="d-flex flex-wrap justify-content-between text-white my-5">
+
+      <div class="solutions--title my-4 my-md-0   col-12 col-md-3">
+        <?php echo get_field('solutions_title');  ?>
+      </div>
+
+      <div class="solutions--content col-12 col-md-9">
+        <p> <?php the_field('solutions_description') ?> </p>
+      </div>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
+
 <!-- OUR OBJECTIVES  -->
+<?php if($objectivesSW ): ?>
 <section class="ourObjs">
   <div class="container py-5">
     <div class="d-flex flex-wrap justify-content-between text-white my-5">
@@ -97,27 +151,26 @@ function addFontColor( $color  ){
 
       <div class="ourObjs--content col-12 col-md-9 d-flex flex-wrap">
         <?php 
-        $objectives = get_field('objectives');
-        if( $objectives ) {
-          $key = 1;
-            foreach( $objectives as $row ) {
-              $key <= 9 ? $key = ("0".$key) : $key;
-                echo "<div class='col-12 col-md-6 px-2  pb-5'>
-                <div class='ourObjs--content-number'>Objective ".$key.": </div>";
-                if($row['title']): echo" <div class='ourObjs--content-subtitle  col-12'>".$row['title']."</div>"; endif;
-                echo "<div class='ourObjs--content-descrip'>".$row['content']."</div>
-                </div>";
-                $key++;
-            }
-        }
-        ?>
+              $objectives = get_field('objectives');
+              if( $objectives ) {
+                $key = 1;
+                  foreach( $objectives as $row ) {
+                    $key <= 9 ? $key = ("0".$key) : $key;
+                      echo "<div class='col-12 col-md-6 px-2  pb-5'>
+                      <div class='ourObjs--content-number'>Objective ".$key.": </div>";
+                      if($row['title']): echo" <div class='ourObjs--content-subtitle  col-12'>".$row['title']."</div>"; endif;
+                      echo "<div class='ourObjs--content-descrip'>".$row['content']."</div>
+                      </div>";
+                      $key++;
+                  }
+              }
+              ?>
       </div>
     </div>
   </div>
 </section>
 
 <!-- BIG Message-->
-
 <h2 class="case_study_banner_1 message_big text-white">
   <div class=" container">
     <div class="d-flex  flex-wrap justify-content-center align-items-center my-5  text-center">
@@ -132,7 +185,7 @@ function addFontColor( $color  ){
   style="min-height: <?php echo get_field('message_image_height'); ?>px; background-image: url(<?php echo  get_field('message_image')['url']; ?>)">
 </div>
 <?php endif; ?>
-
+<?php endif; ?>
 
 
 
@@ -141,6 +194,7 @@ function addFontColor( $color  ){
 
 
 <!-- PROCESS  -->
+<?php if($processSW ): ?>
 <section class="process">
   <div class="container py-5">
     <div class="d-flex flex-wrap justify-content-between text-white my-5">
@@ -171,11 +225,12 @@ function addFontColor( $color  ){
     </div>
   </div>
 </section>
-
+<?php endif; ?>
 
 
 
 <!-- the_results  -->
+<?php if( $resultsSW ): ?>
 <section class="results ">
   <div class="container py-5">
     <div class="d-flex flex-wrap justify-content-between text-white my-5">
@@ -190,7 +245,6 @@ function addFontColor( $color  ){
     </div>
   </div>
 </section>
-
 
 
 
@@ -239,7 +293,8 @@ function addFontColor( $color  ){
   style="min-height: <?php echo get_field('big_image_footer_height'); ?>px; background-image: url(<?php echo  get_field('process_big_image_footer')['url']; ?>)">
 </div>
 <?php endif; ?>
-
+<!-- /the_results  -->
+<?php endif; ?>
 
 
 
@@ -247,6 +302,7 @@ function addFontColor( $color  ){
 
 
 <!-- FAQS -->
+<?php if($faqSW ): ?>
 <?php $faqs = get_field('faqs');  if( $faqs ) { ?>
 <section class="caseStudy_faq faq text-white">
   <div class=" container">
@@ -272,5 +328,87 @@ function addFontColor( $color  ){
   </div>
 </section>
 <?php  } //if ends ?>
+<?php endif; ?>
+
+
+
+
+
+
+<!-- Case studies -->
+<section class="case_study text-black my-5">
+  <div class="container  <?php echo $margen; ?>">
+    <div class="row row-cols-1 row-cols-md-2 g-5  ">
+
+      <?php 
+    $featured_posts = get_field('casestudy_feature');
+    if( $featured_posts ): 
+      foreach( $featured_posts as $post ): 
+         // Setup this post for WP functions (variable must be named $post).
+         setup_postdata($post);
+         
+  
+      $postid =  $featured_post->ID;
+      $image_id = get_post_thumbnail_id( $postid );
+     $alt_text = get_post_meta($image_id , '_wp_attachment_image_alt', true);
+      ?>
+
+      <div class="col my-0 my-md-5">
+        <a class="card-link" href="<?php echo get_the_permalink( $postid ); ?>" rel="noopener noreferrer">
+          <div class='card bg-transparent case-<?php echo $post->ID; ?>'>
+            <div class="card-img mb-4 zoom_img" role="img" aria-label="<?php echo $alt_text; ?>"
+              style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID ); ?>);">
+            </div>
+            <div class="card-body  p-0  ">
+              <!-- Show Categories -->
+              <div class="categories ">
+                <?php 
+                $categories = get_field( 'small_description', $post->ID );
+                $term  = $categories['type_of_business'];
+                
+                if ( $term ) {
+                    foreach( $term as $category ) {
+                      echo '<h3 class="cs_category_subtitle">'.$category->name .'</h3>';
+                    }
+                  }
+                ?>
+              </div>
+
+              <?php 
+                  $pageFields   = get_fields($postid);
+                  echo '<span class="title text-gray">' . $pageFields['headline']['headline_title'] . '</span>';
+            ?>
+            </div>
+          </div>
+        </a>
+      </div>
+
+
+      <?php endforeach; ?>
+      <?php wp_reset_postdata(); ?>
+      <?php endif; ?>
+
+
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col text-center my-5">
+  <a aria-label="latest post" class='rs_link_underline m-auto' href="/our-work/" class="link"> View more case
+    studies</a>
+</div>
 
 <?php get_footer(); ?>

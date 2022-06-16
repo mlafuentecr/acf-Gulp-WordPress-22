@@ -2,7 +2,31 @@
   <html class="h-100" <?php language_attributes();?>>
 
     <head id="header-top" name="top">
+      <!--=== META TAGS ===-->
+      <meta charset="<?php bloginfo('charset');?>" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta charset="<?php bloginfo( 'charset' ); ?>" />
+      <meta name="author" content="Name">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta name="ahrefs-site-verification" content="0b9562a2d0aadf12aeef9882336237ead90ff952810b53e14829c7acdb1f1992">
 
+      <!-- favicons -->
+      <!--[if IE]><link rel="shortcut icon" href="favicon.ico" /><![endif]-->
+      <link rel="apple-touch-icon" sizes="180x180"
+        href="<?php echo get_stylesheet_directory_uri(); ?>/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32"
+        href="<?php echo get_stylesheet_directory_uri(); ?>/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16"
+        href="<?php echo get_stylesheet_directory_uri(); ?>/favicon-16x16.png">
+      <link rel="manifest" crossorigin="use-credentials"
+        href="<?php echo get_stylesheet_directory_uri(); ?>/manifest.json">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+
+
+      <?php wp_head(); ?>
+      <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed"
+        href="<?php echo esc_url(get_feed_link()); ?>">
       <!-- Google Tag Manager -->
       <script>
       (function(w, d, s, l, i) {
@@ -22,40 +46,6 @@
       </script>
       <!-- End Google Tag Manager -->
 
-      <!--=== META TAGS ===-->
-      <meta charset="<?php bloginfo('charset');?>" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <meta charset="<?php bloginfo( 'charset' ); ?>" />
-      <meta name="author" content="Name">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <meta name="ahrefs-site-verification" content="0b9562a2d0aadf12aeef9882336237ead90ff952810b53e14829c7acdb1f1992">
-
-      <!--=== LINK TAGS ===-->
-      <!-- favicons -->
-      <!--[if IE]><link rel="shortcut icon" href="favicon.ico" /><![endif]-->
-      <link rel="apple-touch-icon" sizes="180x180"
-        href="<?php echo get_stylesheet_directory_uri(); ?>/apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32"
-        href="<?php echo get_stylesheet_directory_uri(); ?>/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16"
-        href="<?php echo get_stylesheet_directory_uri(); ?>/favicon-16x16.png">
-      <link rel="manifest" crossorigin="use-credentials"
-        href="<?php echo get_stylesheet_directory_uri(); ?>/manifest.json">
-      <meta name="msapplication-TileColor" content="#da532c">
-      <meta name="theme-color" content="#ffffff">
-      <!-- no-cache -->
-      <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-      <meta http-equiv="Pragma" content="no-cache" />
-      <meta http-equiv="Expires" content="0" /> -->
-      <!--=== TITLE ===-->
-      <!-- <title><?php wp_title(); ?> - <?php bloginfo( 'name' ); ?></title> -->
-
-
-      <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed"
-        href="<?php echo esc_url(get_feed_link()); ?>">
-
-      <!--=== WP_HEAD() ===-->
-      <?php wp_head(); ?>
     </head>
 
     <body id="<?php echo get_post_field( 'post_name', get_post() ); ?>"

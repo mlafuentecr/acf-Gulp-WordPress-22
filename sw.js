@@ -1,7 +1,5 @@
 // PUT IT IN THE ROOT
-// let cacheName = 'rs-pwa';
-// let filesToCache = ['/', '/manifest.json', '/wp-content/themes/rootstrap/dist/js/bootstrap.bundle.min.js', '/wp-content/themes/rootstrap/dist/js/bundle_home.js', '/styles/inline.css'];
-
+// let cacheName = 'clientName-pwa';
 // /* Start the service worker and cache all of the app's content */
 // self.addEventListener('install', e => {
 // 	e.waitUntil(

@@ -259,51 +259,54 @@ if ($rows) {
 
 
   <!-- our offices -->
+
   <section class="office py-5" style="background-color: white;">
     <div class="container py-5">
       <h3 class='title_small text-black'> our offices</h3>
     </div>
 
-    <div class="d-flex flex-wrap ">
-      <?php
-$rows = get_field('office');
-if ($rows) {
+    <div class="container">
+      <div class="d-flex flex-wrap ">
+        <?php
+  $rows = get_field('office');
+  if ($rows) {
 
- foreach ($rows as $item => $row) {
-  $item++;
-  $name = 'article-' . $item;
+  foreach ($rows as $item => $row) {
+    $item++;
+    $name = 'article-' . $item;
 
-  echo "<article class='" . $name . " '>";
-  echo '<div class="container ">';
-  echo "<div class='" . $name . "_main-content '> ";
+    echo "<article class='" . $name . " col-12  justify-content-between '>";
 
-  echo "<div class='" . $name . "_text me-2'>";
-  echo "<div class='" . $name . "_details my-4'>";
-  echo "<h4>" . $row['our_offices_title'] . "</h4>";
-  echo "<b class='" . $name . "_subtitle'>" . $row['our_offices_subtitle'] . "</b>";
-  echo "<div class='" . $name . "_description'>" . $row['our_offices_description'] . "</div>";
-  echo "</div>";
-  echo "<div class='" . $name . "_content my-4'>" . $row['our_offices_content'] . "</div>";
-  echo "</div>";
-  if (!$row['make_image_100']) {
-   echo "<div class='image " . $name . "_image'  style='background-image: url( " . $row['our_offices_image'][0]['url'] . " )' >";
-   echo "</div>";
+    echo "<div class='" . $name . "_main-content  col-12  justify-content-between '> ";
+
+    echo "<div class='" . $name . "_text me-2'>";
+    echo "<div class='" . $name . "_details my-4'>";
+    echo "<h4>" . $row['our_offices_title'] . "</h4>";
+    echo "<b class='" . $name . "_subtitle'>" . $row['our_offices_subtitle'] . "</b>";
+    echo "<div class='" . $name . "_description'>" . $row['our_offices_description'] . "</div>";
+    echo "</div>";
+    echo "<div class='" . $name . "_content my-4'>" . $row['our_offices_content'] . "</div>";
+    echo "</div>";
+    if (!$row['make_image_100']) {
+    echo "<div class='image " . $name . "_image'  style='background-image: url( " . $row['our_offices_image'][0]['url'] . " )' >";
+    echo "</div>";
+    }
+    echo "</div>";
+
+    if ($row['make_image_100']) {
+    echo "<div class='image  " . $name . "_image'  style='background-image: url( " . $row['our_offices_image'][0]['url'] . " )' >";
+    echo "</div>";
+    }
+
+    if ($row['add_sencond_description']) {
+    echo "<div class='" . $name . "_description_2'>" . $row['our_offices_description_2'] . "</div>";
+
+    }
+    echo "</article>";
   }
-  echo "</div>";
-
-  if ($row['make_image_100']) {
-   echo "<div class='image  " . $name . "_image'  style='background-image: url( " . $row['our_offices_image'][0]['url'] . " )' >";
-   echo "</div>";
   }
-
-  if ($row['add_sencond_description']) {
-   echo "<div class='" . $name . "_description_2'>" . $row['our_offices_description_2'] . "</div>";
-   echo "</div>";
-  }
-  echo "</article>";
- }
-}
 ?>
+      </div>
     </div>
 
   </section>

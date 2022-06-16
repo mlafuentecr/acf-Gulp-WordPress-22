@@ -4,7 +4,7 @@
 //     defines
 /*-----------------------------------------------------------------------------------*/
 $GLOBALS['THEME_MLM_PATH'] = get_template_directory_uri();
-$GLOBALS['THEME_MLM_VER']  = '0.0.6';
+$GLOBALS['THEME_MLM_VER']  = '0.0.7';
 $GLOBALS['careerPg']       = 9682;
 $GLOBALS['blog']           = 10020;
 $GLOBALS['THEME_MLM_ENV']  = '';
@@ -15,9 +15,9 @@ $GLOBALS['THEME_MLM_ENV']  = '';
 // Get the hostname
 $http_host  = $_SERVER['HTTP_HOST'];
 $ENV        = '';
-$local      = 'rootstrapprod.local';
-$staging    = 'staging-rootstrap.kinsta.cloud';
-$production = '.rootstrap.com';
+$local      = 'clientName.local';
+$staging    = 'clientName.kinsta.cloud';
+$production = 'clientName.com';
 
 $environments = array(
  'local'      => $local,
