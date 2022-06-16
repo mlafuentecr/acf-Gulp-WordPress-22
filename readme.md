@@ -1,4 +1,4 @@
-# Rootstrap ver2 Wordpress and gulp
+# Client Wordpress and gulp
 
 <br/>for Mac or Windows:
 
