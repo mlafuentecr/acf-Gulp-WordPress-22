@@ -1,13 +1,22 @@
 <?php
+/**
+ * director functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package director
+ */
+
 
 /*-----------------------------------------------------------------------------------*/
-//     defines
+//     VERSION
 /*-----------------------------------------------------------------------------------*/
-$GLOBALS['THEME_MLM_PATH'] = get_template_directory_uri();
-$GLOBALS['THEME_MLM_VER']  = '0.0.7';
-$GLOBALS['careerPg']       = 9682;
-$GLOBALS['blog']           = 10020;
-$GLOBALS['THEME_MLM_ENV']  = '';
+if ( ! defined( '_S_VERSION' ) ) {
+	define( '_S_VERSION', '0.0.3' );
+}
+
+define( 'THEME_PATH', get_template_directory_uri() );
+
 
 /*-----------------------------------------------------------------------------------*/
 //     Variables LOCAL OR DIST
@@ -15,57 +24,59 @@ $GLOBALS['THEME_MLM_ENV']  = '';
 // Get the hostname
 $http_host  = $_SERVER['HTTP_HOST'];
 $ENV        = '';
-$local      = 'clientName.local';
-$staging    = 'clientName.kinsta.cloud';
-$production = 'clientName.com';
+$local      = 'localhost:10018';
+$staging    = 'localhost:10018';
+$production = 'director.com';
+
 
 $environments = array(
- 'local'      => $local,
- 'staging'    => $staging,
- 'production' => $production,
+	'local'      => $local,
+	'staging'    => $staging,
+	'production' => $production,
 );
 
-foreach ($environments as $environment => $hostname) {
- if (stripos($http_host, $hostname) !== false) {
-  //     Set Enviroment
-  if ($environment === 'local') {
-   $GLOBALS['THEME_MLM_ENV'] = 'src';
-  } else {
-   $GLOBALS['THEME_MLM_ENV'] = 'dist';
-  }
-  break;
- }
+
+/*-----------------------------------------------------------------------------------*/
+//     defines
+/*-----------------------------------------------------------------------------------*/
+if ( ! defined( 'ENVIROMENT' ) ) {
+	foreach ( $environments as $environment => $hostname ) {
+		if ( stripos( $http_host, $hostname ) !== false ) {
+			//     Set Enviroment
+			if ( $environment === 'local' ) {
+				define( 'ENVIROMENT', 'src' );
+			} else {
+				define( 'ENVIROMENT', 'dist' );
+			}
+			break;
+		}
+	}
 }
+
 
 /*-----------------------------------------------------------------------------------*/
 //     1) Array of files to include.
 /*-----------------------------------------------------------------------------------*/
 
 // UnderStrap's includes directory.
-$understrap_inc_dir = get_template_directory();
+$director_inc_dir = get_template_directory().'/inc/functions/';
 
-$understrap_includes = array(
- '/inc/functions/cleanup.php', // clean all website code elements from wp
-  '/inc/functions/enqueue.php', // Enqueue scripts and styles.
-  '/inc/functions/add_menus.php', // define menus
-  '/inc/functions/custom_dashboard.php', // add new look to dashboad
-  '/inc/functions/dashboad_menu.php', // add my menu for client use to dashboar
-  '/inc/functions/custom_login_look.php', // re look the loging
-  '/inc/functions/wp_support.php', // add wp supporth has thumbnails ect
-  '/inc/functions/acfToJson.php', // save acf data and load it
-  '/inc/functions/add_acf_theme_options.php', // save acf data and load it
-  '/inc/functions/add_widgets.php', // widgets support
- '/inc/functions/add_blocks.php', // blocks support
-  '/inc/functions/add_richText.php',
- '/inc/functions/add_tiny_mce.php',
- '/inc/functions/add_taxonomy.php', // Theme taxonomy
-  '/inc/functions/helpers.php', //
-  '/inc/functions/load-more-ajax.php',
- //'/inc/functions/add_shortcuts.php',
- '/inc/functions/custom-post-type.php',
-
+$director_includes = array(
+	'enqueue.php', // Enqueue scripts and styles.
+	'add-menus.php',
+	'add-sidebars.php',
+	'theme-support.php',
+	'add_acf_theme_options.php',
+	'add_custom_post_type.php',
+	'add_taxonomy.php',
+	'add-breadcrumb.php',
+	'add_helpers.php', //Any othe function we need
+	'add_richText.php',
+	'add_blocks.php',
+	'advertising.php',
 );
 
-foreach ($understrap_includes as $file) {
- require_once $understrap_inc_dir . $file;
+foreach ($director_includes as $file) {
+	require_once $director_inc_dir . $file;
 }
+

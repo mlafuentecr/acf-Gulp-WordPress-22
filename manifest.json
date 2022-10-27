@@ -1,13 +1,19 @@
 {
-	"name": "https://www.clientName.com/",
-	"short_name": "clientName",
+	"name": "https://www.director.cr",
+	"short_name": "director.cr",
 	"start_url": "/",
 	"lang": "en",
 	"background_color": "#000000",
 	"theme_color": "#cdbf33",
 	"display": "standalone",
-	"description": "At clientName, we help companies scale people, processes, and products.",
+	"description": "At director.cr, we help companies scale people, processes, and products.",
 	"icons": [
+		{
+			"src": "favicon-icon-57x57.png",
+			"sizes": "96x96",
+			"type": "image/png",
+			"density": "1.0"
+		},
 		{
 			"src": "favicon-96x96.png",
 			"sizes": "96x96",
@@ -15,24 +21,14 @@
 			"density": "1.0"
 		},
 		{
-			"src": "favicon-310x310.png",
-			"sizes": "310x310",
+			"src": "favicon-96x96.png",
+			"sizes": "96x96",
 			"type": "image/png",
 			"density": "1.5"
 		},
 		{
-			"src": "favicon-72x72.png",
-			"sizes": "72x72",
-			"type": "image/png",
-			"density": "1.5"
-		},
-
-		{
-			"src": "favicon-192x192.png",
-			"sizes": "192x192",
-			"type": "image/png",
-			"density": "4.0",
-			"purpose": "any maskable"
+			"src": "hd_hi_any.svg",
+			"sizes": "any"
 		}
 	]
 }

@@ -1,91 +1,83 @@
 // Defining requirements
 const { series, parallel, src, dest, watch } = require('gulp');
 
-const prefix = require('gulp-autoprefixer'); // prefixes like -webkit and -moz
+const autoprefixer = require('gulp-autoprefixer'); // prefixes like -webkit and -moz
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
-const cleanCSS = require('gulp-clean-css');
+const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
+
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass')(require('sass'));
 
-function homepageScss() {
-	return src(['./src/sass/homepage.scss'])
+const paths = {
+	font: ['./src/fonts/**/*.{otf,eot,svg,ttf,woff,woff2}'],
+	img: ['./src/images/**/*.{gif,png,jpg,svg}'],
+	jsIndividuals: ['./src/js/**/_*.js'],
+	jsbundle: ['./src/js/**/bundle_*.js'],
+	jsBOOTSTRAP: ['./src/bootstrap-5.1.3-dist/js/bootstrap.bundle.*'],
+	cssBOOTSTRAP: ['./src/bootstrap-5.1.3-dist/css/bootstrap.min.*'],
+	sass: ['./src/sass/**/*.scss'],
+	distCSS: './dist/css/',
+	distImg: './dist/img/',
+	distJS: './dist/js/',
+	distFont: './dist/fonts/',
+};
+
+/*--------------------------------
+# Individuals JS or CSS
+---------------------------------*/
+function jsIndividuals() {
+	return src(paths.jsIndividuals).pipe(babel()).pipe(uglify()).pipe(dest(paths.distJS));
+}
+/*--------------------------------
+# BUNDLES
+---------------------------------*/
+function cssBundle() {
+	return src(paths.sass)
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.init())
-		.pipe(cleanCSS())
-		.pipe(prefix())
-		.pipe(concat('homepage.min.css'))
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(autoprefixer())
 		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./src/css/'));
+		.pipe(dest(paths.distCSS));
 }
 
-function internalScss() {
-	return src(['./src/sass/internal.scss'])
-		.pipe(sass().on('error', sass.logError))
-		.pipe(sourcemaps.init())
-		.pipe(prefix())
-		.pipe(cleanCSS())
-		.pipe(concat('internal.css'))
-		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./src/css/'));
+function jsBundle() {
+	return src(paths.jsbundle).pipe(babel()).pipe(uglify()).pipe(concat('mainBundle.js')).pipe(dest(paths.distJS));
 }
 
-function individualScss() {
-	return src(['./src/sass/custom-editor-style.scss', './src/sass/login.scss', './src/sass/blog.scss'])
-		.pipe(sass().on('error', sass.logError))
-		.pipe(sourcemaps.init())
-		.pipe(prefix())
-		.pipe(cleanCSS())
-		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./src/css/'));
+/*--------------------------------
+# COPY FILES
+---------------------------------*/
+function jsBootstrapCopy() {
+	return src(paths.jsBOOTSTRAP).pipe(dest(paths.distJS));
 }
 
-//copy to css files from dist to src and also copy map
-function copyCss() {
-	return src('./src/css/*.*').pipe(dest('./dist/css/'));
+function ccsBootstrapCopy() {
+	return src(paths.cssBOOTSTRAP).pipe(dest(paths.distCSS));
 }
 
-//Js //I used DIst direct bc if I put them on src will created a loop on gulp file
-const jsIntern = ['./src/js/internal.js', './src/js/scroll.js', './src/js/menu-search.js', './src/js/our_work.js', './src/js/about.js'];
-const jsHome = ['./src/js/newsletter.js', './src/js/slider_home.js', './src/js/pwa.js', './src/js/scroll.js', './src/js/menu-search.js'];
-const jscopy = [
-	'./src/js/blog.js',
-	'./src/js/rich-text.js',
-	'./src/js/block_jobs.js',
-	'./src/js/block_testimonial.js',
-	'./src/js/block_tech_stack.js',
-	'./src/js/bundle_intern.js',
-	'./src/js/bundle_home.js',
-];
-
-function js_bundle_Intern() {
-	return src(jsIntern).pipe(babel()).pipe(uglify()).pipe(concat('bundle_intern.js')).pipe(dest('./src/js/'));
+function fontCopy() {
+	return src(paths.font).pipe(dest(paths.distFont));
 }
-function js_bundle_home() {
-	return src(jsHome).pipe(babel()).pipe(uglify()).pipe(concat('bundle_home.js')).pipe(dest('./src/js/'));
-}
-function copyJs() {
-	return src(jscopy).pipe(babel()).pipe(uglify()).pipe(dest('./dist/js/'));
-}
-function copyboostrapJs() {
-	return src('./src/js/bootstrap.bundle.min.js').pipe(dest('./dist/js/'));
+function imagesCopy() {
+	return src(paths.img).pipe(dest(paths.distImg));
 }
 
-//paca vigila cuando algo cambia corre el , layoutscss
+// /*--------------------------------
+// # WATCH
+// ---------------------------------*/
 function watchtask() {
-	watch(['./src/sass/*.scss'], internalScss);
-	watch(['./src/sass/*.scss'], homepageScss);
-
-	watch('./src/sass/custom-editor-style.scss', individualScss);
-	watch('./src/sass/login.scss', individualScss);
-	watch('./src/sass/blog.scss', individualScss);
-	watch('./src/sass/_latest_post.scss', individualScss);
-	watch('./src/css/*.css', copyCss);
-
-	watch(jsIntern, js_bundle_Intern);
-	watch(jsHome, js_bundle_home);
-	watch(jscopy, copyJs);
+	watch(paths.sass, cssBundle);
+	watch(paths.jsbundle, jsBundle);
+	watch(paths.jsIndividuals, jsIndividuals);
+	watch(paths.font, fontCopy);
+	watch(paths.img, imagesCopy);
 }
 
-exports.default = series(parallel(js_bundle_home, copyboostrapJs, js_bundle_Intern, individualScss, homepageScss, internalScss, series(copyCss, copyJs, watchtask)));
+exports.default = series(parallel(series(cssBundle, jsBundle, jsIndividuals, fontCopy, imagesCopy, ccsBootstrapCopy, jsBootstrapCopy)));
+//you can use gulp build or gulp
+exports.build = series(parallel(series(cssBundle, jsBundle, jsIndividuals, fontCopy, imagesCopy, ccsBootstrapCopy, jsBootstrapCopy)));
+//you can use watch to monitor changes on js and css
+exports.watch = series(parallel(watchtask));

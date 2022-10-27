@@ -1,52 +1,157 @@
 {
-	"version": 1,
-	"settings": {
-		"custom": {
-			"baseFont": 16,
-			"lineHeight": {
-				"small": 1.2,
-				"medium": 1.4,
-				"large": 1.8
-			}
-		},
-		"color": {
-			"custom": false,
-			"customGradient": false,
-			"gradients": [],
-			"link": false,
-			"palette": [
-				{
-					"slug": "RS_yellow",
-					"color": "#EAE639"
-				},
-				{
-					"slug": "superdark",
-					"color": "#222222"
-				},
-				{
-					"slug": "mediumgray",
-					"color": "#191919"
-				},
+  "version": 1,
+  "settings": {
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1000px"
+    },
+    "typography": {
+      "customFontSize": false,
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "16px",
+          "name": "Small"
+        },
+        {
+          "slug": "normal",
+          "size": "18px",
+          "name": "Normal"
+        },
+        {
+          "slug": "large",
+          "size": "24px",
+          "name": "Large"
+        },
+        {
+          "slug": "extra-large",
+          "size": "28px",
+          "name": "XL"
+        },
+        {
+          "slug": "huge",
+          "size": "32px",
+          "name": "Huge"
+        }
+      ]
+    },
+    "custom": {
+      "baseFont": 16,
+      "lineHeight": {
+        "small": 1.2,
+        "medium": 1.4,
+        "large": 1.8
+      }
+    },
+    "color": {
+      "custom": false,
+      "customGradient": false,
+      "gradients": [],
+      "link": false,
+      "palette": [
+        {
+          "slug": "blue-dark",
+          "color": "#021c2b"
+        },
+        {
+          "slug": "blue-main",
+          "color": "#003b5c"
+        },
+        {
+          "slug": "blue-light_1",
+          "color": "#aabdc8"
+        },
 
-				{
-					"slug": "mediumdark",
-					"color": "#333333"
-				},
-				{
-					"slug": "white",
-					"color": "#ffffff"
-				}
-			]
-		},
-		"spacing": {
-			"customPadding": false,
-			"units": ["px", "em", "rem", "vh", "vw"]
-		},
-		"typography": {
-			"customFontSize": true,
-			"customLineHeight": true,
-			"dropCap": false,
-			"fontSizes": []
-		}
-	}
+        {
+          "slug": "blue-light_2",
+          "color": "#002e46"
+        },
+
+        {
+          "slug": "$blue-light_3",
+          "color": "#f4f4f7"
+        },
+
+        {
+          "slug": "green-dark",
+          "color": "#2e5c1f"
+        },
+
+        {
+          "slug": "green-main",
+          "color": "#669933"
+        },
+
+        {
+          "slug": "green-light_1",
+          "color": "#98bb3b"
+        },
+
+        {
+          "slug": "green-light_2",
+          "color": "#cce095"
+        },
+
+        {
+          "slug": "green-light_3",
+          "color": "#edf7d1"
+        },
+
+        {
+          "slug": "orange-dark",
+          "color": "#e07618"
+        },
+
+        {
+          "slug": "orange-main",
+          "color": "#e07618"
+        },
+
+        {
+          "slug": "orange-light_1",
+          "color": "#ffd03d"
+        },
+
+        {
+          "slug": "orange-light_2",
+          "color": "#fffcaf"
+        },
+
+        {
+          "slug": "gray-dark",
+          "color": "#262627"
+        },
+
+        {
+          "slug": "gray-main",
+          "color": "#5c5c5d"
+        },
+
+        {
+          "slug": "gray-light_1",
+          "color": "#c8c8c9"
+        },
+
+        {
+          "slug": "gray-light_2",
+          "color": "#f6f6f6"
+        },
+
+        {
+          "slug": "white",
+          "color": "#ffffff"
+        }
+      ]
+    },
+    "spacing": {
+      "customPadding": false,
+      "units": ["px", "em", "rem", "vh", "vw"]
+    },
+    "typography": {
+      "customFontSize": true,
+      "customLineHeight": true,
+      "dropCap": false,
+      "fontSizes": []
+    }
+  }
 }

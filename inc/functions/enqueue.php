@@ -3,45 +3,41 @@
 // /*-----------------------------------------------------------------------------------*/
 // /* FRONT-END ENQUEUE FUNCTIONS
 // /*-----------------------------------------------------------------------------------*/
+function enqueue_header() {
 
-function enqueue_header()
-{
-  
- 
-  if ( is_front_page() ) {
-    /******************* IF IS HOME PAGE  ********************/
-     wp_enqueue_style('index',       $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/homepage.min.css?defer', array(), $GLOBALS['THEME_MLM_VER']); //css
-     wp_enqueue_script('index',      $GLOBALS["THEME_MLM_PATH"] .  '/dist/js/bundle_home.js?defer', array(), $GLOBALS['THEME_MLM_VER']);  //js
-   
-    
-  }elseif(is_page( 'blog'  ) ||  is_single( ) && get_post_type() !== 'landing_services' && get_post_type() !== 'case_study'  && get_post_type() !== 'case_study1' || is_page('latest-post')  ){
-    /******************* IF IS BLOG INDEX and sigle post ********************/  //&& !is_post_type('services')
-    wp_enqueue_style('blog'.get_post_type().'',      $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/blog.css?defer', array(), $GLOBALS['THEME_MLM_VER']);   //css
-    wp_enqueue_script('blog',    $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/js/blog.js?defer', array(), $GLOBALS['THEME_MLM_VER']);     //js
-    wp_localize_script( 'ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );     //AJAx Fetch for Load more
+	$path = get_template_directory_uri() . '/dist';
 
-  }else {
-  /******************* IF IS Regular PAGE  ********************/
-    wp_enqueue_style('intern3',    $GLOBALS["THEME_MLM_PATH"]. '/dist/css/internal.css?defer', array(), $GLOBALS['THEME_MLM_VER']);
-    wp_enqueue_script('intern3',   $GLOBALS["THEME_MLM_PATH"] .'/dist/js/bundle_intern.js?defer',  array(), $GLOBALS['THEME_MLM_VER']);
-  
-  }
- 
-  /*******************  ALWAYS bootstrap CSS  ********************/
-  wp_enqueue_script('bootstrapjs',  $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/js/bootstrap.bundle.min.js?defer', array(), $GLOBALS['THEME_MLM_VER']);
-  wp_enqueue_style('bootstrap',     $GLOBALS["THEME_MLM_PATH"]. '/'.$GLOBALS['THEME_MLM_ENV'].'/css/bootstrap.min.css?defer', array(), $GLOBALS['THEME_MLM_VER']);
-  //'http://roostrapdev-new-vr1.local/wp-includes/css/dist/block-library/style.min.css?ver=5.9' type='text/css' media='all' /
+	// if ( is_front_page() ) {
+	// 	/******************* IF IS HOME PAGE ********************/
+	// 	wp_enqueue_style('index', $path . '/css/style.min.css?defer', array(), _S_VERSION); //css
+	// 	wp_enqueue_script('index', $path . '/js/mainBundle.js?defer', array(), _S_VERSION); //js
+	// } elseif ( is_page( 'blog' ) || is_single() && get_post_type() !== 'case_study' || is_page('latest-post') ){
+	// 	/******************* IF IS blog single ********************/
+	// 	wp_enqueue_style('intern', $path . '/css/style.min.css?defer', array(), _S_VERSION);
+	// 	wp_enqueue_script('intern', $path . '/js/mainBundle.js?defer', array(), _S_VERSION); //js
+	// } else {
+	// 	/******************* IF IS Regular PAGE ********************/
+	// 	wp_enqueue_style('intern', $path . '/css/style.min.css?defer', array(), _S_VERSION);
+	// 	wp_enqueue_script('intern', $path . '/js/mainBundle.js?defer', array(), _S_VERSION); //js
+	// }
+
+		wp_enqueue_style('intern', $path . '/css/style.min.css?defer', array(), _S_VERSION);
+		wp_enqueue_script('intern', $path . '/js/mainBundle.js?defer', array(), _S_VERSION); //js
+
+	/******************* ALWAYS bootstrap CSS ********************/
+	wp_enqueue_script('bootstrap', $path . '/js/bootstrap.bundle.min.js?defer', array(), _S_VERSION);
+	wp_enqueue_style('bootstrap', $path . '/css/bootstrap.min.css?defer', array(), _S_VERSION);
+
 }
-
 add_action('wp_enqueue_scripts', 'enqueue_header');
 
-
-
- /*******************  Make defer  ********************/
- function defer_parsing_of_js( $url ) {
-  if ( is_user_logged_in() ) return $url; //don't break WP Admin
-  if ( FALSE === strpos( $url, '.js' ) ) return $url;
-  if ( strpos( $url, 'jquery.js' ) ) return $url;
-  return str_replace( ' src', ' defer src', $url );
+/******************* Make defer ********************/
+function defer_parsing_of_js( $url ) {
+	if ( is_user_logged_in() ) return $url; //don't break WP Admin
+	if ( FALSE === strpos( $url, '.js' ) ) return $url;
+	if ( strpos( $url, 'jquery.js' ) ) return $url;
+	return str_replace( ' src', ' defer src', $url );
 }
 //add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
+
+

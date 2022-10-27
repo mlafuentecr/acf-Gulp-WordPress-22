@@ -1,13 +1,17 @@
-/*
-Theme Name: clientName.com 
-Theme URI: https://clientName.com/
-Description: docker, gulp boostrap 
-Version: 3
-Author: Mariolafuente.com
-Author URI: https://github.com/clientName.com
-Tags: white, black, blue, three-columns, fixed-width, threaded-comments
+/*!
+Theme Name: director
+Theme URI: http://director.cr/
+Author: Mario Lafuente
+Author URI: https://www.mariolafuente.com
+Description: Theme for director
+Version: 2.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: director
 
-	The CSS, XHTML and design is released under GPL:
-	http://www.opensource.org/licenses/gpl-license.php
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
 
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */

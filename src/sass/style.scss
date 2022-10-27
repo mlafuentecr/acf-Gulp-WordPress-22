@@ -1,0 +1,78 @@
+/*!
+Theme Name: director
+Theme URI: http://director.cr/
+Author: Mario Lafuente
+Author URI: https://www.mariolafuente.com
+Description: Theme for director
+Version: 2.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: director
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# variables-mixing
+	- Colors
+	- typography
+	- Mixins
+# Base
+	- Header
+	- navigation
+	- sidebar
+	- footer
+## Layouts
+# components-blocks
+	- _block-name  // MAKE FOR EACH BLOCK
+	- Comments
+	- form-elements
+	- headline
+
+# Utilities
+	- Accessibility
+	- custom-editor-style
+	- accessibility
+	- breadcrumb
+	- widgets
+	- search
+	- buttons
+	- icons
+
+# individuals
+	- normalize
+
+--------------------------------------------------------------*/
+/* Normalize
+--------------------------------------------- */
+@import 'individuals/normalize';
+
+/* Basevariables and mixins.
+--------------------------------------------- */
+@import 'variables-mixing/index';
+
+/* Base
+--------------------------------------------- */
+@import 'base/index';
+
+/* Components and Blocks
+--------------------------------------------------------------*/
+@import 'components-blocks/index';
+
+/* Utilities
+--------------------------------------------------------------*/
+@import 'utilities/index';
+
+/* Accessibility
+--------------------------------------------- */
+@import 'utilities/index';
+
+/* Pages
+--------------------------------------------------------------*/
+@import 'pages/index';
